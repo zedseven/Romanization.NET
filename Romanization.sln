@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Romanization", "Romanization\Romanization.csproj", "{65A48061-345B-4991-BB33-8A63B6FE7B3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanizationTests", "RomanizationTests\RomanizationTests.csproj", "{79BC896C-4ECE-4E4C-82A7-368F98EF4B5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65A48061-345B-4991-BB33-8A63B6FE7B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A48061-345B-4991-BB33-8A63B6FE7B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A48061-345B-4991-BB33-8A63B6FE7B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A48061-345B-4991-BB33-8A63B6FE7B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79BC896C-4ECE-4E4C-82A7-368F98EF4B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BC896C-4ECE-4E4C-82A7-368F98EF4B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BC896C-4ECE-4E4C-82A7-368F98EF4B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BC896C-4ECE-4E4C-82A7-368F98EF4B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05F02F5C-A383-45FE-8328-2F3FF95298A8}
+	EndGlobalSection
+EndGlobal
