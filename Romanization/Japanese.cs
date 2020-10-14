@@ -335,7 +335,7 @@ namespace Romanization
 						LongVowelRegexI.Replace(
 							LongVowelRegexO.Replace(
 								LongVowelRegexU.Replace(text,
-									LanguageAgnostic.MacronU),
+								LanguageAgnostic.MacronU),
 								LanguageAgnostic.MacronO),
 							LanguageAgnostic.MacronI),
 						LanguageAgnostic.MacronE),

@@ -21,9 +21,9 @@ namespace Romanization
 		public const string MacronU = "ū";
 
 		// Regex Constants
-		private static readonly Lazy<Regex> LanguageBoundaryRegex = new Lazy<Regex>(new Regex(
+		private static readonly Lazy<Regex> LanguageBoundaryRegex = new Lazy<Regex>(() => new Regex(
 			$"(?:([{LanguageBoundaryChars}])([^ {LanguageBoundaryChars}])|([^ {LanguageBoundaryChars}])([{LanguageBoundaryChars}]))",
-			RegexOptions.IgnoreCase | RegexOptions.Compiled));
+			RegexOptions.Compiled | RegexOptions.IgnoreCase));
 		private const string LanguageBoundaryChars = @"a-z\.\t\-?!";
 		private const string LanguageBoundarySubstitution = "${1}${3} ${2}${4}";
 
