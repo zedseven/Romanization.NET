@@ -9,3 +9,4 @@ The languages currently supported are:
 | Language       | Supported Romanization Systems                                         | Limitations |
 | :------------: | :--------------------------------------------------------------------: | :---------: |
 | Japanese       | [Modified Hepburn](https://en.wikipedia.org/wiki/Hepburn_romanization) | Vowel combination is not done, as it requires knowledge of morpheme boundaries, which vary from word to word. |
+| Korean         | [Revised Romanization of Korean](https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean) |  |
