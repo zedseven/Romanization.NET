@@ -3,10 +3,10 @@
 // ReSharper disable CheckNamespace
 // ReSharper disable StringLiteralTypo
 
-namespace Romanization.Tests
+namespace Romanization.Tests.JapaneseTests
 {
 	[TestClass]
-	public class JapaneseTests
+	public class ModifiedHepburnSystemTests
 	{
 		[TestInitialize]
 		public void Initialize()
@@ -16,7 +16,7 @@ namespace Romanization.Tests
 		}
 
 		[TestMethod]
-		public void HepburnTestLongVowel()
+		public void LongVowelTest()
 		{
 			Assert.AreEqual("nintendō",                    Japanese.ModifiedHepburn.Value.Process("ニンテンドー"));
 			Assert.AreEqual("burauzā",                     Japanese.ModifiedHepburn.Value.Process("ブラウザー"));
@@ -24,14 +24,7 @@ namespace Romanization.Tests
 		}
 
 		[TestMethod]
-		public void HepburnTestLanguageBoundary()
-		{
-			Assert.AreEqual("nintendō DSi burauzā",        Japanese.ModifiedHepburn.Value.Process("ニンテンドーDSiブラウザー"));
-			Assert.AreEqual("G.G shirīzu dorifutosākitto", Japanese.ModifiedHepburn.Value.Process("G.Gシリーズ ドリフトサーキット"));
-		}
-
-		[TestMethod]
-		public void HepburnTestSyllabicN()
+		public void SyllabicNTest()
 		{
 			Assert.AreEqual("annai",                       Japanese.ModifiedHepburn.Value.Process("あんない"));
 			Assert.AreEqual("gunma",                       Japanese.ModifiedHepburn.Value.Process("ぐんま"));
@@ -40,7 +33,7 @@ namespace Romanization.Tests
 		}
 
 		[TestMethod]
-		public void HepburnTestLongConsonant()
+		public void LongConsonantTest()
 		{
 			Assert.AreEqual("kekka",                       Japanese.ModifiedHepburn.Value.Process("けっか"));
 			Assert.AreEqual("sassato",                     Japanese.ModifiedHepburn.Value.Process("さっさと"));

@@ -316,6 +316,9 @@ namespace Romanization
 			[Pure]
 			public string Process(string text)
 			{
+				// Replace common alternate characters
+				text = LanguageAgnostic.ReplaceCommonAlternates(text);
+
 				// Insert spaces at boundaries between Latin characters and Japanese ones (ie. ニンテンドーDSiブラウザー)
 				text = LanguageAgnostic.SeparateLanguageBoundaries(text);
 
@@ -325,9 +328,6 @@ namespace Romanization
 				// Then single-char replacements (Gojūon)
 				text = GojuonChart.Keys.Aggregate(text, (current, gojuonChar)
 						=> current.Replace(gojuonChar, GojuonChart[gojuonChar]));
-
-				// Replace common alternate characters
-				text = LanguageAgnostic.RemoveCommonAlternates(text);
 
 				// Convert chōonpu usage in original text into macrons to mark long vowels in a romanized manner
 				text = LongVowelRegexA.Replace(
