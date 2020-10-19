@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://api.travis-ci.org/zedseven/Romanization.NET.svg?branch=main)](https://travis-ci.org/zedseven/Romanization.NET)
 
-A small library for [romanization](https://en.wikipedia.org/wiki/Romanization) of widely-used languages using common romanization systems.
+A library for [romanization](https://en.wikipedia.org/wiki/Romanization) of widely-used languages using common romanization systems.
 
 Still a work in progress. Originally made as part of the [NUSRipper](https://github.com/zedseven/NusRipper) project.
 
