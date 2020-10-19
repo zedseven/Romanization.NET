@@ -13,8 +13,8 @@ echo "Packing built library..."
 ./nuget.exe pack ./Romanization.csproj -Prop Configuration=Release -Verbosity detailed
 
 echo "Pushing packed package to Nuget..."
-./nuget.exe push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey $NugetApiKey -Source $NugetSource
+./nuget.exe push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey "$NugetApiKey" -Source "$NugetSource"
 echo "Pushing packed package to GitHub Packages..."
-./nuget.exe push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey $PackagesApiKey -Source $PackagesSource
+./nuget.exe push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey "$PackagesApiKey" -Source "$PackagesSource"
 
 echo "Done!"
