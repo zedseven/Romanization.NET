@@ -3,8 +3,8 @@ mono: none
 dotnet: 3.1.402 # to update this value in the future, try `dotnet --list-sdks` as a start
 
 install:
- - dotnet restore
+- dotnet restore
 
- script:
- - dotnet build
- - dotnet test RomanizationTests/RomanizationTests.csproj
+script:
+- dotnet build
+- dotnet test RomanizationTests/RomanizationTests.csproj
