@@ -10,6 +10,8 @@
     <RepositoryUrl>https://github.com/zedseven/Romanization.git</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <NeutralLanguage>en-CA</NeutralLanguage>
+    <Version>0.9.0</Version>
+    <AssemblyVersion>0.9.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
