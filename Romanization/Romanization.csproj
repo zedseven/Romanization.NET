@@ -12,6 +12,7 @@
     <NeutralLanguage>en-CA</NeutralLanguage>
     <Version>0.9.0</Version>
     <AssemblyVersion>0.9.0.0</AssemblyVersion>
+    <AssemblyName>Romanization.NET</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
