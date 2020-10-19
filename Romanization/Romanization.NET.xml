@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Romanization.NET</name>
+    </assembly>
+    <members>
+        <member name="T:Romanization.IRomanizationSystem">
+            <summary>
+            A system used to romanize a language.
+            </summary>
+        </member>
+        <member name="M:Romanization.IRomanizationSystem.Process(System.String)">
+            <summary>
+            The system-specific function that romanizes text according to the system's rules.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
+        </member>
+        <member name="T:Romanization.IReadingsRomanizationSystem`1">
+            <summary>
+            A system used to romanize a language with multiple readings (pronunciations) per character.
+            </summary>
+            <typeparam name="TType">The types of reading the system uses.</typeparam>
+        </member>
+        <member name="M:Romanization.IReadingsRomanizationSystem`1.ProcessWithReadings(System.String)">
+            <summary>
+            The system-specific function that romanizes text in a language with multiple readings (pronunciations) per character.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A <see cref="T:Romanization.LanguageAgnostic.ReadingsString`1"/> with all readings for each character in <paramref name="text"/>.</returns>
+        </member>
+        <member name="T:Romanization.LanguageAgnostic">
+            <summary>
+            A global class for language-agnostic functions and constants (things that are independent of specific languages).
+            </summary>
+        </member>
+        <member name="T:Romanization.LanguageAgnostic.ReadingsString`1">
+            <summary>
+            A string of characters with all possible readings (pronunciations) for each character.
+            </summary>
+            <typeparam name="TType">The type of reading.</typeparam>
+        </member>
+        <member name="T:Romanization.LanguageAgnostic.ReadingCharacter`1">
+            <summary>
+            A character with all possible readings (pronunciations).
+            </summary>
+            <typeparam name="TType">The type of reading.</typeparam>
+        </member>
+        <member name="T:Romanization.LanguageAgnostic.Reading`1">
+            <summary>
+            A reading (pronunciation) of a character.
+            </summary>
+            <typeparam name="TType">The type of reading.</typeparam>
+        </member>
+        <member name="M:Romanization.LanguageAgnostic.ReplaceCommonAlternates(System.String)">
+            <summary>
+            Remove common alternative characters, such as the ideographic full-stop (replaced with a period).
+            </summary>
+            <param name="text">The text to replace in.</param>
+            <returns>The original text with common alternate characters replaced.</returns>
+        </member>
+        <member name="M:Romanization.LanguageAgnostic.SeparateLanguageBoundaries(System.String)">
+            <summary>
+            Insert spaces at boundaries between Latin and non-Latin characters (ie. `ニンテンドーDSiブラウザー` -> `ニンテンドー DSi ブラウザー`).
+            </summary>
+            <param name="text">The text to insert spaces in.</param>
+            <returns>The text with spaces inserted at language boundaries.</returns>
+        </member>
+        <member name="T:Romanization.Chinese">
+            <summary>
+            The class for romanizing Chinese text.
+            </summary>
+        </member>
+        <member name="T:Romanization.Chinese.HanyuPinyinSystem">
+            <summary>
+            The Hànyǔ Pīnyīn Chinese romanization system.<br />
+            For more information, visit:
+            <a href='https://en.wikipedia.org/wiki/Hanyu_Pinyin'>https://en.wikipedia.org/wiki/Hanyu_Pinyin</a>
+            </summary>
+        </member>
+        <member name="T:Romanization.Chinese.HanyuPinyinSystem.ReadingTypes">
+            <summary>
+            The supported reading types for Hànyǔ Pīnyīn.
+            </summary>
+        </member>
+        <member name="F:Romanization.Chinese.HanyuPinyinSystem.ReadingTypes.HanyuPinyin">
+            <summary>
+            Standard Hànyǔ Pīnyīn.
+            </summary>
+        </member>
+        <member name="F:Romanization.Chinese.HanyuPinyinSystem.ReadingTypes.HanyuPinlu">
+            <summary>
+            Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Pínlǜ Cídiǎn.
+            </summary>
+        </member>
+        <member name="F:Romanization.Chinese.HanyuPinyinSystem.ReadingTypes.XHC">
+            <summary>
+            Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Cídiǎn.
+            </summary>
+        </member>
+        <member name="M:Romanization.Chinese.HanyuPinyinSystem.Process(System.String,Romanization.Chinese.HanyuPinyinSystem.ReadingTypes)">
+            <summary>
+            Performs Hànyǔ Pīnyīn romanization on the given text.<br />
+            Uses the first (oft-most-common) reading of the character - standard Hànyǔ Pīnyīn first if available, then Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Pínlǜ Cídiǎn, then as it appeared in Xiàndài Hànyǔ Cídiǎn.<br />
+            If more readings are required, use <see cref="M:Romanization.Chinese.HanyuPinyinSystem.ProcessWithReadings(System.String,Romanization.Chinese.HanyuPinyinSystem.ReadingTypes)"/> instead.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <param name="readingsToUse">The reading types to use.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Chinese.HanyuPinyinSystem.Process(System.String)">
+            <summary>
+            Performs Hànyǔ Pīnyīn romanization on the given text.<br />
+            Uses the first (oft-most-common) reading of the character - standard Hànyǔ Pīnyīn first if available, then Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Pínlǜ Cídiǎn, then as it appeared in Xiàndài Hànyǔ Cídiǎn.<br />
+            If more readings are required, use <see cref="M:Romanization.Chinese.HanyuPinyinSystem.ProcessWithReadings(System.String)"/> instead.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Chinese.HanyuPinyinSystem.ProcessWithReadings(System.String,Romanization.Chinese.HanyuPinyinSystem.ReadingTypes)">
+            <summary>
+            Performs Hànyǔ Pīnyīn romanization on the given text.<br />
+            Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each.<br />
+            Returns the following readings for characters if in <paramref name="readingsToUse"/> and they exist: standard Hànyǔ Pīnyīn, Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Pínlǜ Cídiǎn, and Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Cídiǎn.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <param name="readingsToUse">The reading types to use.</param>
+            <returns>A <see cref="T:Romanization.LanguageAgnostic.ReadingsString`1"/> with all readings for each character in <paramref name="text"/>.</returns>
+        </member>
+        <member name="M:Romanization.Chinese.HanyuPinyinSystem.ProcessWithReadings(System.String)">
+            <summary>
+            Performs Hànyǔ Pīnyīn romanization on the given text.<br />
+            Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each.<br />
+            Returns the following readings for characters if they exist: standard Hànyǔ Pīnyīn, Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Pínlǜ Cídiǎn, and Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Cídiǎn.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A <see cref="T:Romanization.LanguageAgnostic.ReadingsString`1"/> with all readings for each character in <paramref name="text"/>.</returns>
+        </member>
+        <member name="T:Romanization.Japanese">
+            <summary>
+            The class for romanizing Japanese text. (Rōmaji)
+            </summary>
+        </member>
+        <member name="T:Romanization.Japanese.KanjiReadingsSystem">
+            <summary>
+            A system for romanizing Kanji characters.<br />
+            For more information, visit:
+            <a href='https://en.wikipedia.org/wiki/Kanji'>https://en.wikipedia.org/wiki/Kanji</a>
+            </summary>
+        </member>
+        <member name="T:Romanization.Japanese.KanjiReadingsSystem.ReadingTypes">
+            <summary>
+            The supported reading types for Kanji.
+            </summary>
+        </member>
+        <member name="F:Romanization.Japanese.KanjiReadingsSystem.ReadingTypes.Kunyomi">
+            <summary>
+            Kun'yomi, the Japanese-native reading. Often referred to as just Kun.
+            </summary>
+        </member>
+        <member name="F:Romanization.Japanese.KanjiReadingsSystem.ReadingTypes.Onyomi">
+            <summary>
+            On'yomi, the Sino-Japanese reading. Often referred to as just On.
+            </summary>
+        </member>
+        <member name="M:Romanization.Japanese.KanjiReadingsSystem.Process(System.String,Romanization.Japanese.KanjiReadingsSystem.ReadingTypes)">
+            <summary>
+            Performs romanization of all Kanji in the given text.<br />
+            Uses the first reading of the character - Kun'yomi first, if requested and available, then On'yomi if requested and available.<br />
+            If more readings are required, use <see cref="M:Romanization.Japanese.KanjiReadingsSystem.ProcessWithReadings(System.String,Romanization.Japanese.KanjiReadingsSystem.ReadingTypes)"/> instead.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <param name="readingsToUse">The reading types to use.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Japanese.KanjiReadingsSystem.Process(System.String)">
+            <summary>
+            Performs romanization of all Kanji in the given text.<br />
+            Uses the first reading of the character - Kun'yomi first, if available, then On'yomi.<br />
+            If more readings are required, use <see cref="M:Romanization.Japanese.KanjiReadingsSystem.ProcessWithReadings(System.String)"/> instead.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Japanese.KanjiReadingsSystem.ProcessWithKana(System.String,Romanization.IRomanizationSystem)">
+            <summary>
+            Performs romanization of all Kanji in the given text, after using <paramref name="system"/> to handle the kana.<br />
+            <paramref name="system"/> defaults to <see cref="T:Romanization.Japanese.ModifiedHepburnSystem"/> if left as null.<br />
+            See the documentation for <see cref="M:Romanization.Japanese.KanjiReadingsSystem.Process(System.String)"/> and the chosen system for more implementation details.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <param name="system">The system to romanize the kana in <paramref name="text"/> before the Kanji are touched.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Japanese.KanjiReadingsSystem.ProcessWithReadings(System.String,Romanization.Japanese.KanjiReadingsSystem.ReadingTypes)">
+            <summary>
+            Performs romanization of all Kanji in the given text.<br />
+            Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each.<br />
+            Can return the following readings for characters if in <paramref name="readingsToUse"/> and they exist: Kun'yomi and On'yomi.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <param name="readingsToUse">The reading types to use.</param>
+            <returns>A <see cref="T:Romanization.LanguageAgnostic.ReadingsString`1"/> with all readings for each character in <paramref name="text"/>.</returns>
+        </member>
+        <member name="M:Romanization.Japanese.KanjiReadingsSystem.ProcessWithReadings(System.String)">
+            <summary>
+            Performs romanization of all Kanji in the given text.<br />
+            Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each.<br />
+            Returns the following readings for characters if they exist: Kun'yomi and On'yomi.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A <see cref="T:Romanization.LanguageAgnostic.ReadingsString`1"/> with all readings for each character in <paramref name="text"/>.</returns>
+        </member>
+        <member name="T:Romanization.Japanese.ModifiedHepburnSystem">
+            <summary>
+            The Modified Hepburn Japanese romanization system.<br />
+            For more information, visit:
+            <a href='https://en.wikipedia.org/wiki/Hepburn_romanization'>https://en.wikipedia.org/wiki/Hepburn_romanization</a>
+            </summary>
+        </member>
+        <member name="M:Romanization.Japanese.ModifiedHepburnSystem.Process(System.String)">
+            <summary>
+            Performs Modified Hepburn romanization on the given text.<br />
+            Note this supports Hiragana and Katakana, but not Kanji.<br />
+            Due to limits of machine romanization, certain details of the system are left out - namely vowel
+            combinations, as the rules for combining vowels depend on whether or not the vowels share a
+            morpheme (something not known to the program).
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="T:Romanization.Korean.HanjaReadingsSystem">
+            <summary>
+            A system for converting Hanja to Hangeul characters, or for romanizing Hanja directly.
+            </summary>
+        </member>
+        <member name="T:Romanization.Korean.HanjaReadingsSystem.ReadingTypes">
+            <summary>
+            The supported reading types for Hanja. In this case, Hangeul is the only supported one.
+            </summary>
+        </member>
+        <member name="F:Romanization.Korean.HanjaReadingsSystem.ReadingTypes.Hangeul">
+            <summary>
+            Hangeul, the Korean alphabet.
+            </summary>
+        </member>
+        <member name="M:Romanization.Korean.HanjaReadingsSystem.Process(System.String,Romanization.IRomanizationSystem)">
+            <summary>
+            Performs romanization of all Hanja in the given text, first to Hangeul, then to proper romanization according to <paramref name="system"/>.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <param name="system">The romanization system to use for the Hangeul characters the Hanja is converted to.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Korean.HanjaReadingsSystem.Process(System.String)">
+            <summary>
+            Performs romanization of all Hanja in the given text, first to Hangeul, then to proper romanization according to the Revised Romanization of Korea system.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Korean.HanjaReadingsSystem.ProcessToHangeul(System.String)">
+            <summary>
+            Converts all Hanja in the given text to their first Hangeul character in the list of possible readings.<br />
+            Note that this will not yield a romanized string, but rather a standard Korean one. See <see cref="M:Romanization.Korean.HanjaReadingsSystem.Process(System.String,Romanization.IRomanizationSystem)"/> for a romanized output.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A version of the text with all Hanja characters replaced with their first Hangeul readings.</returns>
+        </member>
+        <member name="M:Romanization.Korean.HanjaReadingsSystem.ProcessWithReadings(System.String)">
+            <summary>
+            Performs romanization of all Hanja in the given text.<br />
+            Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each in Hangeul (the Korean alphabet).<br />
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A <see cref="T:Romanization.LanguageAgnostic.ReadingsString`1"/> with all readings for each character in <paramref name="text"/>.</returns>
+        </member>
+        <member name="M:Romanization.Korean.DecomposeSyllableBlock(System.Char)">
+            <summary>
+            Decomposes a Korean syllable block into it's component jamo, in order.<br />
+            ie. '한' -> 'ㅎ', 'ㅏ', 'ㄴ'<br />
+            Sourced from a function derived from:
+            <a href='https://en.wikipedia.org/wiki/Korean_language_and_computers#Hangul_in_Unicode'>https://en.wikipedia.org/wiki/Korean_language_and_computers#Hangul_in_Unicode</a>
+            </summary>
+            <param name="block">The syllable block / Unicode character ('한').</param>
+            <returns>The syllable block decomposed into it's component jamo ('ㅎ', 'ㅏ', 'ㄴ'), or null if the input block is invalid.</returns>
+        </member>
+        <member name="T:Romanization.Korean.RevisedRomanizationSystem">
+            <summary>
+            The Revised Romanization of Korean system.<br />
+            For more information, visit:
+            <a href='https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean'>https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean</a>
+            </summary>
+        </member>
+        <member name="M:Romanization.Korean.RevisedRomanizationSystem.Process(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Performs romanization on the given text, according to the Revised Romanization of Korean system.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <param name="givenName">Whether or not the text to romanize is a given name, since Korean names are often romanized without consideration for special jamo combinations.</param>
+            <param name="noun">Whether or not the text to romanize is a noun, since there is a distinction between whether or not aspiration is reflected based on nouns.</param>
+            <param name="hyphenateSyllables">Whether to insert a hyphen ('-') between syllables in non-required spots. This can help to distinguish between ambiguous words: 가을 -> ga-eul (fall; autumn) vs. 개울 -> gae-ul (stream).</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="M:Romanization.Korean.RevisedRomanizationSystem.Process(System.String)">
+            <summary>
+            Performs romanization on the given text, according to the Revised Romanization of Korean system.
+            </summary>
+            <param name="text">The text to romanize.</param>
+            <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+        </member>
+        <member name="T:Romanization.Utilities.CannotReadStreamException">
+            <summary>
+            Represents the error when the stream provided to <see cref="M:Romanization.Utilities.LoadCsvIntoDictionary``2(System.IO.FileStream,System.Collections.Generic.Dictionary{``0,``1},System.Func{System.String,``0},System.Func{System.String,``1})"/> cannot be read.
+            </summary>
+        </member>
+        <member name="T:Romanization.Utilities.CsvLoadingException">
+            <summary>
+            Represents an error that occurred during loading of a library CSV file.
+            </summary>
+        </member>
+        <member name="M:Romanization.Utilities.LoadCharacterMap``2(System.String,System.Collections.Generic.Dictionary{``0,``1},System.Func{System.String,``0},System.Func{System.String,``1})">
+            <summary>
+            Loads a language character map file into a dictionary, using the provided mapping functions to map CSV entries to dict keys &amp; values.
+            </summary>
+            <typeparam name="TKey">The type of the dictionary keys.</typeparam>
+            <typeparam name="TVal">The type of the dictionary values.</typeparam>
+            <param name="fileName">The file name of the language character map file.</param>
+            <param name="dict">The dictionary to load into.</param>
+            <param name="keyMapper">The function that maps CSV entry first values to dictionary <typeparamref name="TKey"/> values.</param>
+            <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
+            <exception cref="T:Romanization.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
+            <exception cref="T:Romanization.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
+        </member>
+        <member name="M:Romanization.Utilities.LoadCsvIntoDictionary``2(System.IO.FileStream,System.Collections.Generic.Dictionary{``0,``1},System.Func{System.String,``0},System.Func{System.String,``1})">
+            <summary>
+            Loads a CSV file stream into a dictionary, using the provided mapping functions to map CSV entries to dict keys &amp; values.
+            </summary>
+            <typeparam name="TKey">The type of the dictionary keys.</typeparam>
+            <typeparam name="TVal">The type of the dictionary values.</typeparam>
+            <param name="stream">The CSV file stream.</param>
+            <param name="dict">The dictionary to load into.</param>
+            <param name="keyMapper">The function that maps CSV entry first values to dictionary <typeparamref name="TKey"/> values.</param>
+            <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
+            <exception cref="T:Romanization.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
+            <exception cref="T:Romanization.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
+        </member>
+    </members>
+</doc>
