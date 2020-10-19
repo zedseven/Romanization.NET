@@ -12,4 +12,25 @@
     <NeutralLanguage>en-CA</NeutralLanguage>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Update="LanguageCharacterMaps\HanjaHangeul.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LanguageCharacterMaps\HanziHanyuPinlu.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LanguageCharacterMaps\HanziHanyuPinyin.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LanguageCharacterMaps\HanziXHC.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LanguageCharacterMaps\KanjiKun.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="LanguageCharacterMaps\KanjiOn.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

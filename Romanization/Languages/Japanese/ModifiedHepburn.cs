@@ -4,6 +4,7 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+// ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
@@ -11,19 +12,8 @@ using System.Text.RegularExpressions;
 
 namespace Romanization
 {
-	/// <summary>
-	/// The class for romanizing Japanese text. (Rōmaji)
-	/// </summary>
-	public static class Japanese
+	public static partial class Japanese
 	{
-		// Japanese Characters
-		private const char SokuonHiragana = 'っ';
-		private const char SokuonKatakana = 'ッ';
-		private const char Choonpu = 'ー';
-		private const string SyllabicNHiragana = "ん";
-		private const string SyllabicNKatakana = "ン";
-
-		// System Singletons
 		public static readonly Lazy<ModifiedHepburnSystem> ModifiedHepburn = new Lazy<ModifiedHepburnSystem>(() => new ModifiedHepburnSystem());
 
 		/// <summary>
@@ -61,11 +51,11 @@ namespace Romanization
 				LongVowelRegexO = new Regex($"o{Choonpu}", RegexOptions.Compiled);
 				LongVowelRegexU = new Regex($"u{Choonpu}", RegexOptions.Compiled);
 
-				SyllabicNVowelsRegex     = new Regex($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{LanguageAgnostic.Vowels}])",     RegexOptions.Compiled | RegexOptions.IgnoreCase);
+				SyllabicNVowelsRegex = new Regex($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{LanguageAgnostic.Vowels}])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 				SyllabicNConsonantsRegex = new Regex($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{LanguageAgnostic.Consonants}])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 				SokuonGeneralCaseRegex = new Regex($"[{SokuonHiragana}{SokuonKatakana}]([{LanguageAgnostic.Consonants}])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-				SokuonChCaseRegex      = new Regex($"[{SokuonHiragana}{SokuonKatakana}]ch",                                RegexOptions.Compiled | RegexOptions.IgnoreCase);
+				SokuonChCaseRegex = new Regex($"[{SokuonHiragana}{SokuonKatakana}]ch", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 				#region Romanization Chart
 				// Sourced from https://en.wikipedia.org/wiki/Hepburn_romanization#Romanization_charts

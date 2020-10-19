@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // ReSharper disable CheckNamespace
+// ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
 
 namespace Romanization.KoreanTests
@@ -8,13 +9,6 @@ namespace Romanization.KoreanTests
 	[TestClass]
 	public class RevisedRomanizationSystemTests
 	{
-		[TestInitialize]
-		public void Initialize()
-		{
-			// Force the initialization of the Romanizer before testing begins
-			_ = Korean.RevisedRomanization.Value;
-		}
-
 		[TestMethod]
 		public void BasicWordTest()
 		{
