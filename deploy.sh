@@ -1,3 +1,5 @@
+#!/bin/bash
+
 NugetApiKey=$1
 NugetSource=$2
 PackagesApiKey=$3
@@ -10,7 +12,7 @@ cd Romanization
 #chmod +x ./nuget.exe
 
 echo "Packing built library..."
-dotnet pack ./Romanization.nuspec --configuration Release
+dotnet pack ./Romanization.csproj --configuration Release
 
 pattern="Romanization.NET.*.nupkg"
 files=( $pattern )
