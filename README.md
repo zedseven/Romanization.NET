@@ -1,5 +1,6 @@
 # Romanization
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://api.travis-ci.org/zedseven/Romanization.svg?branch=main)](https://travis-ci.org/zedseven/Romanization)
 
 A small library for [romanization](https://en.wikipedia.org/wiki/Romanization) of widely-used languages using common romanization systems.
 
