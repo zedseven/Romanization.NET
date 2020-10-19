@@ -6,7 +6,7 @@ install:
 - dotnet restore
 
 script:
-- dotnet build --configuration Release
+- dotnet build RomanizationNet.sln --configuration Release --no-restore --verbosity detailed
 - dotnet test RomanizationTests/RomanizationTests.csproj
 
 deploy:
