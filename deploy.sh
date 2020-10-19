@@ -7,10 +7,14 @@ PackagesSource=$4
 
 cd Romanization
 
-cp ./Romanization.nuspec bin/Release/Romanization.nuspec
+buildPath="bin/Release/"
+
+cp "./Romanization.nuspec" "${buildPath}Romanization.nuspec"
 
 echo "Packing built library..."
 dotnet pack ./Romanization.csproj --configuration Release
+
+cd buildPath
 
 files=( Romanization.NET.*.nupkg )
 echo "${files[0]}"
