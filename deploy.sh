@@ -5,12 +5,15 @@ PackagesSource=$4
 
 cd Romanization
 
+echo "Downloading the latest nuget.exe..."
+curl https://dist.nuget.org/win-x86-commandline/latest/nuget.exe --output ./nuget.exe
+
 echo "Packing built library..."
-nuget pack ./Romanization.csproj -Prop Configuration=Release -Verbosity detailed
+./nuget.exe pack ./Romanization.csproj -Prop Configuration=Release -Verbosity detailed
 
 echo "Pushing packed package to Nuget..."
-nuget push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey $NugetApiKey -Source $NugetSource
+./nuget.exe push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey $NugetApiKey -Source $NugetSource
 echo "Pushing packed package to GitHub Packages..."
-nuget push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey $PackagesApiKey -Source $PackagesSource
+./nuget.exe push ./Romanization.NET.*.nupkg -Verbosity detailed -ApiKey $PackagesApiKey -Source $PackagesSource
 
 echo "Done!"

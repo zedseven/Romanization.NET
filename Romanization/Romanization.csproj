@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>C:\Users\Zacc\Source\Repos\Romanization.NET\Romanization\Romanization.NET.xml</DocumentationFile>
+    <DocumentationFile>Romanization\bin\Release\Romanization.NET.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

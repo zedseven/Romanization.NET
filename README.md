@@ -10,5 +10,5 @@ The languages currently supported are:
 | Language       | Supported Romanization Systems                                         | Limitations |
 | :------------: | :--------------------------------------------------------------------: | :---------: |
 | Chinese        | [Hànyǔ Pīnyīn](https://en.wikipedia.org/wiki/Pinyin)                   |  |
-| Japanese       | [Modified Hepburn](https://en.wikipedia.org/wiki/Hepburn_romanization), [Kanji (Kun & On)](https://en.wikipedia.org/wiki/Kanji#Readings) | Vowel combination is not done, as it requires knowledge of morpheme boundaries, which vary from word to word. |
+| Japanese       | [Modified Hepburn](https://en.wikipedia.org/wiki/Hepburn_romanization), [Kanji (Kun & On)](https://en.wikipedia.org/wiki/Kanji#Readings) | Vowel combination is not possible as it requires knowledge of morpheme boundaries, which vary from word to word. |
 | Korean         | [Revised Romanization of Korean](https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean), [Hanja Hangeul Readings](https://en.wikipedia.org/wiki/Hanja) |  |
