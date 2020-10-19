@@ -15,6 +15,10 @@
     <AssemblyName>Romanization.NET</AssemblyName>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\Zacc\Source\Repos\Romanization.NET\Romanization\Romanization.NET.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Update="LanguageCharacterMaps\HanjaHangeul.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellane
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		.travis.yml = .travis.yml
+		deploy.sh = deploy.sh
 		README.md = README.md
+		Romanization\Romanization.nuspec = Romanization\Romanization.nuspec
 	EndProjectSection
 EndProject
 Global

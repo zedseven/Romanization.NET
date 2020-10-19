@@ -8,3 +8,10 @@ install:
 script:
 - dotnet build --configuration Release
 - dotnet test RomanizationTests/RomanizationTests.csproj
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: chmod +x ./deploy.sh && ./deploy.sh $NUGET_API_KEY $NUGET_SOURCE $GH_PACKAGES_API_KEY $GH_PACKAGES_SOURCE
+  on:
+	branch: main
