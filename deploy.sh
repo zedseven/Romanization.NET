@@ -7,15 +7,12 @@ PackagesSource=$4
 
 cd Romanization
 
-#echo "Downloading the latest nuget.exe..."
-#curl https://dist.nuget.org/win-x86-commandline/latest/nuget.exe --output ./nuget.exe -s
-#chmod +x ./nuget.exe
+cp ./Romanization.nuspec bin/Release/Romanization.nuspec
 
 echo "Packing built library..."
 dotnet pack ./Romanization.csproj --configuration Release
 
-pattern="Romanization.NET.*.nupkg"
-files=( $pattern )
+files=( Romanization.NET.*.nupkg )
 echo "${files[0]}"
 
 echo "Pushing packed package to Nuget..."
