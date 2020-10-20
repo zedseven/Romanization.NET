@@ -24,6 +24,6 @@ dotnet nuget push "${files[0]}" -k "$NugetApiKey" -s "$NugetSource" --no-service
 echo "Pushing packed package to GitHub Packages..."
 dotnet nuget add source "$PackagesSource" -n github -u zedseven -p "$PackagesApiKey" --store-password-in-clear-text
 #dotnet nuget push "${files[0]}" -k "$PackagesApiKey" -s "$PackagesSource" --no-service-endpoint
-dotnet nuget push "${files[0]}" -s "github" --no-service-endpoint
+dotnet nuget push "${files[0]}" -s "github" -k "$PackagesApiKey" --no-service-endpoint
 
 echo "Done!"
