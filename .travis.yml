@@ -6,7 +6,7 @@ install:
 - dotnet restore
 
 before_script: |
-  echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip docfx.zip -q -d ./docfx
+  echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
 
 script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
