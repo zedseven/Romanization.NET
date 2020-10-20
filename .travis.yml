@@ -9,6 +9,9 @@ script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
 - dotnet test RomanizationTests/RomanizationTests.csproj
 
+before_deploy:
+  choco install docfx -y
+
 deploy:
   provider: script
   skip_cleanup: true
@@ -17,8 +20,8 @@ deploy:
     branch: main
 
 # https://stackoverflow.com/a/33125422/6003488
-after_success:
-  - | if [ -n "$GITHUB_API_KEY" ]; then
+after_success: |
+  if [ -n "$GITHUB_API_KEY" ]; then
     cd "$TRAVIS_BUILD_DIR"
     cd Documentation/generated
     git init
