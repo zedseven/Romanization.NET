@@ -6,17 +6,20 @@
     <Company>Zacchary Dempsey-Plante</Company>
     <Description>A library for romanization of languages written in non-Latin alphabets.</Description>
     <Copyright>Copyright © Zacchary Dempsey-Plante 2020</Copyright>
-    <PackageProjectUrl>https://github.com/zedseven/Romanization</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/zedseven/Romanization.git</RepositoryUrl>
-    <RepositoryType>Git</RepositoryType>
+    <PackageProjectUrl>https://github.com/zedseven/Romanization.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/zedseven/Romanization.NET.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en-CA</NeutralLanguage>
-    <Version>0.9.1</Version>
-    <AssemblyVersion>0.9.1.0</AssemblyVersion>
+    <Version>0.9.2</Version>
+    <AssemblyVersion>0.9.2.0</AssemblyVersion>
     <AssemblyName>Romanization.NET</AssemblyName>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>Romanization Chinese Japanese Korean</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>Romanization\bin\Release\Romanization.NET.xml</DocumentationFile>
+	  <!--<NuspecFile>Romanization.nuspec</NuspecFile>-->
   </PropertyGroup>
 
   <ItemGroup>

@@ -10,6 +10,9 @@ using System.Diagnostics.Contracts;
 
 namespace Romanization
 {
+	/// <summary>
+	/// The class for romanizing Korean text. (Romaja)
+	/// </summary>
 	public static partial class Korean
 	{
 		// Unicode Constants (sourced from https://en.wikipedia.org/wiki/Korean_language_and_computers#Hangul_in_Unicode)

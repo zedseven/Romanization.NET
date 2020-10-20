@@ -13,10 +13,17 @@ namespace Romanization
 {
 	public static partial class Korean
 	{
+		/// <summary>
+		/// A system for converting Hanja to Hangeul characters, or for romanizing Hanja directly.<br />
+		/// For more information, visit:
+		/// <a href='https://en.wikipedia.org/wiki/Hanja'>https://en.wikipedia.org/wiki/Hanja</a>
+		/// </summary>
 		public static readonly Lazy<HanjaReadingsSystem> HanjaReadings = new Lazy<HanjaReadingsSystem>(() => new HanjaReadingsSystem());
 
 		/// <summary>
-		/// A system for converting Hanja to Hangeul characters, or for romanizing Hanja directly.
+		/// A system for converting Hanja to Hangeul characters, or for romanizing Hanja directly.<br />
+		/// For more information, visit:
+		/// <a href='https://en.wikipedia.org/wiki/Hanja'>https://en.wikipedia.org/wiki/Hanja</a>
 		/// </summary>
 		public sealed class HanjaReadingsSystem : IReadingsRomanizationSystem<HanjaReadingsSystem.ReadingTypes>
 		{

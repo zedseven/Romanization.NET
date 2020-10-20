@@ -14,6 +14,11 @@ namespace Romanization
 {
 	public static partial class Korean
 	{
+		/// <summary>
+		/// The Revised Romanization of Korean system.<br />
+		/// For more information, visit:
+		/// <a href='https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean'>https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean</a>
+		/// </summary>
 		public static readonly Lazy<RevisedRomanizationSystem> RevisedRomanization = new Lazy<RevisedRomanizationSystem>(() => new RevisedRomanizationSystem());
 
 		/// <summary>

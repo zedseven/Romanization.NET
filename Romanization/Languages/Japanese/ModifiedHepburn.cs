@@ -14,6 +14,11 @@ namespace Romanization
 {
 	public static partial class Japanese
 	{
+		/// <summary>
+		/// The Modified Hepburn Japanese romanization system.<br />
+		/// For more information, visit:
+		/// <a href='https://en.wikipedia.org/wiki/Hepburn_romanization'>https://en.wikipedia.org/wiki/Hepburn_romanization</a>
+		/// </summary>
 		public static readonly Lazy<ModifiedHepburnSystem> ModifiedHepburn = new Lazy<ModifiedHepburnSystem>(() => new ModifiedHepburnSystem());
 
 		/// <summary>

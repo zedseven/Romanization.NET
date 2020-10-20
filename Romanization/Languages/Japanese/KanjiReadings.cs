@@ -13,6 +13,11 @@ namespace Romanization
 {
 	public static partial class Japanese
 	{
+		/// <summary>
+		/// A system for romanizing Kanji characters.<br />
+		/// For more information, visit:
+		/// <a href='https://en.wikipedia.org/wiki/Kanji'>https://en.wikipedia.org/wiki/Kanji</a>
+		/// </summary>
 		public static readonly Lazy<KanjiReadingsSystem> KanjiReadings = new Lazy<KanjiReadingsSystem>(() => new KanjiReadingsSystem());
 
 		/// <summary>

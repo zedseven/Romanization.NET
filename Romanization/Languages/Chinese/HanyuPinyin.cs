@@ -13,6 +13,11 @@ namespace Romanization
 {
 	public static partial class Chinese
 	{
+		/// <summary>
+		/// The Hànyǔ Pīnyīn Chinese romanization system.<br />
+		/// For more information, visit:
+		/// <a href='https://en.wikipedia.org/wiki/Hanyu_Pinyin'>https://en.wikipedia.org/wiki/Hanyu_Pinyin</a>
+		/// </summary>
 		public static readonly Lazy<HanyuPinyinSystem> HanyuPinyin = new Lazy<HanyuPinyinSystem>(() => new HanyuPinyinSystem());
 
 		/// <summary>
