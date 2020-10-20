@@ -23,7 +23,7 @@ deploy:
 after_success: |
   if [ -n "$GH_API_KEY" ]; then
     cd "$TRAVIS_BUILD_DIR"
-    ls -la
+    mkdir Documentation/generated
     cd Documentation/generated
     git init
     git checkout -b gh-pages
