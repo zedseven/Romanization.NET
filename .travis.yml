@@ -5,8 +5,8 @@ dotnet: 3.1.402 # to update this value in the future, try `dotnet --list-sdks` a
 install:
 - dotnet restore
 
-before_script:
-  choco install docfx -y
+before_script: |
+  echo "Installing docfx..." && wget "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip -q -d ./docfx
 
 script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
@@ -23,13 +23,13 @@ deploy:
 after_deploy: |
   if [ -n "$GH_API_KEY" ]; then
     cd "$TRAVIS_BUILD_DIR"
-    mkdir Documentation/generated
-    cd Documentation/generated
+    mkdir ./Documentation/generated
+    cd ./Documentation/generated
     git init
     git checkout -b gh-pages
     cd ../..
-    chmod +x ./Scripts/buildDoc.sh && bash ./Scripts/buildDoc.sh
-    cd Documentation/generated
+    mono ./docfx/docfx.exe ./Documentation/docfx.json --force
+    cd ./Documentation/generated
     git add .
     git -c user.name='travisci' -c user.email='travisci' commit -m "Updating Pages with updated documentation."
     # Make sure to make the output quiet, or else the API token will leak!
