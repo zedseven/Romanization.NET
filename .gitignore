@@ -348,3 +348,15 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+
+# Project-Specific
+Documentation/**/DROP/
+Documentation/**/TEMP/
+Documentation/**/packages/
+Documentation/**/bin/
+Documentation/**/obj/
+Documentation/generated/
+Documentation/api/.gitignore
+Documentation/api/*.yml
+Documentation/api/.manifest

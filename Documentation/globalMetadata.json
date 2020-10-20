@@ -1,0 +1,9 @@
+// https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html#322-reserved-metadata
+{
+	"_appTitle": "Romanization.NET",
+	"_appFooter": "Romanization.NET",
+	"_enableSearch": "true",
+	"_enableNewTab": true,
+	"_disableContribution": "false",
+	"_disableAffix": false
+}
