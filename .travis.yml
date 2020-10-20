@@ -15,13 +15,13 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: chmod +x ./Scripts/deploy.sh && bash ./Scripts/deploy.sh $NUGET_API_KEY $NUGET_SOURCE $GH_PACKAGES_API_KEY $GH_PACKAGES_SOURCE
+  script: chmod +x ./Scripts/deploy.sh && bash ./Scripts/deploy.sh $NUGET_API_KEY $NUGET_SOURCE $GH_API_KEY $GH_PACKAGES_SOURCE
   on:
     branch: main
 
 # https://stackoverflow.com/a/33125422/6003488
 after_success: |
-  if [ -n "$GITHUB_API_KEY" ]; then
+  if [ -n "$GH_API_KEY" ]; then
     cd "$TRAVIS_BUILD_DIR"
     cd Documentation/generated
     git init
