@@ -20,8 +20,8 @@ files=( Romanization.NET.*.nupkg )
 echo "${files[0]}"
 
 echo "Pushing packed package to Nuget..."
-dotnet nuget push "${files[0]}" --api-key "$NugetApiKey" --source "$NugetSource"
+dotnet nuget push "${files[0]}" --api-key "$NugetApiKey" --source "$NugetSource" --skip-duplicate
 echo "Pushing packed package to GitHub Packages..."
-dotnet nuget push "${files[0]}" --api-key "$PackagesApiKey" --source "$PackagesSource"
+dotnet nuget push "${files[0]}" --api-key "$PackagesApiKey" --source "$PackagesSource" --skip-duplicate
 
 echo "Done!"
