@@ -7,9 +7,9 @@ A library for [romanization](https://en.wikipedia.org/wiki/Romanization) of wide
 
 Still a work in progress. Originally made as part of the [NUSRipper](https://github.com/zedseven/NusRipper) project.
 
-The languages currently supported are:
-| Language       | Supported Romanization Systems                                         | Limitations |
-| :------------: | :--------------------------------------------------------------------: | :---------: |
-| Chinese        | [Hànyǔ Pīnyīn](https://en.wikipedia.org/wiki/Pinyin)                   |  |
-| Japanese       | [Modified Hepburn](https://en.wikipedia.org/wiki/Hepburn_romanization), [Kanji (Kun & On)](https://en.wikipedia.org/wiki/Kanji#Readings)                      | Vowel combination is not possible as it requires knowledge of morpheme boundaries, which vary from word to word. |
-| Korean         | [Revised Romanization of Korean](https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean), [Hanja Hangeul Readings](https://en.wikipedia.org/wiki/Hanja) |  |
+## Supported Languages & Documentation
+At the moment Romanization.NET supports Chinese, Japanese, and Korean, with individual romanization systems supported for each.
+
+For a comprehensive breakdown of supported languages and systems, [check out the full article](https://zedseven.github.io/Romanization.NET/articles/supported).
+
+### [API Documentation & Articles](https://zedseven.github.io/Romanization.NET/)

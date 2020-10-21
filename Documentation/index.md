@@ -35,4 +35,4 @@ Install-Package Romanization.NET
 You can also install through `Tools > NuGet Package Manager > Manage NuGet Packages for Solution...`, and search `Romanization.NET`.
 
 ## More Information
-For more detailed information about the package and what it supports, please visit the [Articles Section](/articles/supported.html).
+For more detailed information about the package and what it supports, please visit the [Articles Section](/articles/supported).

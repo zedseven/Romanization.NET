@@ -13,33 +13,13 @@ script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
 - dotnet test RomanizationTests/RomanizationTests.csproj
 
-before_deploy: >
-  echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
+before_deploy: echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
 
 deploy:
   provider: script
   cleanup: false
   script: chmod +x ./Scripts/deploy.sh && bash ./Scripts/deploy.sh $NUGET_API_KEY $NUGET_SOURCE $GH_API_KEY $GH_PACKAGES_SOURCE
   on:
-    branch: dev
+    branch: main
 
-# https://stackoverflow.com/a/33125422/6003488
-after_deploy: |
-  if [ -n "$GH_API_KEY" ]; then
-    cd "$TRAVIS_BUILD_DIR"
-    mkdir ./Documentation/generated
-    cd ./Documentation/generated
-    git init
-    git checkout -b gh-pages
-    cd ../..
-    mono ./docfx/docfx.exe ./Documentation/docfx.json --force
-    cd ./Documentation/generated
-    git add .
-    git -c user.name='travisci' -c user.email='travisci' commit -m "Updating Pages with updated documentation."
-    echo "Pushing to gh-pages..."
-    # Make sure to make the output quiet, or else the API token will leak!
-    # This works because the API key can replace your password.
-    git push -f -q https://zedseven:$GH_API_KEY@github.com/zedseven/Romanization.NET gh-pages &>/dev/null
-    echo "Done!"
-    cd "$TRAVIS_BUILD_DIR"
-  fi
+after_deploy: chmod +x ./Scripts/updateDocs.sh && bash ./Scripts/updateDocs.sh $GH_API_KEY

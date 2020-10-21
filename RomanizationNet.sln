@@ -15,6 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Miscellaneous", "Miscellane
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{DA912C97-5257-4241-87C5-63B2BE4A5296}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\deploy.sh = Scripts\deploy.sh
+		Scripts\updateDocs.sh = Scripts\updateDocs.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA912C97-5257-4241-87C5-63B2BE4A5296} = {F468514C-AC49-4444-A66C-A322B46D6761}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05F02F5C-A383-45FE-8328-2F3FF95298A8}

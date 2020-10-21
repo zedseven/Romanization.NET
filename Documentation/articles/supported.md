@@ -7,7 +7,7 @@ Below is a list of all supported languages and systems, with explanations of cav
 
 ## Chinese
 ### [Hànyǔ Pīnyīn](https://en.wikipedia.org/wiki/Pinyin)
-The Hànyǔ Pīnyīn system is considered a [Readings System](readingsSystems.md), and supports all [Hànzì](https://en.wikipedia.org/wiki/Chinese_characters) characters in the [Unihan database](http://www.unicode.org/charts/unihan.html).
+The Hànyǔ Pīnyīn system is considered a [Readings System](readingsSystems), and supports all [Hànzì](https://en.wikipedia.org/wiki/Chinese_characters) characters in the [Unihan database](http://www.unicode.org/charts/unihan.html).
 
 The [reading types](/api/Romanization.Chinese.HanyuPinyinSystem.ReadingTypes.html) to use can be specified, but default to using all of them.
 
@@ -39,7 +39,7 @@ Kanji are effectively Japan's Hànzì, and share many of the same considerations
 While kana are syllabaries (each character is one syllable, and therefore maps neatly to a distinct sound), Kanji are their own symbols that can be a variable number of syllables.
 To make things more complicated, each can have multiple readings - in both [Kun'yomi](https://en.wikipedia.org/wiki/Kanji#Kun'yomi_(native_reading)) and [On'yomi](https://en.wikipedia.org/wiki/Kanji#On'yomi_(Sino-Japanese_reading)).
 
-This is why this system is considered a [Readings System](readingsSystems.md) for the purposes of this library, which means you can get every known reading from the [Unihan database](http://www.unicode.org/charts/unihan.html) for each character.
+This is why this system is considered a [Readings System](readingsSystems) for the purposes of this library, which means you can get every known reading from the [Unihan database](http://www.unicode.org/charts/unihan.html) for each character.
 
 The two reading types supported are:
 1. Kun'yomi - often referred to as just Kun - the native reading
@@ -63,7 +63,7 @@ The library's implementation of this system supports all of these provisions as 
 
 
 ### [Hanja](https://en.wikipedia.org/wiki/Hanja) => [Hangeul](https://en.wikipedia.org/wiki/Hangul) Readings
-Hanja, like Kanji, came from China and share their symbols with Hànzì. As a result, this is also considered a [Readings System](readingsSystems.md) as some Hanja have multiple possible readings.
+Hanja, like Kanji, came from China and share their symbols with Hànzì. As a result, this is also considered a [Readings System](readingsSystems) as some Hanja have multiple possible readings.
 
 As with the other Hànzì-related characters, the supported Hanja are all from the [Unihan database](http://www.unicode.org/charts/unihan.html).
 
