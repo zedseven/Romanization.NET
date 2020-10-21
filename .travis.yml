@@ -1,7 +1,6 @@
 language: csharp
-mono: none
+mono: latest
 dotnet: 3.1.402 # to update this value in the future, try `dotnet --list-sdks` as a start
-sudo: required
 
 install:
 - dotnet restore
@@ -11,12 +10,11 @@ script:
 - dotnet test RomanizationTests/RomanizationTests.csproj
 
 before_deploy: >
-  apt-get install mono-runtime -y &&
   echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
 
 deploy:
   provider: script
-  skip_cleanup: true
+  cleanup: false
   script: chmod +x ./Scripts/deploy.sh && bash ./Scripts/deploy.sh $NUGET_API_KEY $NUGET_SOURCE $GH_API_KEY $GH_PACKAGES_SOURCE
   on:
     branch: dev
