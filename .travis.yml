@@ -5,12 +5,13 @@ dotnet: 3.1.402 # to update this value in the future, try `dotnet --list-sdks` a
 install:
 - dotnet restore
 
-before_script: |
-  echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
-
 script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
 - dotnet test RomanizationTests/RomanizationTests.csproj
+
+before_deploy: >
+  apt-get install mono-runtime -y &&
+  echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.4/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
 
 deploy:
   provider: script
