@@ -1,6 +1,10 @@
 language: csharp
+os: linux
+dist: xenial
 mono: latest
 dotnet: 3.1.402 # to update this value in the future, try `dotnet --list-sdks` as a start
+git:
+  depth: false
 
 install:
 - dotnet restore
@@ -34,6 +38,6 @@ after_deploy: |
     git -c user.name='travisci' -c user.email='travisci' commit -m "Updating Pages with updated documentation."
     # Make sure to make the output quiet, or else the API token will leak!
     # This works because the API key can replace your password.
-    git push -f -q https://zedseven:$GITHUB_API_KEY@github.com/zedseven/Romanization.NET-gh-pages gh-pages &>/dev/null
+    git push -f -q https://zedseven:$GITHUB_API_KEY@github.com/zedseven/Romanization.NET gh-pages &>/dev/null
     cd "$TRAVIS_BUILD_DIR"
   fi
