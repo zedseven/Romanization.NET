@@ -11,6 +11,6 @@ Still a work in progress. Originally made as part of the [NUSRipper](https://git
 ## Supported Languages & Documentation
 At the moment Romanization.NET supports Chinese, Japanese, and Korean, with individual romanization systems supported for each.
 
-For a comprehensive breakdown of supported languages and systems, [check out the full article](https://zedseven.github.io/Romanization.NET/articles/supported).
+For a comprehensive breakdown of supported languages and systems, [check out the full article](Documentation/articles/supported.md).
 
 ### [API Documentation & Articles](https://zedseven.github.io/Romanization.NET/)
