@@ -57,9 +57,9 @@ namespace Romanization
 
 			internal HanyuPinyinSystem()
 			{
-				Utilities.LoadCharacterMap(HanyuPinyinFileName, HanyuPinyinReadings, k => k, v => v.Split(','));
-				Utilities.LoadCharacterMap(HanyuPinluFileName, HanyuPinluReadings, k => k, v => v.Split(','));
-				Utilities.LoadCharacterMap(XhcFileName, XhcReadings, k => k, v => v.Split(','));
+				Utilities.LoadCharacterMap(HanyuPinyinFileName, HanyuPinyinReadings, k => k, v => v.Split(' '));
+				Utilities.LoadCharacterMap(HanyuPinluFileName, HanyuPinluReadings, k => k, v => v.Split(' '));
+				Utilities.LoadCharacterMap(XhcFileName, XhcReadings, k => k, v => v.Split(' '));
 			}
 
 			/// <summary>

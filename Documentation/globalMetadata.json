@@ -2,8 +2,8 @@
 {
 	"_appTitle": "Romanization.NET",
 	"_appFooter": "Romanization.NET",
-	"_enableSearch": "true",
+	"_enableSearch": true,
 	"_enableNewTab": true,
-	"_disableContribution": "false",
+	"_disableContribution": false,
 	"_disableAffix": false
 }

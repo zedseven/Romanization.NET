@@ -42,7 +42,7 @@ namespace Romanization
 		{
 			/// <summary>
 			/// The characters of the string.<br />
-			/// Each one stores both the character itself (not necessarily equivalent to a char, as some Hanzi characters are double-wide), and all known readings (pronunciations).
+			/// Each one stores both the character itself (not necessarily equivalent to a char, as some Hànzì characters are double-wide), and all known readings (pronunciations).
 			/// </summary>
 			public readonly ReadingCharacter<TType>[] Characters;
 
@@ -73,7 +73,7 @@ namespace Romanization
 			where TType : Enum
 		{
 			/// <summary>
-			/// The actual character value.<br />Note that this is not necessarily one char in length - some Hanzi characters go outside the Basic Multilingual Plane (BMP), and as such take up 32 bits (two 16-bit chars).
+			/// The actual character value.<br />Note that this is not necessarily one char in length - some Hànzì characters go outside the Basic Multilingual Plane (BMP), and as such take up 32 bits (two 16-bit chars).
 			/// </summary>
 			public readonly string Character;
 			/// <summary>

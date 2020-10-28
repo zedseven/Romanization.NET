@@ -13,7 +13,7 @@ namespace Romanization
 
 		// Exceptions
 		/// <summary>
-		/// Represents the error when the stream provided to <see cref="Utilities.LoadCsvIntoDictionary{TKey,TVal}"/> cannot be read.
+		/// Represents the error when the stream provided to <see cref="LoadCsvIntoDictionary{TKey,TVal}"/> cannot be read.
 		/// </summary>
 		public class CannotReadStreamException : Exception
 		{
@@ -43,12 +43,10 @@ namespace Romanization
 		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
 		/// <exception cref="T:Romanization.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
 		/// <exception cref="T:Romanization.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
-		public static void LoadCharacterMap<TKey, TVal>(string fileName, Dictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
+		public static void LoadCharacterMap<TKey, TVal>(string fileName, IDictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
 		{
-			using (FileStream csvStream = File.OpenRead(Path.Combine(LanguageCharacterMapsPath, fileName)))
-			{
-				csvStream.LoadCsvIntoDictionary(dict, keyMapper, valueMapper);
-			}
+			using FileStream csvStream = File.OpenRead(Path.Combine(LanguageCharacterMapsPath, fileName));
+			csvStream.LoadCsvIntoDictionary(dict, keyMapper, valueMapper);
 		}
 
 		/// <summary>
@@ -62,29 +60,30 @@ namespace Romanization
 		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
 		/// <exception cref="T:Romanization.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
 		/// <exception cref="T:Romanization.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
-		public static void LoadCsvIntoDictionary<TKey, TVal>(this FileStream stream, Dictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
+		public static void LoadCsvIntoDictionary<TKey, TVal>(this FileStream stream, IDictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
 		{
 			if (!stream.CanRead)
 				throw new CannotReadStreamException("The provided stream cannot be read.");
 
 			try
 			{
-				using (StreamReader reader = new StreamReader(stream))
+				using StreamReader reader = new StreamReader(stream);
+
+				// Discard the first line, since it's simply the heading
+				_ = reader.ReadLine();
+
+				while (!reader.EndOfStream)
 				{
-					// Discard the first line, since it's simply the heading
-					_ = reader.ReadLine();
+					string line = reader.ReadLine();
+					if (string.IsNullOrWhiteSpace(line))
+						continue;
 
-					while (!reader.EndOfStream)
-					{
-						string line = reader.ReadLine();
-						if (string.IsNullOrWhiteSpace(line))
-							continue;
-
-						int commaIndex = line.IndexOf(',');
-
-						dict[keyMapper(line.Substring(0, commaIndex).WithoutQuotes())] =
-							valueMapper(line.Substring(commaIndex + 1).WithoutQuotes());
-					}
+					int commaIndex = line.IndexOf(',');
+					if (commaIndex < 0)
+						continue;
+					
+					dict[keyMapper(line.Substring(0, commaIndex))] =
+						valueMapper(line.Substring(commaIndex + 1));
 				}
 			}
 			catch (Exception e)
@@ -94,7 +93,7 @@ namespace Romanization
 		}
 
 		private static string WithoutQuotes(this string str)
-			=> str[1..^1];
+			=> str.Length >= 2 && str[0] == '"' && str[^1] == '"' ? str[1..^1] : str;
 
 		public static string[] SplitIntoSurrogatePairs(this string str)
 		{
