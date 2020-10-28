@@ -13,7 +13,7 @@ before_install: sudo apt-get -y install tree
 
 install:
 - dotnet restore
-- tree -a -C .
+- tree -a .
 
 script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore

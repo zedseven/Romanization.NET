@@ -9,7 +9,7 @@ namespace Romanization
 	{
 		// Constants
 		public static readonly string AssemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-		public static readonly string LanguageCharacterMapsPath = Path.Combine(AssemblyPath, "LanguageCharacterMaps");
+		public static readonly string LanguageCharacterMapsPath = Path.Combine(AssemblyPath, "contentFiles", "any", "any", "LanguageCharacterMaps");
 
 		// Exceptions
 		/// <summary>
