@@ -14,10 +14,11 @@ namespace Romanization
 	public static class LanguageAgnostic
 	{
 		// General Constants
-		internal const string Vowels = "aeiouy";
-		internal const string Consonants = "bcdfghjklmnpqrstvwxz";
-		internal const string Punctuation = @"\.?!";
+		internal const string Vowels            = "aeiouy";
+		internal const string Consonants        = "bcdfghjklmnpqrstvwxz";
+		internal const string Punctuation       = @"\.?!";
 		internal const char IdeographicFullStop = '。';
+		internal const char Interpunct          = '・';
 
 		// Replacement Characters
 		internal const string MacronA = "ā";
@@ -30,8 +31,8 @@ namespace Romanization
 		private static readonly Lazy<Regex> LanguageBoundaryRegex = new Lazy<Regex>(() => new Regex(
 			$"(?:([{LanguageBoundaryChars}{Punctuation}])([^ {LanguageBoundaryChars}{Punctuation}])|([^ {LanguageBoundaryChars}{Punctuation}])([{LanguageBoundaryChars}]))",
 			RegexOptions.Compiled | RegexOptions.IgnoreCase));
-		private const string LanguageBoundaryChars = @"a-z";
-		private const string LanguageBoundarySubstitution = "${1}${3} ${2}${4}";
+		private const string LanguageBoundaryChars                = @"a-z";
+		private const string LanguageBoundarySubstitution         = "${1}${3} ${2}${4}";
 
 		/// <summary>
 		/// A string of characters with all possible readings (pronunciations) for each character.
@@ -141,7 +142,8 @@ namespace Romanization
 		/// <returns>The original text with common alternate characters replaced.</returns>
 		[Pure]
 		internal static string ReplaceCommonAlternates(string text)
-			=> text.Replace(IdeographicFullStop, '.');
+			=> text.Replace(IdeographicFullStop, '.')
+				.Replace(Interpunct, ' ');
 
 		/// <summary>
 		/// Insert spaces at boundaries between Latin and non-Latin characters (ie. <code>ニンテンドーDSiブラウザー</code> -> <code>ニンテンドー DSi ブラウザー</code>).
