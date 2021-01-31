@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace Romanization
 		/// </summary>
 		public sealed class KanjiReadingsSystem : IReadingsRomanizationSystem<KanjiReadingsSystem.ReadingTypes>
 		{
+			/// <inheritdoc />
+			public bool TransliterationSystem => false;
+
 			/// <summary>
 			/// The supported reading types for Kanji.
 			/// </summary>
@@ -102,20 +106,20 @@ namespace Romanization
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <param name="readingsToUse">The reading types to use.</param>
-			/// <returns>A <see cref="LanguageAgnostic.ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
 			[Pure]
-			public LanguageAgnostic.ReadingsString<ReadingTypes> ProcessWithReadings(string text, ReadingTypes readingsToUse)
-				=> new LanguageAgnostic.ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
+			public ReadingsString<ReadingTypes> ProcessWithReadings(string text, ReadingTypes readingsToUse)
+				=> new ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
 					.Select(c =>
 					{
-						List<LanguageAgnostic.Reading<ReadingTypes>> readings = new List<LanguageAgnostic.Reading<ReadingTypes>>(text.Length);
+						List<Reading<ReadingTypes>> readings = new List<Reading<ReadingTypes>>(text.Length);
 
 						if (readingsToUse.HasFlag(ReadingTypes.Kunyomi) && KanjiKunReadings.TryGetValue(c, out string[] rawKanjiKunReadings))
-							readings.AddRange(rawKanjiKunReadings.Select(r => new LanguageAgnostic.Reading<ReadingTypes>(ReadingTypes.Kunyomi, r)));
+							readings.AddRange(rawKanjiKunReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.Kunyomi, r)));
 						if (readingsToUse.HasFlag(ReadingTypes.Onyomi) && KanjiOnReadings.TryGetValue(c, out string[] rawKanjiOnReadings))
-							readings.AddRange(rawKanjiOnReadings.Select(r => new LanguageAgnostic.Reading<ReadingTypes>(ReadingTypes.Onyomi, r)));
+							readings.AddRange(rawKanjiOnReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.Onyomi, r)));
 
-						return new LanguageAgnostic.ReadingCharacter<ReadingTypes>(c, readings);
+						return new ReadingCharacter<ReadingTypes>(c, readings);
 					})
 					.ToArray());
 
@@ -125,9 +129,9 @@ namespace Romanization
 			/// Returns the following readings for characters if they exist: Kun'yomi and On'yomi.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A <see cref="LanguageAgnostic.ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
 			[Pure]
-			public LanguageAgnostic.ReadingsString<ReadingTypes> ProcessWithReadings(string text)
+			public ReadingsString<ReadingTypes> ProcessWithReadings(string text)
 				=> ProcessWithReadings(text, ReadingTypes.Kunyomi | ReadingTypes.Onyomi);
 		}
 	}

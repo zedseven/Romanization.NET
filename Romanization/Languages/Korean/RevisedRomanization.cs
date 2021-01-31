@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -28,6 +29,9 @@ namespace Romanization
 		/// </summary>
 		public sealed class RevisedRomanizationSystem : IRomanizationSystem
 		{
+			/// <inheritdoc />
+			public bool TransliterationSystem => false;
+
 			private readonly struct HyphenString
 			{
 				public readonly AspirationString BaseString;
@@ -214,11 +218,11 @@ namespace Romanization
 			[Pure]
 			public string Process(string text, bool givenName, bool noun = false, bool hyphenateSyllables = false)
 			{
-				// Replace common alternate characters
-				text = LanguageAgnostic.ReplaceCommonAlternates(text);
-
-				// Insert spaces at boundaries between Latin characters and Korean ones
-				text = LanguageAgnostic.SeparateLanguageBoundaries(text);
+				text = text
+					// Replace common alternate characters
+					.ReplaceCommonAlternates()
+					// Insert spaces at boundaries between Latin characters and Korean ones
+					.SeparateLanguageBoundaries();
 
 				// Decompose all syllable blocks in text into their component jamo
 				List<PlacementChar> jamoList = text.SelectMany(c =>

@@ -6,10 +6,10 @@
 
 A library for [romanization](https://en.wikipedia.org/wiki/Romanization) of widely-used languages using common romanization systems.
 
-Still a work in progress. Originally made as part of the [NUSRipper](https://github.com/zedseven/NusRipper) project.
+Still a work in progress.
 
 ## Supported Languages & Documentation
-At the moment Romanization.NET supports Chinese, Japanese, and Korean, with individual romanization systems supported for each.
+At the moment Romanization.NET supports Chinese, Japanese, Korean, and Russian, with individual romanization systems supported for each.
 
 For a comprehensive breakdown of supported languages and systems, [check out the full article](Documentation/articles/supported.md).
 

@@ -9,6 +9,14 @@ namespace Romanization
 	public interface IRomanizationSystem
 	{
 		/// <summary>
+		/// Whether this is a transliteration system, which is moreso concerned with preserving the characters of a language rather than the sounds.<br />
+		/// Some languages only have transliteration systems.<br />
+		/// For more information, visit:
+		/// <a href='https://en.wikipedia.org/wiki/Transliteration'>https://en.wikipedia.org/wiki/Transliteration</a>
+		/// </summary>
+		public bool TransliterationSystem { get; }
+
+		/// <summary>
 		/// The system-specific function that romanizes text according to the system's rules.
 		/// </summary>
 		/// <param name="text">The text to romanize.</param>

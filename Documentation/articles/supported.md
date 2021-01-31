@@ -1,7 +1,7 @@
 ﻿# Supported Languages and Systems
 The goal of Romanization.NET is to provide a simple, extensive way to romanize widely-used languages as accurately as possible.
 
-Below is a list of all supported languages and systems, with explanations of caveats and limitations if necessary.
+Below is a list of all supported languages and systems, with explanations of caveats and limitations if necessary. Languages are ordered lexicographically.
 
 
 
@@ -71,3 +71,71 @@ Only one reading type is supported, which is the Hangeul equivalent pronunciatio
 
 #### Additional Notes
 Because the goal of this package is, as the name suggests, romanization, the implementation also includes a function for first converting the Hanja to Hangeul, then romanizing the Hangeul using the system of your choice.
+
+
+
+## Russian
+At the time of writing, Russian has no single international standard of romanization/transliteration. Instead different systems are used by different groups for different purposes. As a result, there are many systems all implemented with very similar transliterations.
+
+### [BGN/PCGN](https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian)
+Developed jointly by the Unites States Board on Geographic Names and the Permanent Committee on Geographical Names for British Official Use, it is designed to be easier for anglophones to pronounce.
+
+Because of this, it's likely a solid choice for romanizing text specifically for English speakers (US/CA/UK audience).
+
+
+### [GOST 7.79-2000 System A](https://en.wikipedia.org/wiki/GOST_7.79-2000) / [ISO 9](https://en.wikipedia.org/wiki/ISO_9)
+GOST 7.79-2000(A) focuses on mapping one Cyrillic character to one Latin character, potentially with diacritics.
+
+ISO 9:1995 is the current standard for Slavic transliteration from the ISO, and is based on ISO/R 9:1968.
+
+The two systems are functionally identical and in this library are combined into one, under the name of GOST 7.79-2000 System A. This is to retain consistency with the other GOST systems included, as it may be strange to have GOST 7.79-2000 System B but have A under a different name.
+
+
+### [GOST 7.79-2000 System B](https://en.wikipedia.org/wiki/GOST_7.79-2000)
+In contrast to the above, GOST 7.79-2000(B) focuses on mapping one Cyrillic character to potentially several Latin characters (eg. `щ -> shh`), but without the use of diacritics.
+
+
+### [GOST 16876-71 Table 1 (UNGEGN)](https://en.wikipedia.org/wiki/GOST_16876-71)
+GOST 16876-71(1) focuses on mapping one Cyrillic character to one Latin character, potentially with diacritics.
+
+It was recommended by the [United Nations Group of Experts on Geographical Names (UNGEGN)](https://en.wikipedia.org/wiki/United_Nations_Group_of_Experts_on_Geographical_Names) in 1987.
+
+GOST 16876-71 was most recently updated in 1980, and was abandoned in favour of GOST 7.79-2000 in 2002 by the Russian Federation.
+
+
+### [GOST 16876-71 Table 2](https://en.wikipedia.org/wiki/GOST_16876-71)
+GOST 16876-71(2) is another table in GOST 16876-71, and focuses on mapping one Cyrillic character to potentially several Latin characters (eg. `щ -> shh`), but without the use of diacritics.
+
+
+### [Scholarly/Scientific Transliteration](https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic)
+The Scholarly transliteration system for Russian actually covers many slavic languages, with Russian being one of them. It tries to preserve pronunciation of the original characters while remaining unambiguous about it's transformations.
+
+
+### [ISO Recommendation No. 9 (ISO/R 9:1968)](https://en.wikipedia.org/wiki/ISO_9#ISO/R_9)
+Similar to the scholarly system, ISO/R 9 was created 1954 and updated in 1968. It also supports many Slavic languages, and was the ISO's earliest adoption of scholarly transliteration.
+
+
+### [American Library Association and Library of Congress (ALA-LC) System](https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian)
+This system was initially established in 1904, and remains largely unchanged since 1941. It's primary purpose is in US, Canadian, and British libraries.
+
+This system uses some diacritics and uses two-letter tie characters for some Cyrillic characters.
+
+
+### [British Standard 2979:1958](https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard)
+It is the main system of Oxford University Press, and was used by the British Library up until 1975.
+
+The ALA-LC system is now used by the British Library instead.
+
+
+### [ICAO Doc 9303](https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf)
+Created by the International Civil Aviation Organization, a UN agency, the document is designed to make travel documents machine-readable.
+
+It contains tables for transliteration to Latin characters from many alphabets, including Cyrillic. The system uses no diacritics whatsoever, only standard ASCII characters.
+
+The system was put into effect by the Russian government in 2013 for all citizen passports.
+
+
+### [General Road Signs](https://en.wikipedia.org/wiki/Romanization_of_Russian#Road_signs_note)
+This is the system generally used for romanization for road signs and the like.
+
+This originally followed GOST 10807-78 (tables 17, 18), but now follows GOST R 52290-2004 (tables Г.4, Г.5).

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace Romanization
 		/// </summary>
 		public sealed class HanyuPinyinSystem : IReadingsRomanizationSystem<HanyuPinyinSystem.ReadingTypes>
 		{
+			/// <inheritdoc />
+			public bool TransliterationSystem => false;
+
 			/// <summary>
 			/// The supported reading types for Hànyǔ Pīnyīn.
 			/// </summary>
@@ -94,22 +98,22 @@ namespace Romanization
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <param name="readingsToUse">The reading types to use.</param>
-			/// <returns>A <see cref="LanguageAgnostic.ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
 			[Pure]
-			public LanguageAgnostic.ReadingsString<ReadingTypes> ProcessWithReadings(string text, ReadingTypes readingsToUse)
-				=> new LanguageAgnostic.ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
+			public ReadingsString<ReadingTypes> ProcessWithReadings(string text, ReadingTypes readingsToUse)
+				=> new ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
 					.Select(c =>
 					{
-						List<LanguageAgnostic.Reading<ReadingTypes>> readings = new List<LanguageAgnostic.Reading<ReadingTypes>>(text.Length);
+						List<Reading<ReadingTypes>> readings = new List<Reading<ReadingTypes>>(text.Length);
 
 						if (readingsToUse.HasFlag(ReadingTypes.HanyuPinyin) && HanyuPinyinReadings.TryGetValue(c, out string[] rawHanyuPinyinReadings))
-							readings.AddRange(rawHanyuPinyinReadings.Select(r => new LanguageAgnostic.Reading<ReadingTypes>(ReadingTypes.HanyuPinyin, r)));
+							readings.AddRange(rawHanyuPinyinReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.HanyuPinyin, r)));
 						if (readingsToUse.HasFlag(ReadingTypes.HanyuPinlu) && HanyuPinluReadings.TryGetValue(c, out string[] rawHanyuPinluReadings))
-							readings.AddRange(rawHanyuPinluReadings.Select(r => new LanguageAgnostic.Reading<ReadingTypes>(ReadingTypes.HanyuPinlu, r)));
+							readings.AddRange(rawHanyuPinluReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.HanyuPinlu, r)));
 						if (readingsToUse.HasFlag(ReadingTypes.XHC) && XhcReadings.TryGetValue(c, out string[] rawXhcReadings))
-							readings.AddRange(rawXhcReadings.Select(r => new LanguageAgnostic.Reading<ReadingTypes>(ReadingTypes.XHC, r)));
+							readings.AddRange(rawXhcReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.XHC, r)));
 
-						return new LanguageAgnostic.ReadingCharacter<ReadingTypes>(c, readings);
+						return new ReadingCharacter<ReadingTypes>(c, readings);
 					})
 					.ToArray());
 
@@ -119,9 +123,9 @@ namespace Romanization
 			/// Returns the following readings for characters if they exist: standard Hànyǔ Pīnyīn, Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Pínlǜ Cídiǎn, and Hànyǔ Pīnyīn as it appeared in Xiàndài Hànyǔ Cídiǎn.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A <see cref="LanguageAgnostic.ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
 			[Pure]
-			public LanguageAgnostic.ReadingsString<ReadingTypes> ProcessWithReadings(string text)
+			public ReadingsString<ReadingTypes> ProcessWithReadings(string text)
 				=> ProcessWithReadings(text, ReadingTypes.HanyuPinyin | ReadingTypes.HanyuPinlu | ReadingTypes.XHC);
 		}
 	}

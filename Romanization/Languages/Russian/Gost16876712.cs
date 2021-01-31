@@ -14,18 +14,20 @@ namespace Romanization
 	public static partial class Russian
 	{
 		/// <summary>
-		/// The ALA-LC (American Library Association and Library of Congress) Russian romanization system.<br />
+		/// The GOST 16876-71(2) romanization system of Russian.<br />
+		/// This is Table 2 of the GOST 16876-71 system with 1 Cyrillic to potentially many Latin chars, without diacritics.<br />
 		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a>
+		/// <a href='https://en.wikipedia.org/wiki/GOST_16876-71'>https://en.wikipedia.org/wiki/GOST_16876-71</a>
 		/// </summary>
-		public static readonly Lazy<AlaLcSystem> AlaLc = new Lazy<AlaLcSystem>(() => new AlaLcSystem());
+		public static readonly Lazy<Gost16876712System> Gost16876712 = new Lazy<Gost16876712System>(() => new Gost16876712System());
 
 		/// <summary>
-		/// The ALA-LC (American Library Association and Library of Congress) Russian romanization system.<br />
+		/// The GOST 16876-71(2) romanization system of Russian.<br />
+		/// This is Table 2 of the GOST 16876-71 system with 1 Cyrillic to potentially many Latin chars, without diacritics.<br />
 		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a>
+		/// <a href='https://en.wikipedia.org/wiki/GOST_16876-71'>https://en.wikipedia.org/wiki/GOST_16876-71</a>
 		/// </summary>
-		public sealed class AlaLcSystem : IRomanizationSystem
+		public sealed class Gost16876712System : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
@@ -33,13 +35,12 @@ namespace Romanization
 			// System-Specific Constants
 			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			internal AlaLcSystem()
+			internal Gost16876712System()
 			{
 				#region Romanization Chart
 
-				// Sourced from https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian
+				// Sourced from https://en.wikipedia.org/wiki/Romanization_of_Russian and https://en.wikipedia.org/wiki/GOST_16876-71
 
-				// Main characters (2021)
 				RomanizationTable["А"] = "A";
 				RomanizationTable["а"] = "a";
 				RomanizationTable["Б"] = "B";
@@ -52,16 +53,16 @@ namespace Romanization
 				RomanizationTable["д"] = "d";
 				RomanizationTable["Е"] = "E";
 				RomanizationTable["е"] = "e";
-				RomanizationTable["Ё"] = "Ë";
-				RomanizationTable["ё"] = "ë";
+				RomanizationTable["Ё"] = "Jo";
+				RomanizationTable["ё"] = "jo";
 				RomanizationTable["Ж"] = "Zh";
 				RomanizationTable["ж"] = "zh";
 				RomanizationTable["З"] = "Z";
 				RomanizationTable["з"] = "z";
 				RomanizationTable["И"] = "I";
 				RomanizationTable["и"] = "i";
-				RomanizationTable["Й"] = "Ĭ";
-				RomanizationTable["й"] = "ĭ";
+				RomanizationTable["Й"] = "J";
+				RomanizationTable["й"] = "j";
 				RomanizationTable["К"] = "K";
 				RomanizationTable["к"] = "k";
 				RomanizationTable["Л"] = "L";
@@ -86,68 +87,32 @@ namespace Romanization
 				RomanizationTable["ф"] = "f";
 				RomanizationTable["Х"] = "Kh";
 				RomanizationTable["х"] = "kh";
-				RomanizationTable["Ц"] = "T͡s";
-				RomanizationTable["ц"] = "t͡s";
+				RomanizationTable["Ц"] = "C";
+				RomanizationTable["ц"] = "c";
 				RomanizationTable["Ч"] = "Ch";
 				RomanizationTable["ч"] = "ch";
 				RomanizationTable["Ш"] = "Sh";
 				RomanizationTable["ш"] = "sh";
-				RomanizationTable["Щ"] = "Shch";
-				RomanizationTable["щ"] = "shch";
+				RomanizationTable["Щ"] = "Shh";
+				RomanizationTable["щ"] = "shh";
 				RomanizationTable["Ъ"] = "ʺ";
 				RomanizationTable["ъ"] = "ʺ";
 				RomanizationTable["Ы"] = "Y";
 				RomanizationTable["ы"] = "y";
 				RomanizationTable["Ь"] = "ʹ";
 				RomanizationTable["ь"] = "ʹ";
-				RomanizationTable["Э"] = "Ė";
-				RomanizationTable["э"] = "ė";
-				RomanizationTable["Ю"] = "I͡u";
-				RomanizationTable["ю"] = "i͡u";
-				RomanizationTable["Я"] = "I͡a";
-				RomanizationTable["я"] = "i͡a";
-
-				// Letters eliminated in the orthographic reform of 1918
-				RomanizationTable["І"] = "І̄";
-				RomanizationTable["і"] = "ī";
-				RomanizationTable["Ѣ"] = "I͡e";
-				RomanizationTable["ѣ"] = "i͡e";
-				RomanizationTable["Ѳ"] = "Ḟ";
-				RomanizationTable["ѳ"] = "ḟ";
-				RomanizationTable["Ѵ"] = "Ẏ";
-				RomanizationTable["ѵ"] = "ẏ";
-
-				// Pre-18th century letters
-				RomanizationTable["Є"] = "Ē";
-				RomanizationTable["є"] = "ē";
-				RomanizationTable["Ѥ"] = "I͡e";
-				RomanizationTable["ѥ"] = "i͡e";
-				RomanizationTable["Ѕ"] = "Ż";
-				RomanizationTable["ѕ"] = "ż";
-				RomanizationTable["Ꙋ"] = "Ū";
-				RomanizationTable["ꙋ"] = "ū";
-				RomanizationTable["Ѿ"] = "Ō͡t";
-				RomanizationTable["ѿ"] = "ō͡t";
-				RomanizationTable["Ѡ"] = "Ō";
-				RomanizationTable["ѡ"] = "ō";
-				RomanizationTable["Ѧ"] = "Ę";
-				RomanizationTable["ѧ"] = "ę";
-				RomanizationTable["Ѯ"] = "K͡s";
-				RomanizationTable["ѯ"] = "k͡s";
-				RomanizationTable["Ѱ"] = "P͡s";
-				RomanizationTable["ѱ"] = "p͡s";
-				RomanizationTable["Ѫ"] = "Ǫ";
-				RomanizationTable["ѫ"] = "ǫ";
-				RomanizationTable["Ѩ"] = "I͡ę";
-				RomanizationTable["ѩ"] = "i͡ę";
-				RomanizationTable["Ѭ"] = "I͡ǫ";
-				RomanizationTable["ѭ"] = "i͡ǫ";
+				RomanizationTable["Э"] = "Eh";
+				RomanizationTable["э"] = "eh";
+				RomanizationTable["Ю"] = "Ju";
+				RomanizationTable["ю"] = "ju";
+				RomanizationTable["Я"] = "Ja";
+				RomanizationTable["я"] = "ja";
 
 				#endregion
 			}
 
 			/// <summary>
-			/// Performs ALA-LC Russian romanization on the given text.
+			/// Performs GOST 16876-71(2) romanization on Russian text.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -28,39 +27,38 @@ namespace Romanization
 		/// </summary>
 		public sealed class ModifiedHepburnSystem : IRomanizationSystem
 		{
+			/// <inheritdoc />
+			public bool TransliterationSystem => false;
+
 			// System-Specific Constants
 			private static readonly Dictionary<string, string> GojuonChart = new Dictionary<string, string>();
 			private static readonly Dictionary<string, string> YoonChart = new Dictionary<string, string>();
 
-			private static Regex LongVowelRegexA;
-			private static Regex LongVowelRegexE;
-			private static Regex LongVowelRegexI;
-			private static Regex LongVowelRegexO;
-			private static Regex LongVowelRegexU;
+			private static CharSub LongASub;
+			private static CharSub LongESub;
+			private static CharSub LongISub;
+			private static CharSub LongOSub;
+			private static CharSub LongUSub;
 
-			private static Regex SyllabicNVowelsRegex;
-			private static Regex SyllabicNConsonantsRegex;
-			private const string SyllabicNVowelsSubstitution = "n'${1}";
-			private const string SyllabicNConsonantsSubstitution = "n${1}";
+			private static CharSub SyllabicNVowelsSub;
+			private static CharSub SyllabicNConsonantsSub;
 
-			private static Regex SokuonGeneralCaseRegex;
-			private static Regex SokuonChCaseRegex;
-			private const string SokuonGeneralCaseSubstitution = "${1}${1}";
-			private const string SokuonChCaseSubstitution = "tch";
+			private static CharSub SokuonGeneralCaseSub;
+			private static CharSub SokuonChCaseSub;
 
 			internal ModifiedHepburnSystem()
 			{
-				LongVowelRegexA = new Regex($"a{Choonpu}", RegexOptions.Compiled);
-				LongVowelRegexE = new Regex($"e{Choonpu}", RegexOptions.Compiled);
-				LongVowelRegexI = new Regex($"i{Choonpu}", RegexOptions.Compiled);
-				LongVowelRegexO = new Regex($"o{Choonpu}", RegexOptions.Compiled);
-				LongVowelRegexU = new Regex($"u{Choonpu}", RegexOptions.Compiled);
+				LongASub = new CharSub($"a{Choonpu}", Constants.MacronA, false);
+				LongESub = new CharSub($"e{Choonpu}", Constants.MacronE, false);
+				LongISub = new CharSub($"i{Choonpu}", Constants.MacronI, false);
+				LongOSub = new CharSub($"o{Choonpu}", Constants.MacronO, false);
+				LongUSub = new CharSub($"u{Choonpu}", Constants.MacronU, false);
 
-				SyllabicNVowelsRegex = new Regex($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{LanguageAgnostic.Vowels}])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-				SyllabicNConsonantsRegex = new Regex($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{LanguageAgnostic.Consonants}])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+				SyllabicNVowelsSub     = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Vowels}])",     "n'${1}");
+				SyllabicNConsonantsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Consonants}])", "n${1}");
 
-				SokuonGeneralCaseRegex = new Regex($"[{SokuonHiragana}{SokuonKatakana}]([{LanguageAgnostic.Consonants}])", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-				SokuonChCaseRegex = new Regex($"[{SokuonHiragana}{SokuonKatakana}]ch", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+				SokuonGeneralCaseSub   = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.Consonants}])",       "${1}${1}");
+				SokuonChCaseSub        = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]ch",                               "tch");
 
 				#region Romanization Chart
 				// Sourced from https://en.wikipedia.org/wiki/Hepburn_romanization#Romanization_charts
@@ -310,44 +308,23 @@ namespace Romanization
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
-			{
-				// Replace common alternate characters
-				text = LanguageAgnostic.ReplaceCommonAlternates(text);
-
-				// Insert spaces at boundaries between Latin characters and Japanese ones (ie. ニンテンドーDSiブラウザー)
-				text = LanguageAgnostic.SeparateLanguageBoundaries(text);
-
-				// Do multi-char combinations first (Yōon)
-				text = YoonChart.Keys.Aggregate(text, (current, yoonString)
-						=> current.Replace(yoonString, YoonChart[yoonString]));
-				// Then single-char replacements (Gojūon)
-				text = GojuonChart.Keys.Aggregate(text, (current, gojuonChar)
-						=> current.Replace(gojuonChar, GojuonChart[gojuonChar]));
-
-				// Convert chōonpu usage in original text into macrons to mark long vowels in a romanized manner
-				text = LongVowelRegexA.Replace(
-					LongVowelRegexE.Replace(
-						LongVowelRegexI.Replace(
-							LongVowelRegexO.Replace(
-								LongVowelRegexU.Replace(text,
-								LanguageAgnostic.MacronU),
-								LanguageAgnostic.MacronO),
-							LanguageAgnostic.MacronI),
-						LanguageAgnostic.MacronE),
-					LanguageAgnostic.MacronA);
-
-				// Render syllabic n as either "n'" or "n" based on whether or not it preceeds a vowel or consonant, respectively
-				text = SyllabicNConsonantsRegex.Replace(
-					SyllabicNVowelsRegex.Replace(text, SyllabicNVowelsSubstitution),
-					SyllabicNConsonantsSubstitution);
-
-				// Take sokuon usage into account (repeating the following consonant to mark long consonants)
-				text = SokuonGeneralCaseRegex.Replace(
-					SokuonChCaseRegex.Replace(text, SokuonChCaseSubstitution),
-					SokuonGeneralCaseSubstitution);
-
-				return text;
-			}
+				=> text
+					// Replace common alternate characters
+					.ReplaceCommonAlternates()
+					// Insert spaces at boundaries between Latin characters and Japanese ones (ie. ニンテンドーDSiブラウザー)
+					.SeparateLanguageBoundaries()
+					// Do multi-char combinations first (Yōon)
+					.ReplaceFromChart(YoonChart)
+					// Then single-char replacements (Gojūon)
+					.ReplaceFromChart(GojuonChart)
+					// Do special subsitutions
+					.ReplaceMany(
+						// Convert chōonpu usage in original text into macrons to mark long vowels in a romanized manner
+						LongASub, LongESub, LongISub, LongOSub, LongUSub,
+						// Render syllabic n as either "n'" or "n" based on whether or not it preceeds a vowel or consonant, respectively
+						SyllabicNVowelsSub, SyllabicNConsonantsSub,
+						// Take sokuon usage into account (repeating the following consonant to mark long consonants)
+						SokuonChCaseSub, SokuonGeneralCaseSub);
 		}
 	}
 }

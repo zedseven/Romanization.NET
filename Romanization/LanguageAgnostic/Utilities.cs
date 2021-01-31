@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
-namespace Romanization
+namespace Romanization.LanguageAgnostic
 {
 	internal static class Utilities
 	{
@@ -41,8 +44,8 @@ namespace Romanization
 		/// <param name="dict">The dictionary to load into.</param>
 		/// <param name="keyMapper">The function that maps CSV entry first values to dictionary <typeparamref name="TKey"/> values.</param>
 		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
-		/// <exception cref="T:Romanization.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
-		/// <exception cref="T:Romanization.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
+		/// <exception cref="T:Romanization.LanguageAgnostic.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
+		/// <exception cref="T:Romanization.LanguageAgnostic.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
 		public static void LoadCharacterMap<TKey, TVal>(string fileName, IDictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
 		{
 			using FileStream csvStream = File.OpenRead(Path.Combine(LanguageCharacterMapsPath, fileName));
@@ -58,8 +61,8 @@ namespace Romanization
 		/// <param name="dict">The dictionary to load into.</param>
 		/// <param name="keyMapper">The function that maps CSV entry first values to dictionary <typeparamref name="TKey"/> values.</param>
 		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
-		/// <exception cref="T:Romanization.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
-		/// <exception cref="T:Romanization.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
+		/// <exception cref="T:Romanization.LanguageAgnostic.Utilities.CannotReadStreamException">The provided stream cannot be read.</exception>
+		/// <exception cref="T:Romanization.LanguageAgnostic.Utilities.CsvLoadingException">Unable to load the CSV file.</exception>
 		public static void LoadCsvIntoDictionary<TKey, TVal>(this FileStream stream, IDictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
 		{
 			if (!stream.CanRead)
@@ -92,9 +95,11 @@ namespace Romanization
 			}
 		}
 
+		[Pure]
 		private static string WithoutQuotes(this string str)
 			=> str.Length >= 2 && str[0] == '"' && str[^1] == '"' ? str[1..^1] : str;
 
+		[Pure]
 		public static string[] SplitIntoSurrogatePairs(this string str)
 		{
 			List<string> retList = new List<string>(str.Length);
@@ -111,5 +116,48 @@ namespace Romanization
 
 			return retList.ToArray();
 		}
+
+		[Pure]
+		public static string ReplaceMany(this string text, params ISub[] subs)
+			=> subs.Aggregate(text, (str, sub) => sub.Replace(str));
+
+		[Pure]
+		public static string ReplaceFromChart(this string text, Dictionary<string, string> chart)
+			=> chart.Keys.Aggregate(text, (current, key)
+				=> current.Replace(key, chart[key]));
+
+		[Pure]
+		public static string ReplaceFromChart(this string text, Dictionary<char, char> chart)
+			=> chart.Keys.Aggregate(text, (current, key)
+				=> current.Replace(key, chart[key]));
+
+		private const string LanguageBoundaryChars = @"a-z";
+		private static readonly Lazy<CharSub> LanguageBoundarySubstitution = new Lazy<CharSub>(() =>
+			new CharSub(
+				$"(?:([{LanguageBoundaryChars}{Constants.Punctuation}])([^ {LanguageBoundaryChars}{Constants.Punctuation}])|([^ {LanguageBoundaryChars}{Constants.Punctuation}])([{LanguageBoundaryChars}]))",
+				"${1}${3} ${2}${4}"));
+
+		/// <summary>
+		/// Remove common alternative characters, such as the ideographic full-stop (replaced with a period).
+		/// </summary>
+		/// <param name="text">The text to replace in.</param>
+		/// <returns>The original text with common alternate characters replaced.</returns>
+		[Pure]
+		internal static string ReplaceCommonAlternates(this string text)
+			=> text.Replace(Constants.IdeographicFullStop, '.')
+				.Replace(Constants.Interpunct, ' ');
+
+		/// <summary>
+		/// Insert spaces at boundaries between Latin and non-Latin characters (ie. <code>ニンテンドーDSiブラウザー</code> -> <code>ニンテンドー DSi ブラウザー</code>).
+		/// </summary>
+		/// <param name="text">The text to insert spaces in.</param>
+		/// <returns>The text with spaces inserted at language boundaries.</returns>
+		[Pure]
+		internal static string SeparateLanguageBoundaries(this string text)
+			=> LanguageBoundarySubstitution.Value.Replace(text);
+
+		[Pure]
+		internal static string WithoutChars(this string charset, string withoutChars)
+			=> withoutChars.Aggregate(charset, (set, withoutChar) => set.Replace($"{withoutChar}", ""));
 	}
 }

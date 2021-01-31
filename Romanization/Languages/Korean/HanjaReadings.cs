@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -27,6 +28,9 @@ namespace Romanization
 		/// </summary>
 		public sealed class HanjaReadingsSystem : IReadingsRomanizationSystem<HanjaReadingsSystem.ReadingTypes>
 		{
+			/// <inheritdoc />
+			public bool TransliterationSystem => false;
+
 			/// <summary>
 			/// The supported reading types for Hanja. In this case, Hangeul is the only supported one.
 			/// </summary>
@@ -89,18 +93,18 @@ namespace Romanization
 			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each in Hangeul (the Korean alphabet).<br />
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A <see cref="LanguageAgnostic.ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
 			[Pure]
-			public LanguageAgnostic.ReadingsString<ReadingTypes> ProcessWithReadings(string text)
-				=> new LanguageAgnostic.ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
+			public ReadingsString<ReadingTypes> ProcessWithReadings(string text)
+				=> new ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
 					.Select(c =>
 					{
-						List<LanguageAgnostic.Reading<ReadingTypes>> readings = new List<LanguageAgnostic.Reading<ReadingTypes>>(text.Length);
+						List<Reading<ReadingTypes>> readings = new List<Reading<ReadingTypes>>(text.Length);
 
 						if (HangeulReadings.TryGetValue(c, out char[] rawHanjaHangeulReadings))
-							readings.AddRange(rawHanjaHangeulReadings.Select(r => new LanguageAgnostic.Reading<ReadingTypes>(ReadingTypes.Hangeul, r.ToString())));
+							readings.AddRange(rawHanjaHangeulReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.Hangeul, r.ToString())));
 
-						return new LanguageAgnostic.ReadingCharacter<ReadingTypes>(c, readings);
+						return new ReadingCharacter<ReadingTypes>(c, readings);
 					})
 					.ToArray());
 		}

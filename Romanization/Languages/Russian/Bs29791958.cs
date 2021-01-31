@@ -1,7 +1,6 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using Romanization.LanguageAgnostic;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -14,30 +13,37 @@ namespace Romanization
 	public static partial class Russian
 	{
 		/// <summary>
-		/// The ALA-LC (American Library Association and Library of Congress) Russian romanization system.<br />
+		/// The British Standard 2979:1958 system of romanization for Russian.<br />
+		/// It is the main system of Oxford University Press, and was used by the British Library up until 1975. ALA-LC is now used instead.<br />
 		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a>
+		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard'>https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard</a>
 		/// </summary>
-		public static readonly Lazy<AlaLcSystem> AlaLc = new Lazy<AlaLcSystem>(() => new AlaLcSystem());
+		public static readonly Lazy<Bs29791958System> Bs29791958 = new Lazy<Bs29791958System>(() => new Bs29791958System());
 
 		/// <summary>
-		/// The ALA-LC (American Library Association and Library of Congress) Russian romanization system.<br />
+		/// The British Standard 2979:1958 system of romanization for Russian.<br />
+		/// It is the main system of Oxford University Press, and was used by the British Library up until 1975. ALA-LC is now used instead.<br />
 		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a>
+		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard'>https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard</a>
 		/// </summary>
-		public sealed class AlaLcSystem : IRomanizationSystem
+		public sealed class Bs29791958System : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
 			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private static readonly Dictionary<string, string> DigraphTable = new Dictionary<string, string>();
 
-			internal AlaLcSystem()
+			private static CharSub HardSignSub;
+
+			internal Bs29791958System()
 			{
+				HardSignSub = new CharSub("[Ъъ]\\b", "");
+
 				#region Romanization Chart
 
-				// Sourced from https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian
+				// Sourced from https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian
 
 				// Main characters (2021)
 				RomanizationTable["А"] = "A";
@@ -86,8 +92,8 @@ namespace Romanization
 				RomanizationTable["ф"] = "f";
 				RomanizationTable["Х"] = "Kh";
 				RomanizationTable["х"] = "kh";
-				RomanizationTable["Ц"] = "T͡s";
-				RomanizationTable["ц"] = "t͡s";
+				RomanizationTable["Ц"] = "Ts";
+				RomanizationTable["ц"] = "ts";
 				RomanizationTable["Ч"] = "Ch";
 				RomanizationTable["ч"] = "ch";
 				RomanizationTable["Ш"] = "Sh";
@@ -96,63 +102,44 @@ namespace Romanization
 				RomanizationTable["щ"] = "shch";
 				RomanizationTable["Ъ"] = "ʺ";
 				RomanizationTable["ъ"] = "ʺ";
-				RomanizationTable["Ы"] = "Y";
-				RomanizationTable["ы"] = "y";
+				RomanizationTable["Ы"] = "Ȳ";
+				RomanizationTable["ы"] = "ȳ";
 				RomanizationTable["Ь"] = "ʹ";
 				RomanizationTable["ь"] = "ʹ";
-				RomanizationTable["Э"] = "Ė";
-				RomanizationTable["э"] = "ė";
-				RomanizationTable["Ю"] = "I͡u";
-				RomanizationTable["ю"] = "i͡u";
-				RomanizationTable["Я"] = "I͡a";
-				RomanizationTable["я"] = "i͡a";
+				RomanizationTable["Э"] = "É";
+				RomanizationTable["э"] = "é";
+				RomanizationTable["Ю"] = "Yu";
+				RomanizationTable["ю"] = "yu";
+				RomanizationTable["Я"] = "Ya";
+				RomanizationTable["я"] = "ya";
 
 				// Letters eliminated in the orthographic reform of 1918
-				RomanizationTable["І"] = "І̄";
+				RomanizationTable["І"] = "Ī";
 				RomanizationTable["і"] = "ī";
-				RomanizationTable["Ѣ"] = "I͡e";
-				RomanizationTable["ѣ"] = "i͡e";
 				RomanizationTable["Ѳ"] = "Ḟ";
 				RomanizationTable["ѳ"] = "ḟ";
-				RomanizationTable["Ѵ"] = "Ẏ";
-				RomanizationTable["ѵ"] = "ẏ";
+				RomanizationTable["Ѣ"] = "Ê";
+				RomanizationTable["ѣ"] = "ê";
+				RomanizationTable["Ѵ"] = "Y̆";
+				RomanizationTable["ѵ"] = "y̆";
 
-				// Pre-18th century letters
-				RomanizationTable["Є"] = "Ē";
-				RomanizationTable["є"] = "ē";
-				RomanizationTable["Ѥ"] = "I͡e";
-				RomanizationTable["ѥ"] = "i͡e";
-				RomanizationTable["Ѕ"] = "Ż";
-				RomanizationTable["ѕ"] = "ż";
-				RomanizationTable["Ꙋ"] = "Ū";
-				RomanizationTable["ꙋ"] = "ū";
-				RomanizationTable["Ѿ"] = "Ō͡t";
-				RomanizationTable["ѿ"] = "ō͡t";
-				RomanizationTable["Ѡ"] = "Ō";
-				RomanizationTable["ѡ"] = "ō";
-				RomanizationTable["Ѧ"] = "Ę";
-				RomanizationTable["ѧ"] = "ę";
-				RomanizationTable["Ѯ"] = "K͡s";
-				RomanizationTable["ѯ"] = "k͡s";
-				RomanizationTable["Ѱ"] = "P͡s";
-				RomanizationTable["ѱ"] = "p͡s";
-				RomanizationTable["Ѫ"] = "Ǫ";
-				RomanizationTable["ѫ"] = "ǫ";
-				RomanizationTable["Ѩ"] = "I͡ę";
-				RomanizationTable["ѩ"] = "i͡ę";
-				RomanizationTable["Ѭ"] = "I͡ǫ";
-				RomanizationTable["ѭ"] = "i͡ǫ";
+				// Digraphs specific to this system
+				DigraphTable["Тс"] = "T-s";
+				DigraphTable["тс"] = "t-s";
 
 				#endregion
 			}
 
 			/// <summary>
-			/// Performs ALA-LC Russian romanization on the given text.
+			/// Performs romanization according to the British Standard 2979:1958 on the given text.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
 			public string Process(string text)
-				=> text.ReplaceFromChart(RomanizationTable);
+				=> text
+					.ReplaceFromChart(DigraphTable)
+					.ReplaceMany(HardSignSub)
+					.ReplaceFromChart(RomanizationTable);
 		}
 	}
 }
