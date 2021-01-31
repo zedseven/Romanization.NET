@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using Romanization.LanguageAgnostic;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -20,34 +17,31 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs'>https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs</a>
 		/// </summary>
-		public static readonly Lazy<RoadSignsSystem> RoadSigns = new Lazy<RoadSignsSystem>(() => new RoadSignsSystem());
-
-		/// <summary>
-		/// The general road sign romanization system of Russian.<br />
-		/// This consists of Russian GOST R 52290-2004 (tables Г.4, Г.5) as well as GOST 10807-78 (tables 17, 18), historically.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs'>https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs</a>
-		/// </summary>
-		public sealed class RoadSignsSystem : IRomanizationSystem
+		public sealed class RoadSigns : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			private static CharSubCased YeVowelsSub;
-			private static CharSubCased YoVowelsSub;
-			private static CharSubCased YoExceptionsSub;
+			private readonly CharSubCased YeVowelsSub = new CharSubCased(
+				$"(^|\\b|[{RussianVowels}ЪъЬь])Е", $"(^|\\b|[{RussianVowels}ЪъЬь])е",
+				"${1}Ye", "${1}ye");
 
-			internal RoadSignsSystem()
+			private readonly CharSubCased YoVowelsSub = new CharSubCased(
+				$"(^|\\b|[{RussianVowels}ЪъЬь])Ё", $"(^|\\b|[{RussianVowels}ЪъЬь])ё",
+				"${1}Yo", "${1}yo");
+
+			private readonly CharSubCased YoExceptionsSub = new CharSubCased(
+				"(^|\\b|[ЧчШшЩщЖж])Ё", "(^|\\b|[ЧчШшЩщЖж])ё",
+				"${1}E", "${1}e");
+
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public RoadSigns()
 			{
-				YeVowelsSub = new CharSubCased("(^|\\b|[ИиЫыЭэЕеАаЯяОоЁёУуЮюЪъЬь])Е",
-					"(^|\\b|[ИиЫыЭэЕеАаЯяОоЁёУуЮюЪъЬь])е", "${1}Ye", "${1}ye");
-				YoVowelsSub = new CharSubCased("(^|\\b|[ИиЫыЭэЕеАаЯяОоЁёУуЮюЪъЬь])Ё",
-					"(^|\\b|[ИиЫыЭэЕеАаЯяОоЁёУуЮюЪъЬь])ё", "${1}Yo", "${1}yo");
-				YoExceptionsSub = new CharSubCased("(^|\\b|[ЧчШшЩщЖж])Ё", "(^|\\b|[ЧчШшЩщЖж])ё", "${1}E", "${1}e");
-
 				#region Romanization Chart
 
 				// Sourced from https://en.wikipedia.org/wiki/Romanization_of_Russian

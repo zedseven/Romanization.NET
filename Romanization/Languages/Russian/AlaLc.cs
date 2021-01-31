@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
-using System.Linq;
-using Romanization.LanguageAgnostic;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -18,22 +16,18 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a>
 		/// </summary>
-		public static readonly Lazy<AlaLcSystem> AlaLc = new Lazy<AlaLcSystem>(() => new AlaLcSystem());
-
-		/// <summary>
-		/// The ALA-LC (American Library Association and Library of Congress) Russian romanization system.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a>
-		/// </summary>
-		public sealed class AlaLcSystem : IRomanizationSystem
+		public sealed class AlaLc : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			internal AlaLcSystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public AlaLc()
 			{
 				#region Romanization Chart
 

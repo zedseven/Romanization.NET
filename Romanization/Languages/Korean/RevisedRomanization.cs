@@ -20,14 +20,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean'>https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean</a>
 		/// </summary>
-		public static readonly Lazy<RevisedRomanizationSystem> RevisedRomanization = new Lazy<RevisedRomanizationSystem>(() => new RevisedRomanizationSystem());
-
-		/// <summary>
-		/// The Revised Romanization of Korean system.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean'>https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean</a>
-		/// </summary>
-		public sealed class RevisedRomanizationSystem : IRomanizationSystem
+		public sealed class RevisedRomanization : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => false;
@@ -71,12 +64,15 @@ namespace Romanization
 			}
 
 			// System-Specific Constants
-			private static readonly Dictionary<char, string> HangeulVowelRomanizations = new Dictionary<char, string>();
-			private static readonly Dictionary<char, string> HangeulConsonantInitialRomanizations = new Dictionary<char, string>();
-			private static readonly Dictionary<char, string> HangeulConsonantFinalRomanizations = new Dictionary<char, string>();
-			private static readonly Dictionary<(char, char), HyphenString> HangeulConsonantCombinationRomanizations = new Dictionary<(char, char), HyphenString>();
+			private readonly Dictionary<char, string> HangeulVowelRomanizations = new Dictionary<char, string>();
+			private readonly Dictionary<char, string> HangeulConsonantInitialRomanizations = new Dictionary<char, string>();
+			private readonly Dictionary<char, string> HangeulConsonantFinalRomanizations = new Dictionary<char, string>();
+			private readonly Dictionary<(char, char), HyphenString> HangeulConsonantCombinationRomanizations = new Dictionary<(char, char), HyphenString>();
 
-			internal RevisedRomanizationSystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public RevisedRomanization()
 			{
 				#region Romanization Chart
 

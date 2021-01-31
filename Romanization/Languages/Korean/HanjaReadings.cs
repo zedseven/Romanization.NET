@@ -19,14 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Hanja'>https://en.wikipedia.org/wiki/Hanja</a>
 		/// </summary>
-		public static readonly Lazy<HanjaReadingsSystem> HanjaReadings = new Lazy<HanjaReadingsSystem>(() => new HanjaReadingsSystem());
-
-		/// <summary>
-		/// A system for converting Hanja to Hangeul characters, or for romanizing Hanja directly.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Hanja'>https://en.wikipedia.org/wiki/Hanja</a>
-		/// </summary>
-		public sealed class HanjaReadingsSystem : IReadingsRomanizationSystem<HanjaReadingsSystem.ReadingTypes>
+		public sealed class HanjaReadings : IReadingsRomanizationSystem<HanjaReadings.ReadingTypes>
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => false;
@@ -45,9 +38,12 @@ namespace Romanization
 
 			private const string HangeulFileName = "HanjaHangeul.csv";
 
-			private static readonly Dictionary<string, char[]> HangeulReadings = new Dictionary<string, char[]>();
+			private readonly Dictionary<string, char[]> HangeulReadings = new Dictionary<string, char[]>();
 
-			internal HanjaReadingsSystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public HanjaReadings()
 			{
 				Utilities.LoadCharacterMap(HangeulFileName, HangeulReadings, k => k, v => v.Split(' ').Select(c => c[0]).ToArray());
 			}
@@ -61,7 +57,7 @@ namespace Romanization
 			[Pure]
 			public string Process(string text, IRomanizationSystem system)
 			{
-				system ??= RevisedRomanization.Value;
+				system ??= new RevisedRomanization();
 				return system.Process(
 					string.Join("",
 						ProcessWithReadings(text).Characters
@@ -75,7 +71,7 @@ namespace Romanization
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
-				=> Process(text, RevisedRomanization.Value);
+				=> Process(text, new RevisedRomanization());
 
 			/// <summary>
 			/// Converts all Hanja in the given text to their first Hangeul character in the list of possible readings.<br />

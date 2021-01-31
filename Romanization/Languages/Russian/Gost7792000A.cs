@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
-using System.Linq;
-using Romanization.LanguageAgnostic;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -20,24 +18,18 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/GOST_7.79-2000'>https://en.wikipedia.org/wiki/GOST_7.79-2000</a>
 		/// </summary>
-		public static readonly Lazy<Gost7792000ASystem> Gost7792000A = new Lazy<Gost7792000ASystem>(() => new Gost7792000ASystem());
-
-		/// <summary>
-		/// The GOST 7.79-2000(A) romanization system of Russian.<br />
-		/// This is System A of the GOST 7.79-2000 system with 1 Cyrillic to 1 Latin char, with diacritics.<br />
-		/// Identical to ISO 9:1995 (different to ISO/R 9:1968).<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/GOST_7.79-2000'>https://en.wikipedia.org/wiki/GOST_7.79-2000</a>
-		/// </summary>
-		public sealed class Gost7792000ASystem : IRomanizationSystem
+		public sealed class Gost7792000A : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			internal Gost7792000ASystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public Gost7792000A()
 			{
 				#region Romanization Chart
 

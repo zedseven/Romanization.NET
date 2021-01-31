@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
-using System.Linq;
-using Romanization.LanguageAgnostic;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -20,24 +18,18 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/GOST_16876-71'>https://en.wikipedia.org/wiki/GOST_16876-71</a>
 		/// </summary>
-		public static readonly Lazy<Gost16876711System> Gost16876711 = new Lazy<Gost16876711System>(() => new Gost16876711System());
-
-		/// <summary>
-		/// The GOST 16876-71(1) (UNGEGN) romanization system of Russian.<br />
-		/// This system was recommended by the United Nations Group of Experts on Geographical Names.<br />
-		/// This is Table 1 of the GOST 16876-71 system with 1 Cyrillic to 1 Latin char, with diacritics.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/GOST_16876-71'>https://en.wikipedia.org/wiki/GOST_16876-71</a>
-		/// </summary>
-		public sealed class Gost16876711System : IRomanizationSystem
+		public sealed class Gost16876711 : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<char, char> RomanizationTable = new Dictionary<char, char>();
+			private readonly Dictionary<char, char> RomanizationTable = new Dictionary<char, char>();
 
-			internal Gost16876711System()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public Gost16876711()
 			{
 				#region Romanization Chart
 

@@ -1,5 +1,4 @@
 ﻿using Romanization.LanguageAgnostic;
-using System;
 using System.Collections.Generic;
 
 // ReSharper disable CheckNamespace
@@ -18,29 +17,22 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard'>https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard</a>
 		/// </summary>
-		public static readonly Lazy<Bs29791958System> Bs29791958 = new Lazy<Bs29791958System>(() => new Bs29791958System());
-
-		/// <summary>
-		/// The British Standard 2979:1958 system of romanization for Russian.<br />
-		/// It is the main system of Oxford University Press, and was used by the British Library up until 1975. ALA-LC is now used instead.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard'>https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard</a>
-		/// </summary>
-		public sealed class Bs29791958System : IRomanizationSystem
+		public sealed class Bs29791958 : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
-			private static readonly Dictionary<string, string> DigraphTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> DigraphTable = new Dictionary<string, string>();
 
-			private static CharSub HardSignSub;
+			private readonly CharSub HardSignSub = new CharSub("[Ъъ]\\b", "");
 
-			internal Bs29791958System()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public Bs29791958()
 			{
-				HardSignSub = new CharSub("[Ъъ]\\b", "");
-
 				#region Romanization Chart
 
 				// Sourced from https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian

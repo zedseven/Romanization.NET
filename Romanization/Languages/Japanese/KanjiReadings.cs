@@ -19,14 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Kanji'>https://en.wikipedia.org/wiki/Kanji</a>
 		/// </summary>
-		public static readonly Lazy<KanjiReadingsSystem> KanjiReadings = new Lazy<KanjiReadingsSystem>(() => new KanjiReadingsSystem());
-
-		/// <summary>
-		/// A system for romanizing Kanji characters.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Kanji'>https://en.wikipedia.org/wiki/Kanji</a>
-		/// </summary>
-		public sealed class KanjiReadingsSystem : IReadingsRomanizationSystem<KanjiReadingsSystem.ReadingTypes>
+		public sealed class KanjiReadings : IReadingsRomanizationSystem<KanjiReadings.ReadingTypes>
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => false;
@@ -50,10 +43,13 @@ namespace Romanization
 			private const string KanjiKunFileName = "KanjiKun.csv";
 			private const string KanjiOnFileName = "KanjiOn.csv";
 
-			private static readonly Dictionary<string, string[]> KanjiKunReadings = new Dictionary<string, string[]>();
-			private static readonly Dictionary<string, string[]> KanjiOnReadings = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> KanjiKunReadings = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> KanjiOnReadings = new Dictionary<string, string[]>();
 
-			internal KanjiReadingsSystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public KanjiReadings()
 			{
 				Utilities.LoadCharacterMap(KanjiKunFileName, KanjiKunReadings, k => k, v => v.Split(' '));
 				Utilities.LoadCharacterMap(KanjiOnFileName, KanjiOnReadings, k => k, v => v.Split(' '));
@@ -86,7 +82,7 @@ namespace Romanization
 
 			/// <summary>
 			/// Performs romanization of all Kanji in the given text, after using <paramref name="system"/> to handle the kana.<br />
-			/// <paramref name="system"/> defaults to <see cref="ModifiedHepburnSystem"/> if left as null.<br />
+			/// <paramref name="system"/> defaults to <see cref="ModifiedHepburn"/> if left as null.<br />
 			/// See the documentation for <see cref="Process(string)"/> and the chosen system for more implementation details.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
@@ -95,7 +91,7 @@ namespace Romanization
 			[Pure]
 			public string ProcessWithKana(string text, IRomanizationSystem system = null)
 			{
-				system ??= ModifiedHepburn.Value;
+				system ??= new ModifiedHepburn();
 				return Process(system.Process(text));
 			}
 

@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using Romanization.LanguageAgnostic;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -20,31 +17,28 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/GOST_7.79-2000'>https://en.wikipedia.org/wiki/GOST_7.79-2000</a>
 		/// </summary>
-		public static readonly Lazy<Gost7792000BSystem> Gost7792000B = new Lazy<Gost7792000BSystem>(() => new Gost7792000BSystem());
-
-		/// <summary>
-		/// The GOST 7.79-2000(B) romanization system of Russian.<br />
-		/// This is System B of the GOST 7.79-2000 system with 1 Cyrillic to potentially many Latin chars, without diacritics.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/GOST_7.79-2000'>https://en.wikipedia.org/wiki/GOST_7.79-2000</a>
-		/// </summary>
-		public sealed class Gost7792000BSystem : IRomanizationSystem
+		public sealed class Gost7792000B : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			private static LanguageAgnostic.CharSubCased TseVowelsSub;
-			private static LanguageAgnostic.CharSubCased TseConsonantsSub;
+			private readonly CharSubCased TseVowelsSub = new CharSubCased(
+				"Ц([eijy])", "ц([eijy])",
+				"C${1}", "c${1}");
 
-			internal Gost7792000BSystem()
+			// The reason this is done as opposed to having the consonant value in the chart is because the vowel exception is based on latin vowels
+			private readonly CharSubCased TseConsonantsSub = new CharSubCased(
+				"Ц([abcdfghklmnopqrstuvwxz])", "ц([abcdfghklmnopqrstuvwxz])",
+				"Cz${1}", "cz${1}");
+
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public Gost7792000B()
 			{
-				TseVowelsSub = new LanguageAgnostic.CharSubCased("Ц([eijy])", "ц([eijy])", "C${1}", "c${1}");
-				TseConsonantsSub = new LanguageAgnostic.CharSubCased("Ц([abcdfghklmnopqrstuvwxz])",
-					"ц([abcdfghklmnopqrstuvwxz])", "Cz${1}", "cz${1}");
-
 				#region Romanization Chart
 
 				// Sourced from https://en.wikipedia.org/wiki/Romanization_of_Russian and https://en.wikipedia.org/wiki/GOST_7.79-2000

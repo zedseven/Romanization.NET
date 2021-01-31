@@ -1,5 +1,4 @@
 ﻿using Romanization.LanguageAgnostic;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 
@@ -18,48 +17,32 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Hepburn_romanization'>https://en.wikipedia.org/wiki/Hepburn_romanization</a>
 		/// </summary>
-		public static readonly Lazy<ModifiedHepburnSystem> ModifiedHepburn = new Lazy<ModifiedHepburnSystem>(() => new ModifiedHepburnSystem());
-
-		/// <summary>
-		/// The Modified Hepburn Japanese romanization system.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Hepburn_romanization'>https://en.wikipedia.org/wiki/Hepburn_romanization</a>
-		/// </summary>
-		public sealed class ModifiedHepburnSystem : IRomanizationSystem
+		public sealed class ModifiedHepburn : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => false;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> GojuonChart = new Dictionary<string, string>();
-			private static readonly Dictionary<string, string> YoonChart = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> GojuonChart = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> YoonChart = new Dictionary<string, string>();
 
-			private static CharSub LongASub;
-			private static CharSub LongESub;
-			private static CharSub LongISub;
-			private static CharSub LongOSub;
-			private static CharSub LongUSub;
+			private readonly CharSub LongASub = new CharSub($"a{Choonpu}", Constants.MacronA, false);
+			private readonly CharSub LongESub = new CharSub($"e{Choonpu}", Constants.MacronE, false);
+			private readonly CharSub LongISub = new CharSub($"i{Choonpu}", Constants.MacronI, false);
+			private readonly CharSub LongOSub = new CharSub($"o{Choonpu}", Constants.MacronO, false);
+			private readonly CharSub LongUSub = new CharSub($"u{Choonpu}", Constants.MacronU, false);
 
-			private static CharSub SyllabicNVowelsSub;
-			private static CharSub SyllabicNConsonantsSub;
+			private readonly CharSub SyllabicNVowelsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Vowels}])", "n'${1}");
+			private readonly CharSub SyllabicNConsonantsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Consonants}])", "n${1}");
 
-			private static CharSub SokuonGeneralCaseSub;
-			private static CharSub SokuonChCaseSub;
+			private readonly CharSub SokuonGeneralCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.Consonants}])", "${1}${1}");
+			private readonly CharSub SokuonChCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]ch", "tch");
 
-			internal ModifiedHepburnSystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public ModifiedHepburn()
 			{
-				LongASub = new CharSub($"a{Choonpu}", Constants.MacronA, false);
-				LongESub = new CharSub($"e{Choonpu}", Constants.MacronE, false);
-				LongISub = new CharSub($"i{Choonpu}", Constants.MacronI, false);
-				LongOSub = new CharSub($"o{Choonpu}", Constants.MacronO, false);
-				LongUSub = new CharSub($"u{Choonpu}", Constants.MacronU, false);
-
-				SyllabicNVowelsSub     = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Vowels}])",     "n'${1}");
-				SyllabicNConsonantsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Consonants}])", "n${1}");
-
-				SokuonGeneralCaseSub   = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.Consonants}])",       "${1}${1}");
-				SokuonChCaseSub        = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]ch",                               "tch");
-
 				#region Romanization Chart
 				// Sourced from https://en.wikipedia.org/wiki/Hepburn_romanization#Romanization_charts
 				// Each pair is hiragana, then katakana, respectively

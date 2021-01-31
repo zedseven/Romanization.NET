@@ -1,5 +1,4 @@
 ﻿using Romanization.LanguageAgnostic;
-using System;
 using System.Collections.Generic;
 
 // ReSharper disable CheckNamespace
@@ -19,45 +18,44 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian'>https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian</a>
 		/// </summary>
-		public static readonly Lazy<BgnPcgnSystem> BgnPcgn = new Lazy<BgnPcgnSystem>(() => new BgnPcgnSystem());
-
-		/// <summary>
-		/// The BGN/PCGN system of romanization for Russian.<br />
-		/// It was developed by the Unites States Board on Geographic Names and the Permanent Committee on Geographical Names for British Official Use, and is
-		/// designed to be easier for anglophones to pronounce.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian'>https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian</a>
-		/// </summary>
-		public sealed class BgnPcgnSystem : IRomanizationSystem
+		public sealed class BgnPcgn : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
-			private static readonly Dictionary<string, string> DigraphTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> DigraphTable = new Dictionary<string, string>();
 
-			private static CharSubCased YeProvisionSub;
-			private static CharSubCased YoProvisionSub;
-			private static CharSubCased IDigraphSub;
-			private static CharSubCased YeryExceptionDigraphSub;
-			private static CharSubCased YeryVowelsDigraphSub;
-			private static CharSubCased EConsonantsDigraphSub;
+			private readonly CharSubCased YeProvisionSub = new CharSubCased(
+				$"(^|\\b|[{RussianVowels}ЙйЪъЬь])Е", $"(^|\\b|[{RussianVowels}ЙйЪъЬь])е",
+				"${1}Ye", "${1}ye");
 
-			internal BgnPcgnSystem()
+			private readonly CharSubCased YoProvisionSub = new CharSubCased(
+				$"(^|\\b|[{RussianVowels}ЙйЪъЬь])Ё", $"(^|\\b|[{RussianVowels}ЙйЪъЬь])ё",
+				"${1}Yё", "${1}yё");
+
+			private readonly CharSubCased IDigraphSub = new CharSubCased(
+				"Й([АаУуЫыЭэ])", "й([АаУуЫыЭэ])",
+				"Y·${1}", "y·${1}");
+
+			private readonly CharSubCased YeryExceptionDigraphSub = new CharSubCased(
+				"Ы([АаУуЫыЭэ])", "ы([АаУуЫыЭэ])",
+				"Y·${1}", "y·${1}");
+
+			private readonly CharSubCased YeryVowelsDigraphSub = new CharSubCased(
+				$"([{RussianVowels}])Ы", $"([{RussianVowels}])ы",
+				"${1}·Y", "${1}·y");
+
+			private readonly CharSubCased EConsonantsDigraphSub = new CharSubCased(
+				$"([{RussianConsonants.WithoutChars("Йй")}])Э", $"([{RussianConsonants.WithoutChars("Йй")}])э",
+					"${1}·E", "${1}·e");
+
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public BgnPcgn()
 			{
-				YeProvisionSub = new CharSubCased($"(^|\\b|[{RussianVowels}ЙйЪъЬь])Е", $"(^|\\b|[{RussianVowels}ЙйЪъЬь])е",
-					"${1}Ye", "${1}ye");
-				YoProvisionSub = new CharSubCased($"(^|\\b|[{RussianVowels}ЙйЪъЬь])Ё", $"(^|\\b|[{RussianVowels}ЙйЪъЬь])ё",
-					"${1}Yё", "${1}yё");
-				IDigraphSub = new CharSubCased("Й([АаУуЫыЭэ])", "й([АаУуЫыЭэ])", "Y·${1}", "y·${1}");
-				YeryExceptionDigraphSub = new CharSubCased("Ы([АаУуЫыЭэ])", "ы([АаУуЫыЭэ])", "Y·${1}", "y·${1}");
-				YeryVowelsDigraphSub =
-					new CharSubCased($"([{RussianVowels}])Ы", $"([{RussianVowels}])ы", "${1}·Y", "${1}·y");
-				EConsonantsDigraphSub =
-					new CharSubCased($"([{RussianConsonants.WithoutChars("Йй")}])Э", $"([{RussianConsonants.WithoutChars("Йй")}])э",
-						"${1}·E", "${1}·e");
-
 				#region Romanization Chart
 
 				// Sourced from https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian

@@ -19,14 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Hanyu_Pinyin'>https://en.wikipedia.org/wiki/Hanyu_Pinyin</a>
 		/// </summary>
-		public static readonly Lazy<HanyuPinyinSystem> HanyuPinyin = new Lazy<HanyuPinyinSystem>(() => new HanyuPinyinSystem());
-
-		/// <summary>
-		/// The Hànyǔ Pīnyīn Chinese romanization system.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Hanyu_Pinyin'>https://en.wikipedia.org/wiki/Hanyu_Pinyin</a>
-		/// </summary>
-		public sealed class HanyuPinyinSystem : IReadingsRomanizationSystem<HanyuPinyinSystem.ReadingTypes>
+		public sealed class HanyuPinyin : IReadingsRomanizationSystem<HanyuPinyin.ReadingTypes>
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => false;
@@ -55,11 +48,14 @@ namespace Romanization
 			private const string HanyuPinluFileName = "HanziHanyuPinlu.csv";
 			private const string XhcFileName = "HanziXHC.csv";
 
-			private static readonly Dictionary<string, string[]> HanyuPinyinReadings = new Dictionary<string, string[]>();
-			private static readonly Dictionary<string, string[]> HanyuPinluReadings = new Dictionary<string, string[]>();
-			private static readonly Dictionary<string, string[]> XhcReadings = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> HanyuPinyinReadings = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> HanyuPinluReadings = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> XhcReadings = new Dictionary<string, string[]>();
 
-			internal HanyuPinyinSystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public HanyuPinyin()
 			{
 				Utilities.LoadCharacterMap(HanyuPinyinFileName, HanyuPinyinReadings, k => k, v => v.Split(' '));
 				Utilities.LoadCharacterMap(HanyuPinluFileName, HanyuPinluReadings, k => k, v => v.Split(' '));

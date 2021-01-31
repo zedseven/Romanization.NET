@@ -9,28 +9,30 @@ namespace Romanization.Tests.RussianTests
 	[TestClass]
 	public class Icao9303Tests
 	{
+		private readonly Russian.Icao9303 _system = new Russian.Icao9303();
+
 		[TestMethod]
 		public void ProcessTest()
 		{
-			Assert.AreEqual("",                 Russian.Icao9303.Value.Process(""));
-			Assert.AreEqual("Elektrogorsk",     Russian.Icao9303.Value.Process("Электрогорск"));
-			Assert.AreEqual("Radioelektronika", Russian.Icao9303.Value.Process("Радиоэлектроника"));
-			Assert.AreEqual("Tsimliansk",       Russian.Icao9303.Value.Process("Цимлянск"));
-			Assert.AreEqual("Severobaikalsk",   Russian.Icao9303.Value.Process("Северобайкальск"));
-			Assert.AreEqual("Ioshkar-Ola",      Russian.Icao9303.Value.Process("Йошкар-Ола"));
-			Assert.AreEqual("Rossiia",          Russian.Icao9303.Value.Process("Россия"));
-			Assert.AreEqual("Ygyatta",          Russian.Icao9303.Value.Process("Ыгыатта"));
-			Assert.AreEqual("Kuyrkieiavr",      Russian.Icao9303.Value.Process("Куыркъявр"));
-			Assert.AreEqual("Ulan-Ude",         Russian.Icao9303.Value.Process("Улан-Удэ"));
-			Assert.AreEqual("Tyaia",            Russian.Icao9303.Value.Process("Тыайа"));
-			Assert.AreEqual("Chapaevsk",        Russian.Icao9303.Value.Process("Чапаевск"));
-			Assert.AreEqual("Meierovka",        Russian.Icao9303.Value.Process("Мейеровка"));
-			Assert.AreEqual("Barnaul",          Russian.Icao9303.Value.Process("Барнаул"));
-			Assert.AreEqual("Iakutsk",          Russian.Icao9303.Value.Process("Якутск"));
-			Assert.AreEqual("Yttyk-Kel",        Russian.Icao9303.Value.Process("Ыттык-Кёль"));
-			Assert.AreEqual("Ufa",              Russian.Icao9303.Value.Process("Уфа"));
-			Assert.AreEqual("rádost",           Russian.Icao9303.Value.Process("ра́дость"));
-			Assert.AreEqual("radost tsvetok",   Russian.Icao9303.Value.Process("радость цветок"));
+			Assert.AreEqual("",                 _system.Process(""));
+			Assert.AreEqual("Elektrogorsk",     _system.Process("Электрогорск"));
+			Assert.AreEqual("Radioelektronika", _system.Process("Радиоэлектроника"));
+			Assert.AreEqual("Tsimliansk",       _system.Process("Цимлянск"));
+			Assert.AreEqual("Severobaikalsk",   _system.Process("Северобайкальск"));
+			Assert.AreEqual("Ioshkar-Ola",      _system.Process("Йошкар-Ола"));
+			Assert.AreEqual("Rossiia",          _system.Process("Россия"));
+			Assert.AreEqual("Ygyatta",          _system.Process("Ыгыатта"));
+			Assert.AreEqual("Kuyrkieiavr",      _system.Process("Куыркъявр"));
+			Assert.AreEqual("Ulan-Ude",         _system.Process("Улан-Удэ"));
+			Assert.AreEqual("Tyaia",            _system.Process("Тыайа"));
+			Assert.AreEqual("Chapaevsk",        _system.Process("Чапаевск"));
+			Assert.AreEqual("Meierovka",        _system.Process("Мейеровка"));
+			Assert.AreEqual("Barnaul",          _system.Process("Барнаул"));
+			Assert.AreEqual("Iakutsk",          _system.Process("Якутск"));
+			Assert.AreEqual("Yttyk-Kel",        _system.Process("Ыттык-Кёль"));
+			Assert.AreEqual("Ufa",              _system.Process("Уфа"));
+			Assert.AreEqual("rádost",           _system.Process("ра́дость"));
+			Assert.AreEqual("radost tsvetok",   _system.Process("радость цветок"));
 		}
 	}
 }

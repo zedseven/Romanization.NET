@@ -7,7 +7,7 @@ namespace Romanization.LanguageAgnostic
 	/// <summary>
 	/// A string of characters with all possible readings (pronunciations) for each character.
 	/// </summary>
-	/// <typeparam name="TType">The reading type enum to use, which contains all supported readings for a given language or system.<br />For example, <see cref="Japanese.KanjiReadingsSystem.ReadingTypes"/>.</typeparam>
+	/// <typeparam name="TType">The reading type enum to use, which contains all supported readings for a given language or system.<br />For example, <see cref="Japanese.KanjiReadings.ReadingTypes"/>.</typeparam>
 	public class ReadingsString<TType>
 		where TType : Enum
 	{
@@ -39,7 +39,7 @@ namespace Romanization.LanguageAgnostic
 	/// <summary>
 	/// A character with all possible readings (pronunciations).
 	/// </summary>
-	/// <typeparam name="TType">The reading type enum to use, which contains all supported readings for a given language or system.<br />For example, <see cref="Japanese.KanjiReadingsSystem.ReadingTypes"/>.</typeparam>
+	/// <typeparam name="TType">The reading type enum to use, which contains all supported readings for a given language or system.<br />For example, <see cref="Japanese.KanjiReadings.ReadingTypes"/>.</typeparam>
 	public class ReadingCharacter<TType>
 		where TType : Enum
 	{
@@ -85,12 +85,12 @@ namespace Romanization.LanguageAgnostic
 	/// <summary>
 	/// A reading (pronunciation) of a character.
 	/// </summary>
-	/// <typeparam name="TType">The reading type enum to use, which contains all supported readings for a given language or system.<br />For example, <see cref="Japanese.KanjiReadingsSystem.ReadingTypes"/>.</typeparam>
+	/// <typeparam name="TType">The reading type enum to use, which contains all supported readings for a given language or system.<br />For example, <see cref="Japanese.KanjiReadings.ReadingTypes"/>.</typeparam>
 	public class Reading<TType>
 		where TType : Enum
 	{
 		/// <summary>
-		/// The type of reading it is. For example, it could be <see cref="Japanese.KanjiReadingsSystem.ReadingTypes.Kunyomi"/>.
+		/// The type of reading it is. For example, it could be <see cref="Japanese.KanjiReadings.ReadingTypes.Kunyomi"/>.
 		/// </summary>
 		public readonly TType Type;
 		/// <summary>

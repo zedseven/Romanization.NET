@@ -1,7 +1,7 @@
 ﻿# Supported Languages and Systems
 The goal of Romanization.NET is to provide a simple, extensive way to romanize widely-used languages as accurately as possible.
 
-Below is a list of all supported languages and systems, with explanations of caveats and limitations if necessary. Languages are ordered lexicographically.
+Below is a list of all supported languages and systems, with explanations of caveats and limitations if necessary. Languages are ordered lexicographically ascending.
 
 
 

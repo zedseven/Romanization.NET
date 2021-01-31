@@ -1,5 +1,4 @@
 ﻿using Romanization.LanguageAgnostic;
-using System;
 using System.Collections.Generic;
 
 // ReSharper disable CheckNamespace
@@ -17,22 +16,18 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic'>https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic</a>
 		/// </summary>
-		public static readonly Lazy<ScholarlySystem> Scholarly = new Lazy<ScholarlySystem>(() => new ScholarlySystem());
-
-		/// <summary>
-		/// The International Scholarly System of romanization for Russian.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic'>https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic</a>
-		/// </summary>
-		public sealed class ScholarlySystem : IRomanizationSystem
+		public sealed class Scholarly : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			internal ScholarlySystem()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public Scholarly()
 			{
 				#region Romanization Chart
 

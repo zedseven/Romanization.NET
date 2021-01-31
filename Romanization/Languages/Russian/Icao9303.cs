@@ -1,5 +1,4 @@
 ﻿using Romanization.LanguageAgnostic;
-using System;
 using System.Collections.Generic;
 
 // ReSharper disable CheckNamespace
@@ -18,23 +17,18 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf'>https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf</a>
 		/// </summary>
-		public static readonly Lazy<Icao9303System> Icao9303 = new Lazy<Icao9303System>(() => new Icao9303System());
-
-		/// <summary>
-		/// The system from ICAO Doc 9303 "Machine Readable Travel Documents, Part 3".<br />
-		/// This is the standard for modern Russian passports, in 2021.<br />
-		/// For more information, visit:
-		/// <a href='https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf'>https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf</a>
-		/// </summary>
-		public sealed class Icao9303System : IRomanizationSystem
+		public sealed class Icao9303 : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			internal Icao9303System()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public Icao9303()
 			{
 				#region Romanization Chart
 

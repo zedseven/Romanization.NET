@@ -1,7 +1,5 @@
-﻿using System;
+﻿using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
-using System.Linq;
-using Romanization.LanguageAgnostic;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -20,24 +18,18 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/ISO_9#ISO/R_9'>https://en.wikipedia.org/wiki/ISO_9#ISO/R_9</a>
 		/// </summary>
-		public static readonly Lazy<IsoR9System> IsoR9 = new Lazy<IsoR9System>(() => new IsoR9System());
-
-		/// <summary>
-		/// The ISO Recommendation No. 9 (ISO/R 9:1968) system of romanization, specialized for Russian.<br />
-		/// This transliteration table is designed to cover Bulgarian, Russian, Belarusian, Ukrainian, Serbo-Croatian and Macedonian in general, with regional specializations for certain languages.<br />
-		/// This is largely superceded by ISO 9 (GOST 7.79-2000(A)).<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/ISO_9#ISO/R_9'>https://en.wikipedia.org/wiki/ISO_9#ISO/R_9</a>
-		/// </summary>
-		public sealed class IsoR9System : IRomanizationSystem
+		public sealed class IsoR9 : IRomanizationSystem
 		{
 			/// <inheritdoc />
 			public bool TransliterationSystem => true;
 
 			// System-Specific Constants
-			private static readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
 
-			internal IsoR9System()
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.
+			/// </summary>
+			public IsoR9()
 			{
 				#region Romanization Chart
 
