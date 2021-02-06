@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian scientific/scholarly romanization system, <see cref="Russian.Scholarly"/>.
+	/// </summary>
 	[TestClass]
 	public class ScholarlyTests
 	{
 		private readonly Russian.Scholarly _system = new Russian.Scholarly();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

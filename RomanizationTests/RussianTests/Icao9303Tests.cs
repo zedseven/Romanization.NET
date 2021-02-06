@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian ICAO Doc 9303 romanization system, <see cref="Russian.Icao9303"/>.
+	/// </summary>
 	[TestClass]
 	public class Icao9303Tests
 	{
 		private readonly Russian.Icao9303 _system = new Russian.Icao9303();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

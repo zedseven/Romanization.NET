@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian ALA-LC romanization system, <see cref="Russian.AlaLc"/>.
+	/// </summary>
 	[TestClass]
 	public class AlaLcTests
 	{
 		private readonly Russian.AlaLc _system = new Russian.AlaLc();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

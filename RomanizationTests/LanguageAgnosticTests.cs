@@ -6,12 +6,18 @@ using Romanization;
 
 namespace RomanizationTests.LanguageAgnosticTests
 {
+	/// <summary>
+	/// For testing language agnostic functions.
+	/// </summary>
 	[TestClass]
 	public class LanguageAgnosticTests
 	{
 		private readonly Japanese.ModifiedHepburn _modifiedHepburn = new Japanese.ModifiedHepburn();
 		private readonly Korean.RevisedRomanization _revisedRomanization = new Korean.RevisedRomanization();
 
+		/// <summary>
+		/// Aims to test the separation of language boundaries.
+		/// </summary>
 		[TestMethod]
 		public void LanguageBoundaryTest()
 		{

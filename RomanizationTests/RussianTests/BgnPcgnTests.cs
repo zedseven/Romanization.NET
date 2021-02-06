@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian BGN/PCGN romanization system, <see cref="Russian.BgnPcgn"/>.
+	/// </summary>
 	[TestClass]
 	public class BgnPcgnTests
 	{
 		private readonly Russian.BgnPcgn _system = new Russian.BgnPcgn();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

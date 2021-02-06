@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian ISO/R 9:1968 romanization system, <see cref="Russian.IsoR9"/>.
+	/// </summary>
 	[TestClass]
 	public class IsoR9Tests
 	{
 		private readonly Russian.IsoR9 _system = new Russian.IsoR9();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

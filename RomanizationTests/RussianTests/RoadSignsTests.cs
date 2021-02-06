@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian road sign romanization system, <see cref="Russian.RoadSigns"/>.
+	/// </summary>
 	[TestClass]
 	public class RoadSignsTests
 	{
 		private readonly Russian.RoadSigns _system = new Russian.RoadSigns();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

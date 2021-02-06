@@ -7,11 +7,18 @@ using Romanization;
 
 namespace RomanizationTests.JapaneseTests
 {
+	/// <summary>
+	/// For testing the Japanese Kanji readings system, <see cref="Japanese.KanjiReadings"/>.
+	/// </summary>
 	[TestClass]
 	public class KanjiReadingsTests
 	{
 		private readonly Japanese.KanjiReadings _system = new Japanese.KanjiReadings();
 
+		/// <summary>
+		/// Aims to test quick readings where *a* reading of each character is used. (the first in the Unihan database
+		/// for the character)
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{
@@ -31,6 +38,9 @@ namespace RomanizationTests.JapaneseTests
 			Assert.AreEqual("mitsu",          _system.Process("三"));
 		}
 
+		/// <summary>
+		/// Aims to test the processing of the combination of Kana and Kanji together.
+		/// </summary>
 		[TestMethod]
 		public void ProcessWithKanaTest()
 		{
@@ -39,12 +49,20 @@ namespace RomanizationTests.JapaneseTests
 			Assert.AreEqual("mitsutsu",      _system.ProcessWithKana("三つ")); // An example of why the simple Process() function is not to be relied on for accurate parsing of written systems with multiple readings per character
 		}
 
+		/// <summary>
+		/// Aims to test processing with all readings for every character.<br />
+		/// This test does not demonstrate realistic use of this system.
+		/// </summary>
 		[TestMethod]
 		public void ProcessWithReadingsTest()
 		{
 			Assert.AreEqual("", _system.ProcessWithReadings("").ToString());
-			Assert.AreEqual("[oshieru oshie yomu kun kin][yomu yomi toku tou doku]", _system.ProcessWithReadings("訓読").ToString());
-			Assert.AreEqual("[arawareru arawasu utsutsu gen ken][kawaru yo shiro dai tai] [kara kan][kataru kotoba tsugeru go gyo] [shikirini hin bin][hikiiru oomune wariai ritsu sotsu] [kotoba shi ji][nori tsukasadoru sakan ten]", _system.ProcessWithReadings("現代 漢語 頻率 詞典").ToString());
+			Assert.AreEqual("[oshieru oshie yomu kun kin][yomu yomi toku tou doku]",
+				_system.ProcessWithReadings("訓読").ToString());
+			Assert.AreEqual("[arawareru arawasu utsutsu gen ken][kawaru yo shiro dai tai] [kara kan]" +
+			                "[kataru kotoba tsugeru go gyo] [shikirini hin bin][hikiiru oomune wariai ritsu sotsu] " +
+			                "[kotoba shi ji][nori tsukasadoru sakan ten]",
+				_system.ProcessWithReadings("現代 漢語 頻率 詞典").ToString());
 		}
 	}
 }

@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian British Standard 2979:1958 romanization system, <see cref="Russian.Bs29791958"/>.
+	/// </summary>
 	[TestClass]
 	public class Bs29791958Tests
 	{
 		private readonly Russian.Bs29791958 _system = new Russian.Bs29791958();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

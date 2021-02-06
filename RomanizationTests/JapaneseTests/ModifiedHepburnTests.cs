@@ -7,21 +7,30 @@ using Romanization;
 
 namespace RomanizationTests.JapaneseTests
 {
+	/// <summary>
+	/// For testing the Japanese Modified Hepburn romanization system, <see cref="Japanese.ModifiedHepburn"/>.
+	/// </summary>
 	[TestClass]
 	public class ModifiedHepburnTests
 	{
 		private readonly Japanese.ModifiedHepburn _system = new Japanese.ModifiedHepburn();
 
+		/// <summary>
+		/// Aims to test Katakana long vowel (chōonpu, ー) conversion into macron versions of respective vowels.
+		/// </summary>
 		[TestMethod]
-		public void LongVowelTest()
+		public void KatakanaLongVowelTest()
 		{
 			Assert.AreEqual("nintendō",             _system.Process("ニンテンドー"));
 			Assert.AreEqual("burauzā",              _system.Process("ブラウザー"));
 			Assert.AreEqual("nintendō DSi burauzā", _system.Process("ニンテンドーDSiブラウザー"));
 		}
 
+		/// <summary>
+		/// Aims to test Hiragana syllabic n (ん) conversion into <c>n</c>, or <c>n'</c> if before a vowel or y.
+		/// </summary>
 		[TestMethod]
-		public void SyllabicNTest()
+		public void HiraganaSyllabicNTest()
 		{
 			Assert.AreEqual("annai",    _system.Process("あんない"));
 			Assert.AreEqual("gunma",    _system.Process("ぐんま"));
@@ -29,8 +38,11 @@ namespace RomanizationTests.JapaneseTests
 			Assert.AreEqual("shin'you", _system.Process("しんよう"));
 		}
 
+		/// <summary>
+		/// Aims to test Hiragana long consonant (sokuon, っ) conversion into doubled-up Rômaji consonants.
+		/// </summary>
 		[TestMethod]
-		public void LongConsonantTest()
+		public void HiraganaLongConsonantTest()
 		{
 			Assert.AreEqual("kekka",   _system.Process("けっか"));
 			Assert.AreEqual("sassato", _system.Process("さっさと"));

@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.KoreanTests
 {
+	/// <summary>
+	/// For testing the Korean Revised Romanization system, <see cref="Korean.RevisedRomanization"/>.
+	/// </summary>
 	[TestClass]
 	public class RevisedRomanizationTests
 	{
 		private readonly Korean.RevisedRomanization _system = new Korean.RevisedRomanization();
 
+		/// <summary>
+		/// Aims to test basic words.
+		/// </summary>
 		[TestMethod]
 		public void BasicWordTest()
 		{
@@ -23,6 +29,10 @@ namespace RomanizationTests.KoreanTests
 			Assert.AreEqual("",         _system.Process(""));
 		}
 
+		/// <summary>
+		/// Aims to test the difference and behaviour of the given name processing. (given names are often romanized
+		/// without consideration for special Jamo combinations)
+		/// </summary>
 		[TestMethod]
 		public void GivenNameTest()
 		{
@@ -32,6 +42,9 @@ namespace RomanizationTests.KoreanTests
 			Assert.AreEqual("choe binna",     _system.Process("최 빛나", false));
 		}
 
+		/// <summary>
+		/// Aims to test whether noun aspiration is handled properly.
+		/// </summary>
 		[TestMethod]
 		public void NounAspirationTest()
 		{
@@ -41,6 +54,9 @@ namespace RomanizationTests.KoreanTests
 			Assert.AreEqual("jipyeonjeon",  _system.Process("집현전", false, false));
 		}
 
+		/// <summary>
+		/// Aims to test whether or not syllables are hyphenated properly.
+		/// </summary>
 		[TestMethod]
 		public void SyllableHyphenationTest()
 		{

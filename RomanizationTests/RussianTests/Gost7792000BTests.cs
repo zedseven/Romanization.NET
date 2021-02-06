@@ -7,11 +7,17 @@ using Romanization;
 
 namespace RomanizationTests.RussianTests
 {
+	/// <summary>
+	/// For testing the Russian GOST 7.79-2000(B) romanization system, <see cref="Russian.Gost7792000B"/>.
+	/// </summary>
 	[TestClass]
 	public class Gost7792000BTests
 	{
 		private readonly Russian.Gost7792000B _system = new Russian.Gost7792000B();
 
+		/// <summary>
+		/// Aims to test basic processing.
+		/// </summary>
 		[TestMethod]
 		public void ProcessTest()
 		{

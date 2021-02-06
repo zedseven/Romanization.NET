@@ -19,6 +19,9 @@ namespace RomanizationTests.GreekTests.AncientTests
         private readonly Greek.Ancient.AlaLc _systemNr = new Greek.Ancient.AlaLc(OutputNumeralType.Roman,  false);
         private readonly Greek.Ancient.AlaLc _systemNa = new Greek.Ancient.AlaLc(OutputNumeralType.Arabic, false);
 
+        /// <summary>
+        /// Aims to test use of the system with <see cref="OutputNumeralType.Roman"/> and older punctuation &amp; numerals.
+        /// </summary>
         [TestMethod]
         public void ProcessOlderRomanTest()
         {
@@ -27,6 +30,9 @@ namespace RomanizationTests.GreekTests.AncientTests
                 _systemOr.Process("Δ̅Ι̅. ἑνδέκατός ἐστι παράλληλος, καθ’ ὃν ἂν γένοιτο ἡ μεγίστη ἡμέρα ὡρῶν ἰσημερινῶν Δ̅Ι̅Ι̅Ι̅Ι̅"));
         }
 
+        /// <summary>
+        /// Aims to test use of the system with <see cref="OutputNumeralType.Arabic"/> and older punctuation &amp; numerals.
+        /// </summary>
         [TestMethod]
         public void ProcessOlderArabicTest()
         {
@@ -35,6 +41,9 @@ namespace RomanizationTests.GreekTests.AncientTests
                 _systemOa.Process("Δ̅Ι̅. ἑνδέκατός ἐστι παράλληλος, καθ’ ὃν ἂν γένοιτο ἡ μεγίστη ἡμέρα ὡρῶν ἰσημερινῶν Δ̅Ι̅Ι̅Ι̅Ι̅"));
         }
 
+        /// <summary>
+        /// Aims to test use of the system with <see cref="OutputNumeralType.Roman"/> and newer punctuation &amp; numerals.
+        /// </summary>
         [TestMethod]
         public void ProcessNewerRomanTest()
         {
@@ -49,6 +58,9 @@ namespace RomanizationTests.GreekTests.AncientTests
                                   "ρ̅γ̅ γʹ"));
         }
 
+        /// <summary>
+        /// Aims to test use of the system with <see cref="OutputNumeralType.Arabic"/> and newer punctuation &amp; numerals.
+        /// </summary>
         [TestMethod]
         public void ProcessNewerArabicTest()
         {

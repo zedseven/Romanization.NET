@@ -22,7 +22,7 @@ The order in which readings are returned is as follows:
 ### [Modified Hepburn](https://en.wikipedia.org/wiki/Hepburn_romanization)
 This system is a revised version of the romanization system first published by James Curtis Hepburn, and the one in most widespread use in Japan.
 
-It only supports [kana](https://en.wikipedia.org/wiki/Kana) ([hiragana](https://en.wikipedia.org/wiki/Hiragana) and [katakana](https://en.wikipedia.org/wiki/Katakana)), not Kanji. See below for Kanji support.
+It only supports [Kana](https://en.wikipedia.org/wiki/Kana) ([Hiragana](https://en.wikipedia.org/wiki/Hiragana) and [Katakana](https://en.wikipedia.org/wiki/Katakana)), not Kanji. See below for Kanji support.
 
 This supports [syllabic n](https://en.wikipedia.org/wiki/Hepburn_romanization#Syllabic_n) (ん), [long consonants](https://en.wikipedia.org/wiki/Hepburn_romanization#Long_consonants) (sokuon, or っ), and [long vowels](https://en.wikipedia.org/wiki/Hepburn_romanization#Loanwords) (chōonpu (ー) only).
 
@@ -36,7 +36,7 @@ As a result, while some vowel combinations *could* be done (not all have this re
 ### [Kanji (Kun & On) Readings](https://en.wikipedia.org/wiki/Kanji#Readings)
 Kanji are effectively Japan's Hànzì, and share many of the same considerations and even symbols.
 
-While kana are syllabaries (each character is one syllable, and therefore maps neatly to a distinct sound), Kanji are their own symbols that can be a variable number of syllables.
+While Kana are syllabaries (each character is one syllable, and therefore maps neatly to a distinct sound), Kanji are their own symbols that can be a variable number of syllables.
 To make things more complicated, each can have multiple readings - in both [Kun'yomi](https://en.wikipedia.org/wiki/Kanji#Kun'yomi_(native_reading)) and [On'yomi](https://en.wikipedia.org/wiki/Kanji#On'yomi_(Sino-Japanese_reading)).
 
 This is why this system is considered a [Readings System](readingsSystems) for the purposes of this library, which means you can get every known reading from the [Unihan database](http://www.unicode.org/charts/unihan.html) for each character.
@@ -46,7 +46,7 @@ The two reading types supported are:
 2. On'yomi - often referred to as just On - the Sino-Japanese reading
 
 #### Additional Notes
-Because Kanji often appear alongside supplementary kana, the system also has a small convenience function that romanizes both Kanji and Kana, using the system of your choice for kana.
+Because Kanji often appear alongside supplementary Kana, the system also has a small convenience function that romanizes both Kanji and Kana, using the system of your choice for Kana.
 
 
 
@@ -55,7 +55,7 @@ Because Kanji often appear alongside supplementary kana, the system also has a s
 The Revised Romanization of Korean system is the most commonly used, and does not make use of accents or macrons.
 
 The system has a few provisions for certain kinds of content, which change the romanization somewhat:
-- Certain special pairs of jamo are not combined in given names
+- Certain special pairs of Jamo are not combined in given names
 - Whether or not aspiration is reflected in the romanization depends on whether or not the word is a noun
 - Sometimes it can be helpful to hyphenate syllables, which occassionally makes a difference in disambiguating words with the same romanization (ga-eul vs. gae-ul)
 

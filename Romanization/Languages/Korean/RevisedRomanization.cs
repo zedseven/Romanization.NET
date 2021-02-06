@@ -207,10 +207,15 @@ namespace Romanization
 			/// Performs romanization on the given text, according to the Revised Romanization of Korean system.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <param name="givenName">Whether or not the text to romanize is a given name, since Korean names are often romanized without consideration for special jamo combinations.</param>
-			/// <param name="noun">Whether or not the text to romanize is a noun, since there is a distinction between whether or not aspiration is reflected based on nouns.</param>
-			/// <param name="hyphenateSyllables">Whether to insert a hyphen ('-') between syllables in non-required spots. This can help to distinguish between ambiguous words: 가을 -> ga-eul (fall; autumn) vs. 개울 -> gae-ul (stream).</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+			/// <param name="givenName">Whether or not the text to romanize is a given name, since Korean names are
+			/// often romanized without consideration for special Jamo combinations.</param>
+			/// <param name="noun">Whether or not the text to romanize is a noun, since there is a distinction between
+			/// whether or not aspiration is reflected based on nouns.</param>
+			/// <param name="hyphenateSyllables">Whether to insert a hyphen ('-') between syllables in non-required
+			/// spots. This can help to distinguish between ambiguous words: <c>가을 -> ga-eul</c> (fall; autumn) vs.
+			/// <c>개울</c> -> gae-ul (stream).</param>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
+			/// romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text, bool givenName, bool noun = false, bool hyphenateSyllables = false)
 			{
@@ -220,7 +225,7 @@ namespace Romanization
 					// Insert spaces at boundaries between Latin characters and Korean ones
 					.SeparateLanguageBoundaries();
 
-				// Decompose all syllable blocks in text into their component jamo
+				// Decompose all syllable blocks in text into their component Jamo
 				List<PlacementChar> jamoList = text.SelectMany(c =>
 				{
 					SyllableBlock b = DecomposeSyllableBlock(c);
@@ -228,7 +233,7 @@ namespace Romanization
 				})
 					.ToList();
 
-				// Use the component jamo to build the romanization
+				// Use the component Jamo to build the romanization
 				StringBuilder romanizedText = new StringBuilder();
 				for (int i = 0; i < jamoList.Count; i++)
 				{
@@ -256,10 +261,14 @@ namespace Romanization
 								if (HangeulConsonantCombinationRomanizations.TryGetValue(key, out HyphenString specialCaseRomanization))
 								{
 									// TODO: This may be backwards - (!noun may need to be inverted) - this is because documentation for this is heavily unclear on whether aspiration should be reflected in nouns
-									// More info: "... However, aspirated sounds are *not* reflected in case of nouns where ㅎ follows ㄱ, ㄷ, and ㅂ: 묵호 → Mukho, 집현전 → Jiphyeonjeon." (emphasis mine)
-									// The text says aspiration should not be reflected in such nouns, yet both examples it gives are nouns that reflect aspiration.
-									// Furthermore, the previous examples all exclude aspiration and whether or not the words are nouns is unclear - this leads me to believe the text has it backwards.
-									// As someone with a very rudimentary understanding of Korean, I can't determine one way or the other for certain, so for now this is how it will stay.
+									// More info: "... However, aspirated sounds are *not* reflected in case of nouns
+									// where ㅎ follows ㄱ, ㄷ, and ㅂ: 묵호 → Mukho, 집현전 → Jiphyeonjeon." (emphasis mine)
+									// The text says aspiration should not be reflected in such nouns, yet both examples
+									// it gives are nouns that reflect aspiration.
+									// Furthermore, the previous examples all exclude aspiration and whether or not the
+									// words are nouns is unclear - this leads me to believe the text has it backwards.
+									// As someone with a very rudimentary understanding of Korean, I can't determine one
+									// way or the other for certain, so for now this is how it will stay.
 									if (!noun && jamoList[i + 1] == 'ㅎ' &&
 										(jamoList[i] == 'ㄱ' || jamoList[i] == 'ㄷ' || jamoList[i] == 'ㅂ'))
 										romanizedText.Append(hyphenateSyllables
@@ -276,7 +285,7 @@ namespace Romanization
 
 							romanizedText.Append(HangeulConsonantFinalRomanizations[jamoList[i]]);
 
-							// Three-jamo syllable hyphenation
+							// Three-Jamo syllable hyphenation
 							if (hyphenateSyllables && !lastChar && jamoList[i + 1].Placement == PlacementChar.Placements.Initial)
 								romanizedText.Append('-');
 
@@ -291,7 +300,8 @@ namespace Romanization
 			/// Performs romanization on the given text, according to the Revised Romanization of Korean system.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
+			/// romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
 				=> Process(text, false, false, false);
