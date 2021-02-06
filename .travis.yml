@@ -22,7 +22,7 @@ before_script:
 
 script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
-- dotnet test //p:CollectCoverage=true //p:CoverletOutputFormat=cobertura RomanizationTests/RomanizationTests.csproj
+- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura RomanizationTests/RomanizationTests.csproj
 
 after_script: ./cc-test-reporter after-build --input RomanizationTests\coverage.cobertura.xml --coverage-input-type cobertura --exit-code $TRAVIS_TEST_RESULT
 
