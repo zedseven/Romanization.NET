@@ -1,6 +1,8 @@
 ﻿using Romanization.LanguageAgnostic;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using System.Globalization;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -32,11 +34,14 @@ namespace Romanization
 			private readonly CharSub LongOSub = new CharSub($"o{Choonpu}", Constants.MacronO, false);
 			private readonly CharSub LongUSub = new CharSub($"u{Choonpu}", Constants.MacronU, false);
 
-			private readonly CharSub SyllabicNVowelsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinVowels}])", "n'${1}");
-			private readonly CharSub SyllabicNConsonantsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinConsonants}])", "n${1}");
+			private readonly CharSub SyllabicNVowelsSub =
+				new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinVowels}])", "n'${1}");
+			private readonly CharSub SyllabicNConsonantsSub =
+				new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinConsonants}])", "n${1}");
 
-			private readonly CharSub SokuonGeneralCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.LatinConsonants}])", "${1}${1}");
-			private readonly CharSub SokuonChCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]ch", "tch");
+			private readonly CharSub SokuonGeneralCaseSub =
+				new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.LatinConsonants}])", "${1}${1}", false);
+			private readonly CharSub SokuonChCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]ch", "tch", false);
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
@@ -291,15 +296,15 @@ namespace Romanization
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
-				=> text
+				=> Utilities.RunWithCulture(CultureInfo.GetCultureInfo("ja-JP"), () => text
 					// Replace common alternate characters
 					.ReplaceCommonAlternates()
 					// Insert spaces at boundaries between Latin characters and Japanese ones (ie. ニンテンドーDSiブラウザー)
 					.SeparateLanguageBoundaries()
 					// Do multi-char combinations first (Yōon)
-					.ReplaceFromChart(YoonChart)
+					.ReplaceFromChart(YoonChart, StringComparison.CurrentCulture)
 					// Then single-char replacements (Gojūon)
-					.ReplaceFromChart(GojuonChart)
+					.ReplaceFromChart(GojuonChart, StringComparison.CurrentCulture)
 					// Do special subsitutions
 					.ReplaceMany(
 						// Convert chōonpu usage in original text into macrons to mark long vowels in a romanized manner
@@ -307,7 +312,7 @@ namespace Romanization
 						// Render syllabic n as either "n'" or "n" based on whether or not it preceeds a vowel or consonant, respectively
 						SyllabicNVowelsSub, SyllabicNConsonantsSub,
 						// Take sokuon usage into account (repeating the following consonant to mark long consonants)
-						SokuonChCaseSub, SokuonGeneralCaseSub);
+						SokuonChCaseSub, SokuonGeneralCaseSub));
 		}
 	}
 }
