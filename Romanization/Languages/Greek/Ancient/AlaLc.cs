@@ -17,11 +17,22 @@ namespace Romanization
 		{
 			/// <summary>
 			/// The ALA-LC (American Library Association and Library of Congress) Greek romanization system.<br />
+			/// Has two separate modes - one for *very* old Greek
+			/// (<a href='https://en.wikipedia.org/wiki/Attic_numerals'>Attic numerals</a>, obelistic full-stops (⁚)),
+			/// and one for more recent old Greek
+			/// (<a href='https://en.wikipedia.org/wiki/Greek_numerals'>Greek numerals</a>, modern-ish punctuation). If
+			/// you don't know the difference, use the more recent version.<br />
 			/// For more information, visit:<br />
 			/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Greek'>https://en.wikipedia.org/wiki/Romanization_of_Greek</a><br />
 			/// and<br />
 			/// <a href='https://www.loc.gov/catdir/cpso/romanization/greek.pdf'>https://www.loc.gov/catdir/cpso/romanization/greek.pdf</a>
 			/// </summary>
+			/// <remarks>Attic numeral support is somewhat contrived, as there's no real way to distinguish them from
+			/// other Greek text and so in-text detection works based on presence of Unicode overbar characters.
+			/// This isn't realistically something that would be seen, and the special Attic characters often don't
+			/// even work with the overbar combining character. Perhaps a better solution is possible, but overbars
+			/// seem to stand the highest chance of having actually been in use, so that's what it looks for. For
+			/// general parsing of Attic numerals, check out the <see cref="AtticNumerals"/> system.</remarks>
 			public sealed class AlaLc : IExtendedMultiCulturalRomanizationSystem
 			{
 				/// <inheritdoc />
