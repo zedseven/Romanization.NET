@@ -28,7 +28,7 @@ namespace Romanization.LanguageAgnostic
 		/// For characters with 0 readings, they are displayed simply as themselves.<br />
 		/// For characters with 1 reading, they are displayed as their only reading.<br />
 		/// For characters with more than 1 reading, they are displayed as a space-delimited list of all readings in order, within square brackets.<br />
-		/// Example: <code>"xiàndài [hàn tān][yǔ yù] [pín bīn][shuài lǜ lüe l̈ù] cí[diǎn tiǎn]."</code><br />
+		/// Example: <c>"xiàndài [hàn tān][yǔ yù] [pín bīn][shuài lǜ lüe l̈ù] cí[diǎn tiǎn]."</c><br />
 		/// Note that this does not display the source of each reading.
 		/// </summary>
 		/// <returns>A string with all known readings of each character.</returns>
@@ -60,7 +60,7 @@ namespace Romanization.LanguageAgnostic
 
 		/// <summary>
 		/// Returns a string that represents the current object.<br />
-		/// The format is: <code>'&lt;char&gt;' [&lt;readings&gt;]</code>
+		/// The format is: <c>'&lt;char&gt;' [&lt;readings&gt;]</c>
 		/// </summary>
 		/// <returns>A string with the character and all known readings.</returns>
 		public override string ToString()
@@ -69,7 +69,7 @@ namespace Romanization.LanguageAgnostic
 		/// <summary>
 		/// Returns a string starting and ending with square brackets, containing all readings in the order they appear in <see cref="Readings"/>.<br />
 		/// If the character has no known readings, the character itself is returned instead.<br />
-		/// Example: <code>[shuài lǜ lüe l̈ù]</code><br />
+		/// Example: <c>[shuài lǜ lüe l̈ù]</c><br />
 		/// Note this does not output the source of each reading.
 		/// </summary>
 		/// <returns>A string representation of all readings of the character, or the character itself if there are none.</returns>

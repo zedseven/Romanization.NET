@@ -1,8 +1,10 @@
-﻿// ReSharper disable CheckNamespace
+// ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
 // ReSharper disable InconsistentNaming
+
+using Romanization.LanguageAgnostic;
 
 namespace Romanization
 {
@@ -15,7 +17,14 @@ namespace Romanization
 	/// </summary>
 	public static partial class Russian
 	{
-		private const string RussianVowels = "ИиЫыЭэЕеАаЯяОоЁёУуЮю"; // https://en.wikipedia.org/wiki/Russian_phonology#Vowels
-		private const string RussianConsonants = "БбВвГгДдЖжЗзЙйКкЛлМмНнПпРрСсТтФфХхЦцЧчШшЩщ"; // https://russianlanguage.org.uk/russian-language-consonants/
+		private const string RussianVowels = "ИиЫыЭэЕеАаЯяОоЁёУуЮю"; // https://en.wikipedia.org/wiki/Russian_phonology#Vowels
+		private const string RussianConsonants = "БбВвГгДдЖжЗзЙйКкЛлМмНнПпРрСсТтФфХхЦцЧчШшЩщ"; // https://russianlanguage.org.uk/russian-language-consonants/
+
+		private static string LanguageWidePreparation(this string text)
+			=> text
+					// Normalize Unicode
+					.UnicodeNormalize()
+					// Remove acute accents, as some formal/educational Russian includes them
+					.Replace("\u0301", "");
 	}
 }

@@ -4,13 +4,26 @@
 [![NuGet](https://img.shields.io/nuget/v/Romanization.NET.svg)](https://www.nuget.org/packages/Romanization.NET/)
 [![# Issues](https://img.shields.io/github/issues/zedseven/Romanization.NET)](https://github.com/zedseven/Romanization.NET/issues)
 
-A library for [romanization](https://en.wikipedia.org/wiki/Romanization) of widely-used languages using common romanization systems.
+## Project Goals
+This project aims to provide a comprehensive suite of [romanization](https://en.wikipedia.org/wiki/Romanization) systems
+for most languages a dev might need to consider.
 
-Still a work in progress.
+At the moment languages are being added in no particular order, so if there's a specific language or romanization system
+you need for a project, [open an issue](https://github.com/zedseven/Romanization.NET/issues) and it may be given priority.
+
+Please note that at the moment the public API is more likely to change than normal libraries, as it may need to evolve
+as new languages are implemented (languages are often drastically different from one-another, and it is difficult to
+cover all of them ahead of time before actually researching the language).
 
 ## Supported Languages & Documentation
-At the moment Romanization.NET supports Chinese, Japanese, Korean, and Russian, with individual romanization systems supported for each.
+At the moment Romanization.NET supports the following languages, with individual romanization systems supported for each:
 
-For a comprehensive breakdown of supported languages and systems, [check out the full article](Documentation/articles/supported.md).
+- Chinese
+- Japanese
+- Korean
+- Russian
+
+For a comprehensive breakdown of supported languages and systems,
+[check out the full article](Documentation/articles/supported.md).
 
 ### [API Documentation & Articles](https://zedseven.github.io/Romanization.NET/)

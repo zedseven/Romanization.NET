@@ -122,6 +122,9 @@ $tf/
 # Guidance Automation Toolkit
 *.gpState
 
+# JetBrains IDEs make a folder for storage of configuration etc
+.idea/ 
+
 # ReSharper is a .NET coding add-in
 _ReSharper*/
 *.[Rr]e[Ss]harper

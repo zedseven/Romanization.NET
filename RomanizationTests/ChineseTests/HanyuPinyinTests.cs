@@ -1,10 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Romanization;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable IdentifierTypo
 // ReSharper disable StringLiteralTypo
 
-namespace Romanization.ChineseTests
+namespace RomanizationTests.ChineseTests
 {
 	[TestClass]
 	public class HanyuPinyinTests

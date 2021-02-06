@@ -5,7 +5,7 @@ NugetSource=$2
 PackagesApiKey=$3
 PackagesSource=$4
 
-cd Romanization
+cd Romanization || exit
 
 buildPath="bin/Release"
 
@@ -14,7 +14,7 @@ cp "./Romanization.nuspec" "$buildPath/Romanization.nuspec"
 echo "Packing built library..."
 dotnet pack ./Romanization.csproj --configuration Release
 
-cd "$buildPath"
+cd "$buildPath" || exit
 
 files=( Romanization.NET.*.nupkg )
 echo "${files[0]}"

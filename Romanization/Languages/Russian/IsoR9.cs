@@ -1,5 +1,7 @@
-﻿using Romanization.LanguageAgnostic;
+using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Globalization;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -18,10 +20,13 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/ISO_9#ISO/R_9'>https://en.wikipedia.org/wiki/ISO_9#ISO/R_9</a>
 		/// </summary>
-		public sealed class IsoR9 : IRomanizationSystem
+		public sealed class IsoR9 : IMultiCulturalRomanizationSystem
 		{
 			/// <inheritdoc />
-			public bool TransliterationSystem => true;
+			public SystemType Type => SystemType.Transliteration;
+
+			/// <inheritdoc />
+			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
 
 			// System-Specific Constants
 			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
@@ -35,107 +40,74 @@ namespace Romanization
 
 				// Sourced from https://en.wikipedia.org/wiki/ISO_9#ISO/R_9
 
-				RomanizationTable["А"] = "A";
 				RomanizationTable["а"] = "a";
-				RomanizationTable["Б"] = "B";
 				RomanizationTable["б"] = "b";
-				RomanizationTable["В"] = "V";
 				RomanizationTable["в"] = "v";
-				RomanizationTable["Г"] = "G";
 				RomanizationTable["г"] = "g";
-				RomanizationTable["Д"] = "D";
 				RomanizationTable["д"] = "d";
-				RomanizationTable["Ѓ"] = "Ǵ";
-				RomanizationTable["ѓ"] = "ǵ";
-				RomanizationTable["Ђ"] = "Đ";
+				RomanizationTable["ѓ"] = "ǵ";
 				RomanizationTable["ђ"] = "đ";
-				RomanizationTable["Е"] = "E";
 				RomanizationTable["е"] = "e";
-				RomanizationTable["Ё"] = "Ë";
-				RomanizationTable["ё"] = "ë";
-				RomanizationTable["Є"] = "Je";
+				RomanizationTable["ё"] = "ë";
 				RomanizationTable["є"] = "je";
-				RomanizationTable["Ж"] = "Ž";
-				RomanizationTable["ж"] = "ž";
-				RomanizationTable["З"] = "Z";
+				RomanizationTable["ж"] = "ž";
 				RomanizationTable["з"] = "z";
-				RomanizationTable["Ѕ"] = "Dz";
 				RomanizationTable["ѕ"] = "dz";
-				RomanizationTable["И"] = "I";
 				RomanizationTable["и"] = "i";
-				RomanizationTable["I"] = "I";
 				RomanizationTable["і"] = "i";
-				RomanizationTable["Ї"] = "Ï";
-				RomanizationTable["ї"] = "ï";
-				RomanizationTable["Й"] = "J";
-				RomanizationTable["й"] = "j";
-				RomanizationTable["К"] = "K";
+				RomanizationTable["ї"] = "ï";
+				RomanizationTable["й"] = "j";
 				RomanizationTable["к"] = "k";
-				RomanizationTable["Л"] = "L";
 				RomanizationTable["л"] = "l";
-				RomanizationTable["Љ"] = "Lj";
 				RomanizationTable["љ"] = "lj";
-				RomanizationTable["М"] = "M";
 				RomanizationTable["м"] = "m";
-				RomanizationTable["Н"] = "N";
 				RomanizationTable["н"] = "n";
-				RomanizationTable["Њ"] = "Nj";
 				RomanizationTable["њ"] = "nj";
-				RomanizationTable["О"] = "O";
 				RomanizationTable["о"] = "o";
-				RomanizationTable["П"] = "P";
 				RomanizationTable["п"] = "p";
-				RomanizationTable["Р"] = "R";
 				RomanizationTable["р"] = "r";
-				RomanizationTable["С"] = "S";
 				RomanizationTable["с"] = "s";
-				RomanizationTable["Т"] = "T";
 				RomanizationTable["т"] = "t";
-				RomanizationTable["Ќ"] = "Ḱ";
-				RomanizationTable["ќ"] = "ḱ";
-				RomanizationTable["Ћ"] = "Ć";
-				RomanizationTable["ћ"] = "ć";
-				RomanizationTable["У"] = "U";
+				RomanizationTable["ќ"] = "ḱ";
+				RomanizationTable["ћ"] = "ć";
 				RomanizationTable["у"] = "u";
-				RomanizationTable["Ў"] = "Ŭ";
-				RomanizationTable["ў"] = "ŭ";
-				RomanizationTable["Ф"] = "F";
+				RomanizationTable["ў"] = "ŭ";
 				RomanizationTable["ф"] = "f";
-				RomanizationTable["Х"] = "H"; // RU specialization
 				RomanizationTable["х"] = "h"; // RU specialization
-				RomanizationTable["Ц"] = "C";
 				RomanizationTable["ц"] = "c";
-				RomanizationTable["Ч"] = "Č";
-				RomanizationTable["ч"] = "č";
-				RomanizationTable["Џ"] = "Dž";
-				RomanizationTable["џ"] = "dž";
-				RomanizationTable["Ш"] = "Š";
-				RomanizationTable["ш"] = "š";
-				RomanizationTable["Щ"] = "Šč";
-				RomanizationTable["щ"] = "šč";
-				RomanizationTable["Ъ"] = "ʺ";
+				RomanizationTable["ч"] = "č";
+				RomanizationTable["џ"] = "dž";
+				RomanizationTable["ш"] = "š";
+				RomanizationTable["щ"] = "šč";
 				RomanizationTable["ъ"] = "ʺ";
-				RomanizationTable["Ы"] = "Y";
 				RomanizationTable["ы"] = "y";
-				RomanizationTable["Ь"] = "ʹ";
 				RomanizationTable["ь"] = "ʹ";
-				RomanizationTable["Ѣ"] = "Ě";
-				RomanizationTable["ѣ"] = "ě";
-				RomanizationTable["Э"] = "Ė";
-				RomanizationTable["э"] = "ė";
-				RomanizationTable["Ю"] = "Ju";
+				RomanizationTable["ѣ"] = "ě";
+				RomanizationTable["э"] = "ė";
 				RomanizationTable["ю"] = "ju";
-				RomanizationTable["Я"] = "Ja";
 				RomanizationTable["я"] = "ja";
 				RomanizationTable["’"] = "ʺ";
-				RomanizationTable["Ѫ"] = "ʺ̣";
 				RomanizationTable["ѫ"] = "ʺ̣";
-				RomanizationTable["Ѳ"] = "Ḟ";
-				RomanizationTable["ѳ"] = "ḟ";
-				RomanizationTable["Ѵ"] = "Ẏ";
-				RomanizationTable["ѵ"] = "ẏ";
+				RomanizationTable["ѳ"] = "ḟ";
+				RomanizationTable["ѵ"] = "ẏ";
 
 				#endregion
+			}
+
+			/// <summary>
+			/// Performs romanization according to ICAO Doc 9303 on the given text.<br />
+			/// Supports providing a specific <paramref name="nativeCulture"/> to process with, as long as the country code is <c>ru</c>.
+			/// </summary>
+			/// <param name="text">The text to romanize.</param>
+			/// <param name="nativeCulture">The culture to use.</param>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
+			/// <exception cref="IrrelevantCultureException"><paramref name="nativeCulture"/> is irrelevant to the language/region.</exception>
+			[Pure]
+			public string Process(string text, CultureInfo nativeCulture)
+			{
+				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
+					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
+				return Utilities.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation().ReplaceFromChart(RomanizationTable));
 			}
 
 			/// <summary>
@@ -143,8 +115,9 @@ namespace Romanization
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
+			[Pure]
 			public string Process(string text)
-				=> text.ReplaceFromChart(RomanizationTable);
+				=> Process(text, DefaultCulture);
 		}
 	}
 }

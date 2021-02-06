@@ -22,7 +22,7 @@ namespace Romanization
 		public sealed class HanjaReadings : IReadingsRomanizationSystem<HanjaReadings.ReadingTypes>
 		{
 			/// <inheritdoc />
-			public bool TransliterationSystem => false;
+			public SystemType Type => SystemType.PhonemicTranscription;
 
 			/// <summary>
 			/// The supported reading types for Hanja. In this case, Hangeul is the only supported one.

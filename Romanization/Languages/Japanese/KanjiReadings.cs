@@ -22,7 +22,7 @@ namespace Romanization
 		public sealed class KanjiReadings : IReadingsRomanizationSystem<KanjiReadings.ReadingTypes>
 		{
 			/// <inheritdoc />
-			public bool TransliterationSystem => false;
+			public SystemType Type => SystemType.PhonemicTranscription;
 
 			/// <summary>
 			/// The supported reading types for Kanji.

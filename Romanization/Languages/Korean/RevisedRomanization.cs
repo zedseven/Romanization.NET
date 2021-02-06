@@ -23,7 +23,7 @@ namespace Romanization
 		public sealed class RevisedRomanization : IRomanizationSystem
 		{
 			/// <inheritdoc />
-			public bool TransliterationSystem => false;
+			public SystemType Type => SystemType.PhonemicTranscription;
 
 			private readonly struct HyphenString
 			{

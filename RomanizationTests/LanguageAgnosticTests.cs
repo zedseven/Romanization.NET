@@ -1,9 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Romanization;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable StringLiteralTypo
 
-namespace Romanization.Tests.LanguageAgnosticTests
+namespace RomanizationTests.LanguageAgnosticTests
 {
 	[TestClass]
 	public class LanguageAgnosticTests

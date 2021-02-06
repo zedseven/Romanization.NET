@@ -22,7 +22,7 @@ namespace Romanization
 		public sealed class HanyuPinyin : IReadingsRomanizationSystem<HanyuPinyin.ReadingTypes>
 		{
 			/// <inheritdoc />
-			public bool TransliterationSystem => false;
+			public SystemType Type => SystemType.PhonemicTranscription;
 
 			/// <summary>
 			/// The supported reading types for Hànyǔ Pīnyīn.

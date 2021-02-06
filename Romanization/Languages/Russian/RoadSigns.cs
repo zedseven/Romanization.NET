@@ -1,5 +1,7 @@
-﻿using Romanization.LanguageAgnostic;
+using Romanization.LanguageAgnostic;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Globalization;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -17,10 +19,13 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs'>https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs</a>
 		/// </summary>
-		public sealed class RoadSigns : IRomanizationSystem
+		public sealed class RoadSigns : IMultiCulturalRomanizationSystem
 		{
 			/// <inheritdoc />
-			public bool TransliterationSystem => true;
+			public SystemType Type => SystemType.Transliteration;
+
+			/// <inheritdoc />
+			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
 
 			// System-Specific Constants
 			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
@@ -30,11 +35,11 @@ namespace Romanization
 				"${1}Ye", "${1}ye");
 
 			private readonly CharSubCased YoVowelsSub = new CharSubCased(
-				$"(^|\\b|[{RussianVowels}ЪъЬь])Ё", $"(^|\\b|[{RussianVowels}ЪъЬь])ё",
+				$"(^|\\b|[{RussianVowels}ЪъЬь])Ё", $"(^|\\b|[{RussianVowels}ЪъЬь])ё",
 				"${1}Yo", "${1}yo");
 
 			private readonly CharSubCased YoExceptionsSub = new CharSubCased(
-				"(^|\\b|[ЧчШшЩщЖж])Ё", "(^|\\b|[ЧчШшЩщЖж])ё",
+				"(^|\\b|[ЧчШшЩщЖж])Ё", "(^|\\b|[ЧчШшЩщЖж])ё",
 				"${1}E", "${1}e");
 
 			/// <summary>
@@ -46,74 +51,61 @@ namespace Romanization
 
 				// Sourced from https://en.wikipedia.org/wiki/Romanization_of_Russian
 
-				RomanizationTable["А"] = "A";
 				RomanizationTable["а"] = "a";
-				RomanizationTable["Б"] = "B";
 				RomanizationTable["б"] = "b";
-				RomanizationTable["В"] = "V";
 				RomanizationTable["в"] = "v";
-				RomanizationTable["Г"] = "G";
 				RomanizationTable["г"] = "g";
-				RomanizationTable["Д"] = "D";
 				RomanizationTable["д"] = "d";
-				RomanizationTable["Е"] = "E";
 				RomanizationTable["е"] = "e";
-				RomanizationTable["Ё"] = "Ye";
-				RomanizationTable["ё"] = "ye";
-				RomanizationTable["Ж"] = "Zh";
+				RomanizationTable["ё"] = "ye";
 				RomanizationTable["ж"] = "zh";
-				RomanizationTable["З"] = "Z";
 				RomanizationTable["з"] = "z";
-				RomanizationTable["И"] = "I";
 				RomanizationTable["и"] = "i";
-				RomanizationTable["Й"] = "Y";
-				RomanizationTable["й"] = "y";
-				RomanizationTable["К"] = "K";
+				RomanizationTable["й"] = "y";
 				RomanizationTable["к"] = "k";
-				RomanizationTable["Л"] = "L";
 				RomanizationTable["л"] = "l";
-				RomanizationTable["М"] = "M";
 				RomanizationTable["м"] = "m";
-				RomanizationTable["Н"] = "N";
 				RomanizationTable["н"] = "n";
-				RomanizationTable["О"] = "O";
 				RomanizationTable["о"] = "o";
-				RomanizationTable["П"] = "P";
 				RomanizationTable["п"] = "p";
-				RomanizationTable["Р"] = "R";
 				RomanizationTable["р"] = "r";
-				RomanizationTable["С"] = "S";
 				RomanizationTable["с"] = "s";
-				RomanizationTable["Т"] = "T";
 				RomanizationTable["т"] = "t";
-				RomanizationTable["У"] = "U";
 				RomanizationTable["у"] = "u";
-				RomanizationTable["Ф"] = "F";
 				RomanizationTable["ф"] = "f";
-				RomanizationTable["Х"] = "Kh";
 				RomanizationTable["х"] = "kh";
-				RomanizationTable["Ц"] = "Ts";
 				RomanizationTable["ц"] = "ts";
-				RomanizationTable["Ч"] = "Ch";
 				RomanizationTable["ч"] = "ch";
-				RomanizationTable["Ш"] = "Sh";
 				RomanizationTable["ш"] = "sh";
-				RomanizationTable["Щ"] = "Shch";
 				RomanizationTable["щ"] = "shch";
-				RomanizationTable["Ъ"] = "ʹ";
 				RomanizationTable["ъ"] = "ʹ";
-				RomanizationTable["Ы"] = "Y";
 				RomanizationTable["ы"] = "y";
-				RomanizationTable["Ь"] = "ʹ";
 				RomanizationTable["ь"] = "ʹ";
-				RomanizationTable["Э"] = "E";
 				RomanizationTable["э"] = "e";
-				RomanizationTable["Ю"] = "Yu";
 				RomanizationTable["ю"] = "yu";
-				RomanizationTable["Я"] = "Ya";
 				RomanizationTable["я"] = "ya";
 
 				#endregion
+			}
+
+			/// <summary>
+			/// Performs general road sign romanization on Russian text.<br />
+			/// Supports providing a specific <paramref name="nativeCulture"/> to process with, as long as the country code is <c>ru</c>.
+			/// </summary>
+			/// <param name="text">The text to romanize.</param>
+			/// <param name="nativeCulture">The culture to use.</param>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
+			/// <exception cref="IrrelevantCultureException"><paramref name="nativeCulture"/> is irrelevant to the language/region.</exception>
+			[Pure]
+			public string Process(string text, CultureInfo nativeCulture)
+			{
+				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
+					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
+				return Utilities.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation()
+					// Render ye (Е) and yo (Ё) in different forms depending on what preceeds them
+					.ReplaceMany(YeVowelsSub, YoVowelsSub, YoExceptionsSub)
+					// Do remaining romanization replacements
+					.ReplaceFromChart(RomanizationTable));
 			}
 
 			/// <summary>
@@ -121,12 +113,9 @@ namespace Romanization
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
+			[Pure]
 			public string Process(string text)
-				=> text
-					// Render ye (Е) and yo (Ё) in different forms depending on what preceeds them
-					.ReplaceMany(YeVowelsSub, YoVowelsSub, YoExceptionsSub)
-					// Do remaining romanization replacements
-					.ReplaceFromChart(RomanizationTable);
+				=> Process(text, DefaultCulture);
 		}
 	}
 }

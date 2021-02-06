@@ -20,7 +20,7 @@ namespace Romanization
 		public sealed class ModifiedHepburn : IRomanizationSystem
 		{
 			/// <inheritdoc />
-			public bool TransliterationSystem => false;
+			public SystemType Type => SystemType.PhonemicTranscription;
 
 			// System-Specific Constants
 			private readonly Dictionary<string, string> GojuonChart = new Dictionary<string, string>();
@@ -32,10 +32,10 @@ namespace Romanization
 			private readonly CharSub LongOSub = new CharSub($"o{Choonpu}", Constants.MacronO, false);
 			private readonly CharSub LongUSub = new CharSub($"u{Choonpu}", Constants.MacronU, false);
 
-			private readonly CharSub SyllabicNVowelsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Vowels}])", "n'${1}");
-			private readonly CharSub SyllabicNConsonantsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.Consonants}])", "n${1}");
+			private readonly CharSub SyllabicNVowelsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinVowels}])", "n'${1}");
+			private readonly CharSub SyllabicNConsonantsSub = new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinConsonants}])", "n${1}");
 
-			private readonly CharSub SokuonGeneralCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.Consonants}])", "${1}${1}");
+			private readonly CharSub SokuonGeneralCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.LatinConsonants}])", "${1}${1}");
 			private readonly CharSub SokuonChCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]ch", "tch");
 
 			/// <summary>
