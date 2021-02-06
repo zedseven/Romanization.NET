@@ -24,7 +24,7 @@ script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
 - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura RomanizationTests/RomanizationTests.csproj
 
-after_script: ./cc-test-reporter after-build --input RomanizationTests\coverage.cobertura.xml --coverage-input-type cobertura --exit-code $TRAVIS_TEST_RESULT
+after_script: ./cc-test-reporter after-build --coverage-input-type cobertura --exit-code $TRAVIS_TEST_RESULT
 
 before_deploy: echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.6/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
 
