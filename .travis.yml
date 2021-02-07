@@ -22,10 +22,12 @@ before_script:
 
 script:
 - dotnet build RomanizationNet.sln --configuration Release --no-restore
-- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura RomanizationTests/RomanizationTests.csproj
+- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov RomanizationTests/RomanizationTests.csproj
 
 after_script:
-- ./cc-test-reporter format-coverage --input-type cobertura --output RomanizationTests/codeclimate.json RomanizationTests/coverage.cobertura.xml
+- cat RomanizationTests/coverage.cobertura.xml
+- ./cc-test-reporter format-coverage --input-type lcov --output RomanizationTests/codeclimate.json RomanizationTests/coverage.cobertura.xml
+- cat RomanizationTests/codeclimate.json
 - ./cc-test-reporter upload-coverage --input RomanizationTests/codeclimate.json
 
 before_deploy: echo "Installing docfx..." && wget -q "https://github.com/dotnet/docfx/releases/download/v2.56.6/docfx.zip" && unzip -q -o -d ./docfx docfx.zip
