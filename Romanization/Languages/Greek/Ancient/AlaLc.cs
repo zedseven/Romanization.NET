@@ -27,12 +27,8 @@ namespace Romanization
 			/// and<br />
 			/// <a href='https://www.loc.gov/catdir/cpso/romanization/greek.pdf'>https://www.loc.gov/catdir/cpso/romanization/greek.pdf</a>
 			/// </summary>
-			/// <remarks>Attic numeral support is somewhat contrived, as there's no real way to distinguish them from
-			/// other Greek text and so in-text detection works based on presence of Unicode overbar characters.
-			/// This isn't realistically something that would be seen, and the special Attic characters often don't
-			/// even work with the overbar combining character. Perhaps a better solution is possible, but overbars
-			/// seem to stand the highest chance of having actually been in use, so that's what it looks for. For
-			/// general parsing of Attic numerals, check out the <see cref="AtticNumerals"/> system.</remarks>
+			/// <remarks>Attic numeral support is somewhat contrived. Check out
+			/// <see cref="AtticNumerals.ProcessNumeralsInText"/> for more information.</remarks>
 			public sealed class AlaLc : IExtendedMultiCulturalRomanizationSystem
 			{
 				/// <inheritdoc />
@@ -56,10 +52,10 @@ namespace Romanization
 				private readonly INumeralParsingSystem NumeralsSystem;
 
 				// System-Specific Constants
-				private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> DiphthongTable = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> RomanizationTable        = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> DiphthongTable           = new Dictionary<string, string>();
 				private readonly Dictionary<string, string> SpecificCombinationTable = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> PunctuationTable = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> PunctuationTable         = new Dictionary<string, string>();
 
 				private readonly CaseAwareSub RhoAspiratedSub = new CaseAwareSub("(?:\\bρ|(?<=ρ)ρ(?!\\b|ρ))", "rh");
 
@@ -78,7 +74,7 @@ namespace Romanization
 				{
 					OutputNumeralType = outputNumeralType;
 					VeryOld = veryOld;
-					NumeralsSystem = !veryOld ? (INumeralParsingSystem) new GreekNumerals() : new AtticNumerals();
+					NumeralsSystem = !VeryOld ? (INumeralParsingSystem) new GreekNumerals() : new AtticNumerals();
 
 					#region Romanization Chart
 
@@ -136,11 +132,12 @@ namespace Romanization
 					RomanizationTable["ϡ"] = "";  // Sampi
 					RomanizationTable["ͳ"] = "";  // Sampi
 					RomanizationTable["ϻ"] = "";  // San
+					RomanizationTable["Ϲ"] = "s"; // Lunate sigma
 					RomanizationTable["ϲ"] = "s"; // Lunate sigma
 					RomanizationTable["ϳ"] = "";  // Yot
 
 					// Punctuation
-					if (veryOld)
+					if (VeryOld)
 					{
 						PunctuationTable["."]      = ","; // Low dot (in ancient Greek this acted as a short breath, or comma)
 						PunctuationTable["·"]      = ";"; // Mid dot (in ancient Greek this acted as a long breath, or semicolon)
@@ -186,7 +183,7 @@ namespace Romanization
 							              "\u0303\u0342" + // Tilde
 							              "\u0311" +       // Inverted breve
 							              "\u0345")        // Iota subscript
-							.ReplaceFromChart(PunctuationTable);
+							.ReplaceFromChartWithSameCase(PunctuationTable);
 
 						// Convert numerals
 						text = OutputNumeralType == OutputNumeralType.Roman
@@ -197,10 +194,10 @@ namespace Romanization
 						return text
 							// Do special provisions
 							.ReplaceMany(RhoAspiratedSub, RoughBreathingVowelSub)
-							.ReplaceFromChart(DiphthongTable)
-							.ReplaceFromChart(SpecificCombinationTable)
+							.ReplaceFromChartWithSameCase(DiphthongTable)
+							.ReplaceFromChartWithSameCase(SpecificCombinationTable)
 							// Do regular character replacement
-							.ReplaceFromChart(RomanizationTable);
+							.ReplaceFromChartWithSameCase(RomanizationTable);
 					});
 				}
 

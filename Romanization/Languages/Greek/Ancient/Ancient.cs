@@ -13,6 +13,9 @@ namespace Romanization
 		/// </summary>
 		public static partial class Ancient
 		{
+			/// <summary>
+			/// Supported units for the Greek numeral systems.
+			/// </summary>
 			public enum Units
 			{
 				/// <summary>
@@ -55,7 +58,7 @@ namespace Romanization
 				/// The plural of mina, which is a unit of weight and currency value.<br />
 				/// See <a href='https://en.wiktionary.org/wiki/mina#English'>https://en.wiktionary.org/wiki/mina#English</a> for more info.
 				/// </summary>
-				Mnas,
+				Mnas
 			}
 		}
 	}

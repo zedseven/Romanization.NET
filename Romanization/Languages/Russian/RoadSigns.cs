@@ -105,7 +105,7 @@ namespace Romanization
 					// Render ye (Е) and yo (Ё) in different forms depending on what preceeds them
 					.ReplaceMany(YeVowelsSub, YoVowelsSub, YoExceptionsSub)
 					// Do remaining romanization replacements
-					.ReplaceFromChart(RomanizationTable));
+					.ReplaceFromChartWithSameCase(RomanizationTable));
 			}
 
 			/// <summary>

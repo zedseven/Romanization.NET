@@ -128,7 +128,7 @@ namespace Romanization
 
 					// Digraphs first, if they're to be inserted
 					if (useDigraphs)
-						text = text.ReplaceFromChart(DigraphTable)
+						text = text.ReplaceFromChartWithSameCase(DigraphTable)
 							.ReplaceMany(IDigraphSub,
 								YeryExceptionDigraphSub, YeryVowelsDigraphSub,
 								EConsonantsDigraphSub);
@@ -136,7 +136,7 @@ namespace Romanization
 					// Then single characters
 					return text
 						.ReplaceMany(YeProvisionSub, YoProvisionSub)
-						.ReplaceFromChart(RomanizationTable);
+						.ReplaceFromChartWithSameCase(RomanizationTable);
 				});
 			}
 

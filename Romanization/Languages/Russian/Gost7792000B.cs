@@ -109,9 +109,9 @@ namespace Romanization
 					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
 				return Utilities.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation()
 					// Do romanization replacements
-					.ReplaceFromChart(RomanizationTable)
+					.ReplaceFromChartWithSameCase(RomanizationTable)
 					// Do cased romanization replacements
-					.ReplaceFromChart(CasedTable, StringComparison.CurrentCulture)
+					.ReplaceFromChartWithSameCase(CasedTable, StringComparison.CurrentCulture)
 					// Render tse (Ц/ц) as "c" if in front of e, i, j, or y, and as "cz" otherwise
 					.ReplaceMany(TseVowelsSub, TseConsonantsSub));
 			}

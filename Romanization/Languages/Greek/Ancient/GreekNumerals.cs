@@ -221,9 +221,10 @@ namespace Romanization
 				/// Processes all Greek numerals in the text.
 				/// </summary>
 				/// <param name="text">The text to search for numerals.</param>
-				/// <param name="numeralProcessor">The function to use to transform the value from <see cref="Process"/>
+				/// <param name="numeralProcessor">The function to use to transform the value from <see cref="Process(string)"/>
 				/// into a string to put in the text.</param>
-				/// <returns></returns>
+				/// <returns>A copy of <paramref name="text"/>, but with all detected Greek numerals processed using
+				/// <paramref name="numeralProcessor"/>.</returns>
 				public string ProcessNumeralsInText(string text, Func<NumeralValue, string> numeralProcessor)
 				{
 					text = text.LanguageWidePreparation();

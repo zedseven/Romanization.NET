@@ -1,8 +1,10 @@
 # Romanization.NET
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 [![Build Status](https://api.travis-ci.org/zedseven/Romanization.NET.svg?branch=main)](https://travis-ci.org/zedseven/Romanization.NET)
-[![NuGet](https://img.shields.io/nuget/v/Romanization.NET.svg)](https://www.nuget.org/packages/Romanization.NET/)
-[![# Issues](https://img.shields.io/github/issues/zedseven/Romanization.NET)](https://github.com/zedseven/Romanization.NET/issues)
+[![NuGet](https://img.shields.io/nuget/v/Romanization.NET.svg?logo=nuget)](https://www.nuget.org/packages/Romanization.NET/)
+[![# Issues](https://img.shields.io/github/issues/zedseven/Romanization.NET?logo=github)](https://github.com/zedseven/Romanization.NET/issues)
+[![Maintainability](https://img.shields.io/codeclimate/maintainability/zedseven/Romanization.NET?logo=code-climate)](https://codeclimate.com/github/zedseven/Romanization.NET/maintainability)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/zedseven/Romanization.NET?logo=code-climate)](https://codeclimate.com/github/zedseven/Romanization.NET/test_coverage)
 
 ## Project Goals
 This project aims to provide a comprehensive suite of [romanization](https://en.wikipedia.org/wiki/Romanization) systems

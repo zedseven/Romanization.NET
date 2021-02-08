@@ -103,9 +103,9 @@ namespace Romanization
 				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
 					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
 				return Utilities.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation()
-					.ReplaceFromChart(DigraphTable)
+					.ReplaceFromChartWithSameCase(DigraphTable)
 					.ReplaceMany(HardSignSub)
-					.ReplaceFromChart(RomanizationTable));
+					.ReplaceFromChartWithSameCase(RomanizationTable));
 			}
 
 			/// <summary>

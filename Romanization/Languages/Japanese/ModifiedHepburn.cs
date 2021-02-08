@@ -302,9 +302,9 @@ namespace Romanization
 					// Insert spaces at boundaries between Latin characters and Japanese ones (ie. ニンテンドーDSiブラウザー)
 					.SeparateLanguageBoundaries()
 					// Do multi-char combinations first (Yōon)
-					.ReplaceFromChart(YoonChart, StringComparison.CurrentCulture)
+					.ReplaceFromChartWithSameCase(YoonChart, StringComparison.CurrentCulture)
 					// Then single-char replacements (Gojūon)
-					.ReplaceFromChart(GojuonChart, StringComparison.CurrentCulture)
+					.ReplaceFromChartWithSameCase(GojuonChart, StringComparison.CurrentCulture)
 					// Do special subsitutions
 					.ReplaceMany(
 						// Convert chōonpu usage in original text into macrons to mark long vowels in a romanized manner

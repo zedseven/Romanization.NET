@@ -25,7 +25,7 @@ script:
 - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=lcov RomanizationTests/RomanizationTests.csproj
 
 after_script:
-- cat RomanizationTests/coverage.cobertura.xml
+- cat RomanizationTests/coverage.info
 - ./cc-test-reporter format-coverage --input-type lcov --output RomanizationTests/codeclimate.json RomanizationTests/coverage.info
 - cat RomanizationTests/codeclimate.json
 - ./cc-test-reporter upload-coverage --input RomanizationTests/codeclimate.json

@@ -5,16 +5,16 @@
     <Authors>Zacchary Dempsey-Plante</Authors>
     <Company>Zacchary Dempsey-Plante</Company>
     <Description>A library for romanization of languages written in non-Latin alphabets.</Description>
-    <Copyright>Copyright © Zacchary Dempsey-Plante 2020</Copyright>
+    <Copyright>Copyright © Zacchary Dempsey-Plante 2020-2021</Copyright>
     <PackageProjectUrl>https://github.com/zedseven/Romanization.NET</PackageProjectUrl>
     <RepositoryUrl>https://github.com/zedseven/Romanization.NET.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <NeutralLanguage>en-CA</NeutralLanguage>
-    <Version>0.9.3</Version>
-    <AssemblyVersion>0.9.3.0</AssemblyVersion>
+    <Version>0.9.4</Version>
+    <AssemblyVersion>0.9.4.0</AssemblyVersion>
     <AssemblyName>Romanization.NET</AssemblyName>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>Romanization Chinese Japanese Korean</PackageTags>
+    <PackageTags>Romanization Language Chinese Greek Japanese Korean Russian</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -26,7 +26,7 @@
 	  <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
 		  <_Parameter1>RomanizationTests</_Parameter1>
 	  </AssemblyAttribute>
-		<Content Include="contentFiles/**/*.csv" copyToOutput="true">
+		<Content Include="contentFiles/**/*.csv" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always">
 			<IncludeInPackage>true</IncludeInPackage>
 			<CopyToOutput>true</CopyToOutput>
 			<BuildAction>Content</BuildAction>

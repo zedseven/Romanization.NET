@@ -25,6 +25,13 @@ namespace Romanization
 			/// <inheritdoc />
 			public SystemType Type => SystemType.PhonemicTranscription;
 
+			/// <summary>
+			/// Whether to insert a hyphen ('-') between syllables in non-required
+			/// spots. This can help to distinguish between ambiguous words: <c>가을 -> ga-eul</c> (fall; autumn) vs.
+			/// <c>개울</c> -> gae-ul (stream).
+			/// </summary>
+			public readonly bool HyphenateSyllables;
+
 			private readonly struct HyphenString
 			{
 				public readonly AspirationString BaseString;

@@ -243,7 +243,12 @@ namespace Romanization.LanguageAgnostic
 			=> subs.Aggregate(text, (str, sub) => sub.Replace(str));
 
 		[Pure]
-		public static string ReplaceFromChart(this string text, Dictionary<string, string> chart, StringComparison strComp = StringComparison.CurrentCultureIgnoreCase)
+		public static string ReplaceFromChart(this string text, Dictionary<string, string> chart, StringComparison strComp = StringComparison.CurrentCulture)
+			=> chart.Keys.Aggregate(text, (current, key)
+				=> current.Replace(key, chart[key], strComp));
+
+		[Pure]
+		public static string ReplaceFromChartWithSameCase(this string text, Dictionary<string, string> chart, StringComparison strComp = StringComparison.CurrentCultureIgnoreCase)
 			=> chart.Keys.Aggregate(text, (current, key)
 				=> current.ReplaceWithSameCase(key, chart[key], strComp));
 

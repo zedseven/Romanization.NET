@@ -164,6 +164,23 @@ namespace Romanization
 				NumeralValue INumeralParsingSystem.Process(string text)
 					=> Process(text).ToUnitlessNumeralValue();
 
+				/// <summary>
+				/// Processes all Attic numerals in the text.
+				/// </summary>
+				/// <param name="text">The text to search for numerals.</param>
+				/// <param name="numeralProcessor">The function to use to transform the value from <see cref="Process(string)"/>
+				/// into a string to put in the text.</param>
+				/// <returns>A copy of <paramref name="text"/>, but with all detected Attic numerals processed using
+				/// <paramref name="numeralProcessor"/>.</returns>
+				/// <remarks>Attic numeral support is somewhat contrived, as there's no real way to distinguish them from
+				/// other Greek text and so in-text detection works based on presence of Unicode overbar characters.
+				/// This isn't realistically something that would be seen in practice, and the special Attic characters
+				/// often don't even work with the overbar combining character. Perhaps a better solution is possible,
+				/// but overbars seem to stand the highest chance of having actually been in use, so that's what it
+				/// looks for.<br />
+                /// If this particular function is something you need, open an issue and provide an example of what
+                /// you need to romanize.<br />
+				/// For general parsing of Attic numerals, check out <see cref="AtticNumerals.Process"/>.</remarks>
 				public string ProcessNumeralsInText(string text, Func<NumeralValue<Units>, string> numeralProcessor)
 				{
 					text = text.LanguageWidePreparation();
