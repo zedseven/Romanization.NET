@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Globalization;
@@ -29,7 +29,7 @@ namespace Romanization
 			/// </summary>
 			/// <remarks>Attic numeral support is somewhat contrived. Check out
 			/// <see cref="AtticNumerals.ProcessNumeralsInText"/> for more information.</remarks>
-			public sealed class AlaLc : IExtendedMultiCulturalRomanizationSystem
+			public sealed class AlaLc : IMultiInOutCultureSystem
 			{
 				/// <inheritdoc />
 				public SystemType Type => SystemType.Transliteration;
@@ -52,10 +52,10 @@ namespace Romanization
 				private readonly INumeralParsingSystem NumeralsSystem;
 
 				// System-Specific Constants
-				private readonly Dictionary<string, string> RomanizationTable        = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> DiphthongTable           = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> RomanizationTable		= new Dictionary<string, string>();
+				private readonly Dictionary<string, string> DiphthongTable		   = new Dictionary<string, string>();
 				private readonly Dictionary<string, string> SpecificCombinationTable = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> PunctuationTable         = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> PunctuationTable		 = new Dictionary<string, string>();
 
 				private readonly CaseAwareSub RhoAspiratedSub = new CaseAwareSub("(?:\\bρ|(?<=ρ)ρ(?!\\b|ρ))", "rh");
 
@@ -81,32 +81,32 @@ namespace Romanization
 					// Sourced from https://en.wikipedia.org/wiki/Romanization_of_Greek
 
 					// Main characters (2021)
-					RomanizationTable["α"]       = "a";
-					RomanizationTable["β"]       = "b";
-					RomanizationTable["γ"]       = "g";  // has special provisions
-					RomanizationTable["δ"]       = "d";
-					RomanizationTable["ε"]       = "e";
-					RomanizationTable["ζ"]       = "z";
-					RomanizationTable["η"]       = "ē";
-					RomanizationTable["θ"]       = "th";
-					RomanizationTable["ι"]       = "i";
-					RomanizationTable["κ"]       = "k";
-					RomanizationTable["λ"]       = "l";
-					RomanizationTable["μ"]       = "m";
-					RomanizationTable["ν"]       = "n";
-					RomanizationTable["ξ"]       = "x";
-					RomanizationTable["ο"]       = "o";
-					RomanizationTable["π"]       = "p";
+					RomanizationTable["α"]	   = "a";
+					RomanizationTable["β"]	   = "b";
+					RomanizationTable["γ"]	   = "g";  // has special provisions
+					RomanizationTable["δ"]	   = "d";
+					RomanizationTable["ε"]	   = "e";
+					RomanizationTable["ζ"]	   = "z";
+					RomanizationTable["η"]	   = "ē";
+					RomanizationTable["θ"]	   = "th";
+					RomanizationTable["ι"]	   = "i";
+					RomanizationTable["κ"]	   = "k";
+					RomanizationTable["λ"]	   = "l";
+					RomanizationTable["μ"]	   = "m";
+					RomanizationTable["ν"]	   = "n";
+					RomanizationTable["ξ"]	   = "x";
+					RomanizationTable["ο"]	   = "o";
+					RomanizationTable["π"]	   = "p";
 					RomanizationTable["ρ\u0314"] = "rh";
-					RomanizationTable["ρ"]       = "r";  // has special provisions
-					RomanizationTable["σ"]       = "s";
-					RomanizationTable["ς"]       = "s";
-					RomanizationTable["τ"]       = "t";
-					RomanizationTable["υ"]       = "y";  // has special provisions
-					RomanizationTable["φ"]       = "ph";
-					RomanizationTable["χ"]       = "ch";
-					RomanizationTable["ψ"]       = "ps";
-					RomanizationTable["ω"]       = "ō";
+					RomanizationTable["ρ"]	   = "r";  // has special provisions
+					RomanizationTable["σ"]	   = "s";
+					RomanizationTable["ς"]	   = "s";
+					RomanizationTable["τ"]	   = "t";
+					RomanizationTable["υ"]	   = "y";  // has special provisions
+					RomanizationTable["φ"]	   = "ph";
+					RomanizationTable["χ"]	   = "ch";
+					RomanizationTable["ψ"]	   = "ps";
+					RomanizationTable["ω"]	   = "ō";
 
 					DiphthongTable["αι"] = "ae";
 					DiphthongTable["ει"] = "ei";
@@ -139,17 +139,17 @@ namespace Romanization
 					// Punctuation
 					if (VeryOld)
 					{
-						PunctuationTable["."]      = ","; // Low dot (in ancient Greek this acted as a short breath, or comma)
-						PunctuationTable["·"]      = ";"; // Mid dot (in ancient Greek this acted as a long breath, or semicolon)
+						PunctuationTable["."]	  = ","; // Low dot (in ancient Greek this acted as a short breath, or comma)
+						PunctuationTable["·"]	  = ";"; // Mid dot (in ancient Greek this acted as a long breath, or semicolon)
 						PunctuationTable["\u0387"] = ";"; // Distinct from above but visually the same
 						PunctuationTable["\u02D9"] = "."; // High dot (in ancient Greek this acted as a full stop)
 						PunctuationTable["\u205A"] = "."; // In ancient texts the Greek two-dot punctuation mark (looks like a colon) served as the full stop
 						PunctuationTable["\u203F"] = "-"; // Papyrological hyphen
 						PunctuationTable["\u035C"] = "-"; // Papyrological hyphen
 					}
-					PunctuationTable[";"]      = "?";
+					PunctuationTable[";"]	  = "?";
 					PunctuationTable["\u037E"] = "?"; // Distinct from above but visually the same
-					PunctuationTable["’"]      = "h"; // Sometimes used as an aspiration mark
+					PunctuationTable["’"]	  = "h"; // Sometimes used as an aspiration mark
 
 					#endregion
 				}
@@ -171,18 +171,18 @@ namespace Romanization
 				{
 					if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "el")
 						throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-					return Utilities.RunWithCulture(nativeCulture, () =>
+					return CulturalOperations.RunWithCulture(nativeCulture, () =>
 					{
 						text = text
 							// General preparation, normalization
 							.LanguageWidePreparation()
 							// Remove diacritics that this system ignores
 							.WithoutChars("\u0300\u0340" + // Grave accent
-							              "\u0301\u0341" + // Acute accent
-							              "\u0313\u0343" + // Smooth breathing/koronis
-							              "\u0303\u0342" + // Tilde
-							              "\u0311" +       // Inverted breve
-							              "\u0345")        // Iota subscript
+										  "\u0301\u0341" + // Acute accent
+										  "\u0313\u0343" + // Smooth breathing/koronis
+										  "\u0303\u0342" + // Tilde
+										  "\u0311" +	   // Inverted breve
+										  "\u0345")		// Iota subscript
 							.ReplaceFromChartWithSameCase(PunctuationTable);
 
 						// Convert numerals
@@ -214,6 +214,16 @@ namespace Romanization
 				[Pure]
 				public string Process(string text, CultureInfo nativeCulture)
 					=> Process(text, nativeCulture, CultureInfo.CurrentCulture);
+
+				/// <summary>
+				/// Performs ALA-LC Greek romanization on the given text.
+				/// </summary>
+				/// <param name="text">The text to romanize.</param>
+				/// <param name="romanizedCulture">The culture to romanize to.</param>
+				/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
+				[Pure]
+				public string ProcessToCulture(string text, CultureInfo romanizedCulture)
+					=> Process(text, DefaultCulture, romanizedCulture);
 
 				/// <summary>
 				/// Performs ALA-LC Greek romanization on the given text.

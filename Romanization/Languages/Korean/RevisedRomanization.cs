@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;

@@ -1,4 +1,4 @@
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Globalization;
@@ -19,7 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf'>https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf</a>
 		/// </summary>
-		public sealed class Icao9303 : IMultiCulturalRomanizationSystem
+		public sealed class Icao9303 : IMultiInCultureSystem
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.Transliteration;
@@ -91,7 +91,7 @@ namespace Romanization
 			{
 				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
 					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-				return Utilities.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation().ReplaceFromChartWithSameCase(RomanizationTable));
+				return CulturalOperations.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation().ReplaceFromChartWithSameCase(RomanizationTable));
 			}
 
 			/// <summary>

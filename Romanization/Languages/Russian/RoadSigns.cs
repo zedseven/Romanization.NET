@@ -1,4 +1,4 @@
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Globalization;
@@ -19,7 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs'>https://en.wikipedia.org/wiki/Romanization_of_Russian#Street_and_road_signs</a>
 		/// </summary>
-		public sealed class RoadSigns : IMultiCulturalRomanizationSystem
+		public sealed class RoadSigns : IMultiInCultureSystem
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.Transliteration;
@@ -101,7 +101,7 @@ namespace Romanization
 			{
 				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
 					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-				return Utilities.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation()
+				return CulturalOperations.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation()
 					// Render ye (Е) and yo (Ё) in different forms depending on what preceeds them
 					.ReplaceMany(YeVowelsSub, YoVowelsSub, YoExceptionsSub)
 					// Do remaining romanization replacements

@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable StringLiteralTypo

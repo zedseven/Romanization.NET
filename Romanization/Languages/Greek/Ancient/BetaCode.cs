@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -21,7 +21,7 @@ namespace Romanization
 			/// For more information, visit:
 			/// <a href='https://en.wikipedia.org/wiki/Beta_Code'>https://en.wikipedia.org/wiki/Beta_Code</a>
 			/// </summary>
-			public sealed class BetaCode : IMultiCulturalRomanizationSystem
+			public sealed class BetaCode : IMultiInCultureSystem
 			{
 				/// <inheritdoc />
 				public SystemType Type => SystemType.Transliteration;
@@ -30,8 +30,8 @@ namespace Romanization
 				public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("el-GR");
 
 				// System-Specific Constants
-				private readonly Dictionary<string, string> DiacriticsTable        = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> PunctuationTable       = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> DiacriticsTable		= new Dictionary<string, string>();
+				private readonly Dictionary<string, string> PunctuationTable	   = new Dictionary<string, string>();
 				private readonly Dictionary<string, string> CommonReplacementTable = new Dictionary<string, string>();
 				//private readonly Dictionary<string, string> FullReplacementTable   = new Dictionary<string, string>();
 
@@ -56,21 +56,21 @@ namespace Romanization
 					DiacriticsTable["\u0306"] =  "'"; // Breve
 
 					// Punctuation
-					//PunctuationTable["."] =       "."; // Low dot
-					//PunctuationTable[","] =       ","; // Comma
-					PunctuationTable["\u0387"] =    ":"; // Mid dot
-					//PunctuationTable[";"] =       ";"; // Question mark
-					PunctuationTable["\u037E"] =    ";"; // Distinct from above but visually the same
+					//PunctuationTable["."] =	   "."; // Low dot
+					//PunctuationTable[","] =	   ","; // Comma
+					PunctuationTable["\u0387"] =	":"; // Mid dot
+					//PunctuationTable[";"] =	   ";"; // Question mark
+					PunctuationTable["\u037E"] =	";"; // Distinct from above but visually the same
 					PunctuationTable["\u02D9"] = "#762"; // High dot (in ancient Greek this acted as a full stop)
 					PunctuationTable["\u205A"] =  "#52"; // In ancient texts the Greek two-dot punctuation mark (looks like a colon) served as the full stop
-					//PunctuationTable["'"] =       "'"; // Apostrophe
-					PunctuationTable["’"] =         "'"; // Distinct from above but visually the same
-					//PunctuationTable["-"] =       "-"; // Hyphen
-					PunctuationTable["‐"] =         "-"; // Distinct from above but visually the same
-					PunctuationTable["—"] =         "_"; // Dash
-					PunctuationTable["ʹ"] =         "#"; // Keraia
-					PunctuationTable["ʹ"] =         "#"; // Distinct from above but visually the same
-					PunctuationTable["ʺ"] =         "#"; // Double Keraia
+					//PunctuationTable["'"] =	   "'"; // Apostrophe
+					PunctuationTable["’"] =		 "'"; // Distinct from above but visually the same
+					//PunctuationTable["-"] =	   "-"; // Hyphen
+					PunctuationTable["‐"] =		 "-"; // Distinct from above but visually the same
+					PunctuationTable["—"] =		 "_"; // Dash
+					PunctuationTable["ʹ"] =		 "#"; // Keraia
+					PunctuationTable["ʹ"] =		 "#"; // Distinct from above but visually the same
+					PunctuationTable["ʺ"] =		 "#"; // Double Keraia
 
 					// Main characters (2021)
 					CommonReplacementTable["Α"] =  "*A";
@@ -129,15 +129,15 @@ namespace Romanization
 
 					// Uncommon letters
 					CommonReplacementTable["Ϛ"] =   "*#2"; // Stigma
-					CommonReplacementTable["ϛ"] =    "#2"; // Stigma
+					CommonReplacementTable["ϛ"] =	"#2"; // Stigma
 					CommonReplacementTable["Ϙ"] =   "*#3"; // Koppa
-					CommonReplacementTable["ϙ"] =    "#3"; // Koppa
+					CommonReplacementTable["ϙ"] =	"#3"; // Koppa
 					CommonReplacementTable["Ϟ"] =   "*#3"; // Koppa
-					CommonReplacementTable["ϟ"] =    "#3"; // Koppa
+					CommonReplacementTable["ϟ"] =	"#3"; // Koppa
 					CommonReplacementTable["Ϡ"] =   "*#5"; // Sampi
-					CommonReplacementTable["ϡ"] =    "#5"; // Sampi
+					CommonReplacementTable["ϡ"] =	"#5"; // Sampi
 					CommonReplacementTable["Ͳ"] =   "*#5"; // Sampi
-					CommonReplacementTable["ͳ"] =    "#5"; // Sampi
+					CommonReplacementTable["ͳ"] =	"#5"; // Sampi
 					CommonReplacementTable["Ϻ"] = "*#711"; // San
 					CommonReplacementTable["ϻ"] =  "#711"; // San
 					CommonReplacementTable["Ϳ"] = "*#401"; // Yot
@@ -161,7 +161,7 @@ namespace Romanization
 				{
 					if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "el")
 						throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-					return Utilities.RunWithCulture(nativeCulture, () => text
+					return CulturalOperations.RunWithCulture(nativeCulture, () => text
 						// General preparation, normalization
 						.LanguageWidePreparation()
 						// Do common replacements

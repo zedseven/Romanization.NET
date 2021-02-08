@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -27,16 +27,16 @@ namespace Romanization
 			public sealed class GreekNumerals : INumeralParsingSystem
 			{
 				// System-Specific Constants
-				private readonly Dictionary<char, int> ValueTable     = new Dictionary<char, int>();
-				private const    char   CanonicalDoubleUpperKeraia    = '″';
-				private const    char   CanonicalSingleUpperKeraia    = 'ʹ';
-				private const    char   CanonicalLowerKeraia          = '͵';
-				private const    char   CanonicalOverbar              = '\u0305';
+				private readonly Dictionary<char, int> ValueTable	 = new Dictionary<char, int>();
+				private const	char   CanonicalDoubleUpperKeraia	= '″';
+				private const	char   CanonicalSingleUpperKeraia	= 'ʹ';
+				private const	char   CanonicalLowerKeraia		  = '͵';
+				private const	char   CanonicalOverbar			  = '\u0305';
 				private readonly char[] UpperKeraiaDoubleReplacements = { 'ʺ', '"' };
 				private readonly char[] UpperKeraiaSingleReplacements = { 'ʹ', '\'' };
-				private readonly char[] LowerKeraiaReplacements       = { ',' };
-				private readonly char[] OverbarChars                  = { '\u0305', '‾' };
-				private const    string SigmaTauDigraph               = "ΣΤ";
+				private readonly char[] LowerKeraiaReplacements	   = { ',' };
+				private readonly char[] OverbarChars				  = { '\u0305', '‾' };
+				private const	string SigmaTauDigraph			   = "ΣΤ";
 
 				private readonly Regex OverbarBoundaryRegex = new Regex("\u0305(?!.\u0305|\u0305)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
@@ -221,10 +221,9 @@ namespace Romanization
 				/// Processes all Greek numerals in the text.
 				/// </summary>
 				/// <param name="text">The text to search for numerals.</param>
-				/// <param name="numeralProcessor">The function to use to transform the value from <see cref="Process(string)"/>
+				/// <param name="numeralProcessor">The function to use to transform the value from <see cref="Process"/>
 				/// into a string to put in the text.</param>
-				/// <returns>A copy of <paramref name="text"/>, but with all detected Greek numerals processed using
-				/// <paramref name="numeralProcessor"/>.</returns>
+				/// <returns></returns>
 				public string ProcessNumeralsInText(string text, Func<NumeralValue, string> numeralProcessor)
 				{
 					text = text.LanguageWidePreparation();

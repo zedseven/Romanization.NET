@@ -1,4 +1,4 @@
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Globalization;
@@ -20,7 +20,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian'>https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian</a>
 		/// </summary>
-		public sealed class BgnPcgn : IMultiCulturalRomanizationSystem
+		public sealed class BgnPcgn : IMultiInCultureSystem
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.Transliteration;
@@ -122,7 +122,7 @@ namespace Romanization
 				if (culture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
 					throw new IrrelevantCultureException(culture.DisplayName, nameof(culture));
 
-				return Utilities.RunWithCulture(culture, () =>
+				return CulturalOperations.RunWithCulture(culture, () =>
 				{
 					text = text.LanguageWidePreparation();
 

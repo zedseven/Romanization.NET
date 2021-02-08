@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -19,7 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Kanji'>https://en.wikipedia.org/wiki/Kanji</a>
 		/// </summary>
-		public sealed class KanjiReadings : IReadingsRomanizationSystem<KanjiReadings.ReadingTypes>
+		public sealed class KanjiReadings : IReadingsSystem<KanjiReadings.ReadingTypes>
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.PhonemicTranscription;
@@ -51,8 +51,8 @@ namespace Romanization
 			/// </summary>
 			public KanjiReadings()
 			{
-				Utilities.LoadCharacterMap(KanjiKunFileName, KanjiKunReadings, k => k, v => v.Split(' '));
-				Utilities.LoadCharacterMap(KanjiOnFileName, KanjiOnReadings, k => k, v => v.Split(' '));
+				CsvLoader.LoadCharacterMap(KanjiKunFileName, KanjiKunReadings, k => k, v => v.Split(' '));
+				CsvLoader.LoadCharacterMap(KanjiOnFileName, KanjiOnReadings, k => k, v => v.Split(' '));
 			}
 
 			/// <summary>

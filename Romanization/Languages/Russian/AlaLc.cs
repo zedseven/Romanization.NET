@@ -1,4 +1,4 @@
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Globalization;
@@ -15,10 +15,12 @@ namespace Romanization
 	{
 		/// <summary>
 		/// The ALA-LC (American Library Association and Library of Congress) Russian romanization system.<br />
-		/// For more information, visit:
-		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a>
+		/// For more information, visit:<br />
+		/// <a href='https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian'>https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian</a><br />
+		/// and<br />
+		/// <a href='https://www.loc.gov/catdir/cpso/romanization/russian.pdf'>https://www.loc.gov/catdir/cpso/romanization/russian.pdf</a>
 		/// </summary>
-		public sealed class AlaLc : IMultiCulturalRomanizationSystem
+		public sealed class AlaLc : IMultiInCultureSystem
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.Transliteration;
@@ -111,7 +113,7 @@ namespace Romanization
 			{
 				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
 					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-				return Utilities.RunWithCulture(nativeCulture,
+				return CulturalOperations.RunWithCulture(nativeCulture,
 					() => text.LanguageWidePreparation().ReplaceFromChartWithSameCase(RomanizationTable));
 			}
 

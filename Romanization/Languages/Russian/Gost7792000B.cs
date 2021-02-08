@@ -1,5 +1,5 @@
 using System;
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Globalization;
@@ -20,7 +20,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/GOST_7.79-2000'>https://en.wikipedia.org/wiki/GOST_7.79-2000</a>
 		/// </summary>
-		public sealed class Gost7792000B : IMultiCulturalRomanizationSystem
+		public sealed class Gost7792000B : IMultiInCultureSystem
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.Transliteration;
@@ -107,7 +107,7 @@ namespace Romanization
 			{
 				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
 					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-				return Utilities.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation()
+				return CulturalOperations.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation()
 					// Do romanization replacements
 					.ReplaceFromChartWithSameCase(RomanizationTable)
 					// Do cased romanization replacements

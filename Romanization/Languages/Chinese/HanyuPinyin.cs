@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -19,7 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Hanyu_Pinyin'>https://en.wikipedia.org/wiki/Hanyu_Pinyin</a>
 		/// </summary>
-		public sealed class HanyuPinyin : IReadingsRomanizationSystem<HanyuPinyin.ReadingTypes>
+		public sealed class HanyuPinyin : IReadingsSystem<HanyuPinyin.ReadingTypes>
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.PhonemicTranscription;
@@ -45,21 +45,21 @@ namespace Romanization
 			}
 
 			private const string HanyuPinyinFileName = "HanziHanyuPinyin.csv";
-			private const string HanyuPinluFileName = "HanziHanyuPinlu.csv";
-			private const string XhcFileName = "HanziXHC.csv";
+			private const string HanyuPinluFileName  = "HanziHanyuPinlu.csv";
+			private const string XhcFileName         = "HanziXHC.csv";
 
 			private readonly Dictionary<string, string[]> HanyuPinyinReadings = new Dictionary<string, string[]>();
-			private readonly Dictionary<string, string[]> HanyuPinluReadings = new Dictionary<string, string[]>();
-			private readonly Dictionary<string, string[]> XhcReadings = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> HanyuPinluReadings  = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> XhcReadings         = new Dictionary<string, string[]>();
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
 			/// </summary>
 			public HanyuPinyin()
 			{
-				Utilities.LoadCharacterMap(HanyuPinyinFileName, HanyuPinyinReadings, k => k, v => v.Split(' '));
-				Utilities.LoadCharacterMap(HanyuPinluFileName, HanyuPinluReadings, k => k, v => v.Split(' '));
-				Utilities.LoadCharacterMap(XhcFileName, XhcReadings, k => k, v => v.Split(' '));
+				CsvLoader.LoadCharacterMap(HanyuPinyinFileName, HanyuPinyinReadings, k => k, v => v.Split(' '));
+				CsvLoader.LoadCharacterMap(HanyuPinluFileName,  HanyuPinluReadings,  k => k, v => v.Split(' '));
+				CsvLoader.LoadCharacterMap(XhcFileName,         XhcReadings,         k => k, v => v.Split(' '));
 			}
 
 			/// <summary>

@@ -1,18 +1,25 @@
-﻿// ReSharper disable CommentTypo
+﻿using System.IO;
+using System.Reflection;
 
-namespace Romanization.LanguageAgnostic
+// ReSharper disable CommentTypo
+// ReSharper disable CheckNamespace
+
+namespace Romanization
 {
 	/// <summary>
 	/// A global class for language-agnostic functions and constants (things that are independent of specific languages).
 	/// </summary>
 	internal static class Constants
 	{
+		// Assembly Constants
+		public static readonly string AssemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
 		// General Constants
-		public const string LatinVowels         = "aeiouy";
-		public const string LatinConsonants     = "bcdfghjklmnpqrstvwxz";
-		public const string Punctuation         = @"\.?!";
+		public const string LatinVowels		    = "aeiouy";
+		public const string LatinConsonants	    = "bcdfghjklmnpqrstvwxz";
+		public const string Punctuation		    = @"\.?!";
 		public const char   IdeographicFullStop = '。';
-		public const char   Interpunct          = '・';
+		public const char   Interpunct		    = '・';
 
 		// Replacement Characters
 		public const string MacronA = "ā";

@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable StringLiteralTypo
@@ -8,7 +8,7 @@ using Romanization.LanguageAgnostic;
 namespace RomanizationTests.InternalTests
 {
 	/// <summary>
-	/// For testing the <see cref="Utilities.ToRomanNumerals(decimal)"/> function.
+	/// For testing the <see cref="NumeralRenderer.ToRomanNumerals(decimal)"/> function.
 	/// </summary>
 	[TestClass]
 	public class ToRomanNumeralsTests

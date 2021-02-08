@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -19,7 +19,7 @@ namespace Romanization
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/Hanja'>https://en.wikipedia.org/wiki/Hanja</a>
 		/// </summary>
-		public sealed class HanjaReadings : IReadingsRomanizationSystem<HanjaReadings.ReadingTypes>
+		public sealed class HanjaReadings : IReadingsSystem<HanjaReadings.ReadingTypes>
 		{
 			/// <inheritdoc />
 			public SystemType Type => SystemType.PhonemicTranscription;
@@ -45,7 +45,7 @@ namespace Romanization
 			/// </summary>
 			public HanjaReadings()
 			{
-				Utilities.LoadCharacterMap(HangeulFileName, HangeulReadings, k => k, v => v.Split(' ').Select(c => c[0]).ToArray());
+				CsvLoader.LoadCharacterMap(HangeulFileName, HangeulReadings, k => k, v => v.Split(' ').Select(c => c[0]).ToArray());
 			}
 
 			/// <summary>

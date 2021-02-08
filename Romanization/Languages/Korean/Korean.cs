@@ -31,8 +31,8 @@ namespace Romanization
 			{
 				Character = character;
 				Initial   = new PlacementChar(initial, PlacementChar.Placements.Initial);
-				Medial    = new PlacementChar(medial,  PlacementChar.Placements.Medial);
-				Final     = final.HasValue ? new PlacementChar(final.Value, PlacementChar.Placements.Final) : (PlacementChar?) null;
+				Medial	= new PlacementChar(medial,  PlacementChar.Placements.Medial);
+				Final	 = final.HasValue ? new PlacementChar(final.Value, PlacementChar.Placements.Final) : (PlacementChar?) null;
 			}
 
 			[Pure]

@@ -4,7 +4,7 @@
 // ReSharper disable StringLiteralTypo
 // ReSharper disable InconsistentNaming
 
-using Romanization.LanguageAgnostic;
+using Romanization.Internal;
 
 namespace Romanization
 {

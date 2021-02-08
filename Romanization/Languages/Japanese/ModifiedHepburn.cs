@@ -1,4 +1,4 @@
-﻿using Romanization.LanguageAgnostic;
+﻿using Romanization.Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
@@ -296,7 +296,7 @@ namespace Romanization
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
-				=> Utilities.RunWithCulture(CultureInfo.GetCultureInfo("ja-JP"), () => text
+				=> CulturalOperations.RunWithCulture(CultureInfo.GetCultureInfo("ja-JP"), () => text
 					// Replace common alternate characters
 					.ReplaceCommonAlternates()
 					// Insert spaces at boundaries between Latin characters and Japanese ones (ie. ニンテンドーDSiブラウザー)
