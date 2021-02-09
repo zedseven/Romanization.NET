@@ -63,7 +63,7 @@ namespace Romanization
 				=> c.BaseChar;
 
 			public static explicit operator PlacementChar(char c)
-				=> new PlacementChar(c, Placements.NotApplicable);
+				=> new(c, Placements.NotApplicable);
 
 			public bool Equals(PlacementChar other)
 				=> BaseChar == other.BaseChar && Placement == other.Placement;
@@ -105,13 +105,13 @@ namespace Romanization
 			}
 
 			public static implicit operator AspirationString(string s)
-				=> new AspirationString(s);
+				=> new(s);
 
 			public static implicit operator AspirationString(ValueTuple<string, string> s)
-				=> new AspirationString(s.Item1, s.Item2);
+				=> new(s.Item1, s.Item2);
 
 			public static implicit operator AspirationString(Tuple<string, string> s)
-				=> new AspirationString(s.Item1, s.Item2);
+				=> new(s.Item1, s.Item2);
 		}
 
 		private static readonly char[]  HangeulUnicodeJamoInitialMap =

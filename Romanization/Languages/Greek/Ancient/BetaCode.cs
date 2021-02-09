@@ -30,9 +30,9 @@ namespace Romanization
 				public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("el-GR");
 
 				// System-Specific Constants
-				private readonly Dictionary<string, string> DiacriticsTable		= new Dictionary<string, string>();
-				private readonly Dictionary<string, string> PunctuationTable	   = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> CommonReplacementTable = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> DiacriticsTable		= new();
+				private readonly Dictionary<string, string> PunctuationTable	   = new();
+				private readonly Dictionary<string, string> CommonReplacementTable = new();
 				//private readonly Dictionary<string, string> FullReplacementTable   = new Dictionary<string, string>();
 
 				/// <summary>

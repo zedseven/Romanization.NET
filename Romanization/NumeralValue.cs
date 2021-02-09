@@ -132,6 +132,6 @@ namespace Romanization
 		/// </summary>
 		/// <returns>A new <see cref="NumeralValue"/>, without support for a unit.</returns>
 		internal NumeralValue ToUnitlessNumeralValue()
-			=> new NumeralValue(Value);
+			=> new(Value);
 	}
 }

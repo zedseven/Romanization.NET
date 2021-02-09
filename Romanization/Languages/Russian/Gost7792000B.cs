@@ -29,15 +29,15 @@ namespace Romanization
 			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
 
 			// System-Specific Constants
-			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
-			private readonly Dictionary<string, string> CasedTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new();
+			private readonly Dictionary<string, string> CasedTable = new();
 
-			private readonly CharSubCased TseVowelsSub = new CharSubCased(
+			private readonly CharSubCased TseVowelsSub = new(
 				"Ц([eijy])", "ц([eijy])",
 				"C${1}", "c${1}");
 
 			// The reason this is done as opposed to having the consonant value in the chart is because the vowel exception is based on latin vowels
-			private readonly CharSubCased TseConsonantsSub = new CharSubCased(
+			private readonly CharSubCased TseConsonantsSub = new(
 				"Ц([abcdfghklmnopqrstuvwxz])", "ц([abcdfghklmnopqrstuvwxz])",
 				"Cz${1}", "cz${1}");
 

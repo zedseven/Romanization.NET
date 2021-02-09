@@ -27,7 +27,7 @@ namespace Romanization
 			public sealed class GreekNumerals : INumeralParsingSystem
 			{
 				// System-Specific Constants
-				private readonly Dictionary<char, int> ValueTable     = new Dictionary<char, int>();
+				private readonly Dictionary<char, int> ValueTable     = new();
 				private const    char   CanonicalDoubleUpperKeraia    = '″';
 				private const    char   CanonicalSingleUpperKeraia    = 'ʹ';
 				private const    char   CanonicalLowerKeraia          = '͵';
@@ -38,10 +38,10 @@ namespace Romanization
 				private readonly char[] OverbarChars        	      = { '\u0305', '‾' };
 				private const    string SigmaTauDigraph               = "ΣΤ";
 
-				private readonly Regex OverbarBoundaryRegex = new Regex("\u0305(?!.\u0305|\u0305)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+				private readonly Regex OverbarBoundaryRegex = new("\u0305(?!.\u0305|\u0305)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 				private readonly Regex NumeralDetectionRegex =
-					new Regex(
+					new(
 						"(?:(?:[\\w͵∠]\u0305)+(?:\\s*[\\w∠]+[ʹʹ'])*|[\\w͵∠]+[ʹʹ'](?:\\s*[\\w∠]+(?:[″ʺ\\\"]|[ʹʹ'][ʹʹ']))*)",
 						RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
@@ -221,15 +221,15 @@ namespace Romanization
 				/// Processes all Greek numerals in the text.
 				/// </summary>
 				/// <param name="text">The text to search for numerals.</param>
-				/// <param name="numeralProcessor">The function to use to transform the value from <see cref="Process"/>
-				/// into a string to put in the text.</param>
+				/// <param name="numeralProcessor">The function to use to transform the value from
+				/// <see cref="Process(string)"/> string to put in the text.</param>
 				/// <returns></returns>
 				public string ProcessNumeralsInText(string text, Func<NumeralValue, string> numeralProcessor)
 				{
 					text = text.LanguageWidePreparation();
 					bool usesOverbars = text.Any(c => OverbarChars.Contains(c));
 
-					StringBuilder result = new StringBuilder(text.Length);
+					StringBuilder result = new(text.Length);
 					bool foundMatch = false;
 					int startIndex = 0;
 					Match match = NumeralDetectionRegex.Match(text);

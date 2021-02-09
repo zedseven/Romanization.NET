@@ -29,7 +29,7 @@ namespace Romanization.Internal
 
 			// Value maps
 			const decimal closenessMargin = (decimal) 1/20736; // 1 order of magnitude (12^4) smaller than the smallest value
-			Dictionary<int, char> valueRepresentations = new Dictionary<int, char>
+			Dictionary<int, char> valueRepresentations = new()
 			{
 				{ 1000, 'M' },
 				{  500, 'D' },
@@ -39,7 +39,7 @@ namespace Romanization.Internal
 				{    5, 'V' },
 				{    1, 'I' }
 			};
-			Dictionary<int, int> subtractiveSteps = new Dictionary<int, int>
+			Dictionary<int, int> subtractiveSteps = new()
 			{
 				{ 1000, 100 },
 				{  500, 100 },
@@ -48,7 +48,7 @@ namespace Romanization.Internal
 				{   10,   1 },
 				{    5,   1 }
 			};
-			Dictionary<decimal, char> fractionRepresentations = new Dictionary<decimal, char>
+			Dictionary<decimal, char> fractionRepresentations = new()
 			{
 				{ (decimal)   6/12, 'S' },
 				{ (decimal)   5/12, '⁙' },
@@ -64,7 +64,7 @@ namespace Romanization.Internal
 			};
 			const string dots = "·:∴∷⁙";
 
-			StringBuilder result = new StringBuilder(5);
+			StringBuilder result = new(5);
 			int numToAdd;
 
 			// Whole numbers

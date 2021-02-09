@@ -52,15 +52,15 @@ namespace Romanization
 				private readonly INumeralParsingSystem NumeralsSystem;
 
 				// System-Specific Constants
-				private readonly Dictionary<string, string> RomanizationTable        = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> DiphthongTable           = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> SpecificCombinationTable = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> PunctuationTable         = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> RomanizationTable        = new();
+				private readonly Dictionary<string, string> DiphthongTable           = new();
+				private readonly Dictionary<string, string> SpecificCombinationTable = new();
+				private readonly Dictionary<string, string> PunctuationTable         = new();
 
-				private readonly CaseAwareSub RhoAspiratedSub = new CaseAwareSub("(?:\\bρ|(?<=ρ)ρ(?!\\b|ρ))", "rh");
+				private readonly CaseAwareSub RhoAspiratedSub = new("(?:\\bρ|(?<=ρ)ρ(?!\\b|ρ))", "rh");
 
 				private readonly CaseAwareSub RoughBreathingVowelSub =
-					new CaseAwareSub($"(?<=[{GreekAllVowels}]|{GreekVowelDiphthongs})\u0314", "h", true);
+					new($"(?<=[{GreekAllVowels}]|{GreekVowelDiphthongs})\u0314", "h", true);
 
 				/// <summary>
 				/// Instantiates a copy of the system to process romanizations.

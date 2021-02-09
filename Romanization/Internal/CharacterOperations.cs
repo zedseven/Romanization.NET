@@ -11,7 +11,7 @@ namespace Romanization.Internal
 		[Pure]
 		public static string[] SplitIntoSurrogatePairs(this string str)
 		{
-			List<string> retList = new List<string>(str.Length);
+			List<string> retList = new(str.Length);
 			for (int i = 0; i < str.Length; i++)
 			{
 				if (!char.IsSurrogatePair(str, i))
@@ -31,7 +31,7 @@ namespace Romanization.Internal
 			=> str.Normalize(NormalizationForm.FormD);
 
 		private const string LanguageBoundaryChars = @"a-z";
-		private static readonly Lazy<CharSub> LanguageBoundarySubstitution = new Lazy<CharSub>(() =>
+		private static readonly Lazy<CharSub> LanguageBoundarySubstitution = new(() =>
 			new CharSub(
 				$"(?:([{LanguageBoundaryChars}{Constants.Punctuation}])([^ {LanguageBoundaryChars}{Constants.Punctuation}])|([^ {LanguageBoundaryChars}{Constants.Punctuation}])([{LanguageBoundaryChars}]))",
 				"${1}${3} ${2}${4}"));

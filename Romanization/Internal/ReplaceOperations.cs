@@ -49,7 +49,7 @@ namespace Romanization.Internal
 				throw new ArgumentException("String cannot be of zero length.");
 
 			// Prepare string builder for storing the processed string.
-			StringBuilder resultStringBuilder = new StringBuilder(str.Length);
+			StringBuilder resultStringBuilder = new(str.Length);
 
 			// Analyze the replacement: replace or remove.
 			bool isReplacementNullOrEmpty = string.IsNullOrEmpty(newValue);
@@ -158,7 +158,7 @@ namespace Romanization.Internal
 		[Pure]
 		internal static string ReplaceMultipleChars(this string str, IEnumerable<char> chars, char replacement)
 		{
-			StringBuilder result = new StringBuilder(str.Length);
+			StringBuilder result = new(str.Length);
 			foreach (char s in str)
 			{
 				bool replaced = false;

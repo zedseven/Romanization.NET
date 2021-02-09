@@ -64,7 +64,7 @@ namespace Romanization.Internal
 
 			try
 			{
-				using StreamReader reader = new StreamReader(stream);
+				using StreamReader reader = new(stream);
 
 				// Discard the first line, since it's simply the heading
 				_ = reader.ReadLine();

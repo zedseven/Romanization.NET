@@ -29,30 +29,30 @@ namespace Romanization
 			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
 
 			// System-Specific Constants
-			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
-			private readonly Dictionary<string, string> DigraphTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new();
+			private readonly Dictionary<string, string> DigraphTable = new();
 
-			private readonly CharSubCased YeProvisionSub = new CharSubCased(
+			private readonly CharSubCased YeProvisionSub = new(
 				$"(^|\\b|[{RussianVowels}ЙйЪъЬь])Е", $"(^|\\b|[{RussianVowels}ЙйЪъЬь])е",
 				"${1}Ye", "${1}ye");
 
-			private readonly CharSubCased YoProvisionSub = new CharSubCased(
+			private readonly CharSubCased YoProvisionSub = new(
 				$"(^|\\b|[{RussianVowels}ЙйЪъЬь])Ё", $"(^|\\b|[{RussianVowels}ЙйЪъЬь])ё",
 				"${1}Yё", "${1}yё");
 
-			private readonly CharSubCased IDigraphSub = new CharSubCased(
+			private readonly CharSubCased IDigraphSub = new(
 				"Й([АаУуЫыЭэ])", "й([АаУуЫыЭэ])",
 				"Y·${1}", "y·${1}");
 
-			private readonly CharSubCased YeryExceptionDigraphSub = new CharSubCased(
+			private readonly CharSubCased YeryExceptionDigraphSub = new(
 				"Ы([АаУуЫыЭэ])", "ы([АаУуЫыЭэ])",
 				"Y·${1}", "y·${1}");
 
-			private readonly CharSubCased YeryVowelsDigraphSub = new CharSubCased(
+			private readonly CharSubCased YeryVowelsDigraphSub = new(
 				$"([{RussianVowels}])Ы", $"([{RussianVowels}])ы",
 				"${1}·Y", "${1}·y");
 
-			private readonly CharSubCased EConsonantsDigraphSub = new CharSubCased(
+			private readonly CharSubCased EConsonantsDigraphSub = new(
 				$"([{RussianConsonants.WithoutChars("Йй")}])Э", $"([{RussianConsonants.WithoutChars("Йй")}])э",
 					"${1}·E", "${1}·e");
 

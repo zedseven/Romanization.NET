@@ -28,17 +28,17 @@ namespace Romanization
 			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
 
 			// System-Specific Constants
-			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new();
 
-			private readonly CharSubCased YeVowelsSub = new CharSubCased(
+			private readonly CharSubCased YeVowelsSub = new(
 				$"(^|\\b|[{RussianVowels}ЪъЬь])Е", $"(^|\\b|[{RussianVowels}ЪъЬь])е",
 				"${1}Ye", "${1}ye");
 
-			private readonly CharSubCased YoVowelsSub = new CharSubCased(
+			private readonly CharSubCased YoVowelsSub = new(
 				$"(^|\\b|[{RussianVowels}ЪъЬь])Ё", $"(^|\\b|[{RussianVowels}ЪъЬь])ё",
 				"${1}Yo", "${1}yo");
 
-			private readonly CharSubCased YoExceptionsSub = new CharSubCased(
+			private readonly CharSubCased YoExceptionsSub = new(
 				"(^|\\b|[ЧчШшЩщЖж])Ё", "(^|\\b|[ЧчШшЩщЖж])ё",
 				"${1}E", "${1}e");
 

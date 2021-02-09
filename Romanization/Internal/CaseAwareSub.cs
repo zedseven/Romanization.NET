@@ -35,7 +35,7 @@ namespace Romanization.Internal
 
 		public string Replace(string text)
 		{
-			StringBuilder result = new StringBuilder(text.Length);
+			StringBuilder result = new(text.Length);
 
 			bool foundMatch = false;
 			int startIndex = 0;

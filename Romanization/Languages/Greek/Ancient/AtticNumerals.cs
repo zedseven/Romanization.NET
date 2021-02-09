@@ -30,7 +30,7 @@ namespace Romanization
 			public sealed class AtticNumerals : INumeralParsingSystem<Units>
 			{
 				// System-Specific Constants
-				private readonly Dictionary<string, decimal> ValueTable = new Dictionary<string, decimal>();
+				private readonly Dictionary<string, decimal> ValueTable = new();
 				private readonly string[] DrachmaSymbols = { "𐅻", "𐅼", "𐅂", "𐅝", "𐅞", "𐅼", "𐅽", "𐅾", "𐅿", "𐆀" };
 				private readonly string[] PlethraSymbols = { "𐅘" };
 				private readonly string[] TalentsSymbols = { "𐅺", "𐅈", "𐅉", "𐅊", "𐅋", "𐅌", "𐅍", "𐅎" };
@@ -41,7 +41,7 @@ namespace Romanization
 				private readonly string[] TimeSymbols    = { "𐆍" };
 
 				private readonly Regex NumeralDetectionRegex =
-					new Regex(
+					new(
 						"(?:[𐆊𐅼𐅀𐆋𐅽𐅁𐅵𐅶𐅾𐅷𐅿𐅸𐆀Ι𐅂𐅘𐅙𐅚𐅛𐅜𐅝𐅞Π𐅈𐅏𐅟𐅳Δ𐅉𐅐𐅗𐅠𐅡𐅢𐅣𐅤𐅥𐅄𐅊𐅑𐅦𐅧𐅨𐅩𐅴Η𐅋𐅒𐅪𐅫𐅅𐅌𐅓𐅬𐅭𐅮𐅯𐅰Χ𐅍𐅔𐅱𐅆𐅎𐅲Μ𐅕𐅇𐅖]\u0305)+",
 						RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
@@ -185,7 +185,7 @@ namespace Romanization
 				{
 					text = text.LanguageWidePreparation();
 
-					StringBuilder result = new StringBuilder(text.Length);
+					StringBuilder result = new(text.Length);
 					bool foundMatch = false;
 					int startIndex = 0;
 					Match match = NumeralDetectionRegex.Match(text);

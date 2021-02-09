@@ -2,7 +2,7 @@
 
 namespace Romanization.Internal
 {
-	public class CaptureCountMismatchException : ArgumentException
+	internal class CaptureCountMismatchException : ArgumentException
 	{
 		internal CaptureCountMismatchException() { }
 		internal CaptureCountMismatchException(string message) : base(message) { }

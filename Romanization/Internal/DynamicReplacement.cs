@@ -39,7 +39,7 @@ namespace Romanization.Internal
 		public DynamicReplacement(string sub)
 		{
 			// Build a parts list by parsing the input string
-			List<Part> parts = new List<Part>();
+			List<Part> parts = new();
 			int startIndex = 0;
 			int foundAt;
 			while ((foundAt = sub.IndexOf('$', startIndex)) != -1)
@@ -104,7 +104,7 @@ namespace Romanization.Internal
 					$"Number of captures provided ({captures.Count}) does not match the expected number ({ExpectedCaptureCount}).",
 					nameof(captures));
 
-			StringBuilder sb = new StringBuilder(_verbatimLength * 2);
+			StringBuilder sb = new(_verbatimLength * 2);
 			for (int i = 0, verbatimSoFar = 0; i < _parts.Length; i++)
 			{
 				Part part = _parts[i];
@@ -137,7 +137,7 @@ namespace Romanization.Internal
 
 		public override string ToString()
 		{
-			StringBuilder sb = new StringBuilder();
+			StringBuilder sb = new();
 			foreach (Part part in _parts)
 				sb.Append(part);
 			return sb.ToString();

@@ -46,16 +46,16 @@ namespace Romanization
 				}
 
 				public static implicit operator HyphenString(string s)
-					=> new HyphenString(s);
+					=> new(s);
 
 				public static implicit operator HyphenString(AspirationString s)
-					=> new HyphenString(s);
+					=> new(s);
 
 				public static implicit operator HyphenString(ValueTuple<AspirationString, int> s)
-					=> new HyphenString(s.Item1, s.Item2);
+					=> new(s.Item1, s.Item2);
 
 				public static implicit operator HyphenString(Tuple<AspirationString, int> s)
-					=> new HyphenString(s.Item1, s.Item2);
+					=> new(s.Item1, s.Item2);
 
 				public string ToString(bool aspirated)
 					=> aspirated
@@ -71,10 +71,10 @@ namespace Romanization
 			}
 
 			// System-Specific Constants
-			private readonly Dictionary<char, string> HangeulVowelRomanizations = new Dictionary<char, string>();
-			private readonly Dictionary<char, string> HangeulConsonantInitialRomanizations = new Dictionary<char, string>();
-			private readonly Dictionary<char, string> HangeulConsonantFinalRomanizations = new Dictionary<char, string>();
-			private readonly Dictionary<(char, char), HyphenString> HangeulConsonantCombinationRomanizations = new Dictionary<(char, char), HyphenString>();
+			private readonly Dictionary<char, string> HangeulVowelRomanizations = new();
+			private readonly Dictionary<char, string> HangeulConsonantInitialRomanizations = new();
+			private readonly Dictionary<char, string> HangeulConsonantFinalRomanizations = new();
+			private readonly Dictionary<(char, char), HyphenString> HangeulConsonantCombinationRomanizations = new();
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.

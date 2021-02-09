@@ -29,7 +29,7 @@ namespace Romanization
 			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
 
 			// System-Specific Constants
-			private readonly Dictionary<string, string> RomanizationTable = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> RomanizationTable = new();
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.

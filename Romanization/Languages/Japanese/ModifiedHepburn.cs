@@ -25,23 +25,23 @@ namespace Romanization
 			public SystemType Type => SystemType.PhonemicTranscription;
 
 			// System-Specific Constants
-			private readonly Dictionary<string, string> GojuonChart = new Dictionary<string, string>();
-			private readonly Dictionary<string, string> YoonChart = new Dictionary<string, string>();
+			private readonly Dictionary<string, string> GojuonChart = new();
+			private readonly Dictionary<string, string> YoonChart = new();
 
-			private readonly CharSub LongASub = new CharSub($"a{Choonpu}", Constants.MacronA, false);
-			private readonly CharSub LongESub = new CharSub($"e{Choonpu}", Constants.MacronE, false);
-			private readonly CharSub LongISub = new CharSub($"i{Choonpu}", Constants.MacronI, false);
-			private readonly CharSub LongOSub = new CharSub($"o{Choonpu}", Constants.MacronO, false);
-			private readonly CharSub LongUSub = new CharSub($"u{Choonpu}", Constants.MacronU, false);
+			private readonly CharSub LongASub = new($"a{Choonpu}", Constants.MacronA, false);
+			private readonly CharSub LongESub = new($"e{Choonpu}", Constants.MacronE, false);
+			private readonly CharSub LongISub = new($"i{Choonpu}", Constants.MacronI, false);
+			private readonly CharSub LongOSub = new($"o{Choonpu}", Constants.MacronO, false);
+			private readonly CharSub LongUSub = new($"u{Choonpu}", Constants.MacronU, false);
 
 			private readonly CharSub SyllabicNVowelsSub =
-				new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinVowels}])", "n'${1}");
+				new($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinVowels}])", "n'${1}");
 			private readonly CharSub SyllabicNConsonantsSub =
-				new CharSub($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinConsonants}])", "n${1}");
+				new($"[{SyllabicNHiragana}{SyllabicNKatakana}]([{Constants.LatinConsonants}])", "n${1}");
 
 			private readonly CharSub SokuonGeneralCaseSub =
-				new CharSub($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.LatinConsonants}])", "${1}${1}", false);
-			private readonly CharSub SokuonChCaseSub = new CharSub($"[{SokuonHiragana}{SokuonKatakana}]ch", "tch", false);
+				new($"[{SokuonHiragana}{SokuonKatakana}]([{Constants.LatinConsonants}])", "${1}${1}", false);
+			private readonly CharSub SokuonChCaseSub = new($"[{SokuonHiragana}{SokuonKatakana}]ch", "tch", false);
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
