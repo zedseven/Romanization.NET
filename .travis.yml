@@ -2,14 +2,15 @@ language: csharp
 os: linux
 dist: xenial
 mono: latest
-dotnet: 5.0.102 # to update this value in the future, try `dotnet --list-sdks` as a start
+dotnet: 5.0 # to update this value in the future, try `dotnet --list-sdks` as a start
 git:
   depth: false
 addons:
   apt:
     update: true
-
-before_install: sudo apt-get -y install tree
+    packages:
+      - dotnet-sdk-3.1 # install the other .NET SDK - Travis seems to support listing multiple SDKs in the dotnet field, but then everything else gets run twice
+      - tree
 
 install:
 - dotnet restore
