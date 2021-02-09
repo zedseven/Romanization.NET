@@ -32,7 +32,7 @@ namespace Romanization
 				Character = character;
 				Initial   = new PlacementChar(initial, PlacementChar.Placements.Initial);
 				Medial    = new PlacementChar(medial,  PlacementChar.Placements.Medial);
-				Final     = final.HasValue ? new PlacementChar(final.Value, PlacementChar.Placements.Final) : (PlacementChar?) null;
+				Final     = final.HasValue ? new PlacementChar(final.Value, PlacementChar.Placements.Final) : null;
 			}
 
 			[Pure]
@@ -68,7 +68,7 @@ namespace Romanization
 			public bool Equals(PlacementChar other)
 				=> BaseChar == other.BaseChar && Placement == other.Placement;
 
-			public override bool Equals(object obj)
+			public override bool Equals(object? obj)
 				=> obj is PlacementChar other && Equals(other);
 
 			public override int GetHashCode()
@@ -192,7 +192,7 @@ namespace Romanization
 			'ㅎ'
 		};
 
-		private static readonly Dictionary<char, SyllableBlock> syllableBlockIndex = new Dictionary<char, SyllableBlock>();
+		private static readonly Dictionary<char, SyllableBlock> syllableBlockIndex = new();
 
 		// Helper Functions
 		[Pure]
@@ -207,12 +207,12 @@ namespace Romanization
 		/// </summary>
 		/// <param name="block">The syllable block / Unicode character ('한').</param>
 		/// <returns>The syllable block decomposed into it's component jamo ('ㅎ', 'ㅏ', 'ㄴ'), or null if the input block is invalid.</returns>
-		private static SyllableBlock DecomposeSyllableBlock(char block)
+		private static SyllableBlock? DecomposeSyllableBlock(char block)
 		{
 			if (!IsKorean(block))
 				return null;
 
-			if (syllableBlockIndex.TryGetValue(block, out SyllableBlock cachedBlock))
+			if (syllableBlockIndex.TryGetValue(block, out SyllableBlock? cachedBlock))
 				return cachedBlock;
 
 			int codePoint = block - HangeulUnicodeBaseOffset;
@@ -220,7 +220,7 @@ namespace Romanization
 			int medialIndex = (codePoint - finalIndex) % HangeulUnicodeInitialSpace / HangeulUnicodeMedialSpace;
 			int initialIndex = (codePoint - finalIndex - medialIndex * HangeulUnicodeMedialSpace) / HangeulUnicodeInitialSpace;
 
-			SyllableBlock newBlock = new SyllableBlock(block,
+			SyllableBlock newBlock = new(block,
 				HangeulUnicodeJamoInitialMap[initialIndex],
 				HangeulUnicodeJamoMedialMap[medialIndex],
 				HangeulUnicodeJamoFinalMap[finalIndex]);

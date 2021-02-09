@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<Authors>Zacchary Dempsey-Plante</Authors>
 		<Company>Zacchary Dempsey-Plante</Company>
 		<Description>A library for romanization of languages written in non-Latin alphabets.</Description>
@@ -15,6 +14,9 @@
 		<AssemblyName>Romanization.NET</AssemblyName>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageTags>Romanization Language Chinese Greek Japanese Korean Russian</PackageTags>
+		<TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
+		<LangVersion>9</LangVersion>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

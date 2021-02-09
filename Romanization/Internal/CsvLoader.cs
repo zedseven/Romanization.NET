@@ -17,17 +17,23 @@ namespace Romanization.Internal
 			"contentFiles", "any", "any", "LanguageCharacterMaps");
 
 		/// <summary>
-		/// Loads a language character map file into a dictionary, using the provided mapping functions to map CSV entries to dict keys &amp; values.
+		/// Loads a language character map file into a dictionary, using the provided mapping functions to map CSV
+		/// entries to dict keys &amp; values.
 		/// </summary>
-		/// <typeparam name="TKey">The type of the dictionary keys.</typeparam>
+		/// <typeparam name="TKey">The type of the dictionary keys. Not null.</typeparam>
 		/// <typeparam name="TVal">The type of the dictionary values.</typeparam>
 		/// <param name="fileName">The file name of the language character map file.</param>
 		/// <param name="dict">The dictionary to load into.</param>
-		/// <param name="keyMapper">The function that maps CSV entry first values to dictionary <typeparamref name="TKey"/> values.</param>
-		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
-		/// <exception cref="T:Romanization.Internal.CannotReadStreamException">The provided stream cannot be read.</exception>
+		/// <param name="keyMapper">The function that maps CSV entry first values to dictionary
+		/// <typeparamref name="TKey"/> values.</param>
+		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary
+		/// <typeparamref name="TVal"/> values.</param>
+		/// <exception cref="T:Romanization.Internal.CannotReadStreamException">The provided stream cannot be
+		/// read.</exception>
 		/// <exception cref="T:Romanization.Internal.CsvLoadingException">Unable to load the CSV file.</exception>
-		public static void LoadCharacterMap<TKey, TVal>(string fileName, IDictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
+		public static void LoadCharacterMap<TKey, TVal>(string fileName, IDictionary<TKey, TVal> dict,
+			Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
+			where TKey : notnull
 		{
 			using FileStream csvStream = File.OpenRead(Path.Combine(LanguageCharacterMapsPath, fileName));
 			csvStream.LoadCsvIntoDictionary(dict, keyMapper, valueMapper);
@@ -38,15 +44,20 @@ namespace Romanization.Internal
 		/// keys &amp; values.<br />
 		/// Note that this is a non-standard CSV parsing implementation - it only looks for the first comma.
 		/// </summary>
-		/// <typeparam name="TKey">The type of the dictionary keys.</typeparam>
+		/// <typeparam name="TKey">The type of the dictionary keys. Not null.</typeparam>
 		/// <typeparam name="TVal">The type of the dictionary values.</typeparam>
 		/// <param name="stream">The CSV file stream.</param>
 		/// <param name="dict">The dictionary to load into.</param>
-		/// <param name="keyMapper">The function that maps CSV entry first values to dictionary <typeparamref name="TKey"/> values.</param>
-		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary <typeparamref name="TVal"/> values.</param>
-		/// <exception cref="T:Romanization.Internal.CannotReadStreamException">The provided stream cannot be read.</exception>
+		/// <param name="keyMapper">The function that maps CSV entry first values to dictionary
+		/// <typeparamref name="TKey"/> values.</param>
+		/// <param name="valueMapper">The function that maps CSV entry second values to dictionary
+		/// <typeparamref name="TVal"/> values.</param>
+		/// <exception cref="T:Romanization.Internal.CannotReadStreamException">The provided stream cannot be
+		/// read.</exception>
 		/// <exception cref="T:Romanization.Internal.CsvLoadingException">Unable to load the CSV file.</exception>
-		public static void LoadCsvIntoDictionary<TKey, TVal>(this FileStream stream, IDictionary<TKey, TVal> dict, Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
+		public static void LoadCsvIntoDictionary<TKey, TVal>(this FileStream stream, IDictionary<TKey, TVal> dict,
+			Func<string, TKey> keyMapper, Func<string, TVal> valueMapper)
+			where TKey : notnull
 		{
 			if (!stream.CanRead)
 				throw new CannotReadStreamException("The provided stream cannot be read.", nameof(stream));
@@ -60,7 +71,7 @@ namespace Romanization.Internal
 
 				while (!reader.EndOfStream)
 				{
-					string line = reader.ReadLine();
+					string? line = reader.ReadLine();
 					if (string.IsNullOrWhiteSpace(line))
 						continue;
 

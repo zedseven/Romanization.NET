@@ -234,14 +234,14 @@ namespace Romanization
 
 				// Decompose all syllable blocks in text into their component Jamo
 				List<PlacementChar> jamoList = text.SelectMany(c =>
-				{
-					SyllableBlock b = DecomposeSyllableBlock(c);
-					return b != null ? b.FlattenToArray() : new[] { (PlacementChar)c };
-				})
+					{
+						SyllableBlock? b = DecomposeSyllableBlock(c);
+						return b?.FlattenToArray() ?? new[] {(PlacementChar) c};
+					})
 					.ToList();
 
 				// Use the component Jamo to build the romanization
-				StringBuilder romanizedText = new StringBuilder();
+				StringBuilder romanizedText = new();
 				for (int i = 0; i < jamoList.Count; i++)
 				{
 					bool lastChar = i >= jamoList.Count - 1;
@@ -257,7 +257,8 @@ namespace Romanization
 							romanizedText.Append(HangeulVowelRomanizations[jamoList[i]]);
 
 							// Two-jamo syllable hyphenation
-							if (hyphenateSyllables && !lastChar && jamoList[i + 1].Placement == PlacementChar.Placements.Initial)
+							if (hyphenateSyllables && !lastChar &&
+							    jamoList[i + 1].Placement == PlacementChar.Placements.Initial)
 								romanizedText.Append('-');
 
 							continue;

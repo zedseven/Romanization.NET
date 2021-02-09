@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 
 // ReSharper disable CommentTypo
@@ -12,7 +13,8 @@ namespace Romanization
 	internal static class Constants
 	{
 		// Assembly Constants
-		public static readonly string AssemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		public static readonly string AssemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ??
+		                                             throw new InvalidOperationException();
 
 		// General Constants
 		public const string LatinVowels         = "aeiouy";

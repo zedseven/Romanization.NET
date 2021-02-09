@@ -25,7 +25,7 @@ namespace Romanization
 			=> Value == other.Value;
 
 		/// <inheritdoc />
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 			=> obj is NumeralValue other && Equals(other);
 
 		/// <inheritdoc />
@@ -93,7 +93,7 @@ namespace Romanization
 			=> Value == other.Value && Nullable.Equals(Unit, other.Unit);
 
 		/// <inheritdoc />
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 			=> obj is NumeralValue<TLanguageUnits> other && Equals(other);
 
 		/// <inheritdoc />

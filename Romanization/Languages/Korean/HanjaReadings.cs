@@ -38,26 +38,29 @@ namespace Romanization
 
 			private const string HangeulFileName = "HanjaHangeul.csv";
 
-			private readonly Dictionary<string, char[]> HangeulReadings = new Dictionary<string, char[]>();
+			private readonly Dictionary<string, char[]> HangeulReadings = new();
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
 			/// </summary>
 			public HanjaReadings()
 			{
-				CsvLoader.LoadCharacterMap(HangeulFileName, HangeulReadings, k => k, v => v.Split(' ').Select(c => c[0]).ToArray());
+				CsvLoader.LoadCharacterMap(HangeulFileName, HangeulReadings, k => k,
+					v => v.Split(' ').Select(c => c[0]).ToArray());
 			}
 
 			/// <summary>
-			/// Performs romanization of all Hanja in the given text, first to Hangeul, then to proper romanization according to <paramref name="system"/>.
+			/// Performs romanization of all Hanja in the given text, first to Hangeul, then to proper romanization
+			/// according to <paramref name="system"/>.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <param name="system">The romanization system to use for the Hangeul characters the Hanja is converted to.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+			/// <param name="system">The romanization system to use for the Hangeul characters the Hanja is converted
+			/// to.</param>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
+			/// romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text, IRomanizationSystem system)
 			{
-				system ??= new RevisedRomanization();
 				return system.Process(
 					string.Join("",
 						ProcessWithReadings(text).Characters
@@ -65,20 +68,25 @@ namespace Romanization
 			}
 
 			/// <summary>
-			/// Performs romanization of all Hanja in the given text, first to Hangeul, then to proper romanization according to the Revised Romanization of Korea system.
+			/// Performs romanization of all Hanja in the given text, first to Hangeul, then to proper romanization
+			/// according to the Revised Romanization of Korea system.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
+			/// romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
 				=> Process(text, new RevisedRomanization());
 
 			/// <summary>
-			/// Converts all Hanja in the given text to their first Hangeul character in the list of possible readings.<br />
-			/// Note that this will not yield a romanized string, but rather a standard Korean one. See <see cref="Process(string, IRomanizationSystem)"/> for a romanized output.
+			/// Converts all Hanja in the given text to their first Hangeul character in the list of possible
+			/// readings.<br />
+			/// Note that this will not yield a romanized string, but rather a standard Korean one. See
+			/// <see cref="Process(string, IRomanizationSystem)"/> for a romanized output.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A version of the text with all Hanja characters replaced with their first Hangeul readings.</returns>
+			/// <returns>A version of the text with all Hanja characters replaced with their first Hangeul
+			/// readings.</returns>
 			[Pure]
 			public string ProcessToHangeul(string text)
 				=> string.Join("", ProcessWithReadings(text).Characters
@@ -86,19 +94,22 @@ namespace Romanization
 
 			/// <summary>
 			/// Performs romanization of all Hanja in the given text.<br />
-			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each in Hangeul (the Korean alphabet).<br />
+			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings
+			/// (pronunciations) of each in Hangeul (the Korean alphabet).<br />
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in
+			/// <paramref name="text"/>.</returns>
 			[Pure]
 			public ReadingsString<ReadingTypes> ProcessWithReadings(string text)
-				=> new ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
+				=> new(text.SplitIntoSurrogatePairs()
 					.Select(c =>
 					{
-						List<Reading<ReadingTypes>> readings = new List<Reading<ReadingTypes>>(text.Length);
+						List<Reading<ReadingTypes>> readings = new(text.Length);
 
-						if (HangeulReadings.TryGetValue(c, out char[] rawHanjaHangeulReadings))
-							readings.AddRange(rawHanjaHangeulReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.Hangeul, r.ToString())));
+						if (HangeulReadings.TryGetValue(c, out char[]? rawHanjaHangeulReadings))
+							readings.AddRange(rawHanjaHangeulReadings.Select(r =>
+								new Reading<ReadingTypes>(ReadingTypes.Hangeul, r.ToString())));
 
 						return new ReadingCharacter<ReadingTypes>(c, readings);
 					})

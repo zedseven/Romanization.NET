@@ -41,10 +41,10 @@ namespace Romanization
 			}
 
 			private const string KanjiKunFileName = "KanjiKun.csv";
-			private const string KanjiOnFileName = "KanjiOn.csv";
+			private const string KanjiOnFileName  = "KanjiOn.csv";
 
-			private readonly Dictionary<string, string[]> KanjiKunReadings = new Dictionary<string, string[]>();
-			private readonly Dictionary<string, string[]> KanjiOnReadings = new Dictionary<string, string[]>();
+			private readonly Dictionary<string, string[]> KanjiKunReadings = new();
+			private readonly Dictionary<string, string[]> KanjiOnReadings  = new();
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
@@ -52,17 +52,19 @@ namespace Romanization
 			public KanjiReadings()
 			{
 				CsvLoader.LoadCharacterMap(KanjiKunFileName, KanjiKunReadings, k => k, v => v.Split(' '));
-				CsvLoader.LoadCharacterMap(KanjiOnFileName, KanjiOnReadings, k => k, v => v.Split(' '));
+				CsvLoader.LoadCharacterMap(KanjiOnFileName,  KanjiOnReadings,  k => k, v => v.Split(' '));
 			}
 
 			/// <summary>
 			/// Performs romanization of all Kanji in the given text.<br />
-			/// Uses the first reading of the character - Kun'yomi first, if requested and available, then On'yomi if requested and available.<br />
+			/// Uses the first reading of the character - Kun'yomi first, if requested and available, then On'yomi if
+			/// requested and available.<br />
 			/// If more readings are required, use <see cref="ProcessWithReadings(string, ReadingTypes)"/> instead.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <param name="readingsToUse">The reading types to use.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
+			/// romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text, ReadingTypes readingsToUse)
 				=> string.Join("", ProcessWithReadings(text, readingsToUse).Characters
@@ -74,22 +76,27 @@ namespace Romanization
 			/// If more readings are required, use <see cref="ProcessWithReadings(string)"/> instead.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
+			/// romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
 				=> string.Join("", ProcessWithReadings(text).Characters
 					.Select(c => c.Readings.Length > 0 ? c.Readings[0].Value : c.Character));
 
 			/// <summary>
-			/// Performs romanization of all Kanji in the given text, after using <paramref name="system"/> to handle the kana.<br />
+			/// Performs romanization of all Kanji in the given text, after using <paramref name="system"/> to handle
+			/// the kana.<br />
 			/// <paramref name="system"/> defaults to <see cref="ModifiedHepburn"/> if left as null.<br />
-			/// See the documentation for <see cref="Process(string)"/> and the chosen system for more implementation details.
+			/// See the documentation for <see cref="Process(string)"/> and the chosen system for more implementation
+			/// details.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <param name="system">The system to romanize the kana in <paramref name="text"/> before the Kanji are touched.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all romanized text will be lowercase.</returns>
+			/// <param name="system">The system to romanize the kana in <paramref name="text"/> before the Kanji are
+			/// touched.</param>
+			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
+			/// romanized text will be lowercase.</returns>
 			[Pure]
-			public string ProcessWithKana(string text, IRomanizationSystem system = null)
+			public string ProcessWithKana(string text, IRomanizationSystem? system = null)
 			{
 				system ??= new ModifiedHepburn();
 				return Process(system.Process(text));
@@ -97,23 +104,30 @@ namespace Romanization
 
 			/// <summary>
 			/// Performs romanization of all Kanji in the given text.<br />
-			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each.<br />
-			/// Can return the following readings for characters if in <paramref name="readingsToUse"/> and they exist: Kun'yomi and On'yomi.
+			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings
+			/// (pronunciations) of each.<br />
+			/// Can return the following readings for characters if in <paramref name="readingsToUse"/> and they exist:
+			/// Kun'yomi and On'yomi.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
 			/// <param name="readingsToUse">The reading types to use.</param>
-			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in
+			/// <paramref name="text"/>.</returns>
 			[Pure]
 			public ReadingsString<ReadingTypes> ProcessWithReadings(string text, ReadingTypes readingsToUse)
-				=> new ReadingsString<ReadingTypes>(text.SplitIntoSurrogatePairs()
+				=> new(text.SplitIntoSurrogatePairs()
 					.Select(c =>
 					{
-						List<Reading<ReadingTypes>> readings = new List<Reading<ReadingTypes>>(text.Length);
+						List<Reading<ReadingTypes>> readings = new(text.Length);
 
-						if (readingsToUse.HasFlag(ReadingTypes.Kunyomi) && KanjiKunReadings.TryGetValue(c, out string[] rawKanjiKunReadings))
-							readings.AddRange(rawKanjiKunReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.Kunyomi, r)));
-						if (readingsToUse.HasFlag(ReadingTypes.Onyomi) && KanjiOnReadings.TryGetValue(c, out string[] rawKanjiOnReadings))
-							readings.AddRange(rawKanjiOnReadings.Select(r => new Reading<ReadingTypes>(ReadingTypes.Onyomi, r)));
+						if (readingsToUse.HasFlag(ReadingTypes.Kunyomi) &&
+						    KanjiKunReadings.TryGetValue(c, out string[]? rawKanjiKunReadings))
+							readings.AddRange(rawKanjiKunReadings.Select(r =>
+								new Reading<ReadingTypes>(ReadingTypes.Kunyomi, r)));
+						if (readingsToUse.HasFlag(ReadingTypes.Onyomi) &&
+						    KanjiOnReadings.TryGetValue(c, out string[]? rawKanjiOnReadings))
+							readings.AddRange(rawKanjiOnReadings.Select(r =>
+								new Reading<ReadingTypes>(ReadingTypes.Onyomi, r)));
 
 						return new ReadingCharacter<ReadingTypes>(c, readings);
 					})
@@ -121,11 +135,13 @@ namespace Romanization
 
 			/// <summary>
 			/// Performs romanization of all Kanji in the given text.<br />
-			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings (pronunciations) of each.<br />
+			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings
+			/// (pronunciations) of each.<br />
 			/// Returns the following readings for characters if they exist: Kun'yomi and On'yomi.
 			/// </summary>
 			/// <param name="text">The text to romanize.</param>
-			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in <paramref name="text"/>.</returns>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in
+			/// <paramref name="text"/>.</returns>
 			[Pure]
 			public ReadingsString<ReadingTypes> ProcessWithReadings(string text)
 				=> ProcessWithReadings(text, ReadingTypes.Kunyomi | ReadingTypes.Onyomi);
