@@ -1,6 +1,6 @@
 # Romanization.NET
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
-[![Build Status](https://img.shields.io/travis/zedseven/Romanization.net/dev?logo=travis-ci&logoColor=white)](https://travis-ci.org/zedseven/Romanization.NET)
+[![Build Status](https://img.shields.io/travis/zedseven/Romanization.NET/dev?logo=travis-ci&logoColor=white)](https://travis-ci.org/zedseven/Romanization.NET)
 [![NuGet](https://img.shields.io/nuget/v/Romanization.NET.svg?logo=nuget)](https://www.nuget.org/packages/Romanization.NET/)
 [![# Issues](https://img.shields.io/github/issues/zedseven/Romanization.NET?logo=github)](https://github.com/zedseven/Romanization.NET/issues)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/zedseven/Romanization.NET?logo=code-climate)](https://codeclimate.com/github/zedseven/Romanization.NET/maintainability)

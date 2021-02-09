@@ -52,10 +52,10 @@ namespace Romanization
 				private readonly INumeralParsingSystem NumeralsSystem;
 
 				// System-Specific Constants
-				private readonly Dictionary<string, string> RomanizationTable		= new Dictionary<string, string>();
-				private readonly Dictionary<string, string> DiphthongTable		   = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> RomanizationTable        = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> DiphthongTable           = new Dictionary<string, string>();
 				private readonly Dictionary<string, string> SpecificCombinationTable = new Dictionary<string, string>();
-				private readonly Dictionary<string, string> PunctuationTable		 = new Dictionary<string, string>();
+				private readonly Dictionary<string, string> PunctuationTable         = new Dictionary<string, string>();
 
 				private readonly CaseAwareSub RhoAspiratedSub = new CaseAwareSub("(?:\\bρ|(?<=ρ)ρ(?!\\b|ρ))", "rh");
 
@@ -81,32 +81,32 @@ namespace Romanization
 					// Sourced from https://en.wikipedia.org/wiki/Romanization_of_Greek
 
 					// Main characters (2021)
-					RomanizationTable["α"]	   = "a";
-					RomanizationTable["β"]	   = "b";
-					RomanizationTable["γ"]	   = "g";  // has special provisions
-					RomanizationTable["δ"]	   = "d";
-					RomanizationTable["ε"]	   = "e";
-					RomanizationTable["ζ"]	   = "z";
-					RomanizationTable["η"]	   = "ē";
-					RomanizationTable["θ"]	   = "th";
-					RomanizationTable["ι"]	   = "i";
-					RomanizationTable["κ"]	   = "k";
-					RomanizationTable["λ"]	   = "l";
-					RomanizationTable["μ"]	   = "m";
-					RomanizationTable["ν"]	   = "n";
-					RomanizationTable["ξ"]	   = "x";
-					RomanizationTable["ο"]	   = "o";
-					RomanizationTable["π"]	   = "p";
+					RomanizationTable["α"]       =  "a";
+					RomanizationTable["β"]       =  "b";
+					RomanizationTable["γ"]       =  "g";  // has special provisions
+					RomanizationTable["δ"]       =  "d";
+					RomanizationTable["ε"]       =  "e";
+					RomanizationTable["ζ"]       =  "z";
+					RomanizationTable["η"]       =  "ē";
+					RomanizationTable["θ"]       = "th";
+					RomanizationTable["ι"]       =  "i";
+					RomanizationTable["κ"]       =  "k";
+					RomanizationTable["λ"]       =  "l";
+					RomanizationTable["μ"]       =  "m";
+					RomanizationTable["ν"]       =  "n";
+					RomanizationTable["ξ"]       =  "x";
+					RomanizationTable["ο"]       =  "o";
+					RomanizationTable["π"]       =  "p";
 					RomanizationTable["ρ\u0314"] = "rh";
-					RomanizationTable["ρ"]	   = "r";  // has special provisions
-					RomanizationTable["σ"]	   = "s";
-					RomanizationTable["ς"]	   = "s";
-					RomanizationTable["τ"]	   = "t";
-					RomanizationTable["υ"]	   = "y";  // has special provisions
-					RomanizationTable["φ"]	   = "ph";
-					RomanizationTable["χ"]	   = "ch";
-					RomanizationTable["ψ"]	   = "ps";
-					RomanizationTable["ω"]	   = "ō";
+					RomanizationTable["ρ"]       =  "r";  // has special provisions
+					RomanizationTable["σ"]       =  "s";
+					RomanizationTable["ς"]       =  "s";
+					RomanizationTable["τ"]       =  "t";
+					RomanizationTable["υ"]       =  "y";  // has special provisions
+					RomanizationTable["φ"]       = "ph";
+					RomanizationTable["χ"]       = "ch";
+					RomanizationTable["ψ"]       = "ps";
+					RomanizationTable["ω"]       =  "ō";
 
 					DiphthongTable["αι"] = "ae";
 					DiphthongTable["ει"] = "ei";
@@ -129,27 +129,27 @@ namespace Romanization
 					RomanizationTable["ͷ"] = "w"; // Digamma
 					RomanizationTable["ϙ"] = "ḳ"; // Koppa
 					RomanizationTable["ϟ"] = "ḳ"; // Koppa
-					RomanizationTable["ϡ"] = "";  // Sampi
-					RomanizationTable["ͳ"] = "";  // Sampi
-					RomanizationTable["ϻ"] = "";  // San
+					RomanizationTable["ϡ"] =  ""; // Sampi
+					RomanizationTable["ͳ"] =  ""; // Sampi
+					RomanizationTable["ϻ"] =  ""; // San
 					RomanizationTable["Ϲ"] = "s"; // Lunate sigma
 					RomanizationTable["ϲ"] = "s"; // Lunate sigma
-					RomanizationTable["ϳ"] = "";  // Yot
+					RomanizationTable["ϳ"] =  ""; // Yot
 
 					// Punctuation
 					if (VeryOld)
 					{
-						PunctuationTable["."]	  = ","; // Low dot (in ancient Greek this acted as a short breath, or comma)
-						PunctuationTable["·"]	  = ";"; // Mid dot (in ancient Greek this acted as a long breath, or semicolon)
+						PunctuationTable["."]      = ","; // Low dot (in ancient Greek this acted as a short breath, or comma)
+						PunctuationTable["·"]      = ";"; // Mid dot (in ancient Greek this acted as a long breath, or semicolon)
 						PunctuationTable["\u0387"] = ";"; // Distinct from above but visually the same
 						PunctuationTable["\u02D9"] = "."; // High dot (in ancient Greek this acted as a full stop)
 						PunctuationTable["\u205A"] = "."; // In ancient texts the Greek two-dot punctuation mark (looks like a colon) served as the full stop
 						PunctuationTable["\u203F"] = "-"; // Papyrological hyphen
 						PunctuationTable["\u035C"] = "-"; // Papyrological hyphen
 					}
-					PunctuationTable[";"]	  = "?";
+					PunctuationTable[";"]      = "?";
 					PunctuationTable["\u037E"] = "?"; // Distinct from above but visually the same
-					PunctuationTable["’"]	  = "h"; // Sometimes used as an aspiration mark
+					PunctuationTable["’"]      = "h"; // Sometimes used as an aspiration mark
 
 					#endregion
 				}
@@ -181,8 +181,8 @@ namespace Romanization
 										  "\u0301\u0341" + // Acute accent
 										  "\u0313\u0343" + // Smooth breathing/koronis
 										  "\u0303\u0342" + // Tilde
-										  "\u0311" +	   // Inverted breve
-										  "\u0345")		// Iota subscript
+										  "\u0311" +       // Inverted breve
+										  "\u0345")        // Iota subscript
 							.ReplaceFromChartWithSameCase(PunctuationTable);
 
 						// Convert numerals

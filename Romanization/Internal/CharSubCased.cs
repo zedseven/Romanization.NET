@@ -11,16 +11,16 @@ namespace Romanization.Internal
 
 		public CharSubCased(string patternUpper, string patternLower, string substitutionUpper, string substitutionLower)
 		{
-			_findRegexUpper	= new Regex(patternUpper, RegexOptions.Compiled);
-			_findRegexLower	= new Regex(patternLower, RegexOptions.Compiled);
+			_findRegexUpper    = new Regex(patternUpper, RegexOptions.Compiled);
+			_findRegexLower    = new Regex(patternLower, RegexOptions.Compiled);
 			_substitutionUpper = substitutionUpper;
 			_substitutionLower = substitutionLower;
 		}
 
 		public CharSubCased(string patternUpper, string patternLower, string substitutionUpper, string substitutionLower, RegexOptions options)
 		{
-			_findRegexUpper	= new Regex(patternUpper, RegexOptions.Compiled | options);
-			_findRegexLower	= new Regex(patternLower, RegexOptions.Compiled | options);
+			_findRegexUpper    = new Regex(patternUpper, RegexOptions.Compiled | options);
+			_findRegexLower    = new Regex(patternLower, RegexOptions.Compiled | options);
 			_substitutionUpper = substitutionUpper;
 			_substitutionLower = substitutionLower;
 		}

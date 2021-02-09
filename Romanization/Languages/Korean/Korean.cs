@@ -16,8 +16,8 @@ namespace Romanization
 	public static partial class Korean
 	{
 		// Unicode Constants (sourced from https://en.wikipedia.org/wiki/Korean_language_and_computers#Hangul_in_Unicode)
-		private const int HangeulUnicodeBaseOffset = 44032;
-		private const int HangeulUnicodeMedialSpace = 28;
+		private const int HangeulUnicodeBaseOffset   = 44032;
+		private const int HangeulUnicodeMedialSpace  = 28;
 		private const int HangeulUnicodeInitialSpace = 588; // 21 * 28
 
 		private class SyllableBlock
@@ -31,8 +31,8 @@ namespace Romanization
 			{
 				Character = character;
 				Initial   = new PlacementChar(initial, PlacementChar.Placements.Initial);
-				Medial	= new PlacementChar(medial,  PlacementChar.Placements.Medial);
-				Final	 = final.HasValue ? new PlacementChar(final.Value, PlacementChar.Placements.Final) : (PlacementChar?) null;
+				Medial    = new PlacementChar(medial,  PlacementChar.Placements.Medial);
+				Final     = final.HasValue ? new PlacementChar(final.Value, PlacementChar.Placements.Final) : (PlacementChar?) null;
 			}
 
 			[Pure]
@@ -219,7 +219,7 @@ namespace Romanization
 			int finalIndex = codePoint % HangeulUnicodeMedialSpace;
 			int medialIndex = (codePoint - finalIndex) % HangeulUnicodeInitialSpace / HangeulUnicodeMedialSpace;
 			int initialIndex = (codePoint - finalIndex - medialIndex * HangeulUnicodeMedialSpace) / HangeulUnicodeInitialSpace;
-			
+
 			SyllableBlock newBlock = new SyllableBlock(block,
 				HangeulUnicodeJamoInitialMap[initialIndex],
 				HangeulUnicodeJamoMedialMap[medialIndex],

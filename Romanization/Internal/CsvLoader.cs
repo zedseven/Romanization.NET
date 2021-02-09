@@ -34,7 +34,9 @@ namespace Romanization.Internal
 		}
 
 		/// <summary>
-		/// Loads a CSV file stream into a dictionary, using the provided mapping functions to map CSV entries to dict keys &amp; values.
+		/// Loads a CSV file stream into a dictionary, using the provided mapping functions to map CSV entries to dict
+		/// keys &amp; values.<br />
+		/// Note that this is a non-standard CSV parsing implementation - it only looks for the first comma.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the dictionary keys.</typeparam>
 		/// <typeparam name="TVal">The type of the dictionary values.</typeparam>

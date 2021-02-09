@@ -21,14 +21,14 @@ namespace Romanization.Internal
 
 		public CaseAwareSub(string pattern, string dynamicReplacement, bool countCapturesInCasing = false)
 		{
-			_findRegex	= new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+			_findRegex    = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
 			_dynamicReplacement = new DynamicReplacement(dynamicReplacement);
 			_countCapturesInCasing = countCapturesInCasing;
 		}
 
 		public CaseAwareSub(string pattern, string dynamicReplacement, RegexOptions options, bool countCapturesInCasing = false)
 		{
-			_findRegex	= new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | options);
+			_findRegex    = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | options);
 			_dynamicReplacement = new DynamicReplacement(dynamicReplacement);
 			_countCapturesInCasing = countCapturesInCasing;
 		}

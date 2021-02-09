@@ -36,8 +36,8 @@ namespace Romanization.Internal
 				{  100, 'C' },
 				{   50, 'L' },
 				{   10, 'X' },
-				{	5, 'V' },
-				{	1, 'I' }
+				{    5, 'V' },
+				{    1, 'I' }
 			};
 			Dictionary<int, int> subtractiveSteps = new Dictionary<int, int>
 			{
@@ -46,7 +46,7 @@ namespace Romanization.Internal
 				{  100,  10 },
 				{   50,  10 },
 				{   10,   1 },
-				{	5,   1 }
+				{    5,   1 }
 			};
 			Dictionary<decimal, char> fractionRepresentations = new Dictionary<decimal, char>
 			{

@@ -27,16 +27,16 @@ namespace Romanization
 			public sealed class GreekNumerals : INumeralParsingSystem
 			{
 				// System-Specific Constants
-				private readonly Dictionary<char, int> ValueTable	 = new Dictionary<char, int>();
-				private const	char   CanonicalDoubleUpperKeraia	= '″';
-				private const	char   CanonicalSingleUpperKeraia	= 'ʹ';
-				private const	char   CanonicalLowerKeraia		  = '͵';
-				private const	char   CanonicalOverbar			  = '\u0305';
+				private readonly Dictionary<char, int> ValueTable     = new Dictionary<char, int>();
+				private const    char   CanonicalDoubleUpperKeraia    = '″';
+				private const    char   CanonicalSingleUpperKeraia    = 'ʹ';
+				private const    char   CanonicalLowerKeraia          = '͵';
+				private const    char   CanonicalOverbar              = '\u0305';
 				private readonly char[] UpperKeraiaDoubleReplacements = { 'ʺ', '"' };
 				private readonly char[] UpperKeraiaSingleReplacements = { 'ʹ', '\'' };
-				private readonly char[] LowerKeraiaReplacements	   = { ',' };
-				private readonly char[] OverbarChars				  = { '\u0305', '‾' };
-				private const	string SigmaTauDigraph			   = "ΣΤ";
+				private readonly char[] LowerKeraiaReplacements       = { ',' };
+				private readonly char[] OverbarChars        	      = { '\u0305', '‾' };
+				private const    string SigmaTauDigraph               = "ΣΤ";
 
 				private readonly Regex OverbarBoundaryRegex = new Regex("\u0305(?!.\u0305|\u0305)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 

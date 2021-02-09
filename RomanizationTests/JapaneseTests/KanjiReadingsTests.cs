@@ -60,8 +60,8 @@ namespace RomanizationTests.JapaneseTests
 			Assert.AreEqual("[oshieru oshie yomu kun kin][yomu yomi toku tou doku]",
 				_system.ProcessWithReadings("訓読").ToString());
 			Assert.AreEqual("[arawareru arawasu utsutsu gen ken][kawaru yo shiro dai tai] [kara kan]" +
-			                "[kataru kotoba tsugeru go gyo] [shikirini hin bin][hikiiru oomune wariai ritsu sotsu] " +
-			                "[kotoba shi ji][nori tsukasadoru sakan ten]",
+							"[kataru kotoba tsugeru go gyo] [shikirini hin bin][hikiiru oomune wariai ritsu sotsu] " +
+							"[kotoba shi ji][nori tsukasadoru sakan ten]",
 				_system.ProcessWithReadings("現代 漢語 頻率 詞典").ToString());
 		}
 	}
