@@ -1,0 +1,740 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/travis/build/zedseven/Romanization.NET/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Chinese.HanyuPinyin.ReadingTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Chinese.HanyuPinyin.ReadingTypes.html",
+          "hash": "45UyNZR4Dp5K+/y1sJOnLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Chinese.HanyuPinyin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Chinese.HanyuPinyin.html",
+          "hash": "ah+XvhdPky1uSwffesQAOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Chinese.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Chinese.html",
+          "hash": "nirmSkQ15ArnibSS8/gS4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.Ancient.AlaLc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.Ancient.AlaLc.html",
+          "hash": "4lxrS3KLKXhyNIa6PK/pvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.Ancient.AtticNumerals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.Ancient.AtticNumerals.html",
+          "hash": "njMNsdqwD9n3g7Rq2rqh5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.Ancient.BetaCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.Ancient.BetaCode.html",
+          "hash": "1C95pp3zCI0zkM9N+AhIrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.Ancient.GreekNumerals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.Ancient.GreekNumerals.html",
+          "hash": "xQb65lG5V/sgu4DMuPWX/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.Ancient.Units.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.Ancient.Units.html",
+          "hash": "/xLHA168NDkyBeKwyE0nTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.Ancient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.Ancient.html",
+          "hash": "b1oQLfnAULcYWHLZ6GSgLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.Modern.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.Modern.html",
+          "hash": "97n0og7sRkgMDgvr/3P7Gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Greek.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Greek.html",
+          "hash": "iZUXYWsnwKOXF0aEF366ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.IMultiInCultureSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.IMultiInCultureSystem.html",
+          "hash": "3FpHF8MhCDjVfP8hLz2CCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.IMultiInOutCultureSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.IMultiInOutCultureSystem.html",
+          "hash": "VUwNEKecjYanuRTkm0xD1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.IMultiOutCultureSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.IMultiOutCultureSystem.html",
+          "hash": "CBM+d15nFfOjJvnRCzyVPQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.INumeralParsingSystem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.INumeralParsingSystem-1.html",
+          "hash": "kxVdn7vhaGBt9bMIFoct2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.INumeralParsingSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.INumeralParsingSystem.html",
+          "hash": "xOd499i/0LHUasza3fudgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.IReadingsSystem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.IReadingsSystem-1.html",
+          "hash": "H71HqTqrGVmWdEE1FFgnFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.IRomanizationSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.IRomanizationSystem.html",
+          "hash": "4+M59GZtHXTbM6KThiwwNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Internal.CaptureCountMismatchException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Internal.CaptureCountMismatchException.html",
+          "hash": "ZBDXghgT4PpihUePeuTekA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Internal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Internal.html",
+          "hash": "uQMbuELuKGig8QkT98WR3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.IrrelevantCultureException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.IrrelevantCultureException.html",
+          "hash": "6Zl1xgqfNDRbZ7OlDdjQvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Japanese.KanjiReadings.ReadingTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Japanese.KanjiReadings.ReadingTypes.html",
+          "hash": "/yh2pX1/ImnWI9ptBzW6zg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Japanese.KanjiReadings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Japanese.KanjiReadings.html",
+          "hash": "MF58eHmGZdqJfDh00cRXHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Japanese.ModifiedHepburn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Japanese.ModifiedHepburn.html",
+          "hash": "QXKyNiP3bmeOj5klR/DCXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Japanese.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Japanese.html",
+          "hash": "VVUH110iSv4VDRJk8fCTxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Korean.HanjaReadings.ReadingTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Korean.HanjaReadings.ReadingTypes.html",
+          "hash": "kO1Mqv/slOoNbj/gttCjBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Korean.HanjaReadings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Korean.HanjaReadings.html",
+          "hash": "To6yX4rFVK30wbweaBXzmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Korean.RevisedRomanization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Korean.RevisedRomanization.html",
+          "hash": "RPFCwI6MUuvN1YryUcrKfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Korean.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Korean.html",
+          "hash": "X6z7A+A3ocsc6/EleOyoGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.NumeralValue-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.NumeralValue-1.html",
+          "hash": "bCXUpISnkLV2s+Gbxt5t5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.NumeralValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.NumeralValue.html",
+          "hash": "u0CAzDcPrPJAx8N33Kk5Cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.OutputNumeralType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.OutputNumeralType.html",
+          "hash": "S/S6KJBkVl6poRRQNsrSoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Reading-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Reading-1.html",
+          "hash": "cbry2piFXWV1A0sOr3dVSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.ReadingCharacter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.ReadingCharacter-1.html",
+          "hash": "1+Lpc5mMdr1uX0QSMycbiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.ReadingsString-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.ReadingsString-1.html",
+          "hash": "uJKqixwdHvx7vM2n0I4kdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.AlaLc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.AlaLc.html",
+          "hash": "qq33dyahQEQJvw9IXOV48g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.BgnPcgn.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.BgnPcgn.html",
+          "hash": "h4iDRRSREOJcVmOVIxtJTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.Bs29791958.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.Bs29791958.html",
+          "hash": "/zIxIXDilkT5X9TTKjTh1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.Gost16876711.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.Gost16876711.html",
+          "hash": "zPs8XwTiSfghlsCW3J1UZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.Gost16876712.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.Gost16876712.html",
+          "hash": "ZRFyb+99m1iEfL+UY1hbKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.Gost7792000A.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.Gost7792000A.html",
+          "hash": "9OEYxrXveFjIiyn/reUfNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.Gost7792000B.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.Gost7792000B.html",
+          "hash": "CUTmdRqVtXHdMLFoF3P+JA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.Icao9303.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.Icao9303.html",
+          "hash": "2SEv7oDzqT3/Ei+CYC8DEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.IsoR9.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.IsoR9.html",
+          "hash": "q4nlBriofWRBOUpsNDsC9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.RoadSigns.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.RoadSigns.html",
+          "hash": "pEryupnhq9krzND/QVIvOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.Scholarly.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.Scholarly.html",
+          "hash": "oednJx9pfDCl6IsSRWspeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.Russian.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.Russian.html",
+          "hash": "tYbIX5bU7x+B+CygITPNBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.SystemType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.SystemType.html",
+          "hash": "l+EXrqZxb8CLqN5bejTQjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Romanization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Romanization.html",
+          "hash": "bRQfsJxsjLks9sQfZP+a6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "ihTvGK0+XJIgW8Wn9Rv/nA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "XcwqE92lLaVcO6Pffe16Tg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/readingsSystems.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/readingsSystems.html",
+          "hash": "uaoO2jtxS03Amzk/1orIMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "articles/supported.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/supported.html",
+          "hash": "a6CyV+tsk7n3mmxW58J6cA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "/ZYZqQxY5j650/3oible/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "JemqzCkJEmN6k9HDOUuw+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "bESV0fR8wYmgkYyLVRJEzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 49,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

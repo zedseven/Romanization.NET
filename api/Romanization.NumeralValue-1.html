@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Struct NumeralValue&lt;TLanguageUnits&gt;
+   | Romanization.NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Struct NumeralValue&lt;TLanguageUnits&gt;
+   | Romanization.NET ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Romanization.NumeralValue`1">
+  
+  
+  <h1 id="Romanization_NumeralValue_1" data-uid="Romanization.NumeralValue`1" class="text-break">Struct NumeralValue&lt;TLanguageUnits&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>A numeral value with an associated unit if there is one.<br>
+Some numeral systems have special characters that indicate what the number is for, which is what the
+<a class="xref" href="Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_Unit">Unit</a> field is for.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IEquatable</span>&lt;<a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;&gt;</div>
+    <div><span class="xref">IComparable</span>&lt;<a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Romanization.html">Romanization</a></h6>
+  <h6><strong>Assembly</strong>: Romanization.NET.dll</h6>
+  <h5 id="Romanization_NumeralValue_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct NumeralValue&lt;TLanguageUnits&gt; : IEquatable&lt;NumeralValue&lt;TLanguageUnits&gt;&gt;, IComparable&lt;NumeralValue&lt;TLanguageUnits&gt;&gt; where TLanguageUnits : struct</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLanguageUnits</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1__ctor_System_Decimal_System_Nullable__0__.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.%23ctor(System.Decimal%2CSystem.Nullable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L85">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1__ctor_" data-uid="Romanization.NumeralValue`1.#ctor*"></a>
+  <h4 id="Romanization_NumeralValue_1__ctor_System_Decimal_System_Nullable__0__" data-uid="Romanization.NumeralValue`1.#ctor(System.Decimal,System.Nullable{`0})">NumeralValue(Decimal, Nullable&lt;TLanguageUnits&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructs a new <a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue&lt;TLanguageUnits&gt;</a> with a <code data-dev-comment-type="paramref" class="paramref">value</code> and <code data-dev-comment-type="paramref" class="paramref">unit</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NumeralValue(decimal value, TLanguageUnits? unit = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;TLanguageUnits&gt;</td>
+        <td><span class="parametername">unit</span></td>
+        <td><p>The unit the value is in, if any.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_Unit.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.Unit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L78">View Source</a>
+  </span>
+  <h4 id="Romanization_NumeralValue_1_Unit" data-uid="Romanization.NumeralValue`1.Unit">Unit</h4>
+  <div class="markdown level1 summary"><p>The unit of the value, if known. Some numeral systems have symbols built in that convey the unit
+the number is of.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly TLanguageUnits? Unit</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;TLanguageUnits&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_Value.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L73">View Source</a>
+  </span>
+  <h4 id="Romanization_NumeralValue_1_Value" data-uid="Romanization.NumeralValue`1.Value">Value</h4>
+  <div class="markdown level1 summary"><p>The numeric value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly decimal Value</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_CompareTo_Romanization_NumeralValue__0__.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.CompareTo(Romanization.NumeralValue%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L122">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1_CompareTo_" data-uid="Romanization.NumeralValue`1.CompareTo*"></a>
+  <h4 id="Romanization_NumeralValue_1_CompareTo_Romanization_NumeralValue__0__" data-uid="Romanization.NumeralValue`1.CompareTo(Romanization.NumeralValue{`0})">CompareTo(NumeralValue&lt;TLanguageUnits&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(NumeralValue&lt;TLanguageUnits&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_Equals_Romanization_NumeralValue__0__.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.Equals(Romanization.NumeralValue%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L92">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1_Equals_" data-uid="Romanization.NumeralValue`1.Equals*"></a>
+  <h4 id="Romanization_NumeralValue_1_Equals_Romanization_NumeralValue__0__" data-uid="Romanization.NumeralValue`1.Equals(Romanization.NumeralValue{`0})">Equals(NumeralValue&lt;TLanguageUnits&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(NumeralValue&lt;TLanguageUnits&gt; other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;</td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L96">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1_Equals_" data-uid="Romanization.NumeralValue`1.Equals*"></a>
+  <h4 id="Romanization_NumeralValue_1_Equals_System_Object_" data-uid="Romanization.NumeralValue`1.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_GetHashCode.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L100">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1_GetHashCode_" data-uid="Romanization.NumeralValue`1.GetHashCode*"></a>
+  <h4 id="Romanization_NumeralValue_1_GetHashCode" data-uid="Romanization.NumeralValue`1.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_ToString.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L126">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1_ToString_" data-uid="Romanization.NumeralValue`1.ToString*"></a>
+  <h4 id="Romanization_NumeralValue_1_ToString" data-uid="Romanization.NumeralValue`1.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_op_Equality_Romanization_NumeralValue__0__Romanization_NumeralValue__0__.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.op_Equality(Romanization.NumeralValue%7B%600%7D%2CRomanization.NumeralValue%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L109">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1_op_Equality_" data-uid="Romanization.NumeralValue`1.op_Equality*"></a>
+  <h4 id="Romanization_NumeralValue_1_op_Equality_Romanization_NumeralValue__0__Romanization_NumeralValue__0__" data-uid="Romanization.NumeralValue`1.op_Equality(Romanization.NumeralValue{`0},Romanization.NumeralValue{`0})">Equality(NumeralValue&lt;TLanguageUnits&gt;, NumeralValue&lt;TLanguageUnits&gt;)</h4>
+  <div class="markdown level1 summary"><p>Checks for equality between two <a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue&lt;TLanguageUnits&gt;</a> instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(NumeralValue&lt;TLanguageUnits&gt; left, NumeralValue&lt;TLanguageUnits&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left side of the operator.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right side of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Whether <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code> are value-equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1_op_Inequality_Romanization_NumeralValue__0__Romanization_NumeralValue__0__.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601.op_Inequality(Romanization.NumeralValue%7B%600%7D%2CRomanization.NumeralValue%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L118">View Source</a>
+  </span>
+  <a id="Romanization_NumeralValue_1_op_Inequality_" data-uid="Romanization.NumeralValue`1.op_Inequality*"></a>
+  <h4 id="Romanization_NumeralValue_1_op_Inequality_Romanization_NumeralValue__0__Romanization_NumeralValue__0__" data-uid="Romanization.NumeralValue`1.op_Inequality(Romanization.NumeralValue{`0},Romanization.NumeralValue{`0})">Inequality(NumeralValue&lt;TLanguageUnits&gt;, NumeralValue&lt;TLanguageUnits&gt;)</h4>
+  <div class="markdown level1 summary"><p>Checks for inequality between two <a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue&lt;TLanguageUnits&gt;</a> instances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(NumeralValue&lt;TLanguageUnits&gt; left, NumeralValue&lt;TLanguageUnits&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left side of the operator.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Romanization.NumeralValue-1.html">NumeralValue</a>&lt;TLanguageUnits&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right side of the operator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Whether <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code> are not value-equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">IEquatable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IComparable&lt;&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/zedseven/Romanization.NET/new/b361292bb1ec0bad9055954055d60cbd57d7bd1e/apiSpec/new?filename=Romanization_NumeralValue_1.md&amp;value=---%0Auid%3A%20Romanization.NumeralValue%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Romanization/NumeralValue.cs/#L67" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Romanization.NET
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

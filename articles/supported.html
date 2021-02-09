@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Supported Languages and Systems | Romanization.NET </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Supported Languages and Systems | Romanization.NET ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="supported-languages-and-systems">Supported Languages and Systems</h1>
+
+<p>The goal of Romanization.NET is to provide a simple, extensive way to romanize widely-used languages as accurately as possible.</p>
+<p>Below is a list of all supported languages and systems, with explanations of caveats and limitations if necessary. Languages are ordered lexicographically ascending.</p>
+<h2 id="chinese">Chinese</h2>
+<h3 id="hànyǔ-pīnyīn"><a href="https://en.wikipedia.org/wiki/Pinyin">Hànyǔ Pīnyīn</a></h3>
+<p>The Hànyǔ Pīnyīn system is considered a <a href="readingsSystems">Readings System</a>, and supports all <a href="https://en.wikipedia.org/wiki/Chinese_characters">Hànzì</a> characters in the <a href="http://www.unicode.org/charts/unihan.html">Unihan database</a>.</p>
+<p>The <a href="/api/Romanization.Chinese.HanyuPinyinSystem.ReadingTypes.html">reading types</a> to use can be specified, but default to using all of them.</p>
+<p>The order in which readings are returned is as follows:</p>
+<ol>
+<li>Hànyǔ Pīnyīn</li>
+<li>Hànyǔ Pínlǜ - Hànyǔ Pīnyīn as it appeared in <a href="https://www.unicode.org/reports/tr38/index.html#kHanyuPinlu">Xiàndài Hànyǔ Pínlǜ Cídiǎn</a></li>
+<li>XHC - Hànyǔ Pīnyīn as it appeared in <a href="https://www.unicode.org/reports/tr38/index.html#kXHC1983">Xiàndài Hànyǔ Cídiǎn</a></li>
+</ol>
+<h2 id="japanese">Japanese</h2>
+<h3 id="modified-hepburn"><a href="https://en.wikipedia.org/wiki/Hepburn_romanization">Modified Hepburn</a></h3>
+<p>This system is a revised version of the romanization system first published by James Curtis Hepburn, and the one in most widespread use in Japan.</p>
+<p>It only supports <a href="https://en.wikipedia.org/wiki/Kana">Kana</a> (<a href="https://en.wikipedia.org/wiki/Hiragana">Hiragana</a> and <a href="https://en.wikipedia.org/wiki/Katakana">Katakana</a>), not Kanji. See below for Kanji support.</p>
+<p>This supports <a href="https://en.wikipedia.org/wiki/Hepburn_romanization#Syllabic_n">syllabic n</a> (ん), <a href="https://en.wikipedia.org/wiki/Hepburn_romanization#Long_consonants">long consonants</a> (sokuon, or っ), and <a href="https://en.wikipedia.org/wiki/Hepburn_romanization#Loanwords">long vowels</a> (chōonpu (ー) only).</p>
+<h4 id="limitations">Limitations</h4>
+<p>In the Modified Hepburn system, certain pairs of subsequent vowels in the romanized result are <a href="https://en.wikipedia.org/wiki/Hepburn_romanization#Long_vowels">to be combined into single long vowels</a>, often indicated with a macron (aa =&gt; ā, for example).</p>
+<p>The issue is, according to the spec for the system, these combinations depend on whether the two vowels belong to different morphemes - this is not something known to the program.
+As a result, while some vowel combinations <em>could</em> be done (not all have this requirement), to remain consistent in output, no vowel combination is done.</p>
+<h3 id="kanji-kun--on-readings"><a href="https://en.wikipedia.org/wiki/Kanji#Readings">Kanji (Kun &amp; On) Readings</a></h3>
+<p>Kanji are effectively Japan's Hànzì, and share many of the same considerations and even symbols.</p>
+<p>While Kana are syllabaries (each character is one syllable, and therefore maps neatly to a distinct sound), Kanji are their own symbols that can be a variable number of syllables.
+To make things more complicated, each can have multiple readings - in both <a href="https://en.wikipedia.org/wiki/Kanji#Kun%27yomi_(native_reading)">Kun'yomi</a> and <a href="https://en.wikipedia.org/wiki/Kanji#On%27yomi_(Sino-Japanese_reading)">On'yomi</a>.</p>
+<p>This is why this system is considered a <a href="readingsSystems">Readings System</a> for the purposes of this library, which means you can get every known reading from the <a href="http://www.unicode.org/charts/unihan.html">Unihan database</a> for each character.</p>
+<p>The two reading types supported are:</p>
+<ol>
+<li>Kun'yomi - often referred to as just Kun - the native reading</li>
+<li>On'yomi - often referred to as just On - the Sino-Japanese reading</li>
+</ol>
+<h4 id="additional-notes">Additional Notes</h4>
+<p>Because Kanji often appear alongside supplementary Kana, the system also has a small convenience function that romanizes both Kanji and Kana, using the system of your choice for Kana.</p>
+<h2 id="korean">Korean</h2>
+<h3 id="revised-romanization-of-korean"><a href="https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean">Revised Romanization of Korean</a></h3>
+<p>The Revised Romanization of Korean system is the most commonly used, and does not make use of accents or macrons.</p>
+<p>The system has a few provisions for certain kinds of content, which change the romanization somewhat:</p>
+<ul>
+<li>Certain special pairs of Jamo are not combined in given names</li>
+<li>Whether or not aspiration is reflected in the romanization depends on whether or not the word is a noun</li>
+<li>Sometimes it can be helpful to hyphenate syllables, which occassionally makes a difference in disambiguating words with the same romanization (ga-eul vs. gae-ul)</li>
+</ul>
+<p>The library's implementation of this system supports all of these provisions as options that can be supplied to the function.</p>
+<h3 id="hanja--hangeul-readings"><a href="https://en.wikipedia.org/wiki/Hanja">Hanja</a> =&gt; <a href="https://en.wikipedia.org/wiki/Hangul">Hangeul</a> Readings</h3>
+<p>Hanja, like Kanji, came from China and share their symbols with Hànzì. As a result, this is also considered a <a href="readingsSystems">Readings System</a> as some Hanja have multiple possible readings.</p>
+<p>As with the other Hànzì-related characters, the supported Hanja are all from the <a href="http://www.unicode.org/charts/unihan.html">Unihan database</a>.</p>
+<p>Only one reading type is supported, which is the Hangeul equivalent pronunciation for each Hanja character.</p>
+<h4 id="additional-notes-1">Additional Notes</h4>
+<p>Because the goal of this package is, as the name suggests, romanization, the implementation also includes a function for first converting the Hanja to Hangeul, then romanizing the Hangeul using the system of your choice.</p>
+<h2 id="russian">Russian</h2>
+<p>At the time of writing, Russian has no single international standard of romanization/transliteration. Instead different systems are used by different groups for different purposes. As a result, there are many systems all implemented with very similar transliterations.</p>
+<h3 id="bgnpcgn"><a href="https://en.wikipedia.org/wiki/BGN/PCGN_romanization_of_Russian">BGN/PCGN</a></h3>
+<p>Developed jointly by the Unites States Board on Geographic Names and the Permanent Committee on Geographical Names for British Official Use, it is designed to be easier for anglophones to pronounce.</p>
+<p>Because of this, it's likely a solid choice for romanizing text specifically for English speakers (US/CA/UK audience).</p>
+<h3 id="gost-779-2000-system-a--iso-9"><a href="https://en.wikipedia.org/wiki/GOST_7.79-2000">GOST 7.79-2000 System A</a> / <a href="https://en.wikipedia.org/wiki/ISO_9">ISO 9</a></h3>
+<p>GOST 7.79-2000(A) focuses on mapping one Cyrillic character to one Latin character, potentially with diacritics.</p>
+<p>ISO 9:1995 is the current standard for Slavic transliteration from the ISO, and is based on ISO/R 9:1968.</p>
+<p>The two systems are functionally identical and in this library are combined into one, under the name of GOST 7.79-2000 System A. This is to retain consistency with the other GOST systems included, as it may be strange to have GOST 7.79-2000 System B but have A under a different name.</p>
+<h3 id="gost-779-2000-system-b"><a href="https://en.wikipedia.org/wiki/GOST_7.79-2000">GOST 7.79-2000 System B</a></h3>
+<p>In contrast to the above, GOST 7.79-2000(B) focuses on mapping one Cyrillic character to potentially several Latin characters (eg. <code>щ -&gt; shh</code>), but without the use of diacritics.</p>
+<h3 id="gost-16876-71-table-1-ungegn"><a href="https://en.wikipedia.org/wiki/GOST_16876-71">GOST 16876-71 Table 1 (UNGEGN)</a></h3>
+<p>GOST 16876-71(1) focuses on mapping one Cyrillic character to one Latin character, potentially with diacritics.</p>
+<p>It was recommended by the <a href="https://en.wikipedia.org/wiki/United_Nations_Group_of_Experts_on_Geographical_Names">United Nations Group of Experts on Geographical Names (UNGEGN)</a> in 1987.</p>
+<p>GOST 16876-71 was most recently updated in 1980, and was abandoned in favour of GOST 7.79-2000 in 2002 by the Russian Federation.</p>
+<h3 id="gost-16876-71-table-2"><a href="https://en.wikipedia.org/wiki/GOST_16876-71">GOST 16876-71 Table 2</a></h3>
+<p>GOST 16876-71(2) is another table in GOST 16876-71, and focuses on mapping one Cyrillic character to potentially several Latin characters (eg. <code>щ -&gt; shh</code>), but without the use of diacritics.</p>
+<h3 id="scholarlyscientific-transliteration"><a href="https://en.wikipedia.org/wiki/Scientific_transliteration_of_Cyrillic">Scholarly/Scientific Transliteration</a></h3>
+<p>The Scholarly transliteration system for Russian actually covers many slavic languages, with Russian being one of them. It tries to preserve pronunciation of the original characters while remaining unambiguous about it's transformations.</p>
+<h3 id="iso-recommendation-no-9-isor-91968"><a href="https://en.wikipedia.org/wiki/ISO_9#ISO/R_9">ISO Recommendation No. 9 (ISO/R 9:1968)</a></h3>
+<p>Similar to the scholarly system, ISO/R 9 was created 1954 and updated in 1968. It also supports many Slavic languages, and was the ISO's earliest adoption of scholarly transliteration.</p>
+<h3 id="american-library-association-and-library-of-congress-ala-lc-system"><a href="https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian">American Library Association and Library of Congress (ALA-LC) System</a></h3>
+<p>This system was initially established in 1904, and remains largely unchanged since 1941. It's primary purpose is in US, Canadian, and British libraries.</p>
+<p>This system uses some diacritics and uses two-letter tie characters for some Cyrillic characters.</p>
+<h3 id="british-standard-29791958"><a href="https://en.wikipedia.org/wiki/Romanization_of_Russian#British_Standard">British Standard 2979:1958</a></h3>
+<p>It is the main system of Oxford University Press, and was used by the British Library up until 1975.</p>
+<p>The ALA-LC system is now used by the British Library instead.</p>
+<h3 id="icao-doc-9303"><a href="https://www.icao.int/publications/Documents/9303_p3_cons_en.pdf">ICAO Doc 9303</a></h3>
+<p>Created by the International Civil Aviation Organization, a UN agency, the document is designed to make travel documents machine-readable.</p>
+<p>It contains tables for transliteration to Latin characters from many alphabets, including Cyrillic. The system uses no diacritics whatsoever, only standard ASCII characters.</p>
+<p>The system was put into effect by the Russian government in 2013 for all citizen passports.</p>
+<h3 id="general-road-signs"><a href="https://en.wikipedia.org/wiki/Romanization_of_Russian#Road_signs_note">General Road Signs</a></h3>
+<p>This is the system generally used for romanization for road signs and the like.</p>
+<p>This originally followed GOST 10807-78 (tables 17, 18), but now follows GOST R 52290-2004 (tables Г.4, Г.5).</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/zedseven/Romanization.NET/blob/b361292bb1ec0bad9055954055d60cbd57d7bd1e/Documentation/articles/supported.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Romanization.NET
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

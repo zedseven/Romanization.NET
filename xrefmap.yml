@@ -1,0 +1,2148 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Romanization
+  name: Romanization
+  href: api/Romanization.html
+  commentId: N:Romanization
+  fullName: Romanization
+  nameWithType: Romanization
+- uid: Romanization.Chinese
+  name: Chinese
+  href: api/Romanization.Chinese.html
+  commentId: T:Romanization.Chinese
+  fullName: Romanization.Chinese
+  nameWithType: Chinese
+- uid: Romanization.Chinese.HanyuPinyin
+  name: Chinese.HanyuPinyin
+  href: api/Romanization.Chinese.HanyuPinyin.html
+  commentId: T:Romanization.Chinese.HanyuPinyin
+  fullName: Romanization.Chinese.HanyuPinyin
+  nameWithType: Chinese.HanyuPinyin
+- uid: Romanization.Chinese.HanyuPinyin.#ctor
+  name: HanyuPinyin()
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin__ctor
+  commentId: M:Romanization.Chinese.HanyuPinyin.#ctor
+  fullName: Romanization.Chinese.HanyuPinyin.HanyuPinyin()
+  nameWithType: Chinese.HanyuPinyin.HanyuPinyin()
+- uid: Romanization.Chinese.HanyuPinyin.#ctor*
+  name: HanyuPinyin
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin__ctor_
+  commentId: Overload:Romanization.Chinese.HanyuPinyin.#ctor
+  isSpec: "True"
+  fullName: Romanization.Chinese.HanyuPinyin.HanyuPinyin
+  nameWithType: Chinese.HanyuPinyin.HanyuPinyin
+- uid: Romanization.Chinese.HanyuPinyin.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_Process_System_String_
+  commentId: M:Romanization.Chinese.HanyuPinyin.Process(System.String)
+  fullName: Romanization.Chinese.HanyuPinyin.Process(System.String)
+  nameWithType: Chinese.HanyuPinyin.Process(String)
+- uid: Romanization.Chinese.HanyuPinyin.Process(System.String,Romanization.Chinese.HanyuPinyin.ReadingTypes)
+  name: Process(String, Chinese.HanyuPinyin.ReadingTypes)
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_Process_System_String_Romanization_Chinese_HanyuPinyin_ReadingTypes_
+  commentId: M:Romanization.Chinese.HanyuPinyin.Process(System.String,Romanization.Chinese.HanyuPinyin.ReadingTypes)
+  fullName: Romanization.Chinese.HanyuPinyin.Process(System.String, Romanization.Chinese.HanyuPinyin.ReadingTypes)
+  nameWithType: Chinese.HanyuPinyin.Process(String, Chinese.HanyuPinyin.ReadingTypes)
+- uid: Romanization.Chinese.HanyuPinyin.Process*
+  name: Process
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_Process_
+  commentId: Overload:Romanization.Chinese.HanyuPinyin.Process
+  isSpec: "True"
+  fullName: Romanization.Chinese.HanyuPinyin.Process
+  nameWithType: Chinese.HanyuPinyin.Process
+- uid: Romanization.Chinese.HanyuPinyin.ProcessWithReadings(System.String)
+  name: ProcessWithReadings(String)
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_ProcessWithReadings_System_String_
+  commentId: M:Romanization.Chinese.HanyuPinyin.ProcessWithReadings(System.String)
+  fullName: Romanization.Chinese.HanyuPinyin.ProcessWithReadings(System.String)
+  nameWithType: Chinese.HanyuPinyin.ProcessWithReadings(String)
+- uid: Romanization.Chinese.HanyuPinyin.ProcessWithReadings(System.String,Romanization.Chinese.HanyuPinyin.ReadingTypes)
+  name: ProcessWithReadings(String, Chinese.HanyuPinyin.ReadingTypes)
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_ProcessWithReadings_System_String_Romanization_Chinese_HanyuPinyin_ReadingTypes_
+  commentId: M:Romanization.Chinese.HanyuPinyin.ProcessWithReadings(System.String,Romanization.Chinese.HanyuPinyin.ReadingTypes)
+  fullName: Romanization.Chinese.HanyuPinyin.ProcessWithReadings(System.String, Romanization.Chinese.HanyuPinyin.ReadingTypes)
+  nameWithType: Chinese.HanyuPinyin.ProcessWithReadings(String, Chinese.HanyuPinyin.ReadingTypes)
+- uid: Romanization.Chinese.HanyuPinyin.ProcessWithReadings*
+  name: ProcessWithReadings
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_ProcessWithReadings_
+  commentId: Overload:Romanization.Chinese.HanyuPinyin.ProcessWithReadings
+  isSpec: "True"
+  fullName: Romanization.Chinese.HanyuPinyin.ProcessWithReadings
+  nameWithType: Chinese.HanyuPinyin.ProcessWithReadings
+- uid: Romanization.Chinese.HanyuPinyin.ReadingTypes
+  name: Chinese.HanyuPinyin.ReadingTypes
+  href: api/Romanization.Chinese.HanyuPinyin.ReadingTypes.html
+  commentId: T:Romanization.Chinese.HanyuPinyin.ReadingTypes
+  fullName: Romanization.Chinese.HanyuPinyin.ReadingTypes
+  nameWithType: Chinese.HanyuPinyin.ReadingTypes
+- uid: Romanization.Chinese.HanyuPinyin.ReadingTypes.HanyuPinlu
+  name: HanyuPinlu
+  href: api/Romanization.Chinese.HanyuPinyin.ReadingTypes.html#Romanization_Chinese_HanyuPinyin_ReadingTypes_HanyuPinlu
+  commentId: F:Romanization.Chinese.HanyuPinyin.ReadingTypes.HanyuPinlu
+  fullName: Romanization.Chinese.HanyuPinyin.ReadingTypes.HanyuPinlu
+  nameWithType: Chinese.HanyuPinyin.ReadingTypes.HanyuPinlu
+- uid: Romanization.Chinese.HanyuPinyin.ReadingTypes.HanyuPinyin
+  name: HanyuPinyin
+  href: api/Romanization.Chinese.HanyuPinyin.ReadingTypes.html#Romanization_Chinese_HanyuPinyin_ReadingTypes_HanyuPinyin
+  commentId: F:Romanization.Chinese.HanyuPinyin.ReadingTypes.HanyuPinyin
+  fullName: Romanization.Chinese.HanyuPinyin.ReadingTypes.HanyuPinyin
+  nameWithType: Chinese.HanyuPinyin.ReadingTypes.HanyuPinyin
+- uid: Romanization.Chinese.HanyuPinyin.ReadingTypes.XHC
+  name: XHC
+  href: api/Romanization.Chinese.HanyuPinyin.ReadingTypes.html#Romanization_Chinese_HanyuPinyin_ReadingTypes_XHC
+  commentId: F:Romanization.Chinese.HanyuPinyin.ReadingTypes.XHC
+  fullName: Romanization.Chinese.HanyuPinyin.ReadingTypes.XHC
+  nameWithType: Chinese.HanyuPinyin.ReadingTypes.XHC
+- uid: Romanization.Chinese.HanyuPinyin.Type
+  name: Type
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_Type
+  commentId: P:Romanization.Chinese.HanyuPinyin.Type
+  fullName: Romanization.Chinese.HanyuPinyin.Type
+  nameWithType: Chinese.HanyuPinyin.Type
+- uid: Romanization.Chinese.HanyuPinyin.Type*
+  name: Type
+  href: api/Romanization.Chinese.HanyuPinyin.html#Romanization_Chinese_HanyuPinyin_Type_
+  commentId: Overload:Romanization.Chinese.HanyuPinyin.Type
+  isSpec: "True"
+  fullName: Romanization.Chinese.HanyuPinyin.Type
+  nameWithType: Chinese.HanyuPinyin.Type
+- uid: Romanization.Greek
+  name: Greek
+  href: api/Romanization.Greek.html
+  commentId: T:Romanization.Greek
+  fullName: Romanization.Greek
+  nameWithType: Greek
+- uid: Romanization.Greek.Ancient
+  name: Greek.Ancient
+  href: api/Romanization.Greek.Ancient.html
+  commentId: T:Romanization.Greek.Ancient
+  fullName: Romanization.Greek.Ancient
+  nameWithType: Greek.Ancient
+- uid: Romanization.Greek.Ancient.AlaLc
+  name: Greek.Ancient.AlaLc
+  href: api/Romanization.Greek.Ancient.AlaLc.html
+  commentId: T:Romanization.Greek.Ancient.AlaLc
+  fullName: Romanization.Greek.Ancient.AlaLc
+  nameWithType: Greek.Ancient.AlaLc
+- uid: Romanization.Greek.Ancient.AlaLc.#ctor(Romanization.OutputNumeralType,System.Boolean)
+  name: AlaLc(OutputNumeralType, Boolean)
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc__ctor_Romanization_OutputNumeralType_System_Boolean_
+  commentId: M:Romanization.Greek.Ancient.AlaLc.#ctor(Romanization.OutputNumeralType,System.Boolean)
+  fullName: Romanization.Greek.Ancient.AlaLc.AlaLc(Romanization.OutputNumeralType, System.Boolean)
+  nameWithType: Greek.Ancient.AlaLc.AlaLc(OutputNumeralType, Boolean)
+- uid: Romanization.Greek.Ancient.AlaLc.#ctor*
+  name: AlaLc
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc__ctor_
+  commentId: Overload:Romanization.Greek.Ancient.AlaLc.#ctor
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AlaLc.AlaLc
+  nameWithType: Greek.Ancient.AlaLc.AlaLc
+- uid: Romanization.Greek.Ancient.AlaLc.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_DefaultCulture
+  commentId: P:Romanization.Greek.Ancient.AlaLc.DefaultCulture
+  fullName: Romanization.Greek.Ancient.AlaLc.DefaultCulture
+  nameWithType: Greek.Ancient.AlaLc.DefaultCulture
+- uid: Romanization.Greek.Ancient.AlaLc.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_DefaultCulture_
+  commentId: Overload:Romanization.Greek.Ancient.AlaLc.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AlaLc.DefaultCulture
+  nameWithType: Greek.Ancient.AlaLc.DefaultCulture
+- uid: Romanization.Greek.Ancient.AlaLc.OutputNumeralType
+  name: OutputNumeralType
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_OutputNumeralType
+  commentId: F:Romanization.Greek.Ancient.AlaLc.OutputNumeralType
+  fullName: Romanization.Greek.Ancient.AlaLc.OutputNumeralType
+  nameWithType: Greek.Ancient.AlaLc.OutputNumeralType
+- uid: Romanization.Greek.Ancient.AlaLc.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_Process_System_String_
+  commentId: M:Romanization.Greek.Ancient.AlaLc.Process(System.String)
+  fullName: Romanization.Greek.Ancient.AlaLc.Process(System.String)
+  nameWithType: Greek.Ancient.AlaLc.Process(String)
+- uid: Romanization.Greek.Ancient.AlaLc.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Greek.Ancient.AlaLc.Process(System.String,CultureInfo)
+  fullName: Romanization.Greek.Ancient.AlaLc.Process(System.String, CultureInfo)
+  nameWithType: Greek.Ancient.AlaLc.Process(String, CultureInfo)
+- uid: Romanization.Greek.Ancient.AlaLc.Process(System.String,CultureInfo,CultureInfo)
+  name: Process(String, CultureInfo, CultureInfo)
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_Process_System_String_CultureInfo_CultureInfo_
+  commentId: M:Romanization.Greek.Ancient.AlaLc.Process(System.String,CultureInfo,CultureInfo)
+  fullName: Romanization.Greek.Ancient.AlaLc.Process(System.String, CultureInfo, CultureInfo)
+  nameWithType: Greek.Ancient.AlaLc.Process(String, CultureInfo, CultureInfo)
+- uid: Romanization.Greek.Ancient.AlaLc.Process*
+  name: Process
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_Process_
+  commentId: Overload:Romanization.Greek.Ancient.AlaLc.Process
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AlaLc.Process
+  nameWithType: Greek.Ancient.AlaLc.Process
+- uid: Romanization.Greek.Ancient.AlaLc.ProcessToCulture(System.String,CultureInfo)
+  name: ProcessToCulture(String, CultureInfo)
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_ProcessToCulture_System_String_CultureInfo_
+  commentId: M:Romanization.Greek.Ancient.AlaLc.ProcessToCulture(System.String,CultureInfo)
+  fullName: Romanization.Greek.Ancient.AlaLc.ProcessToCulture(System.String, CultureInfo)
+  nameWithType: Greek.Ancient.AlaLc.ProcessToCulture(String, CultureInfo)
+- uid: Romanization.Greek.Ancient.AlaLc.ProcessToCulture*
+  name: ProcessToCulture
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_ProcessToCulture_
+  commentId: Overload:Romanization.Greek.Ancient.AlaLc.ProcessToCulture
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AlaLc.ProcessToCulture
+  nameWithType: Greek.Ancient.AlaLc.ProcessToCulture
+- uid: Romanization.Greek.Ancient.AlaLc.Type
+  name: Type
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_Type
+  commentId: P:Romanization.Greek.Ancient.AlaLc.Type
+  fullName: Romanization.Greek.Ancient.AlaLc.Type
+  nameWithType: Greek.Ancient.AlaLc.Type
+- uid: Romanization.Greek.Ancient.AlaLc.Type*
+  name: Type
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_Type_
+  commentId: Overload:Romanization.Greek.Ancient.AlaLc.Type
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AlaLc.Type
+  nameWithType: Greek.Ancient.AlaLc.Type
+- uid: Romanization.Greek.Ancient.AlaLc.VeryOld
+  name: VeryOld
+  href: api/Romanization.Greek.Ancient.AlaLc.html#Romanization_Greek_Ancient_AlaLc_VeryOld
+  commentId: F:Romanization.Greek.Ancient.AlaLc.VeryOld
+  fullName: Romanization.Greek.Ancient.AlaLc.VeryOld
+  nameWithType: Greek.Ancient.AlaLc.VeryOld
+- uid: Romanization.Greek.Ancient.AtticNumerals
+  name: Greek.Ancient.AtticNumerals
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html
+  commentId: T:Romanization.Greek.Ancient.AtticNumerals
+  fullName: Romanization.Greek.Ancient.AtticNumerals
+  nameWithType: Greek.Ancient.AtticNumerals
+- uid: Romanization.Greek.Ancient.AtticNumerals.#ctor
+  name: AtticNumerals()
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals__ctor
+  commentId: M:Romanization.Greek.Ancient.AtticNumerals.#ctor
+  fullName: Romanization.Greek.Ancient.AtticNumerals.AtticNumerals()
+  nameWithType: Greek.Ancient.AtticNumerals.AtticNumerals()
+- uid: Romanization.Greek.Ancient.AtticNumerals.#ctor*
+  name: AtticNumerals
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals__ctor_
+  commentId: Overload:Romanization.Greek.Ancient.AtticNumerals.#ctor
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AtticNumerals.AtticNumerals
+  nameWithType: Greek.Ancient.AtticNumerals.AtticNumerals
+- uid: Romanization.Greek.Ancient.AtticNumerals.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_Process_System_String_
+  commentId: M:Romanization.Greek.Ancient.AtticNumerals.Process(System.String)
+  fullName: Romanization.Greek.Ancient.AtticNumerals.Process(System.String)
+  nameWithType: Greek.Ancient.AtticNumerals.Process(String)
+- uid: Romanization.Greek.Ancient.AtticNumerals.Process*
+  name: Process
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_Process_
+  commentId: Overload:Romanization.Greek.Ancient.AtticNumerals.Process
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AtticNumerals.Process
+  nameWithType: Greek.Ancient.AtticNumerals.Process
+- uid: Romanization.Greek.Ancient.AtticNumerals.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue{Romanization.Greek.Ancient.Units},System.String})
+  name: ProcessNumeralsInText(String, Func<NumeralValue<Greek.Ancient.Units>, String>)
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_ProcessNumeralsInText_System_String_Func_Romanization_NumeralValue_Romanization_Greek_Ancient_Units__System_String__
+  commentId: M:Romanization.Greek.Ancient.AtticNumerals.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue{Romanization.Greek.Ancient.Units},System.String})
+  name.vb: ProcessNumeralsInText(String, Func(Of NumeralValue(Of Greek.Ancient.Units), String))
+  fullName: Romanization.Greek.Ancient.AtticNumerals.ProcessNumeralsInText(System.String, Func<Romanization.NumeralValue<Romanization.Greek.Ancient.Units>, System.String>)
+  fullName.vb: Romanization.Greek.Ancient.AtticNumerals.ProcessNumeralsInText(System.String, Func(Of Romanization.NumeralValue(Of Romanization.Greek.Ancient.Units), System.String))
+  nameWithType: Greek.Ancient.AtticNumerals.ProcessNumeralsInText(String, Func<NumeralValue<Greek.Ancient.Units>, String>)
+  nameWithType.vb: Greek.Ancient.AtticNumerals.ProcessNumeralsInText(String, Func(Of NumeralValue(Of Greek.Ancient.Units), String))
+- uid: Romanization.Greek.Ancient.AtticNumerals.ProcessNumeralsInText*
+  name: ProcessNumeralsInText
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_ProcessNumeralsInText_
+  commentId: Overload:Romanization.Greek.Ancient.AtticNumerals.ProcessNumeralsInText
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.AtticNumerals.ProcessNumeralsInText
+  nameWithType: Greek.Ancient.AtticNumerals.ProcessNumeralsInText
+- uid: Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#Process(System.String)
+  name: INumeralParsingSystem.Process(String)
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_Romanization_INumeralParsingSystem_Process_System_String_
+  commentId: M:Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#Process(System.String)
+  name.vb: Romanization.INumeralParsingSystem.Process(String)
+  fullName: Romanization.Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.Process(System.String)
+  nameWithType: Greek.Ancient.AtticNumerals.INumeralParsingSystem.Process(String)
+  nameWithType.vb: Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.Process(String)
+- uid: Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#Process*
+  name: INumeralParsingSystem.Process
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_Romanization_INumeralParsingSystem_Process_
+  commentId: Overload:Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#Process
+  isSpec: "True"
+  name.vb: Romanization.INumeralParsingSystem.Process
+  fullName: Romanization.Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.Process
+  nameWithType: Greek.Ancient.AtticNumerals.INumeralParsingSystem.Process
+  nameWithType.vb: Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.Process
+- uid: Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue,System.String})
+  name: INumeralParsingSystem.ProcessNumeralsInText(String, Func<NumeralValue, String>)
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_Romanization_INumeralParsingSystem_ProcessNumeralsInText_System_String_Func_Romanization_NumeralValue_System_String__
+  commentId: M:Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue,System.String})
+  name.vb: Romanization.INumeralParsingSystem.ProcessNumeralsInText(String, Func(Of NumeralValue, String))
+  fullName: Romanization.Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.ProcessNumeralsInText(System.String, Func<Romanization.NumeralValue, System.String>)
+  fullName.vb: Romanization.Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.ProcessNumeralsInText(System.String, Func(Of Romanization.NumeralValue, System.String))
+  nameWithType: Greek.Ancient.AtticNumerals.INumeralParsingSystem.ProcessNumeralsInText(String, Func<NumeralValue, String>)
+  nameWithType.vb: Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.ProcessNumeralsInText(String, Func(Of NumeralValue, String))
+- uid: Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#ProcessNumeralsInText*
+  name: INumeralParsingSystem.ProcessNumeralsInText
+  href: api/Romanization.Greek.Ancient.AtticNumerals.html#Romanization_Greek_Ancient_AtticNumerals_Romanization_INumeralParsingSystem_ProcessNumeralsInText_
+  commentId: Overload:Romanization.Greek.Ancient.AtticNumerals.Romanization#INumeralParsingSystem#ProcessNumeralsInText
+  isSpec: "True"
+  name.vb: Romanization.INumeralParsingSystem.ProcessNumeralsInText
+  fullName: Romanization.Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.ProcessNumeralsInText
+  nameWithType: Greek.Ancient.AtticNumerals.INumeralParsingSystem.ProcessNumeralsInText
+  nameWithType.vb: Greek.Ancient.AtticNumerals.Romanization.INumeralParsingSystem.ProcessNumeralsInText
+- uid: Romanization.Greek.Ancient.BetaCode
+  name: Greek.Ancient.BetaCode
+  href: api/Romanization.Greek.Ancient.BetaCode.html
+  commentId: T:Romanization.Greek.Ancient.BetaCode
+  fullName: Romanization.Greek.Ancient.BetaCode
+  nameWithType: Greek.Ancient.BetaCode
+- uid: Romanization.Greek.Ancient.BetaCode.#ctor
+  name: BetaCode()
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode__ctor
+  commentId: M:Romanization.Greek.Ancient.BetaCode.#ctor
+  fullName: Romanization.Greek.Ancient.BetaCode.BetaCode()
+  nameWithType: Greek.Ancient.BetaCode.BetaCode()
+- uid: Romanization.Greek.Ancient.BetaCode.#ctor*
+  name: BetaCode
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode__ctor_
+  commentId: Overload:Romanization.Greek.Ancient.BetaCode.#ctor
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.BetaCode.BetaCode
+  nameWithType: Greek.Ancient.BetaCode.BetaCode
+- uid: Romanization.Greek.Ancient.BetaCode.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode_DefaultCulture
+  commentId: P:Romanization.Greek.Ancient.BetaCode.DefaultCulture
+  fullName: Romanization.Greek.Ancient.BetaCode.DefaultCulture
+  nameWithType: Greek.Ancient.BetaCode.DefaultCulture
+- uid: Romanization.Greek.Ancient.BetaCode.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode_DefaultCulture_
+  commentId: Overload:Romanization.Greek.Ancient.BetaCode.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.BetaCode.DefaultCulture
+  nameWithType: Greek.Ancient.BetaCode.DefaultCulture
+- uid: Romanization.Greek.Ancient.BetaCode.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode_Process_System_String_
+  commentId: M:Romanization.Greek.Ancient.BetaCode.Process(System.String)
+  fullName: Romanization.Greek.Ancient.BetaCode.Process(System.String)
+  nameWithType: Greek.Ancient.BetaCode.Process(String)
+- uid: Romanization.Greek.Ancient.BetaCode.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Greek.Ancient.BetaCode.Process(System.String,CultureInfo)
+  fullName: Romanization.Greek.Ancient.BetaCode.Process(System.String, CultureInfo)
+  nameWithType: Greek.Ancient.BetaCode.Process(String, CultureInfo)
+- uid: Romanization.Greek.Ancient.BetaCode.Process*
+  name: Process
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode_Process_
+  commentId: Overload:Romanization.Greek.Ancient.BetaCode.Process
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.BetaCode.Process
+  nameWithType: Greek.Ancient.BetaCode.Process
+- uid: Romanization.Greek.Ancient.BetaCode.Type
+  name: Type
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode_Type
+  commentId: P:Romanization.Greek.Ancient.BetaCode.Type
+  fullName: Romanization.Greek.Ancient.BetaCode.Type
+  nameWithType: Greek.Ancient.BetaCode.Type
+- uid: Romanization.Greek.Ancient.BetaCode.Type*
+  name: Type
+  href: api/Romanization.Greek.Ancient.BetaCode.html#Romanization_Greek_Ancient_BetaCode_Type_
+  commentId: Overload:Romanization.Greek.Ancient.BetaCode.Type
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.BetaCode.Type
+  nameWithType: Greek.Ancient.BetaCode.Type
+- uid: Romanization.Greek.Ancient.GreekNumerals
+  name: Greek.Ancient.GreekNumerals
+  href: api/Romanization.Greek.Ancient.GreekNumerals.html
+  commentId: T:Romanization.Greek.Ancient.GreekNumerals
+  fullName: Romanization.Greek.Ancient.GreekNumerals
+  nameWithType: Greek.Ancient.GreekNumerals
+- uid: Romanization.Greek.Ancient.GreekNumerals.#ctor
+  name: GreekNumerals()
+  href: api/Romanization.Greek.Ancient.GreekNumerals.html#Romanization_Greek_Ancient_GreekNumerals__ctor
+  commentId: M:Romanization.Greek.Ancient.GreekNumerals.#ctor
+  fullName: Romanization.Greek.Ancient.GreekNumerals.GreekNumerals()
+  nameWithType: Greek.Ancient.GreekNumerals.GreekNumerals()
+- uid: Romanization.Greek.Ancient.GreekNumerals.#ctor*
+  name: GreekNumerals
+  href: api/Romanization.Greek.Ancient.GreekNumerals.html#Romanization_Greek_Ancient_GreekNumerals__ctor_
+  commentId: Overload:Romanization.Greek.Ancient.GreekNumerals.#ctor
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.GreekNumerals.GreekNumerals
+  nameWithType: Greek.Ancient.GreekNumerals.GreekNumerals
+- uid: Romanization.Greek.Ancient.GreekNumerals.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Greek.Ancient.GreekNumerals.html#Romanization_Greek_Ancient_GreekNumerals_Process_System_String_
+  commentId: M:Romanization.Greek.Ancient.GreekNumerals.Process(System.String)
+  fullName: Romanization.Greek.Ancient.GreekNumerals.Process(System.String)
+  nameWithType: Greek.Ancient.GreekNumerals.Process(String)
+- uid: Romanization.Greek.Ancient.GreekNumerals.Process*
+  name: Process
+  href: api/Romanization.Greek.Ancient.GreekNumerals.html#Romanization_Greek_Ancient_GreekNumerals_Process_
+  commentId: Overload:Romanization.Greek.Ancient.GreekNumerals.Process
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.GreekNumerals.Process
+  nameWithType: Greek.Ancient.GreekNumerals.Process
+- uid: Romanization.Greek.Ancient.GreekNumerals.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue,System.String})
+  name: ProcessNumeralsInText(String, Func<NumeralValue, String>)
+  href: api/Romanization.Greek.Ancient.GreekNumerals.html#Romanization_Greek_Ancient_GreekNumerals_ProcessNumeralsInText_System_String_Func_Romanization_NumeralValue_System_String__
+  commentId: M:Romanization.Greek.Ancient.GreekNumerals.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue,System.String})
+  name.vb: ProcessNumeralsInText(String, Func(Of NumeralValue, String))
+  fullName: Romanization.Greek.Ancient.GreekNumerals.ProcessNumeralsInText(System.String, Func<Romanization.NumeralValue, System.String>)
+  fullName.vb: Romanization.Greek.Ancient.GreekNumerals.ProcessNumeralsInText(System.String, Func(Of Romanization.NumeralValue, System.String))
+  nameWithType: Greek.Ancient.GreekNumerals.ProcessNumeralsInText(String, Func<NumeralValue, String>)
+  nameWithType.vb: Greek.Ancient.GreekNumerals.ProcessNumeralsInText(String, Func(Of NumeralValue, String))
+- uid: Romanization.Greek.Ancient.GreekNumerals.ProcessNumeralsInText*
+  name: ProcessNumeralsInText
+  href: api/Romanization.Greek.Ancient.GreekNumerals.html#Romanization_Greek_Ancient_GreekNumerals_ProcessNumeralsInText_
+  commentId: Overload:Romanization.Greek.Ancient.GreekNumerals.ProcessNumeralsInText
+  isSpec: "True"
+  fullName: Romanization.Greek.Ancient.GreekNumerals.ProcessNumeralsInText
+  nameWithType: Greek.Ancient.GreekNumerals.ProcessNumeralsInText
+- uid: Romanization.Greek.Ancient.Units
+  name: Greek.Ancient.Units
+  href: api/Romanization.Greek.Ancient.Units.html
+  commentId: T:Romanization.Greek.Ancient.Units
+  fullName: Romanization.Greek.Ancient.Units
+  nameWithType: Greek.Ancient.Units
+- uid: Romanization.Greek.Ancient.Units.Drachma
+  name: Drachma
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Drachma
+  commentId: F:Romanization.Greek.Ancient.Units.Drachma
+  fullName: Romanization.Greek.Ancient.Units.Drachma
+  nameWithType: Greek.Ancient.Units.Drachma
+- uid: Romanization.Greek.Ancient.Units.Mnas
+  name: Mnas
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Mnas
+  commentId: F:Romanization.Greek.Ancient.Units.Mnas
+  fullName: Romanization.Greek.Ancient.Units.Mnas
+  nameWithType: Greek.Ancient.Units.Mnas
+- uid: Romanization.Greek.Ancient.Units.Plethra
+  name: Plethra
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Plethra
+  commentId: F:Romanization.Greek.Ancient.Units.Plethra
+  fullName: Romanization.Greek.Ancient.Units.Plethra
+  nameWithType: Greek.Ancient.Units.Plethra
+- uid: Romanization.Greek.Ancient.Units.Staters
+  name: Staters
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Staters
+  commentId: F:Romanization.Greek.Ancient.Units.Staters
+  fullName: Romanization.Greek.Ancient.Units.Staters
+  nameWithType: Greek.Ancient.Units.Staters
+- uid: Romanization.Greek.Ancient.Units.Talents
+  name: Talents
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Talents
+  commentId: F:Romanization.Greek.Ancient.Units.Talents
+  fullName: Romanization.Greek.Ancient.Units.Talents
+  nameWithType: Greek.Ancient.Units.Talents
+- uid: Romanization.Greek.Ancient.Units.Time
+  name: Time
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Time
+  commentId: F:Romanization.Greek.Ancient.Units.Time
+  fullName: Romanization.Greek.Ancient.Units.Time
+  nameWithType: Greek.Ancient.Units.Time
+- uid: Romanization.Greek.Ancient.Units.Weight
+  name: Weight
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Weight
+  commentId: F:Romanization.Greek.Ancient.Units.Weight
+  fullName: Romanization.Greek.Ancient.Units.Weight
+  nameWithType: Greek.Ancient.Units.Weight
+- uid: Romanization.Greek.Ancient.Units.Years
+  name: Years
+  href: api/Romanization.Greek.Ancient.Units.html#Romanization_Greek_Ancient_Units_Years
+  commentId: F:Romanization.Greek.Ancient.Units.Years
+  fullName: Romanization.Greek.Ancient.Units.Years
+  nameWithType: Greek.Ancient.Units.Years
+- uid: Romanization.Greek.Modern
+  name: Greek.Modern
+  href: api/Romanization.Greek.Modern.html
+  commentId: T:Romanization.Greek.Modern
+  fullName: Romanization.Greek.Modern
+  nameWithType: Greek.Modern
+- uid: Romanization.IMultiInCultureSystem
+  name: IMultiInCultureSystem
+  href: api/Romanization.IMultiInCultureSystem.html
+  commentId: T:Romanization.IMultiInCultureSystem
+  fullName: Romanization.IMultiInCultureSystem
+  nameWithType: IMultiInCultureSystem
+- uid: Romanization.IMultiInCultureSystem.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.IMultiInCultureSystem.html#Romanization_IMultiInCultureSystem_DefaultCulture
+  commentId: P:Romanization.IMultiInCultureSystem.DefaultCulture
+  fullName: Romanization.IMultiInCultureSystem.DefaultCulture
+  nameWithType: IMultiInCultureSystem.DefaultCulture
+- uid: Romanization.IMultiInCultureSystem.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.IMultiInCultureSystem.html#Romanization_IMultiInCultureSystem_DefaultCulture_
+  commentId: Overload:Romanization.IMultiInCultureSystem.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.IMultiInCultureSystem.DefaultCulture
+  nameWithType: IMultiInCultureSystem.DefaultCulture
+- uid: Romanization.IMultiInCultureSystem.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.IMultiInCultureSystem.html#Romanization_IMultiInCultureSystem_Process_System_String_CultureInfo_
+  commentId: M:Romanization.IMultiInCultureSystem.Process(System.String,CultureInfo)
+  fullName: Romanization.IMultiInCultureSystem.Process(System.String, CultureInfo)
+  nameWithType: IMultiInCultureSystem.Process(String, CultureInfo)
+- uid: Romanization.IMultiInCultureSystem.Process*
+  name: Process
+  href: api/Romanization.IMultiInCultureSystem.html#Romanization_IMultiInCultureSystem_Process_
+  commentId: Overload:Romanization.IMultiInCultureSystem.Process
+  isSpec: "True"
+  fullName: Romanization.IMultiInCultureSystem.Process
+  nameWithType: IMultiInCultureSystem.Process
+- uid: Romanization.IMultiInOutCultureSystem
+  name: IMultiInOutCultureSystem
+  href: api/Romanization.IMultiInOutCultureSystem.html
+  commentId: T:Romanization.IMultiInOutCultureSystem
+  fullName: Romanization.IMultiInOutCultureSystem
+  nameWithType: IMultiInOutCultureSystem
+- uid: Romanization.IMultiInOutCultureSystem.Process(System.String,CultureInfo,CultureInfo)
+  name: Process(String, CultureInfo, CultureInfo)
+  href: api/Romanization.IMultiInOutCultureSystem.html#Romanization_IMultiInOutCultureSystem_Process_System_String_CultureInfo_CultureInfo_
+  commentId: M:Romanization.IMultiInOutCultureSystem.Process(System.String,CultureInfo,CultureInfo)
+  fullName: Romanization.IMultiInOutCultureSystem.Process(System.String, CultureInfo, CultureInfo)
+  nameWithType: IMultiInOutCultureSystem.Process(String, CultureInfo, CultureInfo)
+- uid: Romanization.IMultiInOutCultureSystem.Process*
+  name: Process
+  href: api/Romanization.IMultiInOutCultureSystem.html#Romanization_IMultiInOutCultureSystem_Process_
+  commentId: Overload:Romanization.IMultiInOutCultureSystem.Process
+  isSpec: "True"
+  fullName: Romanization.IMultiInOutCultureSystem.Process
+  nameWithType: IMultiInOutCultureSystem.Process
+- uid: Romanization.IMultiOutCultureSystem
+  name: IMultiOutCultureSystem
+  href: api/Romanization.IMultiOutCultureSystem.html
+  commentId: T:Romanization.IMultiOutCultureSystem
+  fullName: Romanization.IMultiOutCultureSystem
+  nameWithType: IMultiOutCultureSystem
+- uid: Romanization.IMultiOutCultureSystem.ProcessToCulture(System.String,CultureInfo)
+  name: ProcessToCulture(String, CultureInfo)
+  href: api/Romanization.IMultiOutCultureSystem.html#Romanization_IMultiOutCultureSystem_ProcessToCulture_System_String_CultureInfo_
+  commentId: M:Romanization.IMultiOutCultureSystem.ProcessToCulture(System.String,CultureInfo)
+  fullName: Romanization.IMultiOutCultureSystem.ProcessToCulture(System.String, CultureInfo)
+  nameWithType: IMultiOutCultureSystem.ProcessToCulture(String, CultureInfo)
+- uid: Romanization.IMultiOutCultureSystem.ProcessToCulture*
+  name: ProcessToCulture
+  href: api/Romanization.IMultiOutCultureSystem.html#Romanization_IMultiOutCultureSystem_ProcessToCulture_
+  commentId: Overload:Romanization.IMultiOutCultureSystem.ProcessToCulture
+  isSpec: "True"
+  fullName: Romanization.IMultiOutCultureSystem.ProcessToCulture
+  nameWithType: IMultiOutCultureSystem.ProcessToCulture
+- uid: Romanization.Internal
+  name: Romanization.Internal
+  href: api/Romanization.Internal.html
+  commentId: N:Romanization.Internal
+  fullName: Romanization.Internal
+  nameWithType: Romanization.Internal
+- uid: Romanization.Internal.CaptureCountMismatchException
+  name: CaptureCountMismatchException
+  href: api/Romanization.Internal.CaptureCountMismatchException.html
+  commentId: T:Romanization.Internal.CaptureCountMismatchException
+  fullName: Romanization.Internal.CaptureCountMismatchException
+  nameWithType: CaptureCountMismatchException
+- uid: Romanization.INumeralParsingSystem
+  name: INumeralParsingSystem
+  href: api/Romanization.INumeralParsingSystem.html
+  commentId: T:Romanization.INumeralParsingSystem
+  fullName: Romanization.INumeralParsingSystem
+  nameWithType: INumeralParsingSystem
+- uid: Romanization.INumeralParsingSystem.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.INumeralParsingSystem.html#Romanization_INumeralParsingSystem_Process_System_String_
+  commentId: M:Romanization.INumeralParsingSystem.Process(System.String)
+  fullName: Romanization.INumeralParsingSystem.Process(System.String)
+  nameWithType: INumeralParsingSystem.Process(String)
+- uid: Romanization.INumeralParsingSystem.Process*
+  name: Process
+  href: api/Romanization.INumeralParsingSystem.html#Romanization_INumeralParsingSystem_Process_
+  commentId: Overload:Romanization.INumeralParsingSystem.Process
+  isSpec: "True"
+  fullName: Romanization.INumeralParsingSystem.Process
+  nameWithType: INumeralParsingSystem.Process
+- uid: Romanization.INumeralParsingSystem.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue,System.String})
+  name: ProcessNumeralsInText(String, Func<NumeralValue, String>)
+  href: api/Romanization.INumeralParsingSystem.html#Romanization_INumeralParsingSystem_ProcessNumeralsInText_System_String_Func_Romanization_NumeralValue_System_String__
+  commentId: M:Romanization.INumeralParsingSystem.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue,System.String})
+  name.vb: ProcessNumeralsInText(String, Func(Of NumeralValue, String))
+  fullName: Romanization.INumeralParsingSystem.ProcessNumeralsInText(System.String, Func<Romanization.NumeralValue, System.String>)
+  fullName.vb: Romanization.INumeralParsingSystem.ProcessNumeralsInText(System.String, Func(Of Romanization.NumeralValue, System.String))
+  nameWithType: INumeralParsingSystem.ProcessNumeralsInText(String, Func<NumeralValue, String>)
+  nameWithType.vb: INumeralParsingSystem.ProcessNumeralsInText(String, Func(Of NumeralValue, String))
+- uid: Romanization.INumeralParsingSystem.ProcessNumeralsInText*
+  name: ProcessNumeralsInText
+  href: api/Romanization.INumeralParsingSystem.html#Romanization_INumeralParsingSystem_ProcessNumeralsInText_
+  commentId: Overload:Romanization.INumeralParsingSystem.ProcessNumeralsInText
+  isSpec: "True"
+  fullName: Romanization.INumeralParsingSystem.ProcessNumeralsInText
+  nameWithType: INumeralParsingSystem.ProcessNumeralsInText
+- uid: Romanization.INumeralParsingSystem`1
+  name: INumeralParsingSystem<TLanguageUnits>
+  href: api/Romanization.INumeralParsingSystem-1.html
+  commentId: T:Romanization.INumeralParsingSystem`1
+  name.vb: INumeralParsingSystem(Of TLanguageUnits)
+  fullName: Romanization.INumeralParsingSystem<TLanguageUnits>
+  fullName.vb: Romanization.INumeralParsingSystem(Of TLanguageUnits)
+  nameWithType: INumeralParsingSystem<TLanguageUnits>
+  nameWithType.vb: INumeralParsingSystem(Of TLanguageUnits)
+- uid: Romanization.INumeralParsingSystem`1.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.INumeralParsingSystem-1.html#Romanization_INumeralParsingSystem_1_Process_System_String_
+  commentId: M:Romanization.INumeralParsingSystem`1.Process(System.String)
+  fullName: Romanization.INumeralParsingSystem<TLanguageUnits>.Process(System.String)
+  fullName.vb: Romanization.INumeralParsingSystem(Of TLanguageUnits).Process(System.String)
+  nameWithType: INumeralParsingSystem<TLanguageUnits>.Process(String)
+  nameWithType.vb: INumeralParsingSystem(Of TLanguageUnits).Process(String)
+- uid: Romanization.INumeralParsingSystem`1.Process*
+  name: Process
+  href: api/Romanization.INumeralParsingSystem-1.html#Romanization_INumeralParsingSystem_1_Process_
+  commentId: Overload:Romanization.INumeralParsingSystem`1.Process
+  isSpec: "True"
+  fullName: Romanization.INumeralParsingSystem<TLanguageUnits>.Process
+  fullName.vb: Romanization.INumeralParsingSystem(Of TLanguageUnits).Process
+  nameWithType: INumeralParsingSystem<TLanguageUnits>.Process
+  nameWithType.vb: INumeralParsingSystem(Of TLanguageUnits).Process
+- uid: Romanization.INumeralParsingSystem`1.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue{`0},System.String})
+  name: ProcessNumeralsInText(String, Func<NumeralValue<TLanguageUnits>, String>)
+  href: api/Romanization.INumeralParsingSystem-1.html#Romanization_INumeralParsingSystem_1_ProcessNumeralsInText_System_String_Func_Romanization_NumeralValue__0__System_String__
+  commentId: M:Romanization.INumeralParsingSystem`1.ProcessNumeralsInText(System.String,Func{Romanization.NumeralValue{`0},System.String})
+  name.vb: ProcessNumeralsInText(String, Func(Of NumeralValue(Of TLanguageUnits), String))
+  fullName: Romanization.INumeralParsingSystem<TLanguageUnits>.ProcessNumeralsInText(System.String, Func<Romanization.NumeralValue<TLanguageUnits>, System.String>)
+  fullName.vb: Romanization.INumeralParsingSystem(Of TLanguageUnits).ProcessNumeralsInText(System.String, Func(Of Romanization.NumeralValue(Of TLanguageUnits), System.String))
+  nameWithType: INumeralParsingSystem<TLanguageUnits>.ProcessNumeralsInText(String, Func<NumeralValue<TLanguageUnits>, String>)
+  nameWithType.vb: INumeralParsingSystem(Of TLanguageUnits).ProcessNumeralsInText(String, Func(Of NumeralValue(Of TLanguageUnits), String))
+- uid: Romanization.INumeralParsingSystem`1.ProcessNumeralsInText*
+  name: ProcessNumeralsInText
+  href: api/Romanization.INumeralParsingSystem-1.html#Romanization_INumeralParsingSystem_1_ProcessNumeralsInText_
+  commentId: Overload:Romanization.INumeralParsingSystem`1.ProcessNumeralsInText
+  isSpec: "True"
+  fullName: Romanization.INumeralParsingSystem<TLanguageUnits>.ProcessNumeralsInText
+  fullName.vb: Romanization.INumeralParsingSystem(Of TLanguageUnits).ProcessNumeralsInText
+  nameWithType: INumeralParsingSystem<TLanguageUnits>.ProcessNumeralsInText
+  nameWithType.vb: INumeralParsingSystem(Of TLanguageUnits).ProcessNumeralsInText
+- uid: Romanization.IReadingsSystem`1
+  name: IReadingsSystem<TType>
+  href: api/Romanization.IReadingsSystem-1.html
+  commentId: T:Romanization.IReadingsSystem`1
+  name.vb: IReadingsSystem(Of TType)
+  fullName: Romanization.IReadingsSystem<TType>
+  fullName.vb: Romanization.IReadingsSystem(Of TType)
+  nameWithType: IReadingsSystem<TType>
+  nameWithType.vb: IReadingsSystem(Of TType)
+- uid: Romanization.IReadingsSystem`1.ProcessWithReadings(System.String)
+  name: ProcessWithReadings(String)
+  href: api/Romanization.IReadingsSystem-1.html#Romanization_IReadingsSystem_1_ProcessWithReadings_System_String_
+  commentId: M:Romanization.IReadingsSystem`1.ProcessWithReadings(System.String)
+  fullName: Romanization.IReadingsSystem<TType>.ProcessWithReadings(System.String)
+  fullName.vb: Romanization.IReadingsSystem(Of TType).ProcessWithReadings(System.String)
+  nameWithType: IReadingsSystem<TType>.ProcessWithReadings(String)
+  nameWithType.vb: IReadingsSystem(Of TType).ProcessWithReadings(String)
+- uid: Romanization.IReadingsSystem`1.ProcessWithReadings*
+  name: ProcessWithReadings
+  href: api/Romanization.IReadingsSystem-1.html#Romanization_IReadingsSystem_1_ProcessWithReadings_
+  commentId: Overload:Romanization.IReadingsSystem`1.ProcessWithReadings
+  isSpec: "True"
+  fullName: Romanization.IReadingsSystem<TType>.ProcessWithReadings
+  fullName.vb: Romanization.IReadingsSystem(Of TType).ProcessWithReadings
+  nameWithType: IReadingsSystem<TType>.ProcessWithReadings
+  nameWithType.vb: IReadingsSystem(Of TType).ProcessWithReadings
+- uid: Romanization.IRomanizationSystem
+  name: IRomanizationSystem
+  href: api/Romanization.IRomanizationSystem.html
+  commentId: T:Romanization.IRomanizationSystem
+  fullName: Romanization.IRomanizationSystem
+  nameWithType: IRomanizationSystem
+- uid: Romanization.IRomanizationSystem.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.IRomanizationSystem.html#Romanization_IRomanizationSystem_Process_System_String_
+  commentId: M:Romanization.IRomanizationSystem.Process(System.String)
+  fullName: Romanization.IRomanizationSystem.Process(System.String)
+  nameWithType: IRomanizationSystem.Process(String)
+- uid: Romanization.IRomanizationSystem.Process*
+  name: Process
+  href: api/Romanization.IRomanizationSystem.html#Romanization_IRomanizationSystem_Process_
+  commentId: Overload:Romanization.IRomanizationSystem.Process
+  isSpec: "True"
+  fullName: Romanization.IRomanizationSystem.Process
+  nameWithType: IRomanizationSystem.Process
+- uid: Romanization.IRomanizationSystem.Type
+  name: Type
+  href: api/Romanization.IRomanizationSystem.html#Romanization_IRomanizationSystem_Type
+  commentId: P:Romanization.IRomanizationSystem.Type
+  fullName: Romanization.IRomanizationSystem.Type
+  nameWithType: IRomanizationSystem.Type
+- uid: Romanization.IRomanizationSystem.Type*
+  name: Type
+  href: api/Romanization.IRomanizationSystem.html#Romanization_IRomanizationSystem_Type_
+  commentId: Overload:Romanization.IRomanizationSystem.Type
+  isSpec: "True"
+  fullName: Romanization.IRomanizationSystem.Type
+  nameWithType: IRomanizationSystem.Type
+- uid: Romanization.IrrelevantCultureException
+  name: IrrelevantCultureException
+  href: api/Romanization.IrrelevantCultureException.html
+  commentId: T:Romanization.IrrelevantCultureException
+  fullName: Romanization.IrrelevantCultureException
+  nameWithType: IrrelevantCultureException
+- uid: Romanization.Japanese
+  name: Japanese
+  href: api/Romanization.Japanese.html
+  commentId: T:Romanization.Japanese
+  fullName: Romanization.Japanese
+  nameWithType: Japanese
+- uid: Romanization.Japanese.KanjiReadings
+  name: Japanese.KanjiReadings
+  href: api/Romanization.Japanese.KanjiReadings.html
+  commentId: T:Romanization.Japanese.KanjiReadings
+  fullName: Romanization.Japanese.KanjiReadings
+  nameWithType: Japanese.KanjiReadings
+- uid: Romanization.Japanese.KanjiReadings.#ctor
+  name: KanjiReadings()
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings__ctor
+  commentId: M:Romanization.Japanese.KanjiReadings.#ctor
+  fullName: Romanization.Japanese.KanjiReadings.KanjiReadings()
+  nameWithType: Japanese.KanjiReadings.KanjiReadings()
+- uid: Romanization.Japanese.KanjiReadings.#ctor*
+  name: KanjiReadings
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings__ctor_
+  commentId: Overload:Romanization.Japanese.KanjiReadings.#ctor
+  isSpec: "True"
+  fullName: Romanization.Japanese.KanjiReadings.KanjiReadings
+  nameWithType: Japanese.KanjiReadings.KanjiReadings
+- uid: Romanization.Japanese.KanjiReadings.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_Process_System_String_
+  commentId: M:Romanization.Japanese.KanjiReadings.Process(System.String)
+  fullName: Romanization.Japanese.KanjiReadings.Process(System.String)
+  nameWithType: Japanese.KanjiReadings.Process(String)
+- uid: Romanization.Japanese.KanjiReadings.Process(System.String,Romanization.Japanese.KanjiReadings.ReadingTypes)
+  name: Process(String, Japanese.KanjiReadings.ReadingTypes)
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_Process_System_String_Romanization_Japanese_KanjiReadings_ReadingTypes_
+  commentId: M:Romanization.Japanese.KanjiReadings.Process(System.String,Romanization.Japanese.KanjiReadings.ReadingTypes)
+  fullName: Romanization.Japanese.KanjiReadings.Process(System.String, Romanization.Japanese.KanjiReadings.ReadingTypes)
+  nameWithType: Japanese.KanjiReadings.Process(String, Japanese.KanjiReadings.ReadingTypes)
+- uid: Romanization.Japanese.KanjiReadings.Process*
+  name: Process
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_Process_
+  commentId: Overload:Romanization.Japanese.KanjiReadings.Process
+  isSpec: "True"
+  fullName: Romanization.Japanese.KanjiReadings.Process
+  nameWithType: Japanese.KanjiReadings.Process
+- uid: Romanization.Japanese.KanjiReadings.ProcessWithKana(System.String,Romanization.IRomanizationSystem)
+  name: ProcessWithKana(String, IRomanizationSystem)
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_ProcessWithKana_System_String_Romanization_IRomanizationSystem_
+  commentId: M:Romanization.Japanese.KanjiReadings.ProcessWithKana(System.String,Romanization.IRomanizationSystem)
+  fullName: Romanization.Japanese.KanjiReadings.ProcessWithKana(System.String, Romanization.IRomanizationSystem)
+  nameWithType: Japanese.KanjiReadings.ProcessWithKana(String, IRomanizationSystem)
+- uid: Romanization.Japanese.KanjiReadings.ProcessWithKana*
+  name: ProcessWithKana
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_ProcessWithKana_
+  commentId: Overload:Romanization.Japanese.KanjiReadings.ProcessWithKana
+  isSpec: "True"
+  fullName: Romanization.Japanese.KanjiReadings.ProcessWithKana
+  nameWithType: Japanese.KanjiReadings.ProcessWithKana
+- uid: Romanization.Japanese.KanjiReadings.ProcessWithReadings(System.String)
+  name: ProcessWithReadings(String)
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_ProcessWithReadings_System_String_
+  commentId: M:Romanization.Japanese.KanjiReadings.ProcessWithReadings(System.String)
+  fullName: Romanization.Japanese.KanjiReadings.ProcessWithReadings(System.String)
+  nameWithType: Japanese.KanjiReadings.ProcessWithReadings(String)
+- uid: Romanization.Japanese.KanjiReadings.ProcessWithReadings(System.String,Romanization.Japanese.KanjiReadings.ReadingTypes)
+  name: ProcessWithReadings(String, Japanese.KanjiReadings.ReadingTypes)
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_ProcessWithReadings_System_String_Romanization_Japanese_KanjiReadings_ReadingTypes_
+  commentId: M:Romanization.Japanese.KanjiReadings.ProcessWithReadings(System.String,Romanization.Japanese.KanjiReadings.ReadingTypes)
+  fullName: Romanization.Japanese.KanjiReadings.ProcessWithReadings(System.String, Romanization.Japanese.KanjiReadings.ReadingTypes)
+  nameWithType: Japanese.KanjiReadings.ProcessWithReadings(String, Japanese.KanjiReadings.ReadingTypes)
+- uid: Romanization.Japanese.KanjiReadings.ProcessWithReadings*
+  name: ProcessWithReadings
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_ProcessWithReadings_
+  commentId: Overload:Romanization.Japanese.KanjiReadings.ProcessWithReadings
+  isSpec: "True"
+  fullName: Romanization.Japanese.KanjiReadings.ProcessWithReadings
+  nameWithType: Japanese.KanjiReadings.ProcessWithReadings
+- uid: Romanization.Japanese.KanjiReadings.ReadingTypes
+  name: Japanese.KanjiReadings.ReadingTypes
+  href: api/Romanization.Japanese.KanjiReadings.ReadingTypes.html
+  commentId: T:Romanization.Japanese.KanjiReadings.ReadingTypes
+  fullName: Romanization.Japanese.KanjiReadings.ReadingTypes
+  nameWithType: Japanese.KanjiReadings.ReadingTypes
+- uid: Romanization.Japanese.KanjiReadings.ReadingTypes.Kunyomi
+  name: Kunyomi
+  href: api/Romanization.Japanese.KanjiReadings.ReadingTypes.html#Romanization_Japanese_KanjiReadings_ReadingTypes_Kunyomi
+  commentId: F:Romanization.Japanese.KanjiReadings.ReadingTypes.Kunyomi
+  fullName: Romanization.Japanese.KanjiReadings.ReadingTypes.Kunyomi
+  nameWithType: Japanese.KanjiReadings.ReadingTypes.Kunyomi
+- uid: Romanization.Japanese.KanjiReadings.ReadingTypes.Onyomi
+  name: Onyomi
+  href: api/Romanization.Japanese.KanjiReadings.ReadingTypes.html#Romanization_Japanese_KanjiReadings_ReadingTypes_Onyomi
+  commentId: F:Romanization.Japanese.KanjiReadings.ReadingTypes.Onyomi
+  fullName: Romanization.Japanese.KanjiReadings.ReadingTypes.Onyomi
+  nameWithType: Japanese.KanjiReadings.ReadingTypes.Onyomi
+- uid: Romanization.Japanese.KanjiReadings.Type
+  name: Type
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_Type
+  commentId: P:Romanization.Japanese.KanjiReadings.Type
+  fullName: Romanization.Japanese.KanjiReadings.Type
+  nameWithType: Japanese.KanjiReadings.Type
+- uid: Romanization.Japanese.KanjiReadings.Type*
+  name: Type
+  href: api/Romanization.Japanese.KanjiReadings.html#Romanization_Japanese_KanjiReadings_Type_
+  commentId: Overload:Romanization.Japanese.KanjiReadings.Type
+  isSpec: "True"
+  fullName: Romanization.Japanese.KanjiReadings.Type
+  nameWithType: Japanese.KanjiReadings.Type
+- uid: Romanization.Japanese.ModifiedHepburn
+  name: Japanese.ModifiedHepburn
+  href: api/Romanization.Japanese.ModifiedHepburn.html
+  commentId: T:Romanization.Japanese.ModifiedHepburn
+  fullName: Romanization.Japanese.ModifiedHepburn
+  nameWithType: Japanese.ModifiedHepburn
+- uid: Romanization.Japanese.ModifiedHepburn.#ctor
+  name: ModifiedHepburn()
+  href: api/Romanization.Japanese.ModifiedHepburn.html#Romanization_Japanese_ModifiedHepburn__ctor
+  commentId: M:Romanization.Japanese.ModifiedHepburn.#ctor
+  fullName: Romanization.Japanese.ModifiedHepburn.ModifiedHepburn()
+  nameWithType: Japanese.ModifiedHepburn.ModifiedHepburn()
+- uid: Romanization.Japanese.ModifiedHepburn.#ctor*
+  name: ModifiedHepburn
+  href: api/Romanization.Japanese.ModifiedHepburn.html#Romanization_Japanese_ModifiedHepburn__ctor_
+  commentId: Overload:Romanization.Japanese.ModifiedHepburn.#ctor
+  isSpec: "True"
+  fullName: Romanization.Japanese.ModifiedHepburn.ModifiedHepburn
+  nameWithType: Japanese.ModifiedHepburn.ModifiedHepburn
+- uid: Romanization.Japanese.ModifiedHepburn.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Japanese.ModifiedHepburn.html#Romanization_Japanese_ModifiedHepburn_Process_System_String_
+  commentId: M:Romanization.Japanese.ModifiedHepburn.Process(System.String)
+  fullName: Romanization.Japanese.ModifiedHepburn.Process(System.String)
+  nameWithType: Japanese.ModifiedHepburn.Process(String)
+- uid: Romanization.Japanese.ModifiedHepburn.Process*
+  name: Process
+  href: api/Romanization.Japanese.ModifiedHepburn.html#Romanization_Japanese_ModifiedHepburn_Process_
+  commentId: Overload:Romanization.Japanese.ModifiedHepburn.Process
+  isSpec: "True"
+  fullName: Romanization.Japanese.ModifiedHepburn.Process
+  nameWithType: Japanese.ModifiedHepburn.Process
+- uid: Romanization.Japanese.ModifiedHepburn.Type
+  name: Type
+  href: api/Romanization.Japanese.ModifiedHepburn.html#Romanization_Japanese_ModifiedHepburn_Type
+  commentId: P:Romanization.Japanese.ModifiedHepburn.Type
+  fullName: Romanization.Japanese.ModifiedHepburn.Type
+  nameWithType: Japanese.ModifiedHepburn.Type
+- uid: Romanization.Japanese.ModifiedHepburn.Type*
+  name: Type
+  href: api/Romanization.Japanese.ModifiedHepburn.html#Romanization_Japanese_ModifiedHepburn_Type_
+  commentId: Overload:Romanization.Japanese.ModifiedHepburn.Type
+  isSpec: "True"
+  fullName: Romanization.Japanese.ModifiedHepburn.Type
+  nameWithType: Japanese.ModifiedHepburn.Type
+- uid: Romanization.Korean
+  name: Korean
+  href: api/Romanization.Korean.html
+  commentId: T:Romanization.Korean
+  fullName: Romanization.Korean
+  nameWithType: Korean
+- uid: Romanization.Korean.HanjaReadings
+  name: Korean.HanjaReadings
+  href: api/Romanization.Korean.HanjaReadings.html
+  commentId: T:Romanization.Korean.HanjaReadings
+  fullName: Romanization.Korean.HanjaReadings
+  nameWithType: Korean.HanjaReadings
+- uid: Romanization.Korean.HanjaReadings.#ctor
+  name: HanjaReadings()
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings__ctor
+  commentId: M:Romanization.Korean.HanjaReadings.#ctor
+  fullName: Romanization.Korean.HanjaReadings.HanjaReadings()
+  nameWithType: Korean.HanjaReadings.HanjaReadings()
+- uid: Romanization.Korean.HanjaReadings.#ctor*
+  name: HanjaReadings
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings__ctor_
+  commentId: Overload:Romanization.Korean.HanjaReadings.#ctor
+  isSpec: "True"
+  fullName: Romanization.Korean.HanjaReadings.HanjaReadings
+  nameWithType: Korean.HanjaReadings.HanjaReadings
+- uid: Romanization.Korean.HanjaReadings.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_Process_System_String_
+  commentId: M:Romanization.Korean.HanjaReadings.Process(System.String)
+  fullName: Romanization.Korean.HanjaReadings.Process(System.String)
+  nameWithType: Korean.HanjaReadings.Process(String)
+- uid: Romanization.Korean.HanjaReadings.Process(System.String,Romanization.IRomanizationSystem)
+  name: Process(String, IRomanizationSystem)
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_Process_System_String_Romanization_IRomanizationSystem_
+  commentId: M:Romanization.Korean.HanjaReadings.Process(System.String,Romanization.IRomanizationSystem)
+  fullName: Romanization.Korean.HanjaReadings.Process(System.String, Romanization.IRomanizationSystem)
+  nameWithType: Korean.HanjaReadings.Process(String, IRomanizationSystem)
+- uid: Romanization.Korean.HanjaReadings.Process*
+  name: Process
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_Process_
+  commentId: Overload:Romanization.Korean.HanjaReadings.Process
+  isSpec: "True"
+  fullName: Romanization.Korean.HanjaReadings.Process
+  nameWithType: Korean.HanjaReadings.Process
+- uid: Romanization.Korean.HanjaReadings.ProcessToHangeul(System.String)
+  name: ProcessToHangeul(String)
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_ProcessToHangeul_System_String_
+  commentId: M:Romanization.Korean.HanjaReadings.ProcessToHangeul(System.String)
+  fullName: Romanization.Korean.HanjaReadings.ProcessToHangeul(System.String)
+  nameWithType: Korean.HanjaReadings.ProcessToHangeul(String)
+- uid: Romanization.Korean.HanjaReadings.ProcessToHangeul*
+  name: ProcessToHangeul
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_ProcessToHangeul_
+  commentId: Overload:Romanization.Korean.HanjaReadings.ProcessToHangeul
+  isSpec: "True"
+  fullName: Romanization.Korean.HanjaReadings.ProcessToHangeul
+  nameWithType: Korean.HanjaReadings.ProcessToHangeul
+- uid: Romanization.Korean.HanjaReadings.ProcessWithReadings(System.String)
+  name: ProcessWithReadings(String)
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_ProcessWithReadings_System_String_
+  commentId: M:Romanization.Korean.HanjaReadings.ProcessWithReadings(System.String)
+  fullName: Romanization.Korean.HanjaReadings.ProcessWithReadings(System.String)
+  nameWithType: Korean.HanjaReadings.ProcessWithReadings(String)
+- uid: Romanization.Korean.HanjaReadings.ProcessWithReadings*
+  name: ProcessWithReadings
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_ProcessWithReadings_
+  commentId: Overload:Romanization.Korean.HanjaReadings.ProcessWithReadings
+  isSpec: "True"
+  fullName: Romanization.Korean.HanjaReadings.ProcessWithReadings
+  nameWithType: Korean.HanjaReadings.ProcessWithReadings
+- uid: Romanization.Korean.HanjaReadings.ReadingTypes
+  name: Korean.HanjaReadings.ReadingTypes
+  href: api/Romanization.Korean.HanjaReadings.ReadingTypes.html
+  commentId: T:Romanization.Korean.HanjaReadings.ReadingTypes
+  fullName: Romanization.Korean.HanjaReadings.ReadingTypes
+  nameWithType: Korean.HanjaReadings.ReadingTypes
+- uid: Romanization.Korean.HanjaReadings.ReadingTypes.Hangeul
+  name: Hangeul
+  href: api/Romanization.Korean.HanjaReadings.ReadingTypes.html#Romanization_Korean_HanjaReadings_ReadingTypes_Hangeul
+  commentId: F:Romanization.Korean.HanjaReadings.ReadingTypes.Hangeul
+  fullName: Romanization.Korean.HanjaReadings.ReadingTypes.Hangeul
+  nameWithType: Korean.HanjaReadings.ReadingTypes.Hangeul
+- uid: Romanization.Korean.HanjaReadings.Type
+  name: Type
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_Type
+  commentId: P:Romanization.Korean.HanjaReadings.Type
+  fullName: Romanization.Korean.HanjaReadings.Type
+  nameWithType: Korean.HanjaReadings.Type
+- uid: Romanization.Korean.HanjaReadings.Type*
+  name: Type
+  href: api/Romanization.Korean.HanjaReadings.html#Romanization_Korean_HanjaReadings_Type_
+  commentId: Overload:Romanization.Korean.HanjaReadings.Type
+  isSpec: "True"
+  fullName: Romanization.Korean.HanjaReadings.Type
+  nameWithType: Korean.HanjaReadings.Type
+- uid: Romanization.Korean.RevisedRomanization
+  name: Korean.RevisedRomanization
+  href: api/Romanization.Korean.RevisedRomanization.html
+  commentId: T:Romanization.Korean.RevisedRomanization
+  fullName: Romanization.Korean.RevisedRomanization
+  nameWithType: Korean.RevisedRomanization
+- uid: Romanization.Korean.RevisedRomanization.#ctor
+  name: RevisedRomanization()
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization__ctor
+  commentId: M:Romanization.Korean.RevisedRomanization.#ctor
+  fullName: Romanization.Korean.RevisedRomanization.RevisedRomanization()
+  nameWithType: Korean.RevisedRomanization.RevisedRomanization()
+- uid: Romanization.Korean.RevisedRomanization.#ctor*
+  name: RevisedRomanization
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization__ctor_
+  commentId: Overload:Romanization.Korean.RevisedRomanization.#ctor
+  isSpec: "True"
+  fullName: Romanization.Korean.RevisedRomanization.RevisedRomanization
+  nameWithType: Korean.RevisedRomanization.RevisedRomanization
+- uid: Romanization.Korean.RevisedRomanization.HyphenateSyllables
+  name: HyphenateSyllables
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization_HyphenateSyllables
+  commentId: F:Romanization.Korean.RevisedRomanization.HyphenateSyllables
+  fullName: Romanization.Korean.RevisedRomanization.HyphenateSyllables
+  nameWithType: Korean.RevisedRomanization.HyphenateSyllables
+- uid: Romanization.Korean.RevisedRomanization.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization_Process_System_String_
+  commentId: M:Romanization.Korean.RevisedRomanization.Process(System.String)
+  fullName: Romanization.Korean.RevisedRomanization.Process(System.String)
+  nameWithType: Korean.RevisedRomanization.Process(String)
+- uid: Romanization.Korean.RevisedRomanization.Process(System.String,System.Boolean,System.Boolean,System.Boolean)
+  name: Process(String, Boolean, Boolean, Boolean)
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization_Process_System_String_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Romanization.Korean.RevisedRomanization.Process(System.String,System.Boolean,System.Boolean,System.Boolean)
+  fullName: Romanization.Korean.RevisedRomanization.Process(System.String, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: Korean.RevisedRomanization.Process(String, Boolean, Boolean, Boolean)
+- uid: Romanization.Korean.RevisedRomanization.Process*
+  name: Process
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization_Process_
+  commentId: Overload:Romanization.Korean.RevisedRomanization.Process
+  isSpec: "True"
+  fullName: Romanization.Korean.RevisedRomanization.Process
+  nameWithType: Korean.RevisedRomanization.Process
+- uid: Romanization.Korean.RevisedRomanization.Type
+  name: Type
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization_Type
+  commentId: P:Romanization.Korean.RevisedRomanization.Type
+  fullName: Romanization.Korean.RevisedRomanization.Type
+  nameWithType: Korean.RevisedRomanization.Type
+- uid: Romanization.Korean.RevisedRomanization.Type*
+  name: Type
+  href: api/Romanization.Korean.RevisedRomanization.html#Romanization_Korean_RevisedRomanization_Type_
+  commentId: Overload:Romanization.Korean.RevisedRomanization.Type
+  isSpec: "True"
+  fullName: Romanization.Korean.RevisedRomanization.Type
+  nameWithType: Korean.RevisedRomanization.Type
+- uid: Romanization.NumeralValue
+  name: NumeralValue
+  href: api/Romanization.NumeralValue.html
+  commentId: T:Romanization.NumeralValue
+  fullName: Romanization.NumeralValue
+  nameWithType: NumeralValue
+- uid: Romanization.NumeralValue.#ctor(System.Decimal)
+  name: NumeralValue(Decimal)
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue__ctor_System_Decimal_
+  commentId: M:Romanization.NumeralValue.#ctor(System.Decimal)
+  fullName: Romanization.NumeralValue.NumeralValue(System.Decimal)
+  nameWithType: NumeralValue.NumeralValue(Decimal)
+- uid: Romanization.NumeralValue.#ctor*
+  name: NumeralValue
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue__ctor_
+  commentId: Overload:Romanization.NumeralValue.#ctor
+  isSpec: "True"
+  fullName: Romanization.NumeralValue.NumeralValue
+  nameWithType: NumeralValue.NumeralValue
+- uid: Romanization.NumeralValue.CompareTo(Romanization.NumeralValue)
+  name: CompareTo(NumeralValue)
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_CompareTo_Romanization_NumeralValue_
+  commentId: M:Romanization.NumeralValue.CompareTo(Romanization.NumeralValue)
+  fullName: Romanization.NumeralValue.CompareTo(Romanization.NumeralValue)
+  nameWithType: NumeralValue.CompareTo(NumeralValue)
+- uid: Romanization.NumeralValue.CompareTo*
+  name: CompareTo
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_CompareTo_
+  commentId: Overload:Romanization.NumeralValue.CompareTo
+  isSpec: "True"
+  fullName: Romanization.NumeralValue.CompareTo
+  nameWithType: NumeralValue.CompareTo
+- uid: Romanization.NumeralValue.Equals(Romanization.NumeralValue)
+  name: Equals(NumeralValue)
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_Equals_Romanization_NumeralValue_
+  commentId: M:Romanization.NumeralValue.Equals(Romanization.NumeralValue)
+  fullName: Romanization.NumeralValue.Equals(Romanization.NumeralValue)
+  nameWithType: NumeralValue.Equals(NumeralValue)
+- uid: Romanization.NumeralValue.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_Equals_System_Object_
+  commentId: M:Romanization.NumeralValue.Equals(System.Object)
+  fullName: Romanization.NumeralValue.Equals(System.Object)
+  nameWithType: NumeralValue.Equals(Object)
+- uid: Romanization.NumeralValue.Equals*
+  name: Equals
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_Equals_
+  commentId: Overload:Romanization.NumeralValue.Equals
+  isSpec: "True"
+  fullName: Romanization.NumeralValue.Equals
+  nameWithType: NumeralValue.Equals
+- uid: Romanization.NumeralValue.GetHashCode
+  name: GetHashCode()
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_GetHashCode
+  commentId: M:Romanization.NumeralValue.GetHashCode
+  fullName: Romanization.NumeralValue.GetHashCode()
+  nameWithType: NumeralValue.GetHashCode()
+- uid: Romanization.NumeralValue.GetHashCode*
+  name: GetHashCode
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_GetHashCode_
+  commentId: Overload:Romanization.NumeralValue.GetHashCode
+  isSpec: "True"
+  fullName: Romanization.NumeralValue.GetHashCode
+  nameWithType: NumeralValue.GetHashCode
+- uid: Romanization.NumeralValue.op_Equality(Romanization.NumeralValue,Romanization.NumeralValue)
+  name: Equality(NumeralValue, NumeralValue)
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_op_Equality_Romanization_NumeralValue_Romanization_NumeralValue_
+  commentId: M:Romanization.NumeralValue.op_Equality(Romanization.NumeralValue,Romanization.NumeralValue)
+  fullName: Romanization.NumeralValue.Equality(Romanization.NumeralValue, Romanization.NumeralValue)
+  nameWithType: NumeralValue.Equality(NumeralValue, NumeralValue)
+- uid: Romanization.NumeralValue.op_Equality*
+  name: Equality
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_op_Equality_
+  commentId: Overload:Romanization.NumeralValue.op_Equality
+  isSpec: "True"
+  fullName: Romanization.NumeralValue.Equality
+  nameWithType: NumeralValue.Equality
+- uid: Romanization.NumeralValue.op_Inequality(Romanization.NumeralValue,Romanization.NumeralValue)
+  name: Inequality(NumeralValue, NumeralValue)
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_op_Inequality_Romanization_NumeralValue_Romanization_NumeralValue_
+  commentId: M:Romanization.NumeralValue.op_Inequality(Romanization.NumeralValue,Romanization.NumeralValue)
+  fullName: Romanization.NumeralValue.Inequality(Romanization.NumeralValue, Romanization.NumeralValue)
+  nameWithType: NumeralValue.Inequality(NumeralValue, NumeralValue)
+- uid: Romanization.NumeralValue.op_Inequality*
+  name: Inequality
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_op_Inequality_
+  commentId: Overload:Romanization.NumeralValue.op_Inequality
+  isSpec: "True"
+  fullName: Romanization.NumeralValue.Inequality
+  nameWithType: NumeralValue.Inequality
+- uid: Romanization.NumeralValue.ToString
+  name: ToString()
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_ToString
+  commentId: M:Romanization.NumeralValue.ToString
+  fullName: Romanization.NumeralValue.ToString()
+  nameWithType: NumeralValue.ToString()
+- uid: Romanization.NumeralValue.ToString*
+  name: ToString
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_ToString_
+  commentId: Overload:Romanization.NumeralValue.ToString
+  isSpec: "True"
+  fullName: Romanization.NumeralValue.ToString
+  nameWithType: NumeralValue.ToString
+- uid: Romanization.NumeralValue.Value
+  name: Value
+  href: api/Romanization.NumeralValue.html#Romanization_NumeralValue_Value
+  commentId: F:Romanization.NumeralValue.Value
+  fullName: Romanization.NumeralValue.Value
+  nameWithType: NumeralValue.Value
+- uid: Romanization.NumeralValue`1
+  name: NumeralValue<TLanguageUnits>
+  href: api/Romanization.NumeralValue-1.html
+  commentId: T:Romanization.NumeralValue`1
+  name.vb: NumeralValue(Of TLanguageUnits)
+  fullName: Romanization.NumeralValue<TLanguageUnits>
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits)
+  nameWithType: NumeralValue<TLanguageUnits>
+  nameWithType.vb: NumeralValue(Of TLanguageUnits)
+- uid: Romanization.NumeralValue`1.#ctor(System.Decimal,System.Nullable{`0})
+  name: NumeralValue(Decimal, Nullable<TLanguageUnits>)
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1__ctor_System_Decimal_System_Nullable__0__
+  commentId: M:Romanization.NumeralValue`1.#ctor(System.Decimal,System.Nullable{`0})
+  name.vb: NumeralValue(Decimal, Nullable(Of TLanguageUnits))
+  fullName: Romanization.NumeralValue<TLanguageUnits>.NumeralValue(System.Decimal, System.Nullable<TLanguageUnits>)
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).NumeralValue(System.Decimal, System.Nullable(Of TLanguageUnits))
+  nameWithType: NumeralValue<TLanguageUnits>.NumeralValue(Decimal, Nullable<TLanguageUnits>)
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).NumeralValue(Decimal, Nullable(Of TLanguageUnits))
+- uid: Romanization.NumeralValue`1.#ctor*
+  name: NumeralValue
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1__ctor_
+  commentId: Overload:Romanization.NumeralValue`1.#ctor
+  isSpec: "True"
+  fullName: Romanization.NumeralValue<TLanguageUnits>.NumeralValue
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).NumeralValue
+  nameWithType: NumeralValue<TLanguageUnits>.NumeralValue
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).NumeralValue
+- uid: Romanization.NumeralValue`1.CompareTo(Romanization.NumeralValue{`0})
+  name: CompareTo(NumeralValue<TLanguageUnits>)
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_CompareTo_Romanization_NumeralValue__0__
+  commentId: M:Romanization.NumeralValue`1.CompareTo(Romanization.NumeralValue{`0})
+  name.vb: CompareTo(NumeralValue(Of TLanguageUnits))
+  fullName: Romanization.NumeralValue<TLanguageUnits>.CompareTo(Romanization.NumeralValue<TLanguageUnits>)
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).CompareTo(Romanization.NumeralValue(Of TLanguageUnits))
+  nameWithType: NumeralValue<TLanguageUnits>.CompareTo(NumeralValue<TLanguageUnits>)
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).CompareTo(NumeralValue(Of TLanguageUnits))
+- uid: Romanization.NumeralValue`1.CompareTo*
+  name: CompareTo
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_CompareTo_
+  commentId: Overload:Romanization.NumeralValue`1.CompareTo
+  isSpec: "True"
+  fullName: Romanization.NumeralValue<TLanguageUnits>.CompareTo
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).CompareTo
+  nameWithType: NumeralValue<TLanguageUnits>.CompareTo
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).CompareTo
+- uid: Romanization.NumeralValue`1.Equals(Romanization.NumeralValue{`0})
+  name: Equals(NumeralValue<TLanguageUnits>)
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_Equals_Romanization_NumeralValue__0__
+  commentId: M:Romanization.NumeralValue`1.Equals(Romanization.NumeralValue{`0})
+  name.vb: Equals(NumeralValue(Of TLanguageUnits))
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Equals(Romanization.NumeralValue<TLanguageUnits>)
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Equals(Romanization.NumeralValue(Of TLanguageUnits))
+  nameWithType: NumeralValue<TLanguageUnits>.Equals(NumeralValue<TLanguageUnits>)
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Equals(NumeralValue(Of TLanguageUnits))
+- uid: Romanization.NumeralValue`1.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_Equals_System_Object_
+  commentId: M:Romanization.NumeralValue`1.Equals(System.Object)
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Equals(System.Object)
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Equals(System.Object)
+  nameWithType: NumeralValue<TLanguageUnits>.Equals(Object)
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Equals(Object)
+- uid: Romanization.NumeralValue`1.Equals*
+  name: Equals
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_Equals_
+  commentId: Overload:Romanization.NumeralValue`1.Equals
+  isSpec: "True"
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Equals
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Equals
+  nameWithType: NumeralValue<TLanguageUnits>.Equals
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Equals
+- uid: Romanization.NumeralValue`1.GetHashCode
+  name: GetHashCode()
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_GetHashCode
+  commentId: M:Romanization.NumeralValue`1.GetHashCode
+  fullName: Romanization.NumeralValue<TLanguageUnits>.GetHashCode()
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).GetHashCode()
+  nameWithType: NumeralValue<TLanguageUnits>.GetHashCode()
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).GetHashCode()
+- uid: Romanization.NumeralValue`1.GetHashCode*
+  name: GetHashCode
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_GetHashCode_
+  commentId: Overload:Romanization.NumeralValue`1.GetHashCode
+  isSpec: "True"
+  fullName: Romanization.NumeralValue<TLanguageUnits>.GetHashCode
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).GetHashCode
+  nameWithType: NumeralValue<TLanguageUnits>.GetHashCode
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).GetHashCode
+- uid: Romanization.NumeralValue`1.op_Equality(Romanization.NumeralValue{`0},Romanization.NumeralValue{`0})
+  name: Equality(NumeralValue<TLanguageUnits>, NumeralValue<TLanguageUnits>)
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_op_Equality_Romanization_NumeralValue__0__Romanization_NumeralValue__0__
+  commentId: M:Romanization.NumeralValue`1.op_Equality(Romanization.NumeralValue{`0},Romanization.NumeralValue{`0})
+  name.vb: Equality(NumeralValue(Of TLanguageUnits), NumeralValue(Of TLanguageUnits))
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Equality(Romanization.NumeralValue<TLanguageUnits>, Romanization.NumeralValue<TLanguageUnits>)
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Equality(Romanization.NumeralValue(Of TLanguageUnits), Romanization.NumeralValue(Of TLanguageUnits))
+  nameWithType: NumeralValue<TLanguageUnits>.Equality(NumeralValue<TLanguageUnits>, NumeralValue<TLanguageUnits>)
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Equality(NumeralValue(Of TLanguageUnits), NumeralValue(Of TLanguageUnits))
+- uid: Romanization.NumeralValue`1.op_Equality*
+  name: Equality
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_op_Equality_
+  commentId: Overload:Romanization.NumeralValue`1.op_Equality
+  isSpec: "True"
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Equality
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Equality
+  nameWithType: NumeralValue<TLanguageUnits>.Equality
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Equality
+- uid: Romanization.NumeralValue`1.op_Inequality(Romanization.NumeralValue{`0},Romanization.NumeralValue{`0})
+  name: Inequality(NumeralValue<TLanguageUnits>, NumeralValue<TLanguageUnits>)
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_op_Inequality_Romanization_NumeralValue__0__Romanization_NumeralValue__0__
+  commentId: M:Romanization.NumeralValue`1.op_Inequality(Romanization.NumeralValue{`0},Romanization.NumeralValue{`0})
+  name.vb: Inequality(NumeralValue(Of TLanguageUnits), NumeralValue(Of TLanguageUnits))
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Inequality(Romanization.NumeralValue<TLanguageUnits>, Romanization.NumeralValue<TLanguageUnits>)
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Inequality(Romanization.NumeralValue(Of TLanguageUnits), Romanization.NumeralValue(Of TLanguageUnits))
+  nameWithType: NumeralValue<TLanguageUnits>.Inequality(NumeralValue<TLanguageUnits>, NumeralValue<TLanguageUnits>)
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Inequality(NumeralValue(Of TLanguageUnits), NumeralValue(Of TLanguageUnits))
+- uid: Romanization.NumeralValue`1.op_Inequality*
+  name: Inequality
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_op_Inequality_
+  commentId: Overload:Romanization.NumeralValue`1.op_Inequality
+  isSpec: "True"
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Inequality
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Inequality
+  nameWithType: NumeralValue<TLanguageUnits>.Inequality
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Inequality
+- uid: Romanization.NumeralValue`1.ToString
+  name: ToString()
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_ToString
+  commentId: M:Romanization.NumeralValue`1.ToString
+  fullName: Romanization.NumeralValue<TLanguageUnits>.ToString()
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).ToString()
+  nameWithType: NumeralValue<TLanguageUnits>.ToString()
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).ToString()
+- uid: Romanization.NumeralValue`1.ToString*
+  name: ToString
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_ToString_
+  commentId: Overload:Romanization.NumeralValue`1.ToString
+  isSpec: "True"
+  fullName: Romanization.NumeralValue<TLanguageUnits>.ToString
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).ToString
+  nameWithType: NumeralValue<TLanguageUnits>.ToString
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).ToString
+- uid: Romanization.NumeralValue`1.Unit
+  name: Unit
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_Unit
+  commentId: F:Romanization.NumeralValue`1.Unit
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Unit
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Unit
+  nameWithType: NumeralValue<TLanguageUnits>.Unit
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Unit
+- uid: Romanization.NumeralValue`1.Value
+  name: Value
+  href: api/Romanization.NumeralValue-1.html#Romanization_NumeralValue_1_Value
+  commentId: F:Romanization.NumeralValue`1.Value
+  fullName: Romanization.NumeralValue<TLanguageUnits>.Value
+  fullName.vb: Romanization.NumeralValue(Of TLanguageUnits).Value
+  nameWithType: NumeralValue<TLanguageUnits>.Value
+  nameWithType.vb: NumeralValue(Of TLanguageUnits).Value
+- uid: Romanization.OutputNumeralType
+  name: OutputNumeralType
+  href: api/Romanization.OutputNumeralType.html
+  commentId: T:Romanization.OutputNumeralType
+  fullName: Romanization.OutputNumeralType
+  nameWithType: OutputNumeralType
+- uid: Romanization.OutputNumeralType.Arabic
+  name: Arabic
+  href: api/Romanization.OutputNumeralType.html#Romanization_OutputNumeralType_Arabic
+  commentId: F:Romanization.OutputNumeralType.Arabic
+  fullName: Romanization.OutputNumeralType.Arabic
+  nameWithType: OutputNumeralType.Arabic
+- uid: Romanization.OutputNumeralType.Roman
+  name: Roman
+  href: api/Romanization.OutputNumeralType.html#Romanization_OutputNumeralType_Roman
+  commentId: F:Romanization.OutputNumeralType.Roman
+  fullName: Romanization.OutputNumeralType.Roman
+  nameWithType: OutputNumeralType.Roman
+- uid: Romanization.Reading`1
+  name: Reading<TType>
+  href: api/Romanization.Reading-1.html
+  commentId: T:Romanization.Reading`1
+  name.vb: Reading(Of TType)
+  fullName: Romanization.Reading<TType>
+  fullName.vb: Romanization.Reading(Of TType)
+  nameWithType: Reading<TType>
+  nameWithType.vb: Reading(Of TType)
+- uid: Romanization.Reading`1.Type
+  name: Type
+  href: api/Romanization.Reading-1.html#Romanization_Reading_1_Type
+  commentId: F:Romanization.Reading`1.Type
+  fullName: Romanization.Reading<TType>.Type
+  fullName.vb: Romanization.Reading(Of TType).Type
+  nameWithType: Reading<TType>.Type
+  nameWithType.vb: Reading(Of TType).Type
+- uid: Romanization.Reading`1.Value
+  name: Value
+  href: api/Romanization.Reading-1.html#Romanization_Reading_1_Value
+  commentId: F:Romanization.Reading`1.Value
+  fullName: Romanization.Reading<TType>.Value
+  fullName.vb: Romanization.Reading(Of TType).Value
+  nameWithType: Reading<TType>.Value
+  nameWithType.vb: Reading(Of TType).Value
+- uid: Romanization.ReadingCharacter`1
+  name: ReadingCharacter<TType>
+  href: api/Romanization.ReadingCharacter-1.html
+  commentId: T:Romanization.ReadingCharacter`1
+  name.vb: ReadingCharacter(Of TType)
+  fullName: Romanization.ReadingCharacter<TType>
+  fullName.vb: Romanization.ReadingCharacter(Of TType)
+  nameWithType: ReadingCharacter<TType>
+  nameWithType.vb: ReadingCharacter(Of TType)
+- uid: Romanization.ReadingCharacter`1.Character
+  name: Character
+  href: api/Romanization.ReadingCharacter-1.html#Romanization_ReadingCharacter_1_Character
+  commentId: F:Romanization.ReadingCharacter`1.Character
+  fullName: Romanization.ReadingCharacter<TType>.Character
+  fullName.vb: Romanization.ReadingCharacter(Of TType).Character
+  nameWithType: ReadingCharacter<TType>.Character
+  nameWithType.vb: ReadingCharacter(Of TType).Character
+- uid: Romanization.ReadingCharacter`1.FlattenReadings
+  name: FlattenReadings()
+  href: api/Romanization.ReadingCharacter-1.html#Romanization_ReadingCharacter_1_FlattenReadings
+  commentId: M:Romanization.ReadingCharacter`1.FlattenReadings
+  fullName: Romanization.ReadingCharacter<TType>.FlattenReadings()
+  fullName.vb: Romanization.ReadingCharacter(Of TType).FlattenReadings()
+  nameWithType: ReadingCharacter<TType>.FlattenReadings()
+  nameWithType.vb: ReadingCharacter(Of TType).FlattenReadings()
+- uid: Romanization.ReadingCharacter`1.FlattenReadings*
+  name: FlattenReadings
+  href: api/Romanization.ReadingCharacter-1.html#Romanization_ReadingCharacter_1_FlattenReadings_
+  commentId: Overload:Romanization.ReadingCharacter`1.FlattenReadings
+  isSpec: "True"
+  fullName: Romanization.ReadingCharacter<TType>.FlattenReadings
+  fullName.vb: Romanization.ReadingCharacter(Of TType).FlattenReadings
+  nameWithType: ReadingCharacter<TType>.FlattenReadings
+  nameWithType.vb: ReadingCharacter(Of TType).FlattenReadings
+- uid: Romanization.ReadingCharacter`1.Readings
+  name: Readings
+  href: api/Romanization.ReadingCharacter-1.html#Romanization_ReadingCharacter_1_Readings
+  commentId: F:Romanization.ReadingCharacter`1.Readings
+  fullName: Romanization.ReadingCharacter<TType>.Readings
+  fullName.vb: Romanization.ReadingCharacter(Of TType).Readings
+  nameWithType: ReadingCharacter<TType>.Readings
+  nameWithType.vb: ReadingCharacter(Of TType).Readings
+- uid: Romanization.ReadingCharacter`1.ToString
+  name: ToString()
+  href: api/Romanization.ReadingCharacter-1.html#Romanization_ReadingCharacter_1_ToString
+  commentId: M:Romanization.ReadingCharacter`1.ToString
+  fullName: Romanization.ReadingCharacter<TType>.ToString()
+  fullName.vb: Romanization.ReadingCharacter(Of TType).ToString()
+  nameWithType: ReadingCharacter<TType>.ToString()
+  nameWithType.vb: ReadingCharacter(Of TType).ToString()
+- uid: Romanization.ReadingCharacter`1.ToString*
+  name: ToString
+  href: api/Romanization.ReadingCharacter-1.html#Romanization_ReadingCharacter_1_ToString_
+  commentId: Overload:Romanization.ReadingCharacter`1.ToString
+  isSpec: "True"
+  fullName: Romanization.ReadingCharacter<TType>.ToString
+  fullName.vb: Romanization.ReadingCharacter(Of TType).ToString
+  nameWithType: ReadingCharacter<TType>.ToString
+  nameWithType.vb: ReadingCharacter(Of TType).ToString
+- uid: Romanization.ReadingsString`1
+  name: ReadingsString<TType>
+  href: api/Romanization.ReadingsString-1.html
+  commentId: T:Romanization.ReadingsString`1
+  name.vb: ReadingsString(Of TType)
+  fullName: Romanization.ReadingsString<TType>
+  fullName.vb: Romanization.ReadingsString(Of TType)
+  nameWithType: ReadingsString<TType>
+  nameWithType.vb: ReadingsString(Of TType)
+- uid: Romanization.ReadingsString`1.Characters
+  name: Characters
+  href: api/Romanization.ReadingsString-1.html#Romanization_ReadingsString_1_Characters
+  commentId: F:Romanization.ReadingsString`1.Characters
+  fullName: Romanization.ReadingsString<TType>.Characters
+  fullName.vb: Romanization.ReadingsString(Of TType).Characters
+  nameWithType: ReadingsString<TType>.Characters
+  nameWithType.vb: ReadingsString(Of TType).Characters
+- uid: Romanization.ReadingsString`1.ToString
+  name: ToString()
+  href: api/Romanization.ReadingsString-1.html#Romanization_ReadingsString_1_ToString
+  commentId: M:Romanization.ReadingsString`1.ToString
+  fullName: Romanization.ReadingsString<TType>.ToString()
+  fullName.vb: Romanization.ReadingsString(Of TType).ToString()
+  nameWithType: ReadingsString<TType>.ToString()
+  nameWithType.vb: ReadingsString(Of TType).ToString()
+- uid: Romanization.ReadingsString`1.ToString*
+  name: ToString
+  href: api/Romanization.ReadingsString-1.html#Romanization_ReadingsString_1_ToString_
+  commentId: Overload:Romanization.ReadingsString`1.ToString
+  isSpec: "True"
+  fullName: Romanization.ReadingsString<TType>.ToString
+  fullName.vb: Romanization.ReadingsString(Of TType).ToString
+  nameWithType: ReadingsString<TType>.ToString
+  nameWithType.vb: ReadingsString(Of TType).ToString
+- uid: Romanization.Russian
+  name: Russian
+  href: api/Romanization.Russian.html
+  commentId: T:Romanization.Russian
+  fullName: Romanization.Russian
+  nameWithType: Russian
+- uid: Romanization.Russian.AlaLc
+  name: Russian.AlaLc
+  href: api/Romanization.Russian.AlaLc.html
+  commentId: T:Romanization.Russian.AlaLc
+  fullName: Romanization.Russian.AlaLc
+  nameWithType: Russian.AlaLc
+- uid: Romanization.Russian.AlaLc.#ctor
+  name: AlaLc()
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc__ctor
+  commentId: M:Romanization.Russian.AlaLc.#ctor
+  fullName: Romanization.Russian.AlaLc.AlaLc()
+  nameWithType: Russian.AlaLc.AlaLc()
+- uid: Romanization.Russian.AlaLc.#ctor*
+  name: AlaLc
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc__ctor_
+  commentId: Overload:Romanization.Russian.AlaLc.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.AlaLc.AlaLc
+  nameWithType: Russian.AlaLc.AlaLc
+- uid: Romanization.Russian.AlaLc.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc_DefaultCulture
+  commentId: P:Romanization.Russian.AlaLc.DefaultCulture
+  fullName: Romanization.Russian.AlaLc.DefaultCulture
+  nameWithType: Russian.AlaLc.DefaultCulture
+- uid: Romanization.Russian.AlaLc.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc_DefaultCulture_
+  commentId: Overload:Romanization.Russian.AlaLc.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.AlaLc.DefaultCulture
+  nameWithType: Russian.AlaLc.DefaultCulture
+- uid: Romanization.Russian.AlaLc.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc_Process_System_String_
+  commentId: M:Romanization.Russian.AlaLc.Process(System.String)
+  fullName: Romanization.Russian.AlaLc.Process(System.String)
+  nameWithType: Russian.AlaLc.Process(String)
+- uid: Romanization.Russian.AlaLc.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.AlaLc.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.AlaLc.Process(System.String, CultureInfo)
+  nameWithType: Russian.AlaLc.Process(String, CultureInfo)
+- uid: Romanization.Russian.AlaLc.Process*
+  name: Process
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc_Process_
+  commentId: Overload:Romanization.Russian.AlaLc.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.AlaLc.Process
+  nameWithType: Russian.AlaLc.Process
+- uid: Romanization.Russian.AlaLc.Type
+  name: Type
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc_Type
+  commentId: P:Romanization.Russian.AlaLc.Type
+  fullName: Romanization.Russian.AlaLc.Type
+  nameWithType: Russian.AlaLc.Type
+- uid: Romanization.Russian.AlaLc.Type*
+  name: Type
+  href: api/Romanization.Russian.AlaLc.html#Romanization_Russian_AlaLc_Type_
+  commentId: Overload:Romanization.Russian.AlaLc.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.AlaLc.Type
+  nameWithType: Russian.AlaLc.Type
+- uid: Romanization.Russian.BgnPcgn
+  name: Russian.BgnPcgn
+  href: api/Romanization.Russian.BgnPcgn.html
+  commentId: T:Romanization.Russian.BgnPcgn
+  fullName: Romanization.Russian.BgnPcgn
+  nameWithType: Russian.BgnPcgn
+- uid: Romanization.Russian.BgnPcgn.#ctor
+  name: BgnPcgn()
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn__ctor
+  commentId: M:Romanization.Russian.BgnPcgn.#ctor
+  fullName: Romanization.Russian.BgnPcgn.BgnPcgn()
+  nameWithType: Russian.BgnPcgn.BgnPcgn()
+- uid: Romanization.Russian.BgnPcgn.#ctor*
+  name: BgnPcgn
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn__ctor_
+  commentId: Overload:Romanization.Russian.BgnPcgn.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.BgnPcgn.BgnPcgn
+  nameWithType: Russian.BgnPcgn.BgnPcgn
+- uid: Romanization.Russian.BgnPcgn.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_DefaultCulture
+  commentId: P:Romanization.Russian.BgnPcgn.DefaultCulture
+  fullName: Romanization.Russian.BgnPcgn.DefaultCulture
+  nameWithType: Russian.BgnPcgn.DefaultCulture
+- uid: Romanization.Russian.BgnPcgn.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_DefaultCulture_
+  commentId: Overload:Romanization.Russian.BgnPcgn.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.BgnPcgn.DefaultCulture
+  nameWithType: Russian.BgnPcgn.DefaultCulture
+- uid: Romanization.Russian.BgnPcgn.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_Process_System_String_
+  commentId: M:Romanization.Russian.BgnPcgn.Process(System.String)
+  fullName: Romanization.Russian.BgnPcgn.Process(System.String)
+  nameWithType: Russian.BgnPcgn.Process(String)
+- uid: Romanization.Russian.BgnPcgn.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.BgnPcgn.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.BgnPcgn.Process(System.String, CultureInfo)
+  nameWithType: Russian.BgnPcgn.Process(String, CultureInfo)
+- uid: Romanization.Russian.BgnPcgn.Process(System.String,System.Boolean)
+  name: Process(String, Boolean)
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_Process_System_String_System_Boolean_
+  commentId: M:Romanization.Russian.BgnPcgn.Process(System.String,System.Boolean)
+  fullName: Romanization.Russian.BgnPcgn.Process(System.String, System.Boolean)
+  nameWithType: Russian.BgnPcgn.Process(String, Boolean)
+- uid: Romanization.Russian.BgnPcgn.Process(System.String,System.Boolean,CultureInfo)
+  name: Process(String, Boolean, CultureInfo)
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_Process_System_String_System_Boolean_CultureInfo_
+  commentId: M:Romanization.Russian.BgnPcgn.Process(System.String,System.Boolean,CultureInfo)
+  fullName: Romanization.Russian.BgnPcgn.Process(System.String, System.Boolean, CultureInfo)
+  nameWithType: Russian.BgnPcgn.Process(String, Boolean, CultureInfo)
+- uid: Romanization.Russian.BgnPcgn.Process*
+  name: Process
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_Process_
+  commentId: Overload:Romanization.Russian.BgnPcgn.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.BgnPcgn.Process
+  nameWithType: Russian.BgnPcgn.Process
+- uid: Romanization.Russian.BgnPcgn.Type
+  name: Type
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_Type
+  commentId: P:Romanization.Russian.BgnPcgn.Type
+  fullName: Romanization.Russian.BgnPcgn.Type
+  nameWithType: Russian.BgnPcgn.Type
+- uid: Romanization.Russian.BgnPcgn.Type*
+  name: Type
+  href: api/Romanization.Russian.BgnPcgn.html#Romanization_Russian_BgnPcgn_Type_
+  commentId: Overload:Romanization.Russian.BgnPcgn.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.BgnPcgn.Type
+  nameWithType: Russian.BgnPcgn.Type
+- uid: Romanization.Russian.Bs29791958
+  name: Russian.Bs29791958
+  href: api/Romanization.Russian.Bs29791958.html
+  commentId: T:Romanization.Russian.Bs29791958
+  fullName: Romanization.Russian.Bs29791958
+  nameWithType: Russian.Bs29791958
+- uid: Romanization.Russian.Bs29791958.#ctor
+  name: Bs29791958()
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958__ctor
+  commentId: M:Romanization.Russian.Bs29791958.#ctor
+  fullName: Romanization.Russian.Bs29791958.Bs29791958()
+  nameWithType: Russian.Bs29791958.Bs29791958()
+- uid: Romanization.Russian.Bs29791958.#ctor*
+  name: Bs29791958
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958__ctor_
+  commentId: Overload:Romanization.Russian.Bs29791958.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.Bs29791958.Bs29791958
+  nameWithType: Russian.Bs29791958.Bs29791958
+- uid: Romanization.Russian.Bs29791958.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958_DefaultCulture
+  commentId: P:Romanization.Russian.Bs29791958.DefaultCulture
+  fullName: Romanization.Russian.Bs29791958.DefaultCulture
+  nameWithType: Russian.Bs29791958.DefaultCulture
+- uid: Romanization.Russian.Bs29791958.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958_DefaultCulture_
+  commentId: Overload:Romanization.Russian.Bs29791958.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.Bs29791958.DefaultCulture
+  nameWithType: Russian.Bs29791958.DefaultCulture
+- uid: Romanization.Russian.Bs29791958.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958_Process_System_String_
+  commentId: M:Romanization.Russian.Bs29791958.Process(System.String)
+  fullName: Romanization.Russian.Bs29791958.Process(System.String)
+  nameWithType: Russian.Bs29791958.Process(String)
+- uid: Romanization.Russian.Bs29791958.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.Bs29791958.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.Bs29791958.Process(System.String, CultureInfo)
+  nameWithType: Russian.Bs29791958.Process(String, CultureInfo)
+- uid: Romanization.Russian.Bs29791958.Process*
+  name: Process
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958_Process_
+  commentId: Overload:Romanization.Russian.Bs29791958.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.Bs29791958.Process
+  nameWithType: Russian.Bs29791958.Process
+- uid: Romanization.Russian.Bs29791958.Type
+  name: Type
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958_Type
+  commentId: P:Romanization.Russian.Bs29791958.Type
+  fullName: Romanization.Russian.Bs29791958.Type
+  nameWithType: Russian.Bs29791958.Type
+- uid: Romanization.Russian.Bs29791958.Type*
+  name: Type
+  href: api/Romanization.Russian.Bs29791958.html#Romanization_Russian_Bs29791958_Type_
+  commentId: Overload:Romanization.Russian.Bs29791958.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.Bs29791958.Type
+  nameWithType: Russian.Bs29791958.Type
+- uid: Romanization.Russian.Gost16876711
+  name: Russian.Gost16876711
+  href: api/Romanization.Russian.Gost16876711.html
+  commentId: T:Romanization.Russian.Gost16876711
+  fullName: Romanization.Russian.Gost16876711
+  nameWithType: Russian.Gost16876711
+- uid: Romanization.Russian.Gost16876711.#ctor
+  name: Gost16876711()
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711__ctor
+  commentId: M:Romanization.Russian.Gost16876711.#ctor
+  fullName: Romanization.Russian.Gost16876711.Gost16876711()
+  nameWithType: Russian.Gost16876711.Gost16876711()
+- uid: Romanization.Russian.Gost16876711.#ctor*
+  name: Gost16876711
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711__ctor_
+  commentId: Overload:Romanization.Russian.Gost16876711.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876711.Gost16876711
+  nameWithType: Russian.Gost16876711.Gost16876711
+- uid: Romanization.Russian.Gost16876711.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711_DefaultCulture
+  commentId: P:Romanization.Russian.Gost16876711.DefaultCulture
+  fullName: Romanization.Russian.Gost16876711.DefaultCulture
+  nameWithType: Russian.Gost16876711.DefaultCulture
+- uid: Romanization.Russian.Gost16876711.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711_DefaultCulture_
+  commentId: Overload:Romanization.Russian.Gost16876711.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876711.DefaultCulture
+  nameWithType: Russian.Gost16876711.DefaultCulture
+- uid: Romanization.Russian.Gost16876711.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711_Process_System_String_
+  commentId: M:Romanization.Russian.Gost16876711.Process(System.String)
+  fullName: Romanization.Russian.Gost16876711.Process(System.String)
+  nameWithType: Russian.Gost16876711.Process(String)
+- uid: Romanization.Russian.Gost16876711.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.Gost16876711.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.Gost16876711.Process(System.String, CultureInfo)
+  nameWithType: Russian.Gost16876711.Process(String, CultureInfo)
+- uid: Romanization.Russian.Gost16876711.Process*
+  name: Process
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711_Process_
+  commentId: Overload:Romanization.Russian.Gost16876711.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876711.Process
+  nameWithType: Russian.Gost16876711.Process
+- uid: Romanization.Russian.Gost16876711.Type
+  name: Type
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711_Type
+  commentId: P:Romanization.Russian.Gost16876711.Type
+  fullName: Romanization.Russian.Gost16876711.Type
+  nameWithType: Russian.Gost16876711.Type
+- uid: Romanization.Russian.Gost16876711.Type*
+  name: Type
+  href: api/Romanization.Russian.Gost16876711.html#Romanization_Russian_Gost16876711_Type_
+  commentId: Overload:Romanization.Russian.Gost16876711.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876711.Type
+  nameWithType: Russian.Gost16876711.Type
+- uid: Romanization.Russian.Gost16876712
+  name: Russian.Gost16876712
+  href: api/Romanization.Russian.Gost16876712.html
+  commentId: T:Romanization.Russian.Gost16876712
+  fullName: Romanization.Russian.Gost16876712
+  nameWithType: Russian.Gost16876712
+- uid: Romanization.Russian.Gost16876712.#ctor
+  name: Gost16876712()
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712__ctor
+  commentId: M:Romanization.Russian.Gost16876712.#ctor
+  fullName: Romanization.Russian.Gost16876712.Gost16876712()
+  nameWithType: Russian.Gost16876712.Gost16876712()
+- uid: Romanization.Russian.Gost16876712.#ctor*
+  name: Gost16876712
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712__ctor_
+  commentId: Overload:Romanization.Russian.Gost16876712.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876712.Gost16876712
+  nameWithType: Russian.Gost16876712.Gost16876712
+- uid: Romanization.Russian.Gost16876712.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712_DefaultCulture
+  commentId: P:Romanization.Russian.Gost16876712.DefaultCulture
+  fullName: Romanization.Russian.Gost16876712.DefaultCulture
+  nameWithType: Russian.Gost16876712.DefaultCulture
+- uid: Romanization.Russian.Gost16876712.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712_DefaultCulture_
+  commentId: Overload:Romanization.Russian.Gost16876712.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876712.DefaultCulture
+  nameWithType: Russian.Gost16876712.DefaultCulture
+- uid: Romanization.Russian.Gost16876712.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712_Process_System_String_
+  commentId: M:Romanization.Russian.Gost16876712.Process(System.String)
+  fullName: Romanization.Russian.Gost16876712.Process(System.String)
+  nameWithType: Russian.Gost16876712.Process(String)
+- uid: Romanization.Russian.Gost16876712.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.Gost16876712.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.Gost16876712.Process(System.String, CultureInfo)
+  nameWithType: Russian.Gost16876712.Process(String, CultureInfo)
+- uid: Romanization.Russian.Gost16876712.Process*
+  name: Process
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712_Process_
+  commentId: Overload:Romanization.Russian.Gost16876712.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876712.Process
+  nameWithType: Russian.Gost16876712.Process
+- uid: Romanization.Russian.Gost16876712.Type
+  name: Type
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712_Type
+  commentId: P:Romanization.Russian.Gost16876712.Type
+  fullName: Romanization.Russian.Gost16876712.Type
+  nameWithType: Russian.Gost16876712.Type
+- uid: Romanization.Russian.Gost16876712.Type*
+  name: Type
+  href: api/Romanization.Russian.Gost16876712.html#Romanization_Russian_Gost16876712_Type_
+  commentId: Overload:Romanization.Russian.Gost16876712.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost16876712.Type
+  nameWithType: Russian.Gost16876712.Type
+- uid: Romanization.Russian.Gost7792000A
+  name: Russian.Gost7792000A
+  href: api/Romanization.Russian.Gost7792000A.html
+  commentId: T:Romanization.Russian.Gost7792000A
+  fullName: Romanization.Russian.Gost7792000A
+  nameWithType: Russian.Gost7792000A
+- uid: Romanization.Russian.Gost7792000A.#ctor
+  name: Gost7792000A()
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A__ctor
+  commentId: M:Romanization.Russian.Gost7792000A.#ctor
+  fullName: Romanization.Russian.Gost7792000A.Gost7792000A()
+  nameWithType: Russian.Gost7792000A.Gost7792000A()
+- uid: Romanization.Russian.Gost7792000A.#ctor*
+  name: Gost7792000A
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A__ctor_
+  commentId: Overload:Romanization.Russian.Gost7792000A.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000A.Gost7792000A
+  nameWithType: Russian.Gost7792000A.Gost7792000A
+- uid: Romanization.Russian.Gost7792000A.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A_DefaultCulture
+  commentId: P:Romanization.Russian.Gost7792000A.DefaultCulture
+  fullName: Romanization.Russian.Gost7792000A.DefaultCulture
+  nameWithType: Russian.Gost7792000A.DefaultCulture
+- uid: Romanization.Russian.Gost7792000A.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A_DefaultCulture_
+  commentId: Overload:Romanization.Russian.Gost7792000A.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000A.DefaultCulture
+  nameWithType: Russian.Gost7792000A.DefaultCulture
+- uid: Romanization.Russian.Gost7792000A.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A_Process_System_String_
+  commentId: M:Romanization.Russian.Gost7792000A.Process(System.String)
+  fullName: Romanization.Russian.Gost7792000A.Process(System.String)
+  nameWithType: Russian.Gost7792000A.Process(String)
+- uid: Romanization.Russian.Gost7792000A.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.Gost7792000A.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.Gost7792000A.Process(System.String, CultureInfo)
+  nameWithType: Russian.Gost7792000A.Process(String, CultureInfo)
+- uid: Romanization.Russian.Gost7792000A.Process*
+  name: Process
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A_Process_
+  commentId: Overload:Romanization.Russian.Gost7792000A.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000A.Process
+  nameWithType: Russian.Gost7792000A.Process
+- uid: Romanization.Russian.Gost7792000A.Type
+  name: Type
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A_Type
+  commentId: P:Romanization.Russian.Gost7792000A.Type
+  fullName: Romanization.Russian.Gost7792000A.Type
+  nameWithType: Russian.Gost7792000A.Type
+- uid: Romanization.Russian.Gost7792000A.Type*
+  name: Type
+  href: api/Romanization.Russian.Gost7792000A.html#Romanization_Russian_Gost7792000A_Type_
+  commentId: Overload:Romanization.Russian.Gost7792000A.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000A.Type
+  nameWithType: Russian.Gost7792000A.Type
+- uid: Romanization.Russian.Gost7792000B
+  name: Russian.Gost7792000B
+  href: api/Romanization.Russian.Gost7792000B.html
+  commentId: T:Romanization.Russian.Gost7792000B
+  fullName: Romanization.Russian.Gost7792000B
+  nameWithType: Russian.Gost7792000B
+- uid: Romanization.Russian.Gost7792000B.#ctor
+  name: Gost7792000B()
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B__ctor
+  commentId: M:Romanization.Russian.Gost7792000B.#ctor
+  fullName: Romanization.Russian.Gost7792000B.Gost7792000B()
+  nameWithType: Russian.Gost7792000B.Gost7792000B()
+- uid: Romanization.Russian.Gost7792000B.#ctor*
+  name: Gost7792000B
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B__ctor_
+  commentId: Overload:Romanization.Russian.Gost7792000B.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000B.Gost7792000B
+  nameWithType: Russian.Gost7792000B.Gost7792000B
+- uid: Romanization.Russian.Gost7792000B.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B_DefaultCulture
+  commentId: P:Romanization.Russian.Gost7792000B.DefaultCulture
+  fullName: Romanization.Russian.Gost7792000B.DefaultCulture
+  nameWithType: Russian.Gost7792000B.DefaultCulture
+- uid: Romanization.Russian.Gost7792000B.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B_DefaultCulture_
+  commentId: Overload:Romanization.Russian.Gost7792000B.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000B.DefaultCulture
+  nameWithType: Russian.Gost7792000B.DefaultCulture
+- uid: Romanization.Russian.Gost7792000B.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B_Process_System_String_
+  commentId: M:Romanization.Russian.Gost7792000B.Process(System.String)
+  fullName: Romanization.Russian.Gost7792000B.Process(System.String)
+  nameWithType: Russian.Gost7792000B.Process(String)
+- uid: Romanization.Russian.Gost7792000B.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.Gost7792000B.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.Gost7792000B.Process(System.String, CultureInfo)
+  nameWithType: Russian.Gost7792000B.Process(String, CultureInfo)
+- uid: Romanization.Russian.Gost7792000B.Process*
+  name: Process
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B_Process_
+  commentId: Overload:Romanization.Russian.Gost7792000B.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000B.Process
+  nameWithType: Russian.Gost7792000B.Process
+- uid: Romanization.Russian.Gost7792000B.Type
+  name: Type
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B_Type
+  commentId: P:Romanization.Russian.Gost7792000B.Type
+  fullName: Romanization.Russian.Gost7792000B.Type
+  nameWithType: Russian.Gost7792000B.Type
+- uid: Romanization.Russian.Gost7792000B.Type*
+  name: Type
+  href: api/Romanization.Russian.Gost7792000B.html#Romanization_Russian_Gost7792000B_Type_
+  commentId: Overload:Romanization.Russian.Gost7792000B.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.Gost7792000B.Type
+  nameWithType: Russian.Gost7792000B.Type
+- uid: Romanization.Russian.Icao9303
+  name: Russian.Icao9303
+  href: api/Romanization.Russian.Icao9303.html
+  commentId: T:Romanization.Russian.Icao9303
+  fullName: Romanization.Russian.Icao9303
+  nameWithType: Russian.Icao9303
+- uid: Romanization.Russian.Icao9303.#ctor
+  name: Icao9303()
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303__ctor
+  commentId: M:Romanization.Russian.Icao9303.#ctor
+  fullName: Romanization.Russian.Icao9303.Icao9303()
+  nameWithType: Russian.Icao9303.Icao9303()
+- uid: Romanization.Russian.Icao9303.#ctor*
+  name: Icao9303
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303__ctor_
+  commentId: Overload:Romanization.Russian.Icao9303.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.Icao9303.Icao9303
+  nameWithType: Russian.Icao9303.Icao9303
+- uid: Romanization.Russian.Icao9303.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303_DefaultCulture
+  commentId: P:Romanization.Russian.Icao9303.DefaultCulture
+  fullName: Romanization.Russian.Icao9303.DefaultCulture
+  nameWithType: Russian.Icao9303.DefaultCulture
+- uid: Romanization.Russian.Icao9303.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303_DefaultCulture_
+  commentId: Overload:Romanization.Russian.Icao9303.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.Icao9303.DefaultCulture
+  nameWithType: Russian.Icao9303.DefaultCulture
+- uid: Romanization.Russian.Icao9303.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303_Process_System_String_
+  commentId: M:Romanization.Russian.Icao9303.Process(System.String)
+  fullName: Romanization.Russian.Icao9303.Process(System.String)
+  nameWithType: Russian.Icao9303.Process(String)
+- uid: Romanization.Russian.Icao9303.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.Icao9303.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.Icao9303.Process(System.String, CultureInfo)
+  nameWithType: Russian.Icao9303.Process(String, CultureInfo)
+- uid: Romanization.Russian.Icao9303.Process*
+  name: Process
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303_Process_
+  commentId: Overload:Romanization.Russian.Icao9303.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.Icao9303.Process
+  nameWithType: Russian.Icao9303.Process
+- uid: Romanization.Russian.Icao9303.Type
+  name: Type
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303_Type
+  commentId: P:Romanization.Russian.Icao9303.Type
+  fullName: Romanization.Russian.Icao9303.Type
+  nameWithType: Russian.Icao9303.Type
+- uid: Romanization.Russian.Icao9303.Type*
+  name: Type
+  href: api/Romanization.Russian.Icao9303.html#Romanization_Russian_Icao9303_Type_
+  commentId: Overload:Romanization.Russian.Icao9303.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.Icao9303.Type
+  nameWithType: Russian.Icao9303.Type
+- uid: Romanization.Russian.IsoR9
+  name: Russian.IsoR9
+  href: api/Romanization.Russian.IsoR9.html
+  commentId: T:Romanization.Russian.IsoR9
+  fullName: Romanization.Russian.IsoR9
+  nameWithType: Russian.IsoR9
+- uid: Romanization.Russian.IsoR9.#ctor
+  name: IsoR9()
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9__ctor
+  commentId: M:Romanization.Russian.IsoR9.#ctor
+  fullName: Romanization.Russian.IsoR9.IsoR9()
+  nameWithType: Russian.IsoR9.IsoR9()
+- uid: Romanization.Russian.IsoR9.#ctor*
+  name: IsoR9
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9__ctor_
+  commentId: Overload:Romanization.Russian.IsoR9.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.IsoR9.IsoR9
+  nameWithType: Russian.IsoR9.IsoR9
+- uid: Romanization.Russian.IsoR9.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9_DefaultCulture
+  commentId: P:Romanization.Russian.IsoR9.DefaultCulture
+  fullName: Romanization.Russian.IsoR9.DefaultCulture
+  nameWithType: Russian.IsoR9.DefaultCulture
+- uid: Romanization.Russian.IsoR9.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9_DefaultCulture_
+  commentId: Overload:Romanization.Russian.IsoR9.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.IsoR9.DefaultCulture
+  nameWithType: Russian.IsoR9.DefaultCulture
+- uid: Romanization.Russian.IsoR9.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9_Process_System_String_
+  commentId: M:Romanization.Russian.IsoR9.Process(System.String)
+  fullName: Romanization.Russian.IsoR9.Process(System.String)
+  nameWithType: Russian.IsoR9.Process(String)
+- uid: Romanization.Russian.IsoR9.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.IsoR9.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.IsoR9.Process(System.String, CultureInfo)
+  nameWithType: Russian.IsoR9.Process(String, CultureInfo)
+- uid: Romanization.Russian.IsoR9.Process*
+  name: Process
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9_Process_
+  commentId: Overload:Romanization.Russian.IsoR9.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.IsoR9.Process
+  nameWithType: Russian.IsoR9.Process
+- uid: Romanization.Russian.IsoR9.Type
+  name: Type
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9_Type
+  commentId: P:Romanization.Russian.IsoR9.Type
+  fullName: Romanization.Russian.IsoR9.Type
+  nameWithType: Russian.IsoR9.Type
+- uid: Romanization.Russian.IsoR9.Type*
+  name: Type
+  href: api/Romanization.Russian.IsoR9.html#Romanization_Russian_IsoR9_Type_
+  commentId: Overload:Romanization.Russian.IsoR9.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.IsoR9.Type
+  nameWithType: Russian.IsoR9.Type
+- uid: Romanization.Russian.RoadSigns
+  name: Russian.RoadSigns
+  href: api/Romanization.Russian.RoadSigns.html
+  commentId: T:Romanization.Russian.RoadSigns
+  fullName: Romanization.Russian.RoadSigns
+  nameWithType: Russian.RoadSigns
+- uid: Romanization.Russian.RoadSigns.#ctor
+  name: RoadSigns()
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns__ctor
+  commentId: M:Romanization.Russian.RoadSigns.#ctor
+  fullName: Romanization.Russian.RoadSigns.RoadSigns()
+  nameWithType: Russian.RoadSigns.RoadSigns()
+- uid: Romanization.Russian.RoadSigns.#ctor*
+  name: RoadSigns
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns__ctor_
+  commentId: Overload:Romanization.Russian.RoadSigns.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.RoadSigns.RoadSigns
+  nameWithType: Russian.RoadSigns.RoadSigns
+- uid: Romanization.Russian.RoadSigns.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns_DefaultCulture
+  commentId: P:Romanization.Russian.RoadSigns.DefaultCulture
+  fullName: Romanization.Russian.RoadSigns.DefaultCulture
+  nameWithType: Russian.RoadSigns.DefaultCulture
+- uid: Romanization.Russian.RoadSigns.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns_DefaultCulture_
+  commentId: Overload:Romanization.Russian.RoadSigns.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.RoadSigns.DefaultCulture
+  nameWithType: Russian.RoadSigns.DefaultCulture
+- uid: Romanization.Russian.RoadSigns.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns_Process_System_String_
+  commentId: M:Romanization.Russian.RoadSigns.Process(System.String)
+  fullName: Romanization.Russian.RoadSigns.Process(System.String)
+  nameWithType: Russian.RoadSigns.Process(String)
+- uid: Romanization.Russian.RoadSigns.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.RoadSigns.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.RoadSigns.Process(System.String, CultureInfo)
+  nameWithType: Russian.RoadSigns.Process(String, CultureInfo)
+- uid: Romanization.Russian.RoadSigns.Process*
+  name: Process
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns_Process_
+  commentId: Overload:Romanization.Russian.RoadSigns.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.RoadSigns.Process
+  nameWithType: Russian.RoadSigns.Process
+- uid: Romanization.Russian.RoadSigns.Type
+  name: Type
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns_Type
+  commentId: P:Romanization.Russian.RoadSigns.Type
+  fullName: Romanization.Russian.RoadSigns.Type
+  nameWithType: Russian.RoadSigns.Type
+- uid: Romanization.Russian.RoadSigns.Type*
+  name: Type
+  href: api/Romanization.Russian.RoadSigns.html#Romanization_Russian_RoadSigns_Type_
+  commentId: Overload:Romanization.Russian.RoadSigns.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.RoadSigns.Type
+  nameWithType: Russian.RoadSigns.Type
+- uid: Romanization.Russian.Scholarly
+  name: Russian.Scholarly
+  href: api/Romanization.Russian.Scholarly.html
+  commentId: T:Romanization.Russian.Scholarly
+  fullName: Romanization.Russian.Scholarly
+  nameWithType: Russian.Scholarly
+- uid: Romanization.Russian.Scholarly.#ctor
+  name: Scholarly()
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly__ctor
+  commentId: M:Romanization.Russian.Scholarly.#ctor
+  fullName: Romanization.Russian.Scholarly.Scholarly()
+  nameWithType: Russian.Scholarly.Scholarly()
+- uid: Romanization.Russian.Scholarly.#ctor*
+  name: Scholarly
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly__ctor_
+  commentId: Overload:Romanization.Russian.Scholarly.#ctor
+  isSpec: "True"
+  fullName: Romanization.Russian.Scholarly.Scholarly
+  nameWithType: Russian.Scholarly.Scholarly
+- uid: Romanization.Russian.Scholarly.DefaultCulture
+  name: DefaultCulture
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly_DefaultCulture
+  commentId: P:Romanization.Russian.Scholarly.DefaultCulture
+  fullName: Romanization.Russian.Scholarly.DefaultCulture
+  nameWithType: Russian.Scholarly.DefaultCulture
+- uid: Romanization.Russian.Scholarly.DefaultCulture*
+  name: DefaultCulture
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly_DefaultCulture_
+  commentId: Overload:Romanization.Russian.Scholarly.DefaultCulture
+  isSpec: "True"
+  fullName: Romanization.Russian.Scholarly.DefaultCulture
+  nameWithType: Russian.Scholarly.DefaultCulture
+- uid: Romanization.Russian.Scholarly.Process(System.String)
+  name: Process(String)
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly_Process_System_String_
+  commentId: M:Romanization.Russian.Scholarly.Process(System.String)
+  fullName: Romanization.Russian.Scholarly.Process(System.String)
+  nameWithType: Russian.Scholarly.Process(String)
+- uid: Romanization.Russian.Scholarly.Process(System.String,CultureInfo)
+  name: Process(String, CultureInfo)
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly_Process_System_String_CultureInfo_
+  commentId: M:Romanization.Russian.Scholarly.Process(System.String,CultureInfo)
+  fullName: Romanization.Russian.Scholarly.Process(System.String, CultureInfo)
+  nameWithType: Russian.Scholarly.Process(String, CultureInfo)
+- uid: Romanization.Russian.Scholarly.Process*
+  name: Process
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly_Process_
+  commentId: Overload:Romanization.Russian.Scholarly.Process
+  isSpec: "True"
+  fullName: Romanization.Russian.Scholarly.Process
+  nameWithType: Russian.Scholarly.Process
+- uid: Romanization.Russian.Scholarly.Type
+  name: Type
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly_Type
+  commentId: P:Romanization.Russian.Scholarly.Type
+  fullName: Romanization.Russian.Scholarly.Type
+  nameWithType: Russian.Scholarly.Type
+- uid: Romanization.Russian.Scholarly.Type*
+  name: Type
+  href: api/Romanization.Russian.Scholarly.html#Romanization_Russian_Scholarly_Type_
+  commentId: Overload:Romanization.Russian.Scholarly.Type
+  isSpec: "True"
+  fullName: Romanization.Russian.Scholarly.Type
+  nameWithType: Russian.Scholarly.Type
+- uid: Romanization.SystemType
+  name: SystemType
+  href: api/Romanization.SystemType.html
+  commentId: T:Romanization.SystemType
+  fullName: Romanization.SystemType
+  nameWithType: SystemType
+- uid: Romanization.SystemType.PhonemicTranscription
+  name: PhonemicTranscription
+  href: api/Romanization.SystemType.html#Romanization_SystemType_PhonemicTranscription
+  commentId: F:Romanization.SystemType.PhonemicTranscription
+  fullName: Romanization.SystemType.PhonemicTranscription
+  nameWithType: SystemType.PhonemicTranscription
+- uid: Romanization.SystemType.PhoneticTranscription
+  name: PhoneticTranscription
+  href: api/Romanization.SystemType.html#Romanization_SystemType_PhoneticTranscription
+  commentId: F:Romanization.SystemType.PhoneticTranscription
+  fullName: Romanization.SystemType.PhoneticTranscription
+  nameWithType: SystemType.PhoneticTranscription
+- uid: Romanization.SystemType.Transliteration
+  name: Transliteration
+  href: api/Romanization.SystemType.html#Romanization_SystemType_Transliteration
+  commentId: F:Romanization.SystemType.Transliteration
+  fullName: Romanization.SystemType.Transliteration
+  nameWithType: SystemType.Transliteration
