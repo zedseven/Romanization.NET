@@ -1,6 +1,6 @@
 language: csharp
 os: linux
-dist: focal
+dist: xenial
 mono: latest
 dotnet: 5.0 # to update this value in the future, try `dotnet --list-sdks` as a start
 git:
