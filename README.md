@@ -30,3 +30,6 @@ For a comprehensive breakdown of supported languages and systems,
 [check out the full article](Documentation/articles/supported.md).
 
 ### [API Documentation & Articles](https://zedseven.github.io/Romanization.NET/)
+
+## Special Thank You
+- [Thesaurus Linguae Graecae (TLG)](http://stephanus.tlg.uci.edu/) for making the process of mapping Unicode codepoints to Beta Code values less painful

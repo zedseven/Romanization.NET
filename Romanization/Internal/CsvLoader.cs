@@ -13,7 +13,17 @@ namespace Romanization.Internal
 	/// </summary>
 	internal static class CsvLoader
 	{
-		public static readonly string LanguageCharacterMapsPath = Path.Combine(Constants.AssemblyPath,
+		/// <summary>
+		/// Represents an error that occurred during loading of a library CSV file.
+		/// </summary>
+		internal class CsvLoadingException : Exception
+		{
+			internal CsvLoadingException() {}
+			internal CsvLoadingException(string message) : base(message) {}
+			internal CsvLoadingException(string message, Exception inner) : base(message, inner) {}
+		}
+
+		private static readonly string LanguageCharacterMapsPath = Path.Combine(Constants.AssemblyPath,
 			"contentFiles", "any", "any", "LanguageCharacterMaps");
 
 		/// <summary>
@@ -37,6 +47,25 @@ namespace Romanization.Internal
 		{
 			using FileStream csvStream = File.OpenRead(Path.Combine(LanguageCharacterMapsPath, fileName));
 			csvStream.LoadCsvIntoDictionary(dict, keyMapper, valueMapper);
+		}
+
+		/// <summary>
+		/// Loads a language character map file into a replacement chart, using the provided mapping functions to map
+		/// CSV entries to chart keys &amp; values.
+		/// </summary>
+		/// <param name="fileName">The file name of the language character map file.</param>
+		/// <param name="chart">The chart to load into.</param>
+		/// <param name="keyMapper">The function that maps CSV entry first values to chart keys.</param>
+		/// <param name="valueMapper">The function that maps CSV entry second values to chart values.</param>
+		/// <exception cref="T:Romanization.Internal.CannotReadStreamException">The provided stream cannot be
+		/// read.</exception>
+		/// <exception cref="T:Romanization.Internal.CsvLoadingException">Unable to load the CSV file.</exception>
+		public static void LoadCharacterMap(string fileName, ReplacementChart chart,
+			Func<string, string> keyMapper, Func<string, string> valueMapper)
+		{
+			using FileStream csvStream = File.OpenRead(Path.Combine(LanguageCharacterMapsPath, fileName));
+			csvStream.LoadCsvIntoDictionary(chart, keyMapper, valueMapper);
+			chart.RecalculateLongestKeyLength();
 		}
 
 		/// <summary>
@@ -67,7 +96,7 @@ namespace Romanization.Internal
 				using StreamReader reader = new(stream);
 
 				// Discard the first line, since it's simply the heading
-				_ = reader.ReadLine();
+				reader.ReadLine();
 
 				while (!reader.EndOfStream)
 				{
@@ -75,12 +104,12 @@ namespace Romanization.Internal
 					if (string.IsNullOrWhiteSpace(line))
 						continue;
 
-					int commaIndex = line.IndexOf(',');
+					int commaIndex = line.IndexOfIgnoreEscaped(',', '"');
 					if (commaIndex < 0)
 						continue;
 
-					dict[keyMapper(line.Substring(0, commaIndex))] =
-						valueMapper(line.Substring(commaIndex + 1));
+					dict.Add(keyMapper(line[..commaIndex].ProcessQuotes()),
+						valueMapper(line[(commaIndex + 1)..].ProcessQuotes()));
 				}
 			}
 			catch (Exception e)
@@ -90,7 +119,25 @@ namespace Romanization.Internal
 		}
 
 		[Pure]
-		private static string WithoutQuotes(this string str)
-			=> str.Length >= 2 && str[0] == '"' && str[^1] == '"' ? str[1..^1] : str;
+		private static string ProcessQuotes(this string str)
+		{
+			if (str.Length >= 2 && str[0] == '"' && str[^1] == '"')
+				str = str[1..^1];
+			return str.Replace("\"\"", "\"");
+		}
+
+		[Pure]
+		private static int IndexOfIgnoreEscaped(this string str, char needle, char escapeChar)
+		{
+			bool escaped = false;
+			for (int i = 0; i < str.Length; i++)
+			{
+				if (str[i] == escapeChar)
+					escaped = !escaped;
+				else if (str[i] == needle && !escaped)
+					return i;
+			}
+			return -1;
+		}
 	}
 }

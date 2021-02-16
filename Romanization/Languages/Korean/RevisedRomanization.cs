@@ -40,8 +40,8 @@ namespace Romanization
 
 				public HyphenString(AspirationString baseString, int hyphenIndex = -1)
 				{
-					BaseString = baseString;
-					HyphenIndex = hyphenIndex;
+					BaseString   = baseString;
+					HyphenIndex  = hyphenIndex;
 					InsertHyphen = hyphenIndex <= -1 && !baseString.AspiratedString.Contains('-');
 				}
 
@@ -71,9 +71,9 @@ namespace Romanization
 			}
 
 			// System-Specific Constants
-			private readonly Dictionary<char, string> HangeulVowelRomanizations = new();
-			private readonly Dictionary<char, string> HangeulConsonantInitialRomanizations = new();
-			private readonly Dictionary<char, string> HangeulConsonantFinalRomanizations = new();
+			private readonly Dictionary<char, string> HangeulVowelRomanizations                              = new();
+			private readonly Dictionary<char, string> HangeulConsonantInitialRomanizations                   = new();
+			private readonly Dictionary<char, string> HangeulConsonantFinalRomanizations                     = new();
 			private readonly Dictionary<(char, char), HyphenString> HangeulConsonantCombinationRomanizations = new();
 
 			/// <summary>
@@ -86,126 +86,126 @@ namespace Romanization
 				// Sourced from https://en.wikipedia.org/wiki/Revised_Romanization_of_Korean#Transcription_rules
 
 				// Vowels
-				HangeulVowelRomanizations['ㅏ'] = "a";
-				HangeulVowelRomanizations['ㅐ'] = "ae";
-				HangeulVowelRomanizations['ㅑ'] = "ya";
-				HangeulVowelRomanizations['ㅒ'] = "yae";
-				HangeulVowelRomanizations['ㅓ'] = "eo";
-				HangeulVowelRomanizations['ㅔ'] = "e";
-				HangeulVowelRomanizations['ㅕ'] = "yeo";
-				HangeulVowelRomanizations['ㅖ'] = "ye";
-				HangeulVowelRomanizations['ㅗ'] = "o";
-				HangeulVowelRomanizations['ㅘ'] = "wa";
-				HangeulVowelRomanizations['ㅙ'] = "wae";
-				HangeulVowelRomanizations['ㅚ'] = "oe";
-				HangeulVowelRomanizations['ㅛ'] = "yo";
-				HangeulVowelRomanizations['ㅜ'] = "u";
-				HangeulVowelRomanizations['ㅝ'] = "wo";
-				HangeulVowelRomanizations['ㅞ'] = "we";
-				HangeulVowelRomanizations['ㅟ'] = "wi";
-				HangeulVowelRomanizations['ㅠ'] = "yu";
-				HangeulVowelRomanizations['ㅡ'] = "eu";
-				HangeulVowelRomanizations['ㅢ'] = "ui";
-				HangeulVowelRomanizations['ㅣ'] = "i";
+				HangeulVowelRomanizations.Add('ㅏ',   "a");
+				HangeulVowelRomanizations.Add('ㅐ',  "ae");
+				HangeulVowelRomanizations.Add('ㅑ',  "ya");
+				HangeulVowelRomanizations.Add('ㅒ', "yae");
+				HangeulVowelRomanizations.Add('ㅓ',  "eo");
+				HangeulVowelRomanizations.Add('ㅔ',   "e");
+				HangeulVowelRomanizations.Add('ㅕ', "yeo");
+				HangeulVowelRomanizations.Add('ㅖ',  "ye");
+				HangeulVowelRomanizations.Add('ㅗ',   "o");
+				HangeulVowelRomanizations.Add('ㅘ',  "wa");
+				HangeulVowelRomanizations.Add('ㅙ', "wae");
+				HangeulVowelRomanizations.Add('ㅚ',  "oe");
+				HangeulVowelRomanizations.Add('ㅛ',  "yo");
+				HangeulVowelRomanizations.Add('ㅜ',   "u");
+				HangeulVowelRomanizations.Add('ㅝ',  "wo");
+				HangeulVowelRomanizations.Add('ㅞ',  "we");
+				HangeulVowelRomanizations.Add('ㅟ',  "wi");
+				HangeulVowelRomanizations.Add('ㅠ',  "yu");
+				HangeulVowelRomanizations.Add('ㅡ',  "eu");
+				HangeulVowelRomanizations.Add('ㅢ',  "ui");
+				HangeulVowelRomanizations.Add('ㅣ',   "i");
 
 				// Consonants in initial positions
-				HangeulConsonantInitialRomanizations['ㄱ'] = "g";
-				HangeulConsonantInitialRomanizations['ㄲ'] = "kk";
-				HangeulConsonantInitialRomanizations['ㄴ'] = "n";
-				HangeulConsonantInitialRomanizations['ㄷ'] = "d";
-				HangeulConsonantInitialRomanizations['ㄸ'] = "tt";
-				HangeulConsonantInitialRomanizations['ㄹ'] = "r";
-				HangeulConsonantInitialRomanizations['ㅁ'] = "m";
-				HangeulConsonantInitialRomanizations['ㅂ'] = "b";
-				HangeulConsonantInitialRomanizations['ㅃ'] = "pp";
-				HangeulConsonantInitialRomanizations['ㅅ'] = "s";
-				HangeulConsonantInitialRomanizations['ㅆ'] = "ss";
-				HangeulConsonantInitialRomanizations['ㅇ'] = "";
-				HangeulConsonantInitialRomanizations['ㅈ'] = "j";
-				HangeulConsonantInitialRomanizations['ㅉ'] = "jj";
-				HangeulConsonantInitialRomanizations['ㅊ'] = "ch";
-				HangeulConsonantInitialRomanizations['ㅋ'] = "k";
-				HangeulConsonantInitialRomanizations['ㅌ'] = "t";
-				HangeulConsonantInitialRomanizations['ㅍ'] = "p";
-				HangeulConsonantInitialRomanizations['ㅎ'] = "h";
+				HangeulConsonantInitialRomanizations.Add('ㄱ',  "g");
+				HangeulConsonantInitialRomanizations.Add('ㄲ', "kk");
+				HangeulConsonantInitialRomanizations.Add('ㄴ',  "n");
+				HangeulConsonantInitialRomanizations.Add('ㄷ',  "d");
+				HangeulConsonantInitialRomanizations.Add('ㄸ', "tt");
+				HangeulConsonantInitialRomanizations.Add('ㄹ',  "r");
+				HangeulConsonantInitialRomanizations.Add('ㅁ',  "m");
+				HangeulConsonantInitialRomanizations.Add('ㅂ',  "b");
+				HangeulConsonantInitialRomanizations.Add('ㅃ', "pp");
+				HangeulConsonantInitialRomanizations.Add('ㅅ',  "s");
+				HangeulConsonantInitialRomanizations.Add('ㅆ', "ss");
+				HangeulConsonantInitialRomanizations.Add('ㅇ',   "");
+				HangeulConsonantInitialRomanizations.Add('ㅈ',  "j");
+				HangeulConsonantInitialRomanizations.Add('ㅉ', "jj");
+				HangeulConsonantInitialRomanizations.Add('ㅊ', "ch");
+				HangeulConsonantInitialRomanizations.Add('ㅋ',  "k");
+				HangeulConsonantInitialRomanizations.Add('ㅌ',  "t");
+				HangeulConsonantInitialRomanizations.Add('ㅍ',  "p");
+				HangeulConsonantInitialRomanizations.Add('ㅎ',  "h");
 
 				// Consonants in final positions
-				HangeulConsonantFinalRomanizations['ㄱ'] = "k";
-				HangeulConsonantFinalRomanizations['ㄲ'] = "k";
-				HangeulConsonantFinalRomanizations['ㄴ'] = "n";
-				HangeulConsonantFinalRomanizations['ㄷ'] = "t";
-				HangeulConsonantFinalRomanizations['ㄹ'] = "l";
-				HangeulConsonantFinalRomanizations['ㅁ'] = "m";
-				HangeulConsonantFinalRomanizations['ㅂ'] = "p";
-				HangeulConsonantFinalRomanizations['ㅅ'] = "t";
-				HangeulConsonantFinalRomanizations['ㅆ'] = "t";
-				HangeulConsonantFinalRomanizations['ㅇ'] = "ng";
-				HangeulConsonantFinalRomanizations['ㅈ'] = "t";
-				HangeulConsonantFinalRomanizations['ㅊ'] = "t";
-				HangeulConsonantFinalRomanizations['ㅋ'] = "k";
-				HangeulConsonantFinalRomanizations['ㅌ'] = "t";
-				HangeulConsonantFinalRomanizations['ㅍ'] = "p";
-				HangeulConsonantFinalRomanizations['ㅎ'] = "t";
+				HangeulConsonantFinalRomanizations.Add('ㄱ',  "k");
+				HangeulConsonantFinalRomanizations.Add('ㄲ',  "k");
+				HangeulConsonantFinalRomanizations.Add('ㄴ',  "n");
+				HangeulConsonantFinalRomanizations.Add('ㄷ',  "t");
+				HangeulConsonantFinalRomanizations.Add('ㄹ',  "l");
+				HangeulConsonantFinalRomanizations.Add('ㅁ',  "m");
+				HangeulConsonantFinalRomanizations.Add('ㅂ',  "p");
+				HangeulConsonantFinalRomanizations.Add('ㅅ',  "t");
+				HangeulConsonantFinalRomanizations.Add('ㅆ',  "t");
+				HangeulConsonantFinalRomanizations.Add('ㅇ', "ng");
+				HangeulConsonantFinalRomanizations.Add('ㅈ',  "t");
+				HangeulConsonantFinalRomanizations.Add('ㅊ',  "t");
+				HangeulConsonantFinalRomanizations.Add('ㅋ',  "k");
+				HangeulConsonantFinalRomanizations.Add('ㅌ',  "t");
+				HangeulConsonantFinalRomanizations.Add('ㅍ',  "p");
+				HangeulConsonantFinalRomanizations.Add('ㅎ',  "t");
 
 				// Special cases of combinations of an ending from one block and the beginning of a new one
-				HangeulConsonantCombinationRomanizations[('ㄱ', 'ㅇ')] = "g";
-				HangeulConsonantCombinationRomanizations[('ㄱ', 'ㄴ')] = ("ngn", 2);
-				HangeulConsonantCombinationRomanizations[('ㄱ', 'ㄹ')] = ("ngn", 2);
-				HangeulConsonantCombinationRomanizations[('ㄱ', 'ㅁ')] = ("ngm", 2);
-				HangeulConsonantCombinationRomanizations[('ㄱ', 'ㄱ')] = "k-k";
-				HangeulConsonantCombinationRomanizations[('ㄱ', 'ㅎ')] = (("kh", "k"), -1); // kh,k
-				HangeulConsonantCombinationRomanizations[('ㄴ', 'ㄱ')] = "n-g";
-				HangeulConsonantCombinationRomanizations[('ㄴ', 'ㄹ')] = ("ll", 1); // ll,nn
-				HangeulConsonantCombinationRomanizations[('ㄷ', 'ㅇ')] = "d"; // d,j
-				HangeulConsonantCombinationRomanizations[('ㄷ', 'ㄴ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㄷ', 'ㄹ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㄷ', 'ㅁ')] = ("nm", 1);
-				HangeulConsonantCombinationRomanizations[('ㄷ', 'ㅌ')] = "t-t";
-				HangeulConsonantCombinationRomanizations[('ㄷ', 'ㅎ')] = (("th", "t"), -1); // th,t,ch
-				HangeulConsonantCombinationRomanizations[('ㄹ', 'ㅇ')] = "r";
-				HangeulConsonantCombinationRomanizations[('ㄹ', 'ㄴ')] = ("ll", 1); // ll,nn
-				HangeulConsonantCombinationRomanizations[('ㄹ', 'ㄹ')] = ("ll", 1);
-				HangeulConsonantCombinationRomanizations[('ㅁ', 'ㄹ')] = ("mn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅂ', 'ㅇ')] = "b";
-				HangeulConsonantCombinationRomanizations[('ㅂ', 'ㄴ')] = ("mn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅂ', 'ㄹ')] = ("mn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅂ', 'ㅁ')] = ("mm", 1);
-				HangeulConsonantCombinationRomanizations[('ㅂ', 'ㅍ')] = "p-p";
-				HangeulConsonantCombinationRomanizations[('ㅂ', 'ㅎ')] = (("ph", "p"), -1); // ph,p
-				HangeulConsonantCombinationRomanizations[('ㅅ', 'ㅇ')] = "s";
-				HangeulConsonantCombinationRomanizations[('ㅅ', 'ㄴ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅅ', 'ㄹ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅅ', 'ㅁ')] = ("nm", 1);
-				HangeulConsonantCombinationRomanizations[('ㅅ', 'ㅌ')] = "t-t";
-				HangeulConsonantCombinationRomanizations[('ㅇ', 'ㅇ')] = "ng-";
-				HangeulConsonantCombinationRomanizations[('ㅇ', 'ㄹ')] = ("ngn", 2);
-				HangeulConsonantCombinationRomanizations[('ㅈ', 'ㅇ')] = "j";
-				HangeulConsonantCombinationRomanizations[('ㅈ', 'ㄴ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅈ', 'ㄹ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅈ', 'ㅁ')] = ("nm", 1);
-				HangeulConsonantCombinationRomanizations[('ㅈ', 'ㅌ')] = "t-t";
-				HangeulConsonantCombinationRomanizations[('ㅈ', 'ㅎ')] = (("th", "t"), -1); // th,t,ch
-				HangeulConsonantCombinationRomanizations[('ㅊ', 'ㅇ')] = "ch";
-				HangeulConsonantCombinationRomanizations[('ㅊ', 'ㄴ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅊ', 'ㄹ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅊ', 'ㅁ')] = ("nm", 1);
-				HangeulConsonantCombinationRomanizations[('ㅊ', 'ㅌ')] = "t-t";
-				HangeulConsonantCombinationRomanizations[('ㅊ', 'ㅎ')] = (("th", "t"), -1); // th,t,ch
-				HangeulConsonantCombinationRomanizations[('ㅌ', 'ㄴ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅌ', 'ㄹ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅌ', 'ㅁ')] = ("nm", 1);
-				HangeulConsonantCombinationRomanizations[('ㅌ', 'ㅌ')] = "t-t";
-				HangeulConsonantCombinationRomanizations[('ㅌ', 'ㅎ')] = (("th", "t"), -1); // th,t,ch
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㅇ')] = "h";
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㄱ')] = "k";
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㄷ')] = "t";
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㄴ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㄹ')] = ("nn", 1);
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㅁ')] = ("nm", 1);
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㅂ')] = "p";
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㅅ')] = ("hs", 1);
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㅈ')] = "ch";
-				HangeulConsonantCombinationRomanizations[('ㅎ', 'ㅎ')] = "t";
+				HangeulConsonantCombinationRomanizations.Add(('ㄱ', 'ㅇ'), "g");
+				HangeulConsonantCombinationRomanizations.Add(('ㄱ', 'ㄴ'), ("ngn", 2));
+				HangeulConsonantCombinationRomanizations.Add(('ㄱ', 'ㄹ'), ("ngn", 2));
+				HangeulConsonantCombinationRomanizations.Add(('ㄱ', 'ㅁ'), ("ngm", 2));
+				HangeulConsonantCombinationRomanizations.Add(('ㄱ', 'ㄱ'), "k-k");
+				HangeulConsonantCombinationRomanizations.Add(('ㄱ', 'ㅎ'), (("kh", "k"), -1)); // kh,k
+				HangeulConsonantCombinationRomanizations.Add(('ㄴ', 'ㄱ'), "n-g");
+				HangeulConsonantCombinationRomanizations.Add(('ㄴ', 'ㄹ'), ("ll", 1)); // ll,nn
+				HangeulConsonantCombinationRomanizations.Add(('ㄷ', 'ㅇ'), "d"); // d,j
+				HangeulConsonantCombinationRomanizations.Add(('ㄷ', 'ㄴ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㄷ', 'ㄹ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㄷ', 'ㅁ'), ("nm", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㄷ', 'ㅌ'), "t-t");
+				HangeulConsonantCombinationRomanizations.Add(('ㄷ', 'ㅎ'), (("th", "t"), -1)); // th,t,ch
+				HangeulConsonantCombinationRomanizations.Add(('ㄹ', 'ㅇ'), "r");
+				HangeulConsonantCombinationRomanizations.Add(('ㄹ', 'ㄴ'), ("ll", 1)); // ll,nn
+				HangeulConsonantCombinationRomanizations.Add(('ㄹ', 'ㄹ'), ("ll", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅁ', 'ㄹ'), ("mn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅂ', 'ㅇ'), "b");
+				HangeulConsonantCombinationRomanizations.Add(('ㅂ', 'ㄴ'), ("mn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅂ', 'ㄹ'), ("mn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅂ', 'ㅁ'), ("mm", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅂ', 'ㅍ'), "p-p");
+				HangeulConsonantCombinationRomanizations.Add(('ㅂ', 'ㅎ'), (("ph", "p"), -1)); // ph,p
+				HangeulConsonantCombinationRomanizations.Add(('ㅅ', 'ㅇ'), "s");
+				HangeulConsonantCombinationRomanizations.Add(('ㅅ', 'ㄴ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅅ', 'ㄹ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅅ', 'ㅁ'), ("nm", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅅ', 'ㅌ'), "t-t");
+				HangeulConsonantCombinationRomanizations.Add(('ㅇ', 'ㅇ'), "ng-");
+				HangeulConsonantCombinationRomanizations.Add(('ㅇ', 'ㄹ'), ("ngn", 2));
+				HangeulConsonantCombinationRomanizations.Add(('ㅈ', 'ㅇ'), "j");
+				HangeulConsonantCombinationRomanizations.Add(('ㅈ', 'ㄴ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅈ', 'ㄹ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅈ', 'ㅁ'), ("nm", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅈ', 'ㅌ'), "t-t");
+				HangeulConsonantCombinationRomanizations.Add(('ㅈ', 'ㅎ'), (("th", "t"), -1)); // th,t,ch
+				HangeulConsonantCombinationRomanizations.Add(('ㅊ', 'ㅇ'), "ch");
+				HangeulConsonantCombinationRomanizations.Add(('ㅊ', 'ㄴ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅊ', 'ㄹ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅊ', 'ㅁ'), ("nm", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅊ', 'ㅌ'), "t-t");
+				HangeulConsonantCombinationRomanizations.Add(('ㅊ', 'ㅎ'), (("th", "t"), -1)); // th,t,ch
+				HangeulConsonantCombinationRomanizations.Add(('ㅌ', 'ㄴ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅌ', 'ㄹ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅌ', 'ㅁ'), ("nm", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅌ', 'ㅌ'), "t-t");
+				HangeulConsonantCombinationRomanizations.Add(('ㅌ', 'ㅎ'), (("th", "t"), -1)); // th,t,ch
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㅇ'), "h");
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㄱ'), "k");
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㄷ'), "t");
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㄴ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㄹ'), ("nn", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㅁ'), ("nm", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㅂ'), "p");
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㅅ'), ("hs", 1));
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㅈ'), "ch");
+				HangeulConsonantCombinationRomanizations.Add(('ㅎ', 'ㅎ'), "t");
 
 				#endregion
 			}

@@ -38,7 +38,8 @@ namespace Romanization
 				private readonly char[] OverbarChars        	      = { '\u0305', '‾' };
 				private const    string SigmaTauDigraph               = "ΣΤ";
 
-				private readonly Regex OverbarBoundaryRegex = new("\u0305(?!.\u0305|\u0305)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+				private readonly Regex OverbarBoundaryRegex =
+					new("\u0305(?!.\u0305|\u0305)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 				private readonly Regex NumeralDetectionRegex =
 					new(
@@ -60,69 +61,68 @@ namespace Romanization
 
 					// Contains both uppercase and lowercase values, since we do case-sensitive comparisons
 
-					//ValueTable['∠'] = (decimal) 1/2;
-					ValueTable['Α'] =   1;
-					ValueTable['α'] =   1;
-					ValueTable['Β'] =   2;
-					ValueTable['β'] =   2;
-					ValueTable['Γ'] =   3;
-					ValueTable['γ'] =   3;
-					ValueTable['Δ'] =   4;
-					ValueTable['δ'] =   4;
-					ValueTable['Ε'] =   5;
-					ValueTable['ε'] =   5;
-					ValueTable['Ϝ'] =   6; // Digamma
-					ValueTable['ϝ'] =   6; // Digamma
-					ValueTable['Ϛ'] =   6; // Stigma (sigma-tau)
-					ValueTable['ϛ'] =   6; // Stigma (sigma-tau)
-					ValueTable['ς'] =   6; // Incorrect, but sometimes used in place of stigma
-					ValueTable['ς'] =   6; // Incorrect, but sometimes used in place of stigma
-					ValueTable['Ζ'] =   7;
-					ValueTable['ζ'] =   7;
-					ValueTable['Η'] =   8;
-					ValueTable['η'] =   8;
-					ValueTable['Θ'] =   9;
-					ValueTable['θ'] =   9;
-					ValueTable['Ι'] =  10;
-					ValueTable['ι'] =  10;
-					ValueTable['Κ'] =  20;
-					ValueTable['κ'] =  20;
-					ValueTable['Λ'] =  30;
-					ValueTable['λ'] =  30;
-					ValueTable['Μ'] =  40;
-					ValueTable['μ'] =  40;
-					ValueTable['Ν'] =  50;
-					ValueTable['ν'] =  50;
-					ValueTable['Ξ'] =  60;
-					ValueTable['ξ'] =  60;
-					ValueTable['Ο'] =  70;
-					ValueTable['ο'] =  70;
-					ValueTable['Π'] =  80;
-					ValueTable['π'] =  80;
-					ValueTable['Ϙ'] =  90;
-					ValueTable['ϙ'] =  90;
-					ValueTable['Ϟ'] =  90; // Koppa (qoppa)
-					ValueTable['ϟ'] =  90; // Koppa (qoppa)
-					ValueTable['Ρ'] = 100;
-					ValueTable['ρ'] = 100;
-					ValueTable['Σ'] = 200;
-					ValueTable['σ'] = 200;
-					ValueTable['Τ'] = 300;
-					ValueTable['τ'] = 300;
-					ValueTable['Υ'] = 400;
-					ValueTable['υ'] = 400;
-					ValueTable['Φ'] = 500;
-					ValueTable['φ'] = 500;
-					ValueTable['Χ'] = 600;
-					ValueTable['χ'] = 600;
-					ValueTable['Ψ'] = 700;
-					ValueTable['ψ'] = 700;
-					ValueTable['Ω'] = 800;
-					ValueTable['ω'] = 800;
-					ValueTable['Ͳ'] = 900;
-					ValueTable['ͳ'] = 900;
-					ValueTable['Ϡ'] = 900; // Sampi
-					ValueTable['ϡ'] = 900; // Sampi
+					//ValueTable.Add('∠', (decimal) 1/2);
+					ValueTable.Add('Α',   1);
+					ValueTable.Add('α',   1);
+					ValueTable.Add('Β',   2);
+					ValueTable.Add('β',   2);
+					ValueTable.Add('Γ',   3);
+					ValueTable.Add('γ',   3);
+					ValueTable.Add('Δ',   4);
+					ValueTable.Add('δ',   4);
+					ValueTable.Add('Ε',   5);
+					ValueTable.Add('ε',   5);
+					ValueTable.Add('Ϝ',   6); // Digamma
+					ValueTable.Add('ϝ',   6); // Digamma
+					ValueTable.Add('Ϛ',   6); // Stigma (sigma-tau)
+					ValueTable.Add('ϛ',   6); // Stigma (sigma-tau)
+					ValueTable.Add('ς',   6); // Incorrect, but sometimes used in place of stigma
+					ValueTable.Add('Ζ',   7);
+					ValueTable.Add('ζ',   7);
+					ValueTable.Add('Η',   8);
+					ValueTable.Add('η',   8);
+					ValueTable.Add('Θ',   9);
+					ValueTable.Add('θ',   9);
+					ValueTable.Add('Ι',  10);
+					ValueTable.Add('ι',  10);
+					ValueTable.Add('Κ',  20);
+					ValueTable.Add('κ',  20);
+					ValueTable.Add('Λ',  30);
+					ValueTable.Add('λ',  30);
+					ValueTable.Add('Μ',  40);
+					ValueTable.Add('μ',  40);
+					ValueTable.Add('Ν',  50);
+					ValueTable.Add('ν',  50);
+					ValueTable.Add('Ξ',  60);
+					ValueTable.Add('ξ',  60);
+					ValueTable.Add('Ο',  70);
+					ValueTable.Add('ο',  70);
+					ValueTable.Add('Π',  80);
+					ValueTable.Add('π',  80);
+					ValueTable.Add('Ϙ',  90);
+					ValueTable.Add('ϙ',  90);
+					ValueTable.Add('Ϟ',  90); // Koppa (qoppa)
+					ValueTable.Add('ϟ',  90); // Koppa (qoppa)
+					ValueTable.Add('Ρ', 100);
+					ValueTable.Add('ρ', 100);
+					ValueTable.Add('Σ', 200);
+					ValueTable.Add('σ', 200);
+					ValueTable.Add('Τ', 300);
+					ValueTable.Add('τ', 300);
+					ValueTable.Add('Υ', 400);
+					ValueTable.Add('υ', 400);
+					ValueTable.Add('Φ', 500);
+					ValueTable.Add('φ', 500);
+					ValueTable.Add('Χ', 600);
+					ValueTable.Add('χ', 600);
+					ValueTable.Add('Ψ', 700);
+					ValueTable.Add('ψ', 700);
+					ValueTable.Add('Ω', 800);
+					ValueTable.Add('ω', 800);
+					ValueTable.Add('Ͳ', 900);
+					ValueTable.Add('ͳ', 900);
+					ValueTable.Add('Ϡ', 900); // Sampi
+					ValueTable.Add('ϡ', 900); // Sampi
 
 					#endregion
 				}
@@ -144,7 +144,7 @@ namespace Romanization
 				/// parsing of larger texts with multiple numerals contained within.</param>
 				/// <returns>A numeric value representing the value of <paramref name="text"/>.</returns>
 				[Pure]
-				internal NumeralValue Process(string text, bool? textUsesOverbars)
+				private NumeralValue Process(string text, bool? textUsesOverbars)
 				{
 					// Clean, normalize, and prepare the text
 					// TODO: This could be done much more efficiently, but this system should only ever be used for small strings so the impact shouldn't be very high
@@ -163,8 +163,10 @@ namespace Romanization
 							$"{CanonicalDoubleUpperKeraia}")
 						.Replace('‾', CanonicalOverbar);
 
-					// Normalize the older usage format with overbars into the modern one using single and double keraiae
-					if (!textUsesOverbars.HasValue && text.Contains(CanonicalOverbar) || textUsesOverbars.HasValue && textUsesOverbars.Value)
+					// Normalize the older usage format with overbars into the modern one using single and
+					// double keraiae
+					if (!textUsesOverbars.HasValue && text.Contains(CanonicalOverbar) ||
+					    textUsesOverbars.HasValue && textUsesOverbars.Value)
 					{
 						// Convert any existing single keraia into doubles
 						text = text.Replace(CanonicalSingleUpperKeraia, CanonicalDoubleUpperKeraia);

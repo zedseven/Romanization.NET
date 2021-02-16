@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace Romanization.Internal
 {
 	/// <summary>
-	/// Effectively a <see cref="Regex"/> implementation of <see cref="ReplaceOperations.ReplaceWithSameCase"/>.<br />
+	/// Effectively a <see cref="Regex"/> implementation of <see cref="ReplaceOperations.ReplaceFromChartCaseAware"/>.<br />
 	/// This could be implemented with a smarter case-checking algorithm (case checks are simply based on
 	/// first &amp; last characters of the entire <see cref="Match"/>), but it's use here is only for small
 	/// matches where this shouldn't be an issue, and so it isn't worth the implementation &amp; speed cost.<br />

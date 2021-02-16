@@ -1,5 +1,5 @@
 using Romanization.Internal;
-using System.Collections.Generic;
+using System;
 using System.Diagnostics.Contracts;
 using System.Globalization;
 
@@ -15,7 +15,8 @@ namespace Romanization
 	{
 		/// <summary>
 		/// The ISO Recommendation No. 9 (ISO/R 9:1968) system of romanization, specialized for Russian.<br />
-		/// This transliteration table is designed to cover Bulgarian, Russian, Belarusian, Ukrainian, Serbo-Croatian and Macedonian in general, with regional specializations for certain languages.<br />
+		/// This transliteration table is designed to cover Bulgarian, Russian, Belarusian, Ukrainian, Serbo-Croatian
+		/// and Macedonian in general, with regional specializations for certain languages.<br />
 		/// This is largely superceded by ISO 9 (GOST 7.79-2000(A)).<br />
 		/// For more information, visit:
 		/// <a href='https://en.wikipedia.org/wiki/ISO_9#ISO/R_9'>https://en.wikipedia.org/wiki/ISO_9#ISO/R_9</a>
@@ -25,89 +26,97 @@ namespace Romanization
 			/// <inheritdoc />
 			public SystemType Type => SystemType.Transliteration;
 
+			/// <summary>
+			/// The default culture this system will use.
+			/// </summary>
+			public const string DefaultNativeCulture = "ru-RU";
+
 			/// <inheritdoc />
-			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
+			public CultureInfo NativeCulture { get; }
 
 			// System-Specific Constants
-			private readonly Dictionary<string, string> RomanizationTable = new();
+			private readonly ReplacementChart RomanizationTable;
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
 			/// </summary>
-			public IsoR9()
+			public IsoR9() : this(CultureInfo.GetCultureInfo(DefaultNativeCulture)) {}
+
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.<br />
+			/// Supports providing a specific <paramref name="nativeCulture"/> to process with, as long as the country
+			/// code is <c>ru</c>.
+			/// </summary>
+			/// <param name="nativeCulture">The culture to romanize from.</param>
+			/// <exception cref="IrrelevantCultureException"><paramref name="nativeCulture"/> is irrelevant to the
+			/// language/region.</exception>
+			public IsoR9(CultureInfo nativeCulture)
 			{
+				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
+					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
+
+				NativeCulture = nativeCulture;
+
 				#region Romanization Chart
 
 				// Sourced from https://en.wikipedia.org/wiki/ISO_9#ISO/R_9
 
-				RomanizationTable["а"] = "a";
-				RomanizationTable["б"] = "b";
-				RomanizationTable["в"] = "v";
-				RomanizationTable["г"] = "g";
-				RomanizationTable["д"] = "d";
-				RomanizationTable["ѓ"] = "ǵ";
-				RomanizationTable["ђ"] = "đ";
-				RomanizationTable["е"] = "e";
-				RomanizationTable["ё"] = "ë";
-				RomanizationTable["є"] = "je";
-				RomanizationTable["ж"] = "ž";
-				RomanizationTable["з"] = "z";
-				RomanizationTable["ѕ"] = "dz";
-				RomanizationTable["и"] = "i";
-				RomanizationTable["і"] = "i";
-				RomanizationTable["ї"] = "ï";
-				RomanizationTable["й"] = "j";
-				RomanizationTable["к"] = "k";
-				RomanizationTable["л"] = "l";
-				RomanizationTable["љ"] = "lj";
-				RomanizationTable["м"] = "m";
-				RomanizationTable["н"] = "n";
-				RomanizationTable["њ"] = "nj";
-				RomanizationTable["о"] = "o";
-				RomanizationTable["п"] = "p";
-				RomanizationTable["р"] = "r";
-				RomanizationTable["с"] = "s";
-				RomanizationTable["т"] = "t";
-				RomanizationTable["ќ"] = "ḱ";
-				RomanizationTable["ћ"] = "ć";
-				RomanizationTable["у"] = "u";
-				RomanizationTable["ў"] = "ŭ";
-				RomanizationTable["ф"] = "f";
-				RomanizationTable["х"] = "h"; // RU specialization
-				RomanizationTable["ц"] = "c";
-				RomanizationTable["ч"] = "č";
-				RomanizationTable["џ"] = "dž";
-				RomanizationTable["ш"] = "š";
-				RomanizationTable["щ"] = "šč";
-				RomanizationTable["ъ"] = "ʺ";
-				RomanizationTable["ы"] = "y";
-				RomanizationTable["ь"] = "ʹ";
-				RomanizationTable["ѣ"] = "ě";
-				RomanizationTable["э"] = "ė";
-				RomanizationTable["ю"] = "ju";
-				RomanizationTable["я"] = "ja";
-				RomanizationTable["’"] = "ʺ";
-				RomanizationTable["ѫ"] = "ʺ̣";
-				RomanizationTable["ѳ"] = "ḟ";
-				RomanizationTable["ѵ"] = "ẏ";
+				RomanizationTable =
+					new ReplacementChart(StringComparer.Create(NativeCulture, CompareOptions.IgnoreCase))
+					{
+						{"а",  "a"},
+						{"б",  "b"},
+						{"в",  "v"},
+						{"г",  "g"},
+						{"д",  "d"},
+						{"ѓ",  "ǵ"},
+						{"ђ",  "đ"},
+						{"е",  "e"},
+						{"ё",  "ë"},
+						{"є", "je"},
+						{"ж",  "ž"},
+						{"з",  "z"},
+						{"ѕ", "dz"},
+						{"и",  "i"},
+						{"і",  "i"},
+						{"ї",  "ï"},
+						{"й",  "j"},
+						{"к",  "k"},
+						{"л",  "l"},
+						{"љ", "lj"},
+						{"м",  "m"},
+						{"н",  "n"},
+						{"њ", "nj"},
+						{"о",  "o"},
+						{"п",  "p"},
+						{"р",  "r"},
+						{"с",  "s"},
+						{"т",  "t"},
+						{"ќ",  "ḱ"},
+						{"ћ",  "ć"},
+						{"у",  "u"},
+						{"ў",  "ŭ"},
+						{"ф",  "f"},
+						{"х",  "h"}, // RU specialization
+						{"ц",  "c"},
+						{"ч",  "č"},
+						{"џ", "dž"},
+						{"ш",  "š"},
+						{"щ", "šč"},
+						{"ъ",  "ʺ"},
+						{"ы",  "y"},
+						{"ь",  "ʹ"},
+						{"ѣ",  "ě"},
+						{"э",  "ė"},
+						{"ю", "ju"},
+						{"я", "ja"},
+						{"’",  "ʺ"},
+						{"ѫ",  "ʺ̣"},
+						{"ѳ",  "ḟ"},
+						{"ѵ",  "ẏ"}
+					};
 
 				#endregion
-			}
-
-			/// <summary>
-			/// Performs romanization according to ICAO Doc 9303 on the given text.<br />
-			/// Supports providing a specific <paramref name="nativeCulture"/> to process with, as long as the country code is <c>ru</c>.
-			/// </summary>
-			/// <param name="text">The text to romanize.</param>
-			/// <param name="nativeCulture">The culture to use.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
-			/// <exception cref="IrrelevantCultureException"><paramref name="nativeCulture"/> is irrelevant to the language/region.</exception>
-			[Pure]
-			public string Process(string text, CultureInfo nativeCulture)
-			{
-				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
-					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-				return CulturalOperations.RunWithCulture(nativeCulture, () => text.LanguageWidePreparation().ReplaceFromChartWithSameCase(RomanizationTable));
 			}
 
 			/// <summary>
@@ -117,7 +126,8 @@ namespace Romanization
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
 			[Pure]
 			public string Process(string text)
-				=> Process(text, DefaultCulture);
+				=> CulturalOperations.RunWithCulture(NativeCulture,
+					() => text.LanguageWidePreparation().ReplaceFromChartCaseAware(RomanizationTable));
 		}
 	}
 }

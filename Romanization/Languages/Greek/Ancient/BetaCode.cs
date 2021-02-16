@@ -1,8 +1,9 @@
 ﻿using Romanization.Internal;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Globalization;
+using System.Linq;
+using System.Text;
 
 // ReSharper disable CheckNamespace
 // ReSharper disable CommentTypo
@@ -17,157 +18,205 @@ namespace Romanization
 		public static partial class Ancient
 		{
 			/// <summary>
-			/// The Beta Code Greek romanization system.<br />
+			/// The Beta Code Greek transliteration system.<br />
 			/// For more information, visit:
 			/// <a href='https://en.wikipedia.org/wiki/Beta_Code'>https://en.wikipedia.org/wiki/Beta_Code</a>
 			/// </summary>
-			public sealed class BetaCode : IMultiInCultureSystem
+			public sealed class BetaCode : IRomanizationSystem
 			{
 				/// <inheritdoc />
-				public SystemType Type => SystemType.Transliteration;
+				public SystemType Type => SystemType.Transliteration; // To the extreme
 
-				/// <inheritdoc />
-				public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("el-GR");
+				/// <summary>
+				/// Whether or not to support the entire TLG Beta Code replacement set. Note that this contains
+				/// hundreds of characters, most of which you will never ever need. If you're not sure, don't use full
+				/// replacements.<br />
+				/// For the full replacement specification, see:
+				/// <a href='http://stephanus.tlg.uci.edu/encoding/BCM.pdf'>http://stephanus.tlg.uci.edu/encoding/BCM.pdf</a>
+				/// </summary>
+				public readonly bool FullReplacements;
 
 				// System-Specific Constants
-				private readonly Dictionary<string, string> DiacriticsTable		= new();
-				private readonly Dictionary<string, string> PunctuationTable	   = new();
-				private readonly Dictionary<string, string> CommonReplacementTable = new();
-				//private readonly Dictionary<string, string> FullReplacementTable   = new Dictionary<string, string>();
+				private const string FullSetFileName = "BetaCodeGreek.csv";
+				private readonly ReplacementChart ReplacementTable;
+
+				private readonly RepeatedCombiningCharsSub? OverlineSub;
+				private readonly RepeatedCombiningCharsSub? UnderlineSub;
+				private readonly RepeatedCombiningCharsSub? InvertedBreveSub;
+				private readonly RepeatedCombiningCharsSub? BelowBreveSub;
+				private readonly RepeatedCombiningCharsSub? BreveSub;
+				private readonly RepeatedCombiningCharsSub? DoubleUnderlineSub;
+				private readonly EncapsulatingCharsSub?     DoubleSolidusBracketsSub;
+				private readonly EncapsulatingCharsSub?     SingleSolidusBracketsSub;
 
 				/// <summary>
 				/// Instantiates a copy of the system to process romanizations.
 				/// </summary>
-				public BetaCode()
+				/// <param name="fullReplacements">Whether or not to support the entire TLG Beta Code replacement set.
+				/// Note that this contains thousands of characters, most of which you will never ever need. If you're
+				/// not sure, don't use full replacements.</param>
+				public BetaCode(bool fullReplacements = false)
 				{
-					#region Common Replacement Chart
+					FullReplacements = fullReplacements;
 
-					// Sourced from https://en.wikipedia.org/wiki/Beta_Code and http://stephanus.tlg.uci.edu/encoding/BCM.pdf
+					#region Replacement Chart
 
-					// Diacritics
-					DiacriticsTable["\u0313"] =  ")"; // Smooth breathing
-					DiacriticsTable["\u0314"] =  "("; // Rough breathing
-					DiacriticsTable["\u0301"] =  "/"; // Acute accent
-					DiacriticsTable["\u0342"] =  "="; // Circumflex accent
-					DiacriticsTable["\u0300"] = "\\"; // Grave accent
-					DiacriticsTable["\u0308"] =  "+"; // Diaeresis
-					DiacriticsTable["\u0345"] =  "|"; // Iota subscript
-					DiacriticsTable["\u0304"] =  "&"; // Macron
-					DiacriticsTable["\u0306"] =  "'"; // Breve
+					// Sourced from https://en.wikipedia.org/wiki/Beta_Code
+					// and http://stephanus.tlg.uci.edu/encoding/BCM.pdf
 
-					// Punctuation
-					//PunctuationTable["."] =	   "."; // Low dot
-					//PunctuationTable[","] =	   ","; // Comma
-					PunctuationTable["\u0387"] =	":"; // Mid dot
-					//PunctuationTable[";"] =	   ";"; // Question mark
-					PunctuationTable["\u037E"] =	";"; // Distinct from above but visually the same
-					PunctuationTable["\u02D9"] = "#762"; // High dot (in ancient Greek this acted as a full stop)
-					PunctuationTable["\u205A"] =  "#52"; // In ancient texts the Greek two-dot punctuation mark (looks like a colon) served as the full stop
-					//PunctuationTable["'"] =	   "'"; // Apostrophe
-					PunctuationTable["’"] =		 "'"; // Distinct from above but visually the same
-					//PunctuationTable["-"] =	   "-"; // Hyphen
-					PunctuationTable["‐"] =		 "-"; // Distinct from above but visually the same
-					PunctuationTable["—"] =		 "_"; // Dash
-					PunctuationTable["ʹ"] =		 "#"; // Keraia
-					PunctuationTable["ʹ"] =		 "#"; // Distinct from above but visually the same
-					PunctuationTable["ʺ"] =		 "#"; // Double Keraia
+					if (!FullReplacements)
+					{
+						ReplacementTable = new ReplacementChart(StringComparer.Ordinal)
+						{
+							// Diacritics
+							{"\u0313",  ")"}, // Smooth breathing
+							{"\u0314",  "("}, // Rough breathing
+							{"\u0301",  "/"}, // Acute accent
+							{"\u0342",  "="}, // Circumflex accent
+							{"\u0300", "\\"}, // Grave accent
+							{"\u0308",  "+"}, // Diaeresis
+							{"\u0345",  "|"}, // Iota subscript
+							{"\u0304",  "&"}, // Macron
+							{"\u0306",  "'"}, // Breve
 
-					// Main characters (2021)
-					CommonReplacementTable["Α"] =  "*A";
-					CommonReplacementTable["α"] =   "A";
-					CommonReplacementTable["Β"] =  "*B";
-					CommonReplacementTable["β"] =   "B";
-					CommonReplacementTable["Γ"] =  "*G";
-					CommonReplacementTable["γ"] =   "G";
-					CommonReplacementTable["Δ"] =  "*D";
-					CommonReplacementTable["δ"] =   "D";
-					CommonReplacementTable["Ε"] =  "*E";
-					CommonReplacementTable["ε"] =   "E";
-					CommonReplacementTable["ϝ"] =  "*V"; // Digamma
-					CommonReplacementTable["ͷ"] =   "V"; // Digamma
-					CommonReplacementTable["Ζ"] =  "*Z";
-					CommonReplacementTable["ζ"] =   "Z";
-					CommonReplacementTable["Η"] =  "*H";
-					CommonReplacementTable["η"] =   "H";
-					CommonReplacementTable["Θ"] =  "*Q";
-					CommonReplacementTable["θ"] =   "Q";
-					CommonReplacementTable["Ι"] =  "*I";
-					CommonReplacementTable["ι"] =   "I";
-					CommonReplacementTable["Κ"] =  "*K";
-					CommonReplacementTable["κ"] =   "K";
-					CommonReplacementTable["Λ"] =  "*L";
-					CommonReplacementTable["λ"] =   "L";
-					CommonReplacementTable["Μ"] =  "*M";
-					CommonReplacementTable["μ"] =   "M";
-					CommonReplacementTable["Ν"] =  "*N";
-					CommonReplacementTable["ν"] =   "N";
-					CommonReplacementTable["Ξ"] =  "*C";
-					CommonReplacementTable["ξ"] =   "C";
-					CommonReplacementTable["Ο"] =  "*O";
-					CommonReplacementTable["ο"] =   "O";
-					CommonReplacementTable["Π"] =  "*P";
-					CommonReplacementTable["π"] =   "P";
-					CommonReplacementTable["Ρ"] =  "*R";
-					CommonReplacementTable["ρ"] =   "R";
-					CommonReplacementTable["Σ"] =  "*S";
-					CommonReplacementTable["σ"] =  "S1";
-					CommonReplacementTable["ς"] =  "S2";
-					CommonReplacementTable["Ϲ"] = "*S3"; // Lunate sigma
-					CommonReplacementTable["ϲ"] =  "S3"; // Lunate sigma
-					CommonReplacementTable["Τ"] =  "*T";
-					CommonReplacementTable["τ"] =   "T";
-					CommonReplacementTable["Υ"] =  "*U";
-					CommonReplacementTable["υ"] =   "U";
-					CommonReplacementTable["Φ"] =  "*F";
-					CommonReplacementTable["φ"] =   "F";
-					CommonReplacementTable["Χ"] =  "*X";
-					CommonReplacementTable["χ"] =   "X";
-					CommonReplacementTable["Ψ"] =  "*Y";
-					CommonReplacementTable["ψ"] =   "Y";
-					CommonReplacementTable["Ω"] =  "*W";
-					CommonReplacementTable["ω"] =   "W";
+							// Punctuation
+							{"\u0387",   ":"}, // Mid dot
+							{"\u037E",   ";"}, // Question mark
+							{"\u02D9", "#72"}, // High dot (in ancient Greek this acted as a full stop)
+							{"\u205A", "#73"}, // In ancient texts the Greek two-dot punctuation mark (looks like a colon) served as the full stop
+							{"’",        "'"}, // Apostrophe
+							{"‐",        "-"}, // Hyphen
+							{"—",        "_"}, // Dash
+							{"ʹ",        "#"}, // Keraia
+							{"ʹ",        "#"}, // Distinct from above but visually the same
+							{"ʺ",        "#"}, // Double Keraia
 
-					// Uncommon letters
-					CommonReplacementTable["Ϛ"] =   "*#2"; // Stigma
-					CommonReplacementTable["ϛ"] =	"#2"; // Stigma
-					CommonReplacementTable["Ϙ"] =   "*#3"; // Koppa
-					CommonReplacementTable["ϙ"] =	"#3"; // Koppa
-					CommonReplacementTable["Ϟ"] =   "*#3"; // Koppa
-					CommonReplacementTable["ϟ"] =	"#3"; // Koppa
-					CommonReplacementTable["Ϡ"] =   "*#5"; // Sampi
-					CommonReplacementTable["ϡ"] =	"#5"; // Sampi
-					CommonReplacementTable["Ͳ"] =   "*#5"; // Sampi
-					CommonReplacementTable["ͳ"] =	"#5"; // Sampi
-					CommonReplacementTable["Ϻ"] = "*#711"; // San
-					CommonReplacementTable["ϻ"] =  "#711"; // San
-					CommonReplacementTable["Ϳ"] = "*#401"; // Yot
-					CommonReplacementTable["ϳ"] =  "#401"; // Yot
+							// Main characters (2021)
+							{"Α",    "*A"},
+							{"α",     "A"},
+							{"Β",    "*B"},
+							{"β",     "B"},
+							{"Γ",    "*G"},
+							{"γ",     "G"},
+							{"Δ",    "*D"},
+							{"δ",     "D"},
+							{"Ε",    "*E"},
+							{"ε",     "E"},
+							{"ϝ",    "*V"}, // Digamma
+							{"ͷ",     "V"}, // Digamma
+							{"Ζ",    "*Z"},
+							{"ζ",     "Z"},
+							{"Η",    "*H"},
+							{"η",     "H"},
+							{"Θ",    "*Q"},
+							{"θ",     "Q"},
+							{"Ι",    "*I"},
+							{"ι",     "I"},
+							{"Κ",    "*K"},
+							{"κ",     "K"},
+							{"Λ",    "*L"},
+							{"λ",     "L"},
+							{"Μ",    "*M"},
+							{"μ",     "M"},
+							{"Ν",    "*N"},
+							{"ν",     "N"},
+							{"Ξ",    "*C"},
+							{"ξ",     "C"},
+							{"Ο",    "*O"},
+							{"ο",     "O"},
+							{"Π",    "*P"},
+							{"π",     "P"},
+							{"Ρ",    "*R"},
+							{"ρ",     "R"},
+							{"Σ",    "*S"},
+							{"σ",    "S1"},
+							{"ς",    "S2"},
+							{"Ϲ",   "*S3"}, // Lunate sigma
+							{"ϲ",    "S3"}, // Lunate sigma
+							{"Τ",    "*T"},
+							{"τ",     "T"},
+							{"Υ",    "*U"},
+							{"υ",     "U"},
+							{"Φ",    "*F"},
+							{"φ",     "F"},
+							{"Χ",    "*X"},
+							{"χ",     "X"},
+							{"Ψ",    "*Y"},
+							{"ψ",     "Y"},
+							{"Ω",    "*W"},
+							{"ω",     "W"},
+
+							// Uncommon letters
+							{"Ϛ",   "*#2"}, // Stigma
+							{"ϛ",    "#2"}, // Stigma
+							{"Ϙ",   "*#3"}, // Koppa
+							{"ϙ",    "#3"}, // Koppa
+							{"Ϟ",   "*#3"}, // Koppa
+							{"ϟ",    "#3"}, // Koppa
+							{"Ϡ",   "*#5"}, // Sampi
+							{"ϡ",    "#5"}, // Sampi
+							{"Ͳ",   "*#5"}, // Sampi
+							{"ͳ",    "#5"}, // Sampi
+							{"Ϻ", "*#711"}, // San
+							{"ϻ",  "#711"}, // San
+							{"Ϳ", "*#401"}, // Yot
+							{"ϳ",  "#401"}  // Yot
+						};
+					}
+					else
+					{
+						// Exceptional replacements
+						OverlineSub              = new RepeatedCombiningCharsSub('\u0305', "<",  ">");
+						UnderlineSub             = new RepeatedCombiningCharsSub('\u0332', "<1", ">1");
+						InvertedBreveSub         = new RepeatedCombiningCharsSub('\u0361', "<3", ">3", 3);
+						BelowBreveSub            = new RepeatedCombiningCharsSub('\u035C', "<4", ">4", 3);
+						BreveSub                 = new RepeatedCombiningCharsSub('\u035D', "<5", ">5", 3);
+						DoubleUnderlineSub       = new RepeatedCombiningCharsSub('\u0333', "<8", ">8");
+						DoubleSolidusBracketsSub = new EncapsulatingCharsSub("//", "//", "[81", "]81");
+						SingleSolidusBracketsSub = new EncapsulatingCharsSub("/",  "/",  "[80", "]80");
+
+						// All other replacements
+						ReplacementTable = new ReplacementChart(StringComparer.Ordinal);
+						CsvLoader.LoadCharacterMap(FullSetFileName, ReplacementTable,
+							k => string.Concat(k
+								.Split('+')
+								.Select(c => char.ConvertFromUtf32(int.Parse(c, NumberStyles.HexNumber)))),
+							v => v);
+					}
 
 					#endregion
 				}
 
-				/// <summary>
-				/// Performs Beta Code Greek romanization on the given text.<br />
-				/// Supports providing a specific <paramref name="nativeCulture"/> to process with, as long as the
-				/// country code is <c>el</c>.
-				/// </summary>
-				/// <param name="text">The text to romanize.</param>
-				/// <param name="nativeCulture">The culture to romanize from.</param>
-				/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
-				/// <exception cref="IrrelevantCultureException"><paramref name="nativeCulture"/> is irrelevant to the
-				/// language/region.</exception>
-				[Pure]
-				public string Process(string text, CultureInfo nativeCulture)
+				private static string ReplaceEditorialBrackets(string text)
 				{
-					if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "el")
-						throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-					return CulturalOperations.RunWithCulture(nativeCulture, () => text
-						// General preparation, normalization
-						.LanguageWidePreparation()
-						// Do common replacements
-						.ReplaceFromChart(DiacriticsTable, StringComparison.Ordinal)
-						.ReplaceFromChart(PunctuationTable, StringComparison.Ordinal)
-						.ReplaceFromChart(CommonReplacementTable));
+					StringBuilder result = new(text.Length + 4);
+					bool? openBracketType = null; // false for deletion bracket, true for dittography bracket
+					foreach (char c in text)
+					{
+						switch (c)
+						{
+							case '├' when !openBracketType.HasValue:
+								openBracketType = false;
+								result.Append("[82");
+								break;
+							case '├' when openBracketType.Value:
+								openBracketType = null;
+								result.Append("]83");
+								break;
+							case '┤' when !openBracketType.HasValue:
+								openBracketType = true;
+								result.Append("[83");
+								break;
+							case '┤' when !openBracketType.Value:
+								openBracketType = null;
+								result.Append("]82");
+								break;
+							default:
+								result.Append(c);
+								break;
+						}
+					}
+					return result.ToString();
 				}
 
 				/// <summary>
@@ -177,7 +226,23 @@ namespace Romanization
 				/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
 				[Pure]
 				public string Process(string text)
-					=> Process(text, DefaultCulture);
+					=> text
+						// General preparation, normalization
+						.LanguageWidePreparation()
+						// If doing full replacements, there are some that require special treatment
+						.ExecuteIf(FullReplacements, t => t
+							.ReplaceMany(
+								OverlineSub,
+								UnderlineSub,
+								InvertedBreveSub,
+								BelowBreveSub,
+								BreveSub,
+								DoubleUnderlineSub,
+								DoubleSolidusBracketsSub,
+								SingleSolidusBracketsSub))
+						.Execute(ReplaceEditorialBrackets)
+						// All other replacements
+						.ReplaceFromChart(ReplacementTable);
 			}
 		}
 	}

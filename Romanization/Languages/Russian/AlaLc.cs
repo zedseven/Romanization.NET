@@ -1,5 +1,5 @@
 using Romanization.Internal;
-using System.Collections.Generic;
+using System;
 using System.Diagnostics.Contracts;
 using System.Globalization;
 
@@ -25,96 +25,101 @@ namespace Romanization
 			/// <inheritdoc />
 			public SystemType Type => SystemType.Transliteration;
 
+			/// <summary>
+			/// The default culture this system will use.
+			/// </summary>
+			public const string DefaultNativeCulture = "ru-RU";
+
 			/// <inheritdoc />
-			public CultureInfo DefaultCulture => CultureInfo.GetCultureInfo("ru-RU");
+			public CultureInfo NativeCulture { get; }
 
 			// System-Specific Constants
-			private readonly Dictionary<string, string> RomanizationTable = new();
+			private readonly ReplacementChart RomanizationTable;
 
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
 			/// </summary>
-			public AlaLc()
+			public AlaLc() : this(CultureInfo.GetCultureInfo(DefaultNativeCulture)) {}
+
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.<br />
+			/// Supports providing a specific <paramref name="nativeCulture"/> to process with, as long as the country
+			/// code is <c>ru</c>.
+			/// </summary>
+			/// <param name="nativeCulture">The culture to romanize from.</param>
+			/// <exception cref="IrrelevantCultureException"><paramref name="nativeCulture"/> is irrelevant to the
+			/// language/region.</exception>
+			public AlaLc(CultureInfo nativeCulture)
 			{
+				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
+					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
+
+				NativeCulture = nativeCulture;
+
 				#region Romanization Chart
 
 				// Sourced from https://en.wikipedia.org/wiki/ALA-LC_romanization_for_Russian
 
-				// Main characters (2021)
-				RomanizationTable["а"] = "a";
-				RomanizationTable["б"] = "b";
-				RomanizationTable["в"] = "v";
-				RomanizationTable["г"] = "g";
-				RomanizationTable["д"] = "d";
-				RomanizationTable["е"] = "e";
-				RomanizationTable["ё"] = "ë";
-				RomanizationTable["ж"] = "zh";
-				RomanizationTable["з"] = "z";
-				RomanizationTable["и"] = "i";
-				RomanizationTable["й"] = "ĭ";
-				RomanizationTable["к"] = "k";
-				RomanizationTable["л"] = "l";
-				RomanizationTable["м"] = "m";
-				RomanizationTable["н"] = "n";
-				RomanizationTable["о"] = "o";
-				RomanizationTable["п"] = "p";
-				RomanizationTable["р"] = "r";
-				RomanizationTable["с"] = "s";
-				RomanizationTable["т"] = "t";
-				RomanizationTable["у"] = "u";
-				RomanizationTable["ф"] = "f";
-				RomanizationTable["х"] = "kh";
-				RomanizationTable["ц"] = "t͡s";
-				RomanizationTable["ч"] = "ch";
-				RomanizationTable["ш"] = "sh";
-				RomanizationTable["щ"] = "shch";
-				RomanizationTable["ъ"] = "ʺ";
-				RomanizationTable["ы"] = "y";
-				RomanizationTable["ь"] = "ʹ";
-				RomanizationTable["э"] = "ė";
-				RomanizationTable["ю"] = "i͡u";
-				RomanizationTable["я"] = "i͡a";
+				RomanizationTable =
+					new ReplacementChart(StringComparer.Create(NativeCulture, CompareOptions.IgnoreCase))
+					{
+						// Main characters (2021)
+						{"а",    "a"},
+						{"б",    "b"},
+						{"в",    "v"},
+						{"г",    "g"},
+						{"д",    "d"},
+						{"е",    "e"},
+						{"ё",    "ë"},
+						{"ж",   "zh"},
+						{"з",    "z"},
+						{"и",    "i"},
+						{"й",    "ĭ"},
+						{"к",    "k"},
+						{"л",    "l"},
+						{"м",    "m"},
+						{"н",    "n"},
+						{"о",    "o"},
+						{"п",    "p"},
+						{"р",    "r"},
+						{"с",    "s"},
+						{"т",    "t"},
+						{"у",    "u"},
+						{"ф",    "f"},
+						{"х",   "kh"},
+						{"ц",   "t͡s"},
+						{"ч",   "ch"},
+						{"ш",   "sh"},
+						{"щ", "shch"},
+						{"ъ",    "ʺ"},
+						{"ы",    "y"},
+						{"ь",    "ʹ"},
+						{"э",    "ė"},
+						{"ю",   "i͡u"},
+						{"я",   "i͡a"},
 
-				// Letters eliminated in the orthographic reform of 1918
-				RomanizationTable["і"] = "ī";
-				RomanizationTable["ѣ"] = "i͡e";
-				RomanizationTable["ѳ"] = "ḟ";
-				RomanizationTable["ѵ"] = "ẏ";
+						// Letters eliminated in the orthographic reform of 1918
+						{"і",  "ī"},
+						{"ѣ", "i͡e"},
+						{"ѳ",  "ḟ"},
+						{"ѵ",  "ẏ"},
 
-				// Pre-18th century letters
-				RomanizationTable["є"] = "ē";
-				RomanizationTable["ѥ"] = "i͡e";
-				RomanizationTable["ѕ"] = "ż";
-				RomanizationTable["ꙋ"] = "ū";
-				RomanizationTable["ѿ"] = "ō͡t";
-				RomanizationTable["ѡ"] = "ō";
-				RomanizationTable["ѧ"] = "ę";
-				RomanizationTable["ѯ"] = "k͡s";
-				RomanizationTable["ѱ"] = "p͡s";
-				RomanizationTable["ѫ"] = "ǫ";
-				RomanizationTable["ѩ"] = "i͡ę";
-				RomanizationTable["ѭ"] = "i͡ǫ";
+						// Pre-18th century letters
+						{"є",  "ē"},
+						{"ѥ", "i͡e"},
+						{"ѕ",  "ż"},
+						{"ꙋ",  "ū"},
+						{"ѿ", "ō͡t"},
+						{"ѡ",  "ō"},
+						{"ѧ",  "ę"},
+						{"ѯ", "k͡s"},
+						{"ѱ", "p͡s"},
+						{"ѫ",  "ǫ"},
+						{"ѩ", "i͡ę"},
+						{"ѭ", "i͡ǫ"}
+					};
 
 				#endregion
-			}
-
-			/// <summary>
-			/// Performs ALA-LC Russian romanization on the given text.<br />
-			/// Supports providing a specific <paramref name="nativeCulture"/> to process with, as long as the country
-			/// code is <c>ru</c>.
-			/// </summary>
-			/// <param name="text">The text to romanize.</param>
-			/// <param name="nativeCulture">The culture to use.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
-			/// <exception cref="IrrelevantCultureException"><paramref name="nativeCulture"/> is irrelevant to the
-			/// language/region.</exception>
-			[Pure]
-			public string Process(string text, CultureInfo nativeCulture)
-			{
-				if (nativeCulture.TwoLetterISOLanguageName.ToLowerInvariant() != "ru")
-					throw new IrrelevantCultureException(nativeCulture.DisplayName, nameof(nativeCulture));
-				return CulturalOperations.RunWithCulture(nativeCulture,
-					() => text.LanguageWidePreparation().ReplaceFromChartWithSameCase(RomanizationTable));
 			}
 
 			/// <summary>
@@ -124,7 +129,8 @@ namespace Romanization
 			/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
 			[Pure]
 			public string Process(string text)
-				=> Process(text, DefaultCulture);
+				=> CulturalOperations.RunWithCulture(NativeCulture,
+					() => text.LanguageWidePreparation().ReplaceFromChartCaseAware(RomanizationTable));
 		}
 	}
 }

@@ -56,75 +56,75 @@ namespace Romanization
 					// Comments are if there's a specific unit associated with the symbol, and names in brackets are
 					// the region(?) in which the symbol was used
 
-					ValueTable["𐆊"]  =             0;
-					ValueTable["𐅼"]  = (decimal) 1/6; // Drachma/Obol
-					ValueTable["𐅀"]  = (decimal) 1/4;
-					ValueTable["𐆋"]  = (decimal) 1/4;
-					ValueTable["𐅽"]  = (decimal) 2/6; // Drachma/Obol
-					ValueTable["𐅁"]  = (decimal) 1/2;
-					ValueTable["𐅵"]  = (decimal) 1/2;
-					ValueTable["𐅶"]  = (decimal) 1/2;
-					ValueTable["𐅾"]  = (decimal) 3/6; // Drachma/Obol
-					ValueTable["𐅷"] = (decimal) 2/3;
-					ValueTable["𐅿"]  = (decimal) 4/6; // Drachma/Obol
-					ValueTable["𐅸"]  = (decimal) 3/4;
-					ValueTable["𐆀"]  = (decimal) 5/6; // Drachma/Obol
-					ValueTable["Ι"]  =             1;
-					ValueTable["𐅂"]  =             1; // Drachma
-					ValueTable["𐅘"]  =             1; // Plethron
-					ValueTable["𐅙"]  =             1; // (Thespian)
-					ValueTable["𐅚"]  =             1; // (Hermionian)
-					ValueTable["𐅛"]  =             2; // (Epidaurean)
-					ValueTable["𐅜"]  =             2; // (Thespian)
-					ValueTable["𐅝"]  =             2; // Drachma (Cyrenaic)
-					ValueTable["𐅞"]  =             2; // Drachma (Epidaurean)
-					ValueTable["Π"]  =             5;
-					ValueTable["𐅈"]  =             5; // Talents
-					ValueTable["𐅏"]  =             5; // Staters
-					ValueTable["𐅟"]  =             5; // (Troezenian)
-					ValueTable["𐅳"]  =             5; // Mnas (Delphic)
-					ValueTable["Δ"]  =            10;
-					ValueTable["𐅉"]  =            10; // Talents
-					ValueTable["𐅐"]  =            10; // Staters
-					ValueTable["𐅗"]  =            10; // Mnas
-					ValueTable["𐅠"]  =            10; // (Troezenian)
-					ValueTable["𐅡"]  =            10; // (Troezenian)
-					ValueTable["𐅢"]  =            10; // (Hermionian)
-					ValueTable["𐅣"]  =            10; // (Messenian)
-					ValueTable["𐅤"]  =            10; // (Thespian)
-					ValueTable["𐅥"]  =            30; // (Thespian)
-					ValueTable["𐅄"]  =            50;
-					ValueTable["𐅊"]  =            50; // Talents
-					ValueTable["𐅑"]  =            50; // Staters
-					ValueTable["𐅦"]  =            50; // (Troezenian)
-					ValueTable["𐅧"]  =            50; // (Troezenian)
-					ValueTable["𐅨"]  =            50; // (Hermionian)
-					ValueTable["𐅩"] =            50; // (Thespian)
-					ValueTable["𐅴"]  =            50; // Mnas (Stratian)
-					ValueTable["Η"]  =           100;
-					ValueTable["𐅋"]  =           100; // Talents
-					ValueTable["𐅒"]  =           100; // Staters
-					ValueTable["𐅪"] =           100; // (Thespian)
-					ValueTable["𐅫"] =           300; // (Thespian)
-					ValueTable["𐅅"]  =           500;
-					ValueTable["𐅌"]  =           500; // Talents
-					ValueTable["𐅓"]  =           500; // Staters
-					ValueTable["𐅬"] =           500; // (Epidaurean)
-					ValueTable["𐅭"] =           500; // (Troezenian)
-					ValueTable["𐅮"] =           500; // (Thespian)
-					ValueTable["𐅯"]  =           500; // (Carystian)
-					ValueTable["𐅰"]  =           500; // (Naxian)
-					ValueTable["Χ"]  =          1000;
-					ValueTable["𐅍"]  =          1000; // Talents
-					ValueTable["𐅔"]  =          1000; // Staters
-					ValueTable["𐅱"]  =          1000; // (Thespian)
-					ValueTable["𐅆"]  =          5000;
-					ValueTable["𐅎"]  =          5000; // Talents
-					ValueTable["𐅲"]  =          5000; // (Thespian)
-					ValueTable["Μ"]  =         10000;
-					ValueTable["𐅕"]  =         10000; // Staters
-					ValueTable["𐅇"]  =         50000;
-					ValueTable["𐅖"]  =         50000; // Staters
+					ValueTable.Add("𐆊",               0);
+					ValueTable.Add("𐅼",   (decimal) 1/6); // Drachma/Obol
+					ValueTable.Add("𐅀",   (decimal) 1/4);
+					ValueTable.Add("𐆋",   (decimal) 1/4);
+					ValueTable.Add("𐅽",   (decimal) 2/6); // Drachma/Obol
+					ValueTable.Add("𐅁",   (decimal) 1/2);
+					ValueTable.Add("𐅵",   (decimal) 1/2);
+					ValueTable.Add("𐅶",   (decimal) 1/2);
+					ValueTable.Add("𐅾",   (decimal) 3/6); // Drachma/Obol
+					ValueTable.Add("𐅷", (decimal) 2/3);
+					ValueTable.Add("𐅿",   (decimal) 4/6); // Drachma/Obol
+					ValueTable.Add("𐅸",   (decimal) 3/4);
+					ValueTable.Add("𐆀",   (decimal) 5/6); // Drachma/Obol
+					ValueTable.Add("Ι",               1);
+					ValueTable.Add("𐅂",               1); // Drachma
+					ValueTable.Add("𐅘",               1); // Plethron
+					ValueTable.Add("𐅙",               1); // (Thespian)
+					ValueTable.Add("𐅚",               1); // (Hermionian)
+					ValueTable.Add("𐅛",               2); // (Epidaurean)
+					ValueTable.Add("𐅜",               2); // (Thespian)
+					ValueTable.Add("𐅝",               2); // Drachma (Cyrenaic)
+					ValueTable.Add("𐅞",               2); // Drachma (Epidaurean)
+					ValueTable.Add("Π",               5);
+					ValueTable.Add("𐅈",               5); // Talents
+					ValueTable.Add("𐅏",               5); // Staters
+					ValueTable.Add("𐅟",               5); // (Troezenian)
+					ValueTable.Add("𐅳",               5); // Mnas (Delphic)
+					ValueTable.Add("Δ",              10);
+					ValueTable.Add("𐅉",              10); // Talents
+					ValueTable.Add("𐅐",              10); // Staters
+					ValueTable.Add("𐅗",              10); // Mnas
+					ValueTable.Add("𐅠",              10); // (Troezenian)
+					ValueTable.Add("𐅡",              10); // (Troezenian)
+					ValueTable.Add("𐅢",              10); // (Hermionian)
+					ValueTable.Add("𐅣",              10); // (Messenian)
+					ValueTable.Add("𐅤",              10); // (Thespian)
+					ValueTable.Add("𐅥",              30); // (Thespian)
+					ValueTable.Add("𐅄",              50);
+					ValueTable.Add("𐅊",              50); // Talents
+					ValueTable.Add("𐅑",              50); // Staters
+					ValueTable.Add("𐅦",              50); // (Troezenian)
+					ValueTable.Add("𐅧",              50); // (Troezenian)
+					ValueTable.Add("𐅨",              50); // (Hermionian)
+					ValueTable.Add("𐅩",            50); // (Thespian)
+					ValueTable.Add("𐅴",              50); // Mnas (Stratian)
+					ValueTable.Add("Η",             100);
+					ValueTable.Add("𐅋",             100); // Talents
+					ValueTable.Add("𐅒",             100); // Staters
+					ValueTable.Add("𐅪",           100); // (Thespian)
+					ValueTable.Add("𐅫",           300); // (Thespian)
+					ValueTable.Add("𐅅",             500);
+					ValueTable.Add("𐅌",             500); // Talents
+					ValueTable.Add("𐅓",             500); // Staters
+					ValueTable.Add("𐅬",           500); // (Epidaurean)
+					ValueTable.Add("𐅭",           500); // (Troezenian)
+					ValueTable.Add("𐅮",           500); // (Thespian)
+					ValueTable.Add("𐅯",             500); // (Carystian)
+					ValueTable.Add("𐅰",             500); // (Naxian)
+					ValueTable.Add("Χ",            1000);
+					ValueTable.Add("𐅍",            1000); // Talents
+					ValueTable.Add("𐅔",            1000); // Staters
+					ValueTable.Add("𐅱",            1000); // (Thespian)
+					ValueTable.Add("𐅆",            5000);
+					ValueTable.Add("𐅎",            5000); // Talents
+					ValueTable.Add("𐅲",            5000); // (Thespian)
+					ValueTable.Add("Μ",           10000);
+					ValueTable.Add("𐅕",           10000); // Staters
+					ValueTable.Add("𐅇",           50000);
+					ValueTable.Add("𐅖",           50000); // Staters
 
 					#endregion
 				}

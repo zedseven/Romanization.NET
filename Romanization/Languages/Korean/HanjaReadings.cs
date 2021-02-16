@@ -62,9 +62,8 @@ namespace Romanization
 			public string Process(string text, IRomanizationSystem system)
 			{
 				return system.Process(
-					string.Join("",
-						ProcessWithReadings(text).Characters
-							.Select(c => c.Readings.Length > 0 ? c.Readings[0].Value : c.Character)));
+					string.Concat(ProcessWithReadings(text).Characters
+						.Select(c => c.Readings.Length > 0 ? c.Readings[0].Value : c.Character)));
 			}
 
 			/// <summary>
@@ -77,20 +76,6 @@ namespace Romanization
 			[Pure]
 			public string Process(string text)
 				=> Process(text, new RevisedRomanization());
-
-			/// <summary>
-			/// Converts all Hanja in the given text to their first Hangeul character in the list of possible
-			/// readings.<br />
-			/// Note that this will not yield a romanized string, but rather a standard Korean one. See
-			/// <see cref="Process(string, IRomanizationSystem)"/> for a romanized output.
-			/// </summary>
-			/// <param name="text">The text to romanize.</param>
-			/// <returns>A version of the text with all Hanja characters replaced with their first Hangeul
-			/// readings.</returns>
-			[Pure]
-			public string ProcessToHangeul(string text)
-				=> string.Join("", ProcessWithReadings(text).Characters
-					.Select(c => c.Readings.Length > 0 ? c.Readings[0].Value : c.Character));
 
 			/// <summary>
 			/// Performs romanization of all Hanja in the given text.<br />
@@ -114,6 +99,20 @@ namespace Romanization
 						return new ReadingCharacter<ReadingTypes>(c, readings);
 					})
 					.ToArray());
+
+			/// <summary>
+			/// Converts all Hanja in the given text to their first Hangeul character in the list of possible
+			/// readings.<br />
+			/// Note that this will not yield a romanized string, but rather a standard Korean one. See
+			/// <see cref="Process(string, IRomanizationSystem)"/> for a romanized output.
+			/// </summary>
+			/// <param name="text">The text to romanize.</param>
+			/// <returns>A version of the text with all Hanja characters replaced with their first Hangeul
+			/// readings.</returns>
+			[Pure]
+			public string ProcessToHangeul(string text)
+				=> string.Concat(ProcessWithReadings(text).Characters
+					.Select(c => c.Readings.Length > 0 ? c.Readings[0].Value : c.Character));
 		}
 	}
 }

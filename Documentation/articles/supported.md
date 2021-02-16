@@ -42,8 +42,8 @@ To make things more complicated, each can have multiple readings - in both [Kun'
 This is why this system is considered a [Readings System](readingsSystems) for the purposes of this library, which means you can get every known reading from the [Unihan database](http://www.unicode.org/charts/unihan.html) for each character.
 
 The two reading types supported are:
-1. Kun'yomi - often referred to as just Kun - the native reading
-2. On'yomi - often referred to as just On - the Sino-Japanese reading
+1. Kun'yomi (meaning reading) - often referred to as just Kun - the native reading, used for standalone words
+2. On'yomi (sound-based reading) - often referred to as just On - the Sino-Japanese reading, used for compound words
 
 #### Additional Notes
 Because Kanji often appear alongside supplementary Kana, the system also has a small convenience function that romanizes both Kanji and Kana, using the system of your choice for Kana.

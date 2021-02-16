@@ -111,20 +111,23 @@ namespace Romanization.Internal
 				if (part.GetType() == typeof(VerbatimPart))
 				{
 					string text = ((VerbatimPart) part).Text;
-					if (casingMode == CasingMode.TitleCase && verbatimSoFar <= 0)
+					switch (casingMode)
 					{
-						sb.Append(char.ToUpper(text[0], CultureInfo.CurrentCulture));
-						sb.Append(text.Substring(1).ToLower(CultureInfo.CurrentCulture));
+						case CasingMode.TitleCase when verbatimSoFar <= 0:
+							sb.Append(char.ToUpper(text[0], CultureInfo.CurrentCulture));
+							sb.Append(text.Substring(1).ToLower(CultureInfo.CurrentCulture));
+							break;
+						case CasingMode.ReverseTitleCase when verbatimSoFar >= _verbatimPartCount - 1:
+							sb.Append(text.Substring(0, text.Length - 1).ToLower(CultureInfo.CurrentCulture));
+							sb.Append(char.ToUpper(text[^1], CultureInfo.CurrentCulture));
+							break;
+						case CasingMode.UpperCase:
+							sb.Append(text.ToUpper(CultureInfo.CurrentCulture));
+							break;
+						default:
+							sb.Append(text.ToLower(CultureInfo.CurrentCulture));
+							break;
 					}
-					else if (casingMode == CasingMode.ReverseTitleCase && verbatimSoFar >= _verbatimPartCount - 1)
-					{
-						sb.Append(text.Substring(0, text.Length - 1).ToLower(CultureInfo.CurrentCulture));
-						sb.Append(char.ToUpper(text[^1], CultureInfo.CurrentCulture));
-					}
-					else if (casingMode == CasingMode.UpperCase)
-						sb.Append(text.ToUpper(CultureInfo.CurrentCulture));
-					else
-						sb.Append(text.ToLower(CultureInfo.CurrentCulture));
 					verbatimSoFar++;
 					continue;
 				}

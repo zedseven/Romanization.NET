@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.Contracts;
-using System.Globalization;
+﻿using System.Globalization;
 
 namespace Romanization
 {
@@ -12,13 +11,8 @@ namespace Romanization
 	public interface IMultiOutCultureSystem : IRomanizationSystem
 	{
 		/// <summary>
-		/// The system-specific function that romanizes text according to the system's rules, using the culture for the
-		/// language, and <paramref name="romanizedCulture"/> for processing of romanized text.
+		/// The culture to romanize to.
 		/// </summary>
-		/// <param name="text">The text to romanize.</param>
-		/// <param name="romanizedCulture">The culture to romanize to.</param>
-		/// <returns>A romanized version of the text, leaving unrecognized characters untouched.</returns>
-		[Pure]
-		public string ProcessToCulture(string text, CultureInfo romanizedCulture);
+		public CultureInfo RomanizedCulture { get; }
 	}
 }

@@ -31,14 +31,18 @@ namespace Romanization
 			public enum ReadingTypes
 			{
 				/// <summary>
-				/// Kun'yomi, the Japanese-native reading. Often referred to as just Kun.
+				/// Kun'yomi, the Japanese-native reading. Often referred to as just Kun. Also known as "meaning
+				/// reading", used for standalone words.
 				/// </summary>
 				Kunyomi = 1,
 				/// <summary>
-				/// On'yomi, the Sino-Japanese reading. Often referred to as just On.
+				/// On'yomi, the Sino-Japanese reading. Often referred to as just On. Also known as "sound reading",
+				/// used for compound words.
 				/// </summary>
 				Onyomi = 1 << 1
 			}
+
+			public readonly ReadingTypes ReadingsToUse;
 
 			private const string KanjiKunFileName = "KanjiKun.csv";
 			private const string KanjiOnFileName  = "KanjiOn.csv";
@@ -49,26 +53,18 @@ namespace Romanization
 			/// <summary>
 			/// Instantiates a copy of the system to process romanizations.
 			/// </summary>
-			public KanjiReadings()
+			public KanjiReadings() : this(ReadingTypes.Kunyomi | ReadingTypes.Onyomi) {}
+
+			/// <summary>
+			/// Instantiates a copy of the system to process romanizations.<br />
+			/// Supports providing which reading types to use.
+			/// </summary>
+			public KanjiReadings(ReadingTypes readingsToUse)
 			{
+				ReadingsToUse = readingsToUse;
 				CsvLoader.LoadCharacterMap(KanjiKunFileName, KanjiKunReadings, k => k, v => v.Split(' '));
 				CsvLoader.LoadCharacterMap(KanjiOnFileName,  KanjiOnReadings,  k => k, v => v.Split(' '));
 			}
-
-			/// <summary>
-			/// Performs romanization of all Kanji in the given text.<br />
-			/// Uses the first reading of the character - Kun'yomi first, if requested and available, then On'yomi if
-			/// requested and available.<br />
-			/// If more readings are required, use <see cref="ProcessWithReadings(string, ReadingTypes)"/> instead.
-			/// </summary>
-			/// <param name="text">The text to romanize.</param>
-			/// <param name="readingsToUse">The reading types to use.</param>
-			/// <returns>A romanized version of the text, leaving unrecognized characters untouched. Note that all
-			/// romanized text will be lowercase.</returns>
-			[Pure]
-			public string Process(string text, ReadingTypes readingsToUse)
-				=> string.Join("", ProcessWithReadings(text, readingsToUse).Characters
-					.Select(c => c.Readings.Length > 0 ? c.Readings[0].Value : c.Character));
 
 			/// <summary>
 			/// Performs romanization of all Kanji in the given text.<br />
@@ -80,8 +76,38 @@ namespace Romanization
 			/// romanized text will be lowercase.</returns>
 			[Pure]
 			public string Process(string text)
-				=> string.Join("", ProcessWithReadings(text).Characters
+				=> string.Concat(ProcessWithReadings(text).Characters
 					.Select(c => c.Readings.Length > 0 ? c.Readings[0].Value : c.Character));
+
+			/// <summary>
+			/// Performs romanization of all Kanji in the given text.<br />
+			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings
+			/// (pronunciations) of each.<br />
+			/// Can return the following readings for characters if in <see name="ReadingsToUse"/> and they exist:
+			/// Kun'yomi and On'yomi.
+			/// </summary>
+			/// <param name="text">The text to romanize.</param>
+			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in
+			/// <paramref name="text"/>.</returns>
+			[Pure]
+			public ReadingsString<ReadingTypes> ProcessWithReadings(string text)
+				=> new(text.SplitIntoSurrogatePairs()
+					.Select(c =>
+					{
+						List<Reading<ReadingTypes>> readings = new(text.Length);
+
+						if (ReadingsToUse.HasFlag(ReadingTypes.Kunyomi) &&
+						    KanjiKunReadings.TryGetValue(c, out string[]? rawKanjiKunReadings))
+							readings.AddRange(rawKanjiKunReadings.Select(r =>
+								new Reading<ReadingTypes>(ReadingTypes.Kunyomi, r)));
+						if (ReadingsToUse.HasFlag(ReadingTypes.Onyomi) &&
+						    KanjiOnReadings.TryGetValue(c, out string[]? rawKanjiOnReadings))
+							readings.AddRange(rawKanjiOnReadings.Select(r =>
+								new Reading<ReadingTypes>(ReadingTypes.Onyomi, r)));
+
+						return new ReadingCharacter<ReadingTypes>(c, readings);
+					})
+					.ToArray());
 
 			/// <summary>
 			/// Performs romanization of all Kanji in the given text, after using <paramref name="system"/> to handle
@@ -101,50 +127,6 @@ namespace Romanization
 				system ??= new ModifiedHepburn();
 				return Process(system.Process(text));
 			}
-
-			/// <summary>
-			/// Performs romanization of all Kanji in the given text.<br />
-			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings
-			/// (pronunciations) of each.<br />
-			/// Can return the following readings for characters if in <paramref name="readingsToUse"/> and they exist:
-			/// Kun'yomi and On'yomi.
-			/// </summary>
-			/// <param name="text">The text to romanize.</param>
-			/// <param name="readingsToUse">The reading types to use.</param>
-			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in
-			/// <paramref name="text"/>.</returns>
-			[Pure]
-			public ReadingsString<ReadingTypes> ProcessWithReadings(string text, ReadingTypes readingsToUse)
-				=> new(text.SplitIntoSurrogatePairs()
-					.Select(c =>
-					{
-						List<Reading<ReadingTypes>> readings = new(text.Length);
-
-						if (readingsToUse.HasFlag(ReadingTypes.Kunyomi) &&
-						    KanjiKunReadings.TryGetValue(c, out string[]? rawKanjiKunReadings))
-							readings.AddRange(rawKanjiKunReadings.Select(r =>
-								new Reading<ReadingTypes>(ReadingTypes.Kunyomi, r)));
-						if (readingsToUse.HasFlag(ReadingTypes.Onyomi) &&
-						    KanjiOnReadings.TryGetValue(c, out string[]? rawKanjiOnReadings))
-							readings.AddRange(rawKanjiOnReadings.Select(r =>
-								new Reading<ReadingTypes>(ReadingTypes.Onyomi, r)));
-
-						return new ReadingCharacter<ReadingTypes>(c, readings);
-					})
-					.ToArray());
-
-			/// <summary>
-			/// Performs romanization of all Kanji in the given text.<br />
-			/// Returns a collection of all the characters in <paramref name="text"/>, but with all readings
-			/// (pronunciations) of each.<br />
-			/// Returns the following readings for characters if they exist: Kun'yomi and On'yomi.
-			/// </summary>
-			/// <param name="text">The text to romanize.</param>
-			/// <returns>A <see cref="ReadingsString{ReadingTypes}"/> with all readings for each character in
-			/// <paramref name="text"/>.</returns>
-			[Pure]
-			public ReadingsString<ReadingTypes> ProcessWithReadings(string text)
-				=> ProcessWithReadings(text, ReadingTypes.Kunyomi | ReadingTypes.Onyomi);
 		}
 	}
 }
